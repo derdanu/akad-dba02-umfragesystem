@@ -17,7 +17,9 @@ class Index {
 	 */
 	public function Index_Action() {
 		
-		print "Hello World from " . get_class($this);
+		$view = new \View();
+		$view->assign('test', 'Hello vom Controller');
+		$view->display();
 		
 	}	
 }
