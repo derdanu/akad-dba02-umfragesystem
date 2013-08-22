@@ -14,7 +14,7 @@ spl_autoload_register('__autoload');
 function __autoload($class) {
  
 	// Namespace Backslashe in Slashe für das Filesystem umwandeln
-	$file = str_replace("\\", "/", $class).".php";
+	$file = str_replace("\\", DIRECTORY_SEPARATOR, $class).".php";
  
  	// Klasse einbinden ansonsten Exception werfen.
 	if (file_exists(CLASS_DIR . $file)) {
