@@ -63,8 +63,8 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>DBA02</h1>
-        <p>Datenbanken</p>
-        <p>PHP und MySQL</p>
+        <p><?php print $this->view['controller']; ?></p>
+        <p><?php print $this->view['config']; ?></p>
         <p>
           <a class="btn btn-lg btn-primary" href="../../components/#navbar">Login &raquo;</a>
         </p>
