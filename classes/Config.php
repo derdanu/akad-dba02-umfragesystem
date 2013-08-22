@@ -26,7 +26,6 @@ class Config
 	private function __construct() {
 		// Konfigurationsdatei nur einmal laden.
 		$this->config = parse_ini_file(CONFIGFILE);
-		print "test";
 	}
 	private function __clone(){}
 
