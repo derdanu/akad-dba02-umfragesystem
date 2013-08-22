@@ -28,8 +28,11 @@ function __autoload($class) {
 try {
 	$c = new \FrontController();
 	$c->run();	
-} catch (Exception $e)  {
-	print "Sorry etwas ist schief gegangen!<br>" . $e->getMessage();
+} catch (Exception $e)  {	
+	$view = new \View();
+	$view->setTemplate('exception');
+	$view->assign('exception', $e->getMessage());
+	$view->display();
 }
 
 
