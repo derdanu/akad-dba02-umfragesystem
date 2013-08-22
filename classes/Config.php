@@ -8,14 +8,13 @@ define('CONFIGFILE', 'config/config.ini');
  * Die Werte stehen in der Ini Datei und können direkt abgerufen werden.
  * 
  */
-class Config
-{
+class Config {
+	
 	private $config = array();
 	
 	static private $instance = null;
 
-	static public function getInstance()
-	{
+	static public function getInstance() {
 		if (null === self::$instance) {
 			self::$instance = new self;
 		}
@@ -27,6 +26,7 @@ class Config
 		// Konfigurationsdatei nur einmal laden.
 		$this->config = parse_ini_file(CONFIGFILE);
 	}
+	
 	private function __clone(){}
 
 	public function __get($key) {
