@@ -1,3 +1,5 @@
 Hello World
 <hr> 
-<?php print $this->view['test']; ?>
+<?php print $this->view['controller']; ?>
+<br>
+<?php print $this->view['config']; ?>

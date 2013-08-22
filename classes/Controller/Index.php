@@ -17,8 +17,11 @@ class Index {
 	 */
 	public function Index_Action() {
 		
+		$conf = \Config::getInstance();
+		
 		$view = new \View();
-		$view->assign('test', 'Hello vom Controller');
+		$view->assign('controller', 'Hello vom Controller ' . get_class($this));
+		$view->assign('config', 'Hello vom Controller und Config ' . $conf->website);
 		$view->display();
 		
 	}	
