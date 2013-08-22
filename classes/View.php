@@ -10,6 +10,10 @@ class View {
 	private $templatePath = 'templates';
 	// Default Template index.tpl.php
 	private $template = 'index';
+	// Layout Template
+	private $layouttemplate = '_layout';
+	// Anzuzeigenedes Template inkl Pfad;
+	private $includetemplate;
 	// Variablen innerhalb des Templates
 	private $view = array();
 	
@@ -43,11 +47,11 @@ class View {
 	 * 
 	 */
 	public function display() {
-		$file = $this->templatePath . DIRECTORY_SEPARATOR . $this->template . ".tpl.php";
+		$this->includetemplate = $this->getTemplateOnFilesystem($this->template);
 		
-		if (file_exists($file)) {
+		if (file_exists($this->includetemplate)) {
 			
-			include $file;
+			include $this->getTemplateOnFilesystem($this->layouttemplate);
 			
 		} else {
 			
@@ -55,6 +59,21 @@ class View {
 			
 		}
 			
-	}		
+	}
+	
+	/**
+	 * 
+	 * Anhand des Templatenamen den vollen Pfad inkl Datei zurückgeben
+	 * 
+	 * @param	String	$template	Templatename
+	 * 
+	 * @return	String	Pfad inkl Dateiname zum Template
+	 * 
+	 */
+	private function getTemplateOnFilesystem($template)	 {
+		
+		return $this->templatePath . DIRECTORY_SEPARATOR . $template . ".tpl.php";
+		
+	}	
 }
 ?>

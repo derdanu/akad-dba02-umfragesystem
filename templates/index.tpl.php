@@ -1,4 +1,3 @@
-<?php include("_header.tpl.php"); ?>
 
       <div class="jumbotron">
         <h1>DBA02</h1>
@@ -9,4 +8,3 @@
         </p>
       </div>
 
-<?php include("_footer.tpl.php"); ?>
