@@ -47,10 +47,12 @@ class View {
 	 * 
 	 */
 	public function display() {
+		
 		$this->includetemplate = $this->getTemplateOnFilesystem($this->template);
 		
+		// Überprüfen ob das angeforderte Template Exitiert
 		if (file_exists($this->includetemplate)) {
-			
+			// Layouttemplate einbinden
 			include $this->getTemplateOnFilesystem($this->layouttemplate);
 			
 		} else {
