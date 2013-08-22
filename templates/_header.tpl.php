@@ -52,7 +52,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./">About</a></li>
+            <li><a href="docs/html/annotated.html" target="_blank">Codedokumentation</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
