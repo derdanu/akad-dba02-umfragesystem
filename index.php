@@ -1,4 +1,6 @@
 <?php
+define('DEBUG', 'true');
+
 define('CLASS_DIR', 'classes/');
 
 // PHP Autoloader Funktion definieren.
@@ -35,6 +37,13 @@ try {
 	$view->display();
 }
 
+if (DEBUG) {
+	print "<hr>Debug<br>";
+	print "<pre>";
+	print_r($_GET);
+	print_r($_POST);
+	print "</pre>";
+}
 
 
 ?>
