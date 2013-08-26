@@ -39,7 +39,7 @@ class UserSession {
 		if ($model->checkCredentials($user, $pass)) {
 
 			\Session::authUser();
-			\Redirect::toController("Survey");
+			\Redirect::toController("Index");
 
 		} else {
 		
