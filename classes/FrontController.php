@@ -31,6 +31,11 @@ class FrontController {
 	public function __construct() {
 
 		$controller = $_GET['controller'];		
+		// Workaround magic_quotes() . Ab PHP 5.4 DEPRICATED
+		if (get_magic_quotes_gpc()) {
+			$controller = 	str_replace("\\\\", "\\", $controller);	
+		}
+		
 		$action = $_GET['action'];
 		
 		
