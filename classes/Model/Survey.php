@@ -8,31 +8,68 @@ namespace Model;
  */
 class Survey {
 
-
+	/**
+	 * 
+	 * Umfragen holen
+	 * 
+	 * @return	Array
+	 * 
+	 */
 	public function getSurveys() {
 		
 		return array(1 => "Umfrage 1", 2 => "Umfrage 2");
 		
 	}
 	
+	/**
+	 * 
+	 * Umfragename holen
+	 * 
+	 * @param	Integer	$survey	UmfrageId	
+	 * 
+	 * @return	String	Name der Umfrage
+	 * 
+	 */
 	public function getSurveyName($survey) {
 		
 		return "Name der Umfrage $survey";
 		
 	}
 	
+	/**
+	 * 
+	 * Umfrage Punkte holen
+	 * 
+	 * @param	Integer	$survey	UmfrageId	
+	 * 
+	 * @return	Array
+	 * 
+	 */
 	public function getSurveyItems($survey) {
 		
 		return (array(10 => "Antwort 1", 11 => "Antwort 2"));
 		
 	}
 
+	/**
+	 * 
+	 * Umfrage Ergebnisse holen
+	 * 
+	 * @param	Integer	$survey	UmfrageId	
+	 * 
+	 * @return	Array
+	 */
 	public function getSurveyResult($survey) {
 		
 		return (array(20 => "Antwort 1", 80 => "Antwort 2"));
 		
 	}
 	
+	/**
+	 * 
+	 * Statistiken holen
+	 * 
+	 */
 	public function getStats() {
 		
 		$stat[survey_cnt] = 17;

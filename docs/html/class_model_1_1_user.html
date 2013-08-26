@@ -93,22 +93,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a6f75fbb91daa84c817340a254bd1aa6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f75fbb91daa84c817340a254bd1aa6f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>checkCredentials</b> ($user, $pass)</td></tr>
-<tr class="memitem:a306c9d8207c01a0dc603dd3fa148094c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a306c9d8207c01a0dc603dd3fa148094c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>getUsers</b> ()</td></tr>
+<tr class="memitem:a6f75fbb91daa84c817340a254bd1aa6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_user.html#a6f75fbb91daa84c817340a254bd1aa6f">checkCredentials</a> ($user, $pass)</td></tr>
+<tr class="memitem:a306c9d8207c01a0dc603dd3fa148094c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_user.html#a306c9d8207c01a0dc603dd3fa148094c">getUsers</a> ()</td></tr>
 </table>
 <a name="details" id="details"></a><h2>Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Benutzer Datenmodell </p>
 
 <p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00009">9</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
-</div><hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+</div><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a6f75fbb91daa84c817340a254bd1aa6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model\User::checkCredentials </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$pass</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Berechtigung überprüfen</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">String</td><td class="paramname">$user</td><td>Benutzername </td></tr>
+    <tr><td class="paramtype">String</td><td class="paramname">$pass</td><td>Passwort</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Boolean </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00022">22</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
+<div class="fragment"><div class="line">                                                       {</div>
+<div class="line">                </div>
+<div class="line">                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">                </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a306c9d8207c01a0dc603dd3fa148094c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model\User::getUsers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Benutzer holen</p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Array </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00035">35</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
+<div class="fragment"><div class="line">                                   {</div>
+<div class="line">                </div>
+<div class="line">                <span class="keywordflow">return</span> array(<span class="stringliteral">&quot;sepp&quot;</span> =&gt; <span class="stringliteral">&quot;maier123&quot;</span>, <span class="stringliteral">&quot;franz&quot;</span> =&gt; <span class="stringliteral">&quot;supersicher&quot;</span>, <span class="stringliteral">&quot;test&quot;</span> =&gt; <span class="stringliteral">&quot;bass&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
 <li><a class="el" href="_model_2_user_8php_source.html">Model/User.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Aug 26 2013 17:08:44 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Aug 26 2013 17:16:19 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

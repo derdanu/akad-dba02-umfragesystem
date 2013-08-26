@@ -47,12 +47,24 @@ class Session {
 		
 	}
 	
+	/**
+	 * 
+	 * Benutzer Authentifizeren
+	 * 
+	 */
 	public static function authUser() {
 		
 		$_SESSION['__AUTH'] = 1;
 		
 	}
 	
+	/**
+	 * 
+	 * Überprüfen ob Benutzer Authentifiziert ist
+	 * 
+	 * @return	Boolean
+	 * 
+	 */
 	public static function isUserAuthed() {
 		
 		if ($_SESSION['__AUTH'] == 1) return true;
@@ -61,6 +73,11 @@ class Session {
 		
 	}
 	
+	/**
+	 * 
+	 * Session löschen
+	 * 
+	 */
 	public static function destroy() {
 		
 		session_destroy();

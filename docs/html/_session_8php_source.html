@@ -133,32 +133,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                $_SESSION[$key] = $value;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> authUser() {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                $_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] = 1;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> isUserAuthed() {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">if</span> ($_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] == 1) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> destroy() {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                session_destroy();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">         * Benutzer Authentifizeren</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_session.html#ab5ee063ee1dd4a5026c1b87caf98c9a0">   55</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_session.html#ab5ee063ee1dd4a5026c1b87caf98c9a0">authUser</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                $_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] = 1;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">         * Überprüfen ob Benutzer Authentifiziert ist</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">         * @return      Boolean</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_session.html#a23cee49624385c6af65af96fb1c682f6">   68</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_session.html#a23cee49624385c6af65af96fb1c682f6">isUserAuthed</a>() {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span> ($_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] == 1) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">         * Session löschen</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="class_session.html#a5dde74b6fa44649e5b73cb1096930dd4">   81</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_session.html#a5dde74b6fa44649e5b73cb1096930dd4">destroy</a>() {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                session_destroy();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Aug 26 2013 17:08:43 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mon Aug 26 2013 17:16:19 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
