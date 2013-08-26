@@ -26,22 +26,33 @@ function __autoload($class) {
 	}
 } 
  
-// FrontController aufrufen 
 try {
+	
+	// Session Initalisieren
+	$session = \Session::getInstance();
+	
+	// Frontcontroller Initalsieren und Aufrufen
 	$c = new \FrontController();
-	$c->run();	
+	$c->run();
+	
+		
 } catch (Exception $e)  {	
+	
 	$view = new \View();
 	$view->setTemplate('exception');
 	$view->assign('exception', $e->getMessage());
 	$view->display();
+
 }
 
+
+// Debugging
 if (DEBUG) {
 	print "<hr>Debug<br>";
 	print "<pre>";
 	print_r($_GET);
 	print_r($_POST);
+	print_r($_SESSION);
 	print "</pre>";
 }
 

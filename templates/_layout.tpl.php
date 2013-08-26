@@ -38,20 +38,26 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="?controller=Survey">Umfrage</a></li>
+            <?php if (\Session::isUserAuthed()) { ?>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Verwaltung</li>
-                <li><a href="#">Benutzer</a></li>
-                <li><a href="#">Umfrage</a></li>
+                <li><a href="?controller=Admin/User">Benutzer</a></li>
+                <li><a href="?controller=Admin/Umfrage">Umfrage</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Statistik</li>
                 <li><a href="#">Umfrage</a></li>
               </ul>
+             <?php } ?>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-			<li><a href="?controller=UserSession&action=Login">Login</a></li>
+            <?php if (\Session::isUserAuthed()) { ?>
+				<li><a href="?controller=UserSession&action=Logout">Logout</a></li>
+            <?php } else { ?>
+            	<li><a href="?controller=UserSession&action=Login">Login</a></li>
+            <?php } ?>
           </ul>
           
         </div><!--/.nav-collapse -->

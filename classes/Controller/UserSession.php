@@ -7,20 +7,8 @@ namespace Controller;
  * 
  * 
  */
-class USerSession {
+class UserSession {
 	
-	/**
-	 * 
-	 * Default Index Get Action
-	 * 
-	 * Umleiten auf Login Formular
-	 * 
-	 */
-	public function Index_Action() {
-		
-		$this->Login_Action();
-		
-	}
 	
 	/**
 	 * 
@@ -43,7 +31,22 @@ class USerSession {
 	 */
 	public function Login_POST_Action() {
 		
-		$this->Index_Action();
+		$user = $_GET['user'];
+		$pass = $_GET['pass'];
+		
+		$model = new \Model\User();
+			
+		if ($model->checkCredentials($user, $pass)) {
+
+			\Session::authUser();
+			\Redirect::toController("Survey");
+
+		} else {
+		
+			$this->Login_Action();			
+			
+		}
+
 		
 	}
 	
@@ -53,9 +56,9 @@ class USerSession {
 	 * 
 	 */
 	public function Logout_Action() {
-		
-		//Destroy Session
-		//Redirect
+
+		\Session::destroy();
+		\Redirect::toController("Index");
 		
 	}
 		
