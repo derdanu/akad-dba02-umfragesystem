@@ -16,8 +16,11 @@ class Survey {
 	 */
 	public function Index_Action() {
 		
+		$model = new \Model\Survey();
+		
 		$view = new \View();
-		$view->setTemplate('index');
+		$view->setTemplate('admin_surveys');
+		$view->assign('surveys', $model->getSurveys());
 		$view->display();
 		
 	}	
