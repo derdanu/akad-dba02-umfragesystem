@@ -37,17 +37,17 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="?controller=Survey">Umfrage</a></li>
+            <li><a href="?controller=Survey">Umfragen</a></li>
             <?php if (\Session::isUserAuthed()) { ?>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Verwaltung</li>
                 <li><a href="?controller=Admin\User">Benutzer</a></li>
-                <li><a href="?controller=Admin\Survey">Umfrage</a></li>
+                <li><a href="?controller=Admin\Survey">Umfragen</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Statistik</li>
-                <li><a href="?controller=Admin\Stats">Umfrage</a></li>
+                <li><a href="?controller=Admin\Stats">Umfragen</a></li>
               </ul>
              <?php } ?>
             </li>
