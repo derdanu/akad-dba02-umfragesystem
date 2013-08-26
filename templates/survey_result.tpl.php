@@ -4,7 +4,8 @@
 			<table class="table table-bordered">
 			<?php
 			foreach ($this->view['survey_result'] as $key=>$value) {
-				print "<tr><td>$value</td><td>$key %</td></tr>";	
+				$width = $key * 5;
+				print "<tr><td>$value</td><td><div style='background-color:grey; width:{$width}px;'>$key %</div></td></tr>";	
 			}
 			?>
 			</table>

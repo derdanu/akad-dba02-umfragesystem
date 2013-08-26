@@ -47,7 +47,7 @@
                 <li><a href="?controller=Admin\Survey">Umfrage</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Statistik</li>
-                <li><a href="#">Umfrage</a></li>
+                <li><a href="?controller=Admin\Stats">Umfrage</a></li>
               </ul>
              <?php } ?>
             </li>

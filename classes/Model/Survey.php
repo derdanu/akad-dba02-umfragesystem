@@ -33,6 +33,13 @@ class Survey {
 		
 	}
 	
+	public function getStats() {
+		
+		$stat[survey_cnt] = 17;
+		$stat[record_cnt] = 343;
+		
+		return $stat;
+	}
 }
 
 
