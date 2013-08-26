@@ -14,6 +14,11 @@ class User {
 		return true;
 		
 	}
+	
+	public function getUsers() {
+		
+		return array("sepp" => "maier123", "franz" => "supersicher", "test" => "bass");
+	}
 		
 }
 

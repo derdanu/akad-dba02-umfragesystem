@@ -50,7 +50,7 @@ class FrontController {
 	 * 
 	 */
 	public function run() {
-		
+
 		$controller = new $this->controller();
 
 		if(in_array($this->action, get_class_methods($controller))) {
