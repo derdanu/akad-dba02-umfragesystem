@@ -1,6 +1,6 @@
       
       <div class="jumbotron">
-		<form class="form-signin" method="post" action="?controller=Survey&action=Save&survey=<?php print $this->view['survey_id']; ?>">
+		<form role="form" method="post" action="?controller=Survey&action=Save&survey=<?php print $this->view['survey_id']; ?>">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 			<h3 class="panel-title"><?php print $this->view['survey_name']; ?></h3>
