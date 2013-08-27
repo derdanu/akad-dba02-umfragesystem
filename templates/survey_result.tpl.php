@@ -5,7 +5,7 @@
 			<?php
 			foreach ($this->view['survey_result'] as $key=>$value) {
 				$width = $key * 5;
-				print "<tr><td>$value</td><td><div style='background-color:grey; width:{$width}px;'>$key %</div></td></tr>";	
+				print "<tr><td>$value</td><td><div style='background-color:grey; width:{$width}px; padding-left:10px;'>$key %</div></td></tr>";	
 			}
 			?>
 			</table>
