@@ -104,6 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 static&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
 <tr class="memitem:ab5ee063ee1dd4a5026c1b87caf98c9a0"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#ab5ee063ee1dd4a5026c1b87caf98c9a0">authUser</a> ()</td></tr>
 <tr class="memitem:a23cee49624385c6af65af96fb1c682f6"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a23cee49624385c6af65af96fb1c682f6">isUserAuthed</a> ()</td></tr>
+<tr class="memitem:a49f0fb7185ab07bdbf6bdff477b43ff8"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a49f0fb7185ab07bdbf6bdff477b43ff8">isUserAuthedCheck</a> ()</td></tr>
 <tr class="memitem:a5dde74b6fa44649e5b73cb1096930dd4"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a5dde74b6fa44649e5b73cb1096930dd4">destroy</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
@@ -126,7 +127,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <p>$session = ::getInstance(); $session-&gt;key = "value";</p>
 <p>::destroy(); </p>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00014">14</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00017">17</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 </div><h2>Dokumentation der Elementfunktionen</h2>
 <a class="anchor" id="ab5ee063ee1dd4a5026c1b87caf98c9a0"></a>
 <div class="memitem">
@@ -150,7 +151,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div><div class="memdoc">
 <p>Benutzer Authentifizeren </p>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00055">55</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00058">58</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line">                                          {</div>
 <div class="line">                </div>
 <div class="line">                $_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] = 1;</div>
@@ -181,7 +182,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div><div class="memdoc">
 <p><a class="el" href="class_session.html">Session</a> löschen </p>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00081">81</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00097">97</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line">                                         {</div>
 <div class="line">                </div>
 <div class="line">                session_destroy();</div>
@@ -213,7 +214,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <p>Überprüfen ob Benutzer Authentifiziert ist</p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Boolean </dd></dl>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00068">68</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00071">71</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line">                                              {</div>
 <div class="line">                </div>
 <div class="line">                <span class="keywordflow">if</span> ($_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] == 1) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -224,13 +225,45 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a49f0fb7185ab07bdbf6bdff477b43ff8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Session::isUserAuthedCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Überprüfen ob Benutzer Authentifiziert ist</p>
+<p>Ansonsten Exception werfen </p>
+
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00086">86</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<div class="fragment"><div class="line">                                                   {</div>
+<div class="line">                </div>
+<div class="line">                <span class="keywordflow">if</span> (!self::isUserAuthed()) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_custom_exception_1_1_user_not_authed_exception.html">Ex\UserNotAuthedException</a>(<span class="stringliteral">&quot;Sie haben keine Berechtigung für diese Seite&quot;</span>);</div>
+<div class="line">                </div>
+<div class="line">        } </div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
 <li><a class="el" href="_session_8php_source.html">Session.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 12:56:18 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 13:26:46 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

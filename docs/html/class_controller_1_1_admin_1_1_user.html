@@ -93,13 +93,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:acbbf0aeb45206f2d0c9e347e8a1d19c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_1_1_admin_1_1_user.html#acbbf0aeb45206f2d0c9e347e8a1d19c9">__construct</a> ()</td></tr>
 <tr class="memitem:a006c1efe9d23f5307039c1beb0ce18a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_1_1_admin_1_1_user.html#a006c1efe9d23f5307039c1beb0ce18a5">Index_Action</a> ()</td></tr>
 </table>
 <a name="details" id="details"></a><h2>Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Admin Benutzer Controller </p>
 
 <p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00010">10</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
-</div><h2>Dokumentation der Elementfunktionen</h2>
+</div><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="acbbf0aeb45206f2d0c9e347e8a1d19c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Controller\Admin\User::__construct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Im Konstruktur generell für diesen Controller überprüfen ob sich der <a class="el" href="class_controller_1_1_admin_1_1_user.html">User</a> eingeloggt hat. </p>
+
+<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00018">18</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">                </div>
+<div class="line">                \Session::isUserAuthedCheck();</div>
+<div class="line">                </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Dokumentation der Elementfunktionen</h2>
 <a class="anchor" id="a006c1efe9d23f5307039c1beb0ce18a5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -114,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><div class="memdoc">
 <p>Default <a class="el" href="class_controller_1_1_index.html">Index</a> Get Action </p>
 
-<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00017">17</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00029">29</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
 <div class="fragment"><div class="line">                                       {</div>
 <div class="line">                </div>
 <div class="line">                $model = new \Model\User();</div>
@@ -135,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 12:56:18 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 13:26:46 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

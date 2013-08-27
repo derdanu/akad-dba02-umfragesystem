@@ -96,27 +96,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_survey.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller_1_1_admin_1_1_survey.html">Survey</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        /** </span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * Default Index Get Action</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>() {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                $model = new \Model\Survey();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                $view = new \View();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                $view-&gt;setTemplate(<span class="stringliteral">&#39;admin_surveys&#39;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                $view-&gt;assign(<span class="stringliteral">&#39;surveys&#39;</span>, $model-&gt;getSurveys());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                $view-&gt;display();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }       </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;?&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * Im Konstruktur generell für diesen Controller </span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * überprüfen ob sich der User eingeloggt hat.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_survey.html#af87ac54e8b5b29bb33fb0897f9de547a">   18</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#af87ac54e8b5b29bb33fb0897f9de547a">__construct</a>() {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                \Session::isUserAuthedCheck();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         * Default Index Get Action</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">   29</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>() {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                $model = new \Model\Survey();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                $view = new \View();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                $view-&gt;setTemplate(<span class="stringliteral">&#39;admin_surveys&#39;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                $view-&gt;assign(<span class="stringliteral">&#39;surveys&#39;</span>, $model-&gt;getSurveys());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                $view-&gt;display();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }       </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 12:56:18 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 13:26:46 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

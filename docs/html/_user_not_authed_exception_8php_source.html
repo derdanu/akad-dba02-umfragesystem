@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>DBA02: /home/dfalkner/workspace/dba02/classes/-Verzeichnisreferenz</title>
+<title>DBA02: UserNotAuthedException.php Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,7 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
       <li><a href="annotated.html"><span>Klassen</span></a></li>
-      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -56,6 +56,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,30 +77,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li><li class="navelem"><a class="el" href="dir_d72f7b35ff7a8b82a1b3250ec450888a.html">CustomException</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">classes-Verzeichnisreferenz</div>  </div>
+<div class="title">UserNotAuthedException.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="subdirs"></a>
-Verzeichnisse</h2></td></tr>
-<tr class="memitem:dir_cd8010ab25fcdf3b558acc16dbba1dc1"><td class="memItemLeft" align="right" valign="top">Verzeichnis &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_cd8010ab25fcdf3b558acc16dbba1dc1.html">Controller</a></td></tr>
-<tr class="memitem:dir_d72f7b35ff7a8b82a1b3250ec450888a"><td class="memItemLeft" align="right" valign="top">Verzeichnis &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_d72f7b35ff7a8b82a1b3250ec450888a.html">CustomException</a></td></tr>
-<tr class="memitem:dir_6d3b1c361b48725847da37ba64dbf5e5"><td class="memItemLeft" align="right" valign="top">Verzeichnis &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_6d3b1c361b48725847da37ba64dbf5e5.html">Model</a></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="files"></a>
-Dateien</h2></td></tr>
-<tr class="memitem:_config_8php"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><b>Config.php</b> <a href="_config_8php_source.html">[code]</a></td></tr>
-<tr class="memitem:_front_controller_8php"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><b>FrontController.php</b> <a href="_front_controller_8php_source.html">[code]</a></td></tr>
-<tr class="memitem:_redirect_8php"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><b>Redirect.php</b> <a href="_redirect_8php_source.html">[code]</a></td></tr>
-<tr class="memitem:_session_8php"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><b>Session.php</b> <a href="_session_8php_source.html">[code]</a></td></tr>
-<tr class="memitem:_view_8php"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><b>View.php</b> <a href="_view_8php_source.html">[code]</a></td></tr>
-</table>
-</div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">namespace </span>CustomException;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="class_custom_exception_1_1_user_not_authed_exception.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_custom_exception_1_1_user_not_authed_exception.html">UserNotAuthedException</a> <span class="keyword">extends</span> \Exception {}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Erzeugt am Die Aug 27 2013 13:26:46 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
