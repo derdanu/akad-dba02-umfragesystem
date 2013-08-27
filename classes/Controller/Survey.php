@@ -58,11 +58,14 @@ class Survey {
 	 * 
 	 * Umfrage Ergebnisse speichern
 	 * 
+	 * Auswertung anzeigen
+	 * 
 	 */
 	public function Save_POST_Action() {
 
 		$this->view->setTemplate('survey_result');
 		$this->view->assign('survey_name', $this->model->getSurveyName($this->survey));
+		$this->view->assign('survey_cnt', $this->model->getSurveyItemCount($this->survey));
 		$this->view->assign('survey_result', $this->model->getSurveyResult($this->survey));
 		$this->view->display();
 				

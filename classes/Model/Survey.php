@@ -53,6 +53,21 @@ class Survey {
 
 	/**
 	 * 
+	 * Anzahl der Abgegeben Umfragewerte
+	 * 
+	 * @param	Integer	$survey	UmfrageId	
+	 * 
+	 * @return	Integer	Anzahl der Ergebnisse zur Umfrage
+	 * 
+	 */
+	public function getSurveyItemCount($survey) {
+		
+		return 564;
+		
+	}
+
+	/**
+	 * 
 	 * Umfrage Ergebnisse holen
 	 * 
 	 * @param	Integer	$survey	UmfrageId	
@@ -61,7 +76,7 @@ class Survey {
 	 */
 	public function getSurveyResult($survey) {
 		
-		return (array(20 => "Antwort 1", 80 => "Antwort 2"));
+		return (array(232 => "Antwort 1", 332 => "Antwort 2"));
 		
 	}
 	
