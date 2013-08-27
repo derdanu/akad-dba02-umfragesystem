@@ -1,4 +1,7 @@
 <?php
+
+use \CustomException as Ex;
+
 /**
  * 
  * Session Klasse als Singleton Pattern
@@ -72,6 +75,19 @@ class Session {
 		return false;
 		
 	}
+	
+	/**
+	 * 
+	 * Überprüfen ob Benutzer Authentifiziert ist
+	 * 
+	 * Ansonsten Exception werfen
+	 * 
+	 */
+	public static function isUserAuthedCheck() {
+		
+		if (!self::isUserAuthed()) throw new Ex\UserNotAuthedException("Sie haben keine Berechtigung für diese Seite");
+		
+	} 
 	
 	/**
 	 * 

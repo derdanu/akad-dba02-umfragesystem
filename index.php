@@ -36,10 +36,19 @@ try {
 	$c->run();
 	
 		
+} catch (CustomException\UserNotAuthedException $e) {
+	
+	$view = new \View();
+	$view->setTemplate('exception');
+	$view->assign('h1', "Illegaler Aufruf");
+	$view->assign('exception', $e->getMessage());
+	$view->display();
+
 } catch (Exception $e)  {	
 	
 	$view = new \View();
 	$view->setTemplate('exception');
+	$view->assign('h1', "Das hätte nicht passieren sollen");
 	$view->assign('exception', $e->getMessage());
 	$view->display();
 

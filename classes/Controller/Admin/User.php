@@ -9,6 +9,18 @@ namespace Controller\Admin;
  */
 class User {
 	
+	/** 
+	 * 
+	 * Im Konstruktur generell für diesen Controller 
+	 * überprüfen ob sich der User eingeloggt hat.
+	 * 
+	 */
+	public function __construct() {
+		
+		\Session::isUserAuthedCheck();
+		
+	}
+	
 	/**
 	 * 
 	 * Default Index Get Action
