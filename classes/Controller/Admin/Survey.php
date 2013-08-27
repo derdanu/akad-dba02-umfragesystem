@@ -32,6 +32,7 @@ class Survey extends Base {
 	 */
 	public function Add_POST_Action() {
 		
+		$this->Index_Action();
 		
 	}
 }

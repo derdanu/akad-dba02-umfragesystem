@@ -1,5 +1,5 @@
 <?php
-define('DEBUG', true);
+define('DEBUG', false);
 
 define('CLASS_DIR', 'classes/');
 

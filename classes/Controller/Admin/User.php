@@ -25,5 +25,16 @@ class User extends Base{
 		$view->display();
 		
 	}	
+	
+	public function Add_POST_Action() {
+		
+		$this->Index_Action();
+		
+	}
+	
+	public function Delete_Action() {
+		
+		$this->Index_Action();
+	}
 }
 ?>
