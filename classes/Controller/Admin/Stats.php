@@ -7,19 +7,8 @@ namespace Controller\Admin;
  * 
  * 
  */
-class Stats {
+class Stats extends Base {
 	
-	/** 
-	 * 
-	 * Im Konstruktur generell für diesen Controller 
-	 * überprüfen ob sich der User eingeloggt hat.
-	 * 
-	 */
-	public function __construct() {
-		
-		\Session::isUserAuthedCheck();
-		
-	}
 	
 	/**
 	 * 

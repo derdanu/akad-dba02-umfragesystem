@@ -7,19 +7,7 @@ namespace Controller\Admin;
  * 
  * 
  */
-class Survey {
-	
-	/** 
-	 * 
-	 * Im Konstruktur generell für diesen Controller 
-	 * überprüfen ob sich der User eingeloggt hat.
-	 * 
-	 */
-	public function __construct() {
-		
-		\Session::isUserAuthedCheck();
-		
-	}
+class Survey extends Base {
 	
 	/**
 	 * 
