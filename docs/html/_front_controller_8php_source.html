@@ -118,43 +118,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_front_controller.html#ad0793ef177eb6e77a45a476567b531b2">   31</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_front_controller.html#ad0793ef177eb6e77a45a476567b531b2">__construct</a>() {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                $controller = $_GET[<span class="stringliteral">&#39;controller&#39;</span>];              </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                $action = $_GET[<span class="stringliteral">&#39;action&#39;</span>];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                $this-&gt;controller = !empty($controller) ? CONTROLLERNAMESPACE . $controller : CONTROLLERNAMESPACE . <span class="stringliteral">&quot;Index&quot;</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                $this-&gt;action = !empty($action) ? $action : <span class="stringliteral">&quot;Index&quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> ($_SERVER[<span class="stringliteral">&#39;REQUEST_METHOD&#39;</span>] == <span class="stringliteral">&#39;POST&#39;</span>) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        $this-&gt;action .= <span class="stringliteral">&quot;_POST&quot;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        $this-&gt;action .= <span class="stringliteral">&quot;_Action&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">         * FrontController ausführen</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_front_controller.html#aee82b9818875d037d6312b856f76403c">   52</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_front_controller.html#aee82b9818875d037d6312b856f76403c">run</a>() {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                $controller = <span class="keyword">new</span> $this-&gt;controller();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">if</span>(in_array($this-&gt;action, get_class_methods($controller))) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                $controller-&gt;{$this-&gt;action}();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;&#39;{$this-&gt;controller}&#39; hat keine Aktion &#39;{$this-&gt;action}&#39;&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;?&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="comment">// Workaround magic_quotes() . Ab PHP 5.4 DEPRICATED</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">if</span> (get_magic_quotes_gpc()) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        $controller =   str_replace(<span class="stringliteral">&quot;\\\\&quot;</span>, <span class="stringliteral">&quot;\\&quot;</span>, $controller); </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                $action = $_GET[<span class="stringliteral">&#39;action&#39;</span>];</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                $this-&gt;controller = !empty($controller) ? CONTROLLERNAMESPACE . $controller : CONTROLLERNAMESPACE . <span class="stringliteral">&quot;Index&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                $this-&gt;action = !empty($action) ? $action : <span class="stringliteral">&quot;Index&quot;</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">if</span> ($_SERVER[<span class="stringliteral">&#39;REQUEST_METHOD&#39;</span>] == <span class="stringliteral">&#39;POST&#39;</span>) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        $this-&gt;action .= <span class="stringliteral">&quot;_POST&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        $this-&gt;action .= <span class="stringliteral">&quot;_Action&quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">         * FrontController ausführen</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_front_controller.html#aee82b9818875d037d6312b856f76403c">   57</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_front_controller.html#aee82b9818875d037d6312b856f76403c">run</a>() {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                $controller = <span class="keyword">new</span> $this-&gt;controller();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span>(in_array($this-&gt;action, get_class_methods($controller))) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                $controller-&gt;{$this-&gt;action}();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;&#39;{$this-&gt;controller}&#39; hat keine Aktion &#39;{$this-&gt;action}&#39;&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Aug 26 2013 17:16:19 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 12:56:18 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

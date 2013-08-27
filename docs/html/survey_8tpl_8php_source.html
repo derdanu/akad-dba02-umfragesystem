@@ -87,26 +87,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;      </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;      &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;jumbotron&quot;</span>&gt;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        &lt;h1&gt;&lt;?php print $this-&gt;view[<span class="stringliteral">&#39;survey_name&#39;</span>]; ?&gt;&lt;/h1&gt;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                        &lt;form <span class="keyword">class</span>=<span class="stringliteral">&quot;form-signin&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span> action=<span class="stringliteral">&quot;?controller=Survey&amp;action=Save&amp;survey=&lt;?php print $this-&gt;view[&#39;survey_id&#39;]; ?&gt;&quot;</span>&gt;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                        &lt;?php </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                        <span class="keywordflow">foreach</span> ($this-&gt;view[<span class="stringliteral">&#39;survey_items&#39;</span>] as $key=&gt;$value) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                print   <span class="stringliteral">&quot;&lt;div class=&#39;checkbox&#39;&gt;&quot;</span> .</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                <span class="stringliteral">&quot;&lt;label&gt;&quot;</span> .</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                <span class="stringliteral">&quot;&lt;input type=&#39;checkbox&#39; value=&#39;$key&#39; name=&#39;items[]&#39;&gt;$value&quot;</span> .</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                <span class="stringliteral">&quot;&lt;/label&gt;&quot;</span> .</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;       </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                        }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                        ?&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                        &lt;button type=<span class="stringliteral">&quot;submit&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-primary&quot;</span>&gt;Absenden&lt;/button&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                        </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                        &lt;/form&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      &lt;/div&gt;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                &lt;form role=<span class="stringliteral">&quot;form&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span> action=<span class="stringliteral">&quot;?controller=Survey&amp;action=Save&amp;survey=&lt;?php print $this-&gt;view[&#39;survey_id&#39;]; ?&gt;&quot;</span>&gt;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;panel panel-default&quot;</span>&gt;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                        &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;panel-heading&quot;</span>&gt;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                        &lt;h3 <span class="keyword">class</span>=<span class="stringliteral">&quot;panel-title&quot;</span>&gt;&lt;?php print $this-&gt;view[<span class="stringliteral">&#39;survey_name&#39;</span>]; ?&gt;&lt;/h3&gt;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                        &lt;/div&gt;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                        &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;panel-body&quot;</span>&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                &lt;?php </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                <span class="keywordflow">foreach</span> ($this-&gt;view[<span class="stringliteral">&#39;survey_items&#39;</span>] as $key=&gt;$value) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                        print   <span class="stringliteral">&quot;&lt;div class=&#39;checkbox&#39;&gt;&quot;</span> .</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                        <span class="stringliteral">&quot;&lt;label&gt;&quot;</span> .</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                        <span class="stringliteral">&quot;&lt;input type=&#39;checkbox&#39; value=&#39;$key&#39; name=&#39;items[]&#39;&gt;$value&quot;</span> .</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                        <span class="stringliteral">&quot;&lt;/label&gt;&quot;</span> .</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                        <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;       </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                ?&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                &lt;button type=<span class="stringliteral">&quot;submit&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-primary&quot;</span>&gt;Absenden&lt;/button&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        &lt;/div&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                &lt;/div&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                &lt;/form&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      &lt;/div&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mon Aug 26 2013 17:16:19 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 12:56:18 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
