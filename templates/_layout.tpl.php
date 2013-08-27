@@ -54,10 +54,25 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 				<li><a href="docs/html/index.html" target="_blank">Code Dokumentation</a></li>
+	
             <?php if (\Session::isUserAuthed()) { ?>
 				<li><a href="?controller=UserSession&action=Logout">Logout</a></li>
             <?php } else { ?>
-            	<li><a href="?controller=UserSession&action=Login">Login</a></li>
+		          <li class="dropdown">
+		            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
+		            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+		           	
+		           	<link href="css/signin.css" rel="stylesheet">
+	
+						<form class="form-signin" method="post" action="?controller=UserSession&action=Login">
+					        <input type="text" name="user" class="form-control" placeholder="Benutzername" autofocus>
+					        <input type="password" name="pass" class="form-control" placeholder="Passwort">
+					        <button class="btn btn-primary btn-block" type="submit">Anmelden</button>
+						</form>
+	
+		            </div>
+		          </li>
+            	
             <?php } ?>
           </ul>
           
