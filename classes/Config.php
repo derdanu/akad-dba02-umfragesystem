@@ -5,6 +5,8 @@ define('CONFIGFILE', 'config/config.ini');
  * Config Klasse als Singleton Pattern
  * 
  * $conf = \Config::getInstance();
+ * $value = $conf->key;
+ * 
  * Die Werte stehen in der Ini Datei und können direkt abgerufen werden.
  * 
  */
