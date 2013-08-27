@@ -1,6 +1,8 @@
       <div class="jumbotron">
-        <h1><?php print $this->view['survey_name']; ?></h1>
-        <h2>Wie andere geantwortet haben</h2>
+        <div class="panel panel-default">
+			<div class="panel-heading">
+			<h3 class="panel-title"><?php print $this->view['survey_name']; ?></h3>
+			</div>
 			<table class="table table-bordered">
 			<?php
 			foreach ($this->view['survey_result'] as $key=>$value) {
@@ -9,4 +11,6 @@
 			}
 			?>
 			</table>
+			</div>
+		</div>
       </div>
