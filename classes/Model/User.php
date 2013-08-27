@@ -34,7 +34,7 @@ class User {
 	 */
 	public function getUsers() {
 		
-		return array("sepp" => "maier123", "franz" => "supersicher", "test" => "bass");
+		return array("sepp" => date("d.m.Y H:i", time()), "franz" => date("d.m.Y H:i", time()), "test" => date("d.m.Y H:i", time()));
 	}
 		
 }
