@@ -12,6 +12,8 @@
 		<a data-toggle="modal" href="#addSurveyModal" class="btn btn-success">Hinzufügen</a>
 
 	  <!-- Modal -->
+	  <form class="form-survey" method="post" action="?controller=Admin\Survey&action=Add">
+	  
 	  <div class="modal" id="addSurveyModal">
 	    <div class="modal-dialog">
 	      <div class="modal-content">
@@ -20,12 +22,35 @@
 	          <h4 class="modal-title">Neue Umfrage hinzufügen</h4>
 	        </div>
 	        <div class="modal-body">
-	          ...
-	        </div>
+	       	 <div class="form-group">
+			    <label for="name">Umfragename</label>
+			    <input type="text" class="form-control" id="name" name="name" placeholder="Umfragename eingeben">
+			  </div>
+	    
+	       	 <div class="form-group">
+			    <label for="answer">Antwort</label>
+			    <input type="text" class="form-control" id="answer" name="answer[]" placeholder="Antwort eingeben">
+			  </div>
+		  
+	        </div>	  
+
+			<div style="padding: 20px;">
+				<a class="btn btn-default" onClick="newAnswer()">Weitere Antwort hinzufügen</a>
+			</div>  		  
+	                  
 	        <div class="modal-footer">
 	          <a href="#" class="btn" data-dismiss="modal">Verwerfen</a>
-	          <a href="#" class="btn btn-primary">Speichern</a>
+        	  <button class="btn btn-primary" type="submit">Speichern</button>
 	        </div>
 	      </div><!-- /.modal-content -->
 	    </div><!-- /.modal-dialog -->
 	  </div><!-- /.modal -->
+	  </form>
+	  
+	  <script>
+		  function newAnswer() {
+		  	
+		  		$('.modal-body').append('<div class="form-group"><input type="text" class="form-control" name="answer[]" placeholder="Antwort eingeben""></div>');
+		  
+		  }
+	  </script>

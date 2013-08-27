@@ -24,5 +24,15 @@ class Survey extends Base {
 		$view->display();
 		
 	}	
+	
+	/**
+	 * 
+	 * neue Umfragen hinzufügen
+	 * 
+	 */
+	public function Add_POST_Action() {
+		
+		
+	}
 }
 ?>
