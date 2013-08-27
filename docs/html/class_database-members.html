@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>DBA02: login.tpl.php Quellcode</title>
+<title>DBA02: Elementverzeichnis</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,8 +36,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Hauptseite</span></a></li>
-      <li><a href="annotated.html"><span>Klassen</span></a></li>
-      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -58,7 +58,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -75,26 +78,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_dffbf13c22df868c1450a46ae79da766.html">templates</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">login.tpl.php</div>  </div>
+<div class="title">Database Elementverzeichnis</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;        </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;        &lt;link href=<span class="stringliteral">&quot;css/signin.css&quot;</span> rel=<span class="stringliteral">&quot;stylesheet&quot;</span>&gt;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        &lt;form <span class="keyword">class</span>=<span class="stringliteral">&quot;form-signin&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span> action=<span class="stringliteral">&quot;?controller=UserSession&amp;action=Login&quot;</span>&gt;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        &lt;h2 <span class="keyword">class</span>=<span class="stringliteral">&quot;form-signin-heading&quot;</span>&gt;Bitte melden Sie sich an:&lt;/h2&gt;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        &lt;input type=<span class="stringliteral">&quot;text&quot;</span> name=<span class="stringliteral">&quot;user&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;form-control&quot;</span> placeholder=<span class="stringliteral">&quot;Benutzername&quot;</span> autofocus&gt;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        &lt;input type=<span class="stringliteral">&quot;password&quot;</span> name=<span class="stringliteral">&quot;pass&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;form-control&quot;</span> placeholder=<span class="stringliteral">&quot;Passwort&quot;</span>&gt;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        &lt;button <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-lg btn-primary btn-block&quot;</span> type=<span class="stringliteral">&quot;submit&quot;</span>&gt;Anmelden&lt;/button&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        &lt;/form&gt;</div>
-</div><!-- fragment --></div><!-- contents -->
+
+<p>Vollständige Aufstellung aller Elemente für <a class="el" href="class_database.html">Database</a> einschließlich aller geerbten Elemente.</p>
+<table class="directory">
+  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>$dsn</b> (Definiert in <a class="el" href="class_database.html">Database</a>)</td><td class="entry"><a class="el" href="class_database.html">Database</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>$pass</b> (Definiert in <a class="el" href="class_database.html">Database</a>)</td><td class="entry"><a class="el" href="class_database.html">Database</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>$user</b> (Definiert in <a class="el" href="class_database.html">Database</a>)</td><td class="entry"><a class="el" href="class_database.html">Database</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_database.html#a2852f635197e76a838486e64e00aac9f">__construct</a>()</td><td class="entry"><a class="el" href="class_database.html">Database</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Erzeugt am Die Aug 27 2013 17:29:29 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
