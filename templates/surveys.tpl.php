@@ -1,10 +1,10 @@
       
       <div class="jumbotron">
         <h1>Bitte Umfrage auswählen</h1>
-		<ul>
+		<ul class="list-group">
 			<?php 
 			foreach ($this->view['surveys'] as $key=>$value) {
-				print "<li><a href='?controller=Survey&survey=$key'>$value</a></li>";	
+				print "<li class='list-group-item'><a href='?controller=Survey&survey=$key'>$value</a></li>";	
 			}
 			?>
 		</ul>
