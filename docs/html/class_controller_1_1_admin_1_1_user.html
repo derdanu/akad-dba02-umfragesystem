@@ -60,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
       <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
       <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
     </ul>
   </div>
@@ -90,41 +91,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="title">Controller\Admin\User Klassenreferenz</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Klassendiagramm für Controller\Admin\User:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_controller_1_1_admin_1_1_user.png" usemap="#Controller\Admin\User_map" alt=""/>
+  <map id="Controller\Admin\User_map" name="Controller\Admin\User_map">
+<area href="class_controller_1_1_admin_1_1_base.html" alt="Controller\Admin\Base" shape="rect" coords="0,0,139,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:acbbf0aeb45206f2d0c9e347e8a1d19c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_1_1_admin_1_1_user.html#acbbf0aeb45206f2d0c9e347e8a1d19c9">__construct</a> ()</td></tr>
 <tr class="memitem:a006c1efe9d23f5307039c1beb0ce18a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_1_1_admin_1_1_user.html#a006c1efe9d23f5307039c1beb0ce18a5">Index_Action</a> ()</td></tr>
+<tr class="inherit_header pub_methods_class_controller_1_1_admin_1_1_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_controller_1_1_admin_1_1_base')"><img src="closed.png" alt="-"/>&nbsp;Öffentliche Methoden geerbt von <a class="el" href="class_controller_1_1_admin_1_1_base.html">Controller\Admin\Base</a></td></tr>
+<tr class="memitem:a7e433734833c21c222186860f4cd8ce5 inherit pub_methods_class_controller_1_1_admin_1_1_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_1_1_admin_1_1_base.html#a7e433734833c21c222186860f4cd8ce5">__construct</a> ()</td></tr>
 </table>
 <a name="details" id="details"></a><h2>Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Admin Benutzer Controller </p>
 
 <p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00010">10</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
-</div><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
-<a class="anchor" id="acbbf0aeb45206f2d0c9e347e8a1d19c9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Controller\Admin\User::__construct </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Im Konstruktur generell für diesen Controller überprüfen ob sich der <a class="el" href="class_controller_1_1_admin_1_1_user.html">User</a> eingeloggt hat. </p>
-
-<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00018">18</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
-<div class="fragment"><div class="line">                                      {</div>
-<div class="line">                </div>
-<div class="line">                \Session::isUserAuthedCheck();</div>
-<div class="line">                </div>
-<div class="line">        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2>Dokumentation der Elementfunktionen</h2>
+</div><h2>Dokumentation der Elementfunktionen</h2>
 <a class="anchor" id="a006c1efe9d23f5307039c1beb0ce18a5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -139,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><div class="memdoc">
 <p>Default <a class="el" href="class_controller_1_1_index.html">Index</a> Get Action </p>
 
-<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00029">29</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_user_8php_source.html#l00017">17</a> der Datei <a class="el" href="_controller_2_admin_2_user_8php_source.html">Controller/Admin/User.php</a>.</p>
 <div class="fragment"><div class="line">                                       {</div>
 <div class="line">                </div>
 <div class="line">                $model = new \Model\User();</div>
@@ -160,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 13:26:46 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 16:50:20 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

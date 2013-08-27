@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>DBA02: Elementverzeichnis</title>
+<title>DBA02: Controller\Admin\Base Klassenreferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,24 +80,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>Controller</b></li><li class="navelem"><a class="el" href="class_controller_1_1_survey.html">Survey</a></li>  </ul>
+<li class="navelem"><b>Controller</b></li><li class="navelem"><b>Admin</b></li><li class="navelem"><a class="el" href="class_controller_1_1_admin_1_1_base.html">Base</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="class_controller_1_1_admin_1_1_base-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
-<div class="title">Controller\Survey Elementverzeichnis</div>  </div>
+<div class="title">Controller\Admin\Base Klassenreferenz</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Klassendiagramm für Controller\Admin\Base:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_controller_1_1_admin_1_1_base.png" usemap="#Controller\Admin\Base_map" alt=""/>
+  <map id="Controller\Admin\Base_map" name="Controller\Admin\Base_map">
+<area href="class_controller_1_1_admin_1_1_stats.html" alt="Controller\Admin\Stats" shape="rect" coords="0,56,152,80"/>
+<area href="class_controller_1_1_admin_1_1_survey.html" alt="Controller\Admin\Survey" shape="rect" coords="162,56,314,80"/>
+<area href="class_controller_1_1_admin_1_1_user.html" alt="Controller\Admin\User" shape="rect" coords="324,56,476,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a7e433734833c21c222186860f4cd8ce5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_1_1_admin_1_1_base.html#a7e433734833c21c222186860f4cd8ce5">__construct</a> ()</td></tr>
+</table>
+<a name="details" id="details"></a><h2>Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Admin <a class="el" href="class_controller_1_1_admin_1_1_base.html">Base</a> Controller </p>
 
-<p>Vollständige Aufstellung aller Elemente für <a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a> einschließlich aller geerbten Elemente.</p>
-<table class="directory">
-  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>$model</b> (Definiert in <a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a>)</td><td class="entry"><a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>$survey</b> (Definiert in <a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a>)</td><td class="entry"><a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>$view</b> (Definiert in <a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a>)</td><td class="entry"><a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_controller_1_1_survey.html#a96fc5091aa3b11390854987ecf667f15">__construct</a>()</td><td class="entry"><a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_controller_1_1_survey.html#ab9a687bf4e1fe3c36b13ff873e94b212">Index_Action</a>()</td><td class="entry"><a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_controller_1_1_survey.html#a1a671d9a36a993bab69c12c16fcc60cc">Save_POST_Action</a>()</td><td class="entry"><a class="el" href="class_controller_1_1_survey.html">Controller\Survey</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>Definiert in Zeile <a class="el" href="_base_8php_source.html#l00010">10</a> der Datei <a class="el" href="_base_8php_source.html">Base.php</a>.</p>
+</div><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a7e433734833c21c222186860f4cd8ce5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Controller\Admin\Base::__construct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Im Konstruktur generell überprüfen ob sich der <a class="el" href="class_controller_1_1_admin_1_1_user.html">User</a> eingeloggt hat. </p>
+
+<p>Definiert in Zeile <a class="el" href="_base_8php_source.html#l00018">18</a> der Datei <a class="el" href="_base_8php_source.html">Base.php</a>.</p>
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">                </div>
+<div class="line">                \Session::isUserAuthedCheck();</div>
+<div class="line">                </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<li><a class="el" href="_base_8php_source.html">Base.php</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Erzeugt am Die Aug 27 2013 16:50:20 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>DBA02: Survey.php Quellcode</title>
+<title>DBA02: Base.php Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Controller/Admin/Survey.php</div>  </div>
+<div class="title">Base.php</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
@@ -90,29 +90,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Admin Umfrage Controller</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Admin Base Controller</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_survey.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller_1_1_admin_1_1_survey.html">Survey</a> <span class="keyword">extends</span> <a class="code" href="class_controller_1_1_admin_1_1_base.html">Base</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_base.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller_1_1_admin_1_1_base.html">Base</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        /** </span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * Default Index Get Action</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>() {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                $model = new \Model\Survey();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                $view = new \View();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                $view-&gt;setTemplate(<span class="stringliteral">&#39;admin_surveys&#39;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                $view-&gt;assign(<span class="stringliteral">&#39;surveys&#39;</span>, $model-&gt;getSurveys());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                $view-&gt;display();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }       </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;?&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * Im Konstruktur generell überprüfen ob </span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * sich der User eingeloggt hat.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="class_controller_1_1_admin_1_1_base.html#a7e433734833c21c222186860f4cd8ce5">   18</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_base.html#a7e433734833c21c222186860f4cd8ce5">__construct</a>() {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                \Session::isUserAuthedCheck();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

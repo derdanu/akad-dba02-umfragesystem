@@ -5,6 +5,6 @@ var searchData=
   ['settemplate',['setTemplate',['../class_view.html#a956eb733dd01bd0c42f06d71e11afef3',1,'View']]],
   ['stats',['Stats',['../class_controller_1_1_admin_1_1_stats.html',1,'Controller::Admin']]],
   ['survey',['Survey',['../class_controller_1_1_admin_1_1_survey.html',1,'Controller::Admin']]],
-  ['survey',['Survey',['../class_model_1_1_survey.html',1,'Model']]],
-  ['survey',['Survey',['../class_controller_1_1_survey.html',1,'Controller']]]
+  ['survey',['Survey',['../class_controller_1_1_survey.html',1,'Controller']]],
+  ['survey',['Survey',['../class_model_1_1_survey.html',1,'Model']]]
 ];
