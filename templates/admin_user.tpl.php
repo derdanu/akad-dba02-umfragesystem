@@ -24,7 +24,7 @@
 	        <div class="modal-body">
 	          <div class="form-group">
 			    <label for="name">Name</label>
-			    <input type="text" class="form-control" id="name" name="name" placeholder="Umfragename eingeben">
+			    <input type="text" class="form-control" id="name" name="name" placeholder="Benutzername eingeben">
 			  </div>
 			  <div class="form-group">
 			    <label for="pass">Passwort</label>
