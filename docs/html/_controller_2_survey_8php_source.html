@@ -145,24 +145,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">         * Umfrage Ergebnisse speichern</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_controller_1_1_survey.html#a1a671d9a36a993bab69c12c16fcc60cc">   62</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_survey.html#a1a671d9a36a993bab69c12c16fcc60cc">Save_POST_Action</a>() {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                $this-&gt;view-&gt;setTemplate(<span class="stringliteral">&#39;survey_result&#39;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_name&#39;</span>, $this-&gt;model-&gt;getSurveyName($this-&gt;survey));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_result&#39;</span>, $this-&gt;model-&gt;getSurveyResult($this-&gt;survey));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                $this-&gt;view-&gt;display();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;?&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">         * Auswertung anzeigen</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="class_controller_1_1_survey.html#a1a671d9a36a993bab69c12c16fcc60cc">   64</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_survey.html#a1a671d9a36a993bab69c12c16fcc60cc">Save_POST_Action</a>() {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                $this-&gt;view-&gt;setTemplate(<span class="stringliteral">&#39;survey_result&#39;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_name&#39;</span>, $this-&gt;model-&gt;getSurveyName($this-&gt;survey));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_cnt&#39;</span>, $this-&gt;model-&gt;getSurveyItemCount($this-&gt;survey));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_result&#39;</span>, $this-&gt;model-&gt;getSurveyResult($this-&gt;survey));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                $this-&gt;view-&gt;display();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 17:29:29 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

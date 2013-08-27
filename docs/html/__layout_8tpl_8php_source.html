@@ -141,33 +141,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          &lt;/ul&gt;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;          &lt;ul <span class="keyword">class</span>=<span class="stringliteral">&quot;nav navbar-nav navbar-right&quot;</span>&gt;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                &lt;li&gt;&lt;a href=<span class="stringliteral">&quot;docs/html/index.html&quot;</span> target=<span class="stringliteral">&quot;_blank&quot;</span>&gt;Code Dokumentation&lt;/a&gt;&lt;/li&gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            &lt;?php <span class="keywordflow">if</span> (\<a class="code" href="class_session.html#a23cee49624385c6af65af96fb1c682f6">Session::isUserAuthed</a>()) { ?&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                &lt;li&gt;&lt;a href=<span class="stringliteral">&quot;?controller=UserSession&amp;action=Logout&quot;</span>&gt;Logout&lt;/a&gt;&lt;/li&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            &lt;?php } <span class="keywordflow">else</span> { ?&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                &lt;li&gt;&lt;a href=<span class="stringliteral">&quot;?controller=UserSession&amp;action=Login&quot;</span>&gt;Login&lt;/a&gt;&lt;/li&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            &lt;?php } ?&gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          &lt;/ul&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      &lt;/div&gt;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    &lt;/div&gt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;container&quot;</span>&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        &lt;?php include($this-&gt;includetemplate); ?&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    &lt;/div&gt; &lt;!-- /container --&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    &lt;!-- Bootstrap core JavaScript</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ================================================== --&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    &lt;!-- Placed at the end of the document so the pages load faster --&gt;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    &lt;script src=<span class="stringliteral">&quot;js/jquery.js&quot;</span>&gt;&lt;/script&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    &lt;script src=<span class="stringliteral">&quot;js/bootstrap.min.js&quot;</span>&gt;&lt;/script&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  &lt;/body&gt;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;&lt;/html&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            &lt;?php <span class="keywordflow">if</span> (\<a class="code" href="class_session.html#a23cee49624385c6af65af96fb1c682f6">Session::isUserAuthed</a>()) { ?&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                &lt;li&gt;&lt;a href=<span class="stringliteral">&quot;?controller=UserSession&amp;action=Logout&quot;</span>&gt;Logout&lt;/a&gt;&lt;/li&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            &lt;?php } <span class="keywordflow">else</span> { ?&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                          &lt;li <span class="keyword">class</span>=<span class="stringliteral">&quot;dropdown&quot;</span>&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                            &lt;a <span class="keyword">class</span>=<span class="stringliteral">&quot;dropdown-toggle&quot;</span> href=<span class="stringliteral">&quot;#&quot;</span> data-toggle=<span class="stringliteral">&quot;dropdown&quot;</span>&gt;Login &lt;strong <span class="keyword">class</span>=<span class="stringliteral">&quot;caret&quot;</span>&gt;&lt;/strong&gt;&lt;/a&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;dropdown-menu&quot;</span> style=<span class="stringliteral">&quot;padding: 15px; padding-bottom: 0px;&quot;</span>&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                &lt;link href=<span class="stringliteral">&quot;css/signin.css&quot;</span> rel=<span class="stringliteral">&quot;stylesheet&quot;</span>&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                &lt;form <span class="keyword">class</span>=<span class="stringliteral">&quot;form-signin&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span> action=<span class="stringliteral">&quot;?controller=UserSession&amp;action=Login&quot;</span>&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                &lt;input type=<span class="stringliteral">&quot;text&quot;</span> name=<span class="stringliteral">&quot;user&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;form-control&quot;</span> placeholder=<span class="stringliteral">&quot;Benutzername&quot;</span> autofocus&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                &lt;input type=<span class="stringliteral">&quot;password&quot;</span> name=<span class="stringliteral">&quot;pass&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;form-control&quot;</span> placeholder=<span class="stringliteral">&quot;Passwort&quot;</span>&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                &lt;button <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-primary btn-block&quot;</span> type=<span class="stringliteral">&quot;submit&quot;</span>&gt;Anmelden&lt;/button&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                &lt;/form&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                            &lt;/div&gt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                          &lt;/li&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            &lt;?php } ?&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          &lt;/ul&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      &lt;/div&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    &lt;/div&gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;container&quot;</span>&gt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        &lt;?php include($this-&gt;includetemplate); ?&gt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    &lt;/div&gt; &lt;!-- /container --&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    &lt;!-- Bootstrap core JavaScript</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ================================================== --&gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    &lt;!-- Placed at the end of the document so the pages load faster --&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    &lt;script src=<span class="stringliteral">&quot;js/jquery.js&quot;</span>&gt;&lt;/script&gt;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    &lt;script src=<span class="stringliteral">&quot;js/bootstrap.min.js&quot;</span>&gt;&lt;/script&gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  &lt;/body&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;&lt;/html&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 17:29:29 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

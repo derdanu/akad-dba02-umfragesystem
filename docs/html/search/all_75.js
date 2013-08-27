@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['user',['User',['../class_o_r_m_1_1_user.html',1,'ORM']]],
   ['user',['User',['../class_controller_1_1_admin_1_1_user.html',1,'Controller::Admin']]],
   ['user',['User',['../class_model_1_1_user.html',1,'Model']]],
   ['usernotauthedexception',['UserNotAuthedException',['../class_custom_exception_1_1_user_not_authed_exception.html',1,'CustomException']]],

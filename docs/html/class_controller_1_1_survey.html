@@ -191,13 +191,15 @@ Private Attribute</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Umfrage Ergebnisse speichern </p>
+<p>Umfrage Ergebnisse speichern</p>
+<p>Auswertung anzeigen </p>
 
-<p>Definiert in Zeile <a class="el" href="_controller_2_survey_8php_source.html#l00062">62</a> der Datei <a class="el" href="_controller_2_survey_8php_source.html">Controller/Survey.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_controller_2_survey_8php_source.html#l00064">64</a> der Datei <a class="el" href="_controller_2_survey_8php_source.html">Controller/Survey.php</a>.</p>
 <div class="fragment"><div class="line">                                           {</div>
 <div class="line"></div>
 <div class="line">                $this-&gt;view-&gt;setTemplate(<span class="stringliteral">&#39;survey_result&#39;</span>);</div>
 <div class="line">                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_name&#39;</span>, $this-&gt;model-&gt;getSurveyName($this-&gt;survey));</div>
+<div class="line">                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_cnt&#39;</span>, $this-&gt;model-&gt;getSurveyItemCount($this-&gt;survey));</div>
 <div class="line">                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_result&#39;</span>, $this-&gt;model-&gt;getSurveyResult($this-&gt;survey));</div>
 <div class="line">                $this-&gt;view-&gt;display();</div>
 <div class="line">                                </div>
@@ -211,7 +213,7 @@ Private Attribute</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 17:29:29 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

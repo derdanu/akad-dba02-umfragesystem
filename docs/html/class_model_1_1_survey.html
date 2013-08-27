@@ -97,6 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <tr class="memitem:a259373a6fdcae5796fc6e14586c98474"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_survey.html#a259373a6fdcae5796fc6e14586c98474">getSurveys</a> ()</td></tr>
 <tr class="memitem:a85d138e55d090b11ba406db39f7d2e72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_survey.html#a85d138e55d090b11ba406db39f7d2e72">getSurveyName</a> ($survey)</td></tr>
 <tr class="memitem:a7f2d5fba208ba0f2ec426db9b9075115"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_survey.html#a7f2d5fba208ba0f2ec426db9b9075115">getSurveyItems</a> ($survey)</td></tr>
+<tr class="memitem:ac4b8b489fe806c31bd05d8ec626aae16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">getSurveyItemCount</a> ($survey)</td></tr>
 <tr class="memitem:a3423f530767905dd0b52858c70d82877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">getSurveyResult</a> ($survey)</td></tr>
 <tr class="memitem:ae8dbded81f45b3d84c061bb1bf5ba97f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">getStats</a> ()</td></tr>
 </table>
@@ -119,13 +120,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><div class="memdoc">
 <p>Statistiken holen </p>
 
-<p>Definiert in Zeile <a class="el" href="_model_2_survey_8php_source.html#l00073">73</a> der Datei <a class="el" href="_model_2_survey_8php_source.html">Model/Survey.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_model_2_survey_8php_source.html#l00088">88</a> der Datei <a class="el" href="_model_2_survey_8php_source.html">Model/Survey.php</a>.</p>
 <div class="fragment"><div class="line">                                   {</div>
 <div class="line">                </div>
 <div class="line">                $stat[survey_cnt] = 17;</div>
 <div class="line">                $stat[record_cnt] = 343;</div>
 <div class="line">                </div>
 <div class="line">                <span class="keywordflow">return</span> $stat;</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac4b8b489fe806c31bd05d8ec626aae16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model\Survey::getSurveyItemCount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$survey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Anzahl der Abgegeben Umfragewerte</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">Integer</td><td class="paramname">$survey</td><td>UmfrageId</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Integer Anzahl der Ergebnisse zur Umfrage </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="_model_2_survey_8php_source.html#l00063">63</a> der Datei <a class="el" href="_model_2_survey_8php_source.html">Model/Survey.php</a>.</p>
+<div class="fragment"><div class="line">                                                    {</div>
+<div class="line">                </div>
+<div class="line">                <span class="keywordflow">return</span> 564;</div>
+<div class="line">                </div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -214,10 +246,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>Array </dd></dl>
 
-<p>Definiert in Zeile <a class="el" href="_model_2_survey_8php_source.html#l00062">62</a> der Datei <a class="el" href="_model_2_survey_8php_source.html">Model/Survey.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_model_2_survey_8php_source.html#l00077">77</a> der Datei <a class="el" href="_model_2_survey_8php_source.html">Model/Survey.php</a>.</p>
 <div class="fragment"><div class="line">                                                 {</div>
 <div class="line">                </div>
-<div class="line">                <span class="keywordflow">return</span> (array(20 =&gt; <span class="stringliteral">&quot;Antwort 1&quot;</span>, 80 =&gt; <span class="stringliteral">&quot;Antwort 2&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">return</span> (array(232 =&gt; <span class="stringliteral">&quot;Antwort 1&quot;</span>, 332 =&gt; <span class="stringliteral">&quot;Antwort 2&quot;</span>));</div>
 <div class="line">                </div>
 <div class="line">        }</div>
 </div><!-- fragment -->
@@ -253,7 +285,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 17:29:29 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

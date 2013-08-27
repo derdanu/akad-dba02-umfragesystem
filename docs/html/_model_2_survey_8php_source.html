@@ -140,38 +140,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">        /**</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">         * Umfrage Ergebnisse holen</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">         * Anzahl der Abgegeben Umfragewerte</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">         * @return      Array</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">   62</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">getSurveyResult</a>($survey) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> (array(20 =&gt; <span class="stringliteral">&quot;Antwort 1&quot;</span>, 80 =&gt; <span class="stringliteral">&quot;Antwort 2&quot;</span>));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">         * Statistiken holen</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">   73</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">getStats</a>() {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                $stat[survey_cnt] = 17;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                $stat[record_cnt] = 343;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">return</span> $stat;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;?&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">         * @return      Integer Anzahl der Ergebnisse zur Umfrage</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">   63</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">getSurveyItemCount</a>($survey) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> 564;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">         * Umfrage Ergebnisse holen</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">         * @return      Array</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">   77</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">getSurveyResult</a>($survey) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">return</span> (array(232 =&gt; <span class="stringliteral">&quot;Antwort 1&quot;</span>, 332 =&gt; <span class="stringliteral">&quot;Antwort 2&quot;</span>));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">         * Statistiken holen</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">   88</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">getStats</a>() {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                $stat[survey_cnt] = 17;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                $stat[record_cnt] = 343;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> $stat;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 17:29:29 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

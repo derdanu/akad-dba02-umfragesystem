@@ -99,27 +99,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                &lt;a data-toggle=<span class="stringliteral">&quot;modal&quot;</span> href=<span class="stringliteral">&quot;#addSurveyModal&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-success&quot;</span>&gt;Hinzufügen&lt;/a&gt;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;          &lt;!-- Modal --&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;addSurveyModal&quot;</span>&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-dialog&quot;</span>&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;              &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-content&quot;</span>&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-header&quot;</span>&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                  &lt;button type=<span class="stringliteral">&quot;button&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;close&quot;</span> data-dismiss=<span class="stringliteral">&quot;modal&quot;</span> aria-hidden=<span class="stringliteral">&quot;true&quot;</span>&gt;&amp;times;&lt;/button&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                  &lt;h4 <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-title&quot;</span>&gt;Neue Umfrage hinzufügen&lt;/h4&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                &lt;/div&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-body&quot;</span>&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                  ...</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                &lt;/div&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-footer&quot;</span>&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                  &lt;a href=<span class="stringliteral">&quot;#&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;btn&quot;</span> data-dismiss=<span class="stringliteral">&quot;modal&quot;</span>&gt;Verwerfen&lt;/a&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                  &lt;a href=<span class="stringliteral">&quot;#&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-primary&quot;</span>&gt;Speichern&lt;/a&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                &lt;/div&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;              &lt;/div&gt;&lt;!-- /.modal-content --&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;          &lt;/div&gt;&lt;!-- /.modal --&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          &lt;form <span class="keyword">class</span>=<span class="stringliteral">&quot;form-survey&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span> action=<span class="stringliteral">&quot;?controller=Admin\Survey&amp;action=Add&quot;</span>&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;          </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;          &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;addSurveyModal&quot;</span>&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-dialog&quot;</span>&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;              &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-content&quot;</span>&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-header&quot;</span>&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                  &lt;button type=<span class="stringliteral">&quot;button&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;close&quot;</span> data-dismiss=<span class="stringliteral">&quot;modal&quot;</span> aria-hidden=<span class="stringliteral">&quot;true&quot;</span>&gt;&amp;times;&lt;/button&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                  &lt;h4 <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-title&quot;</span>&gt;Neue Umfrage hinzufügen&lt;/h4&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                &lt;/div&gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-body&quot;</span>&gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                 &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;form-group&quot;</span>&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;name&quot;</span>&gt;Umfragename&lt;/label&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                            &lt;input type=<span class="stringliteral">&quot;text&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;form-control&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;name&quot;</span> name=<span class="stringliteral">&quot;name&quot;</span> placeholder=<span class="stringliteral">&quot;Umfragename eingeben&quot;</span>&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                          &lt;/div&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                 &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;form-group&quot;</span>&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;answer&quot;</span>&gt;Antwort&lt;/label&gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                            &lt;input type=<span class="stringliteral">&quot;text&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;form-control&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;answer&quot;</span> name=<span class="stringliteral">&quot;answer[]&quot;</span> placeholder=<span class="stringliteral">&quot;Antwort eingeben&quot;</span>&gt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                          &lt;/div&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                  </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                &lt;/div&gt;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        &lt;div style=<span class="stringliteral">&quot;padding: 20px;&quot;</span>&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                &lt;a <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-default&quot;</span> onClick=<span class="stringliteral">&quot;newAnswer()&quot;</span>&gt;Weitere Antwort hinzufügen&lt;/a&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        &lt;/div&gt;                    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                          </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;modal-footer&quot;</span>&gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                  &lt;a href=<span class="stringliteral">&quot;#&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;btn&quot;</span> data-dismiss=<span class="stringliteral">&quot;modal&quot;</span>&gt;Verwerfen&lt;/a&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                  &lt;button <span class="keyword">class</span>=<span class="stringliteral">&quot;btn btn-primary&quot;</span> type=<span class="stringliteral">&quot;submit&quot;</span>&gt;Speichern&lt;/button&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                &lt;/div&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;              &lt;/div&gt;&lt;!-- /.modal-content --&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          &lt;/div&gt;&lt;!-- /.modal --&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          &lt;/form&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;          </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          &lt;script&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                  <span class="keyword">function</span> newAnswer() {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                $(<span class="stringliteral">&#39;.modal-body&#39;</span>).append(<span class="stringliteral">&#39;&lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;answer[]&quot; placeholder=&quot;Antwort eingeben&quot;&quot;&gt;&lt;/div&gt;&#39;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                  </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          &lt;/script&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 17:29:29 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
