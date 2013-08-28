@@ -35,5 +35,16 @@ class Survey extends Base {
 		$this->Index_Action();
 		
 	}
+	
+	/**
+	 * 
+	 * Umfragen loeschen
+	 * 
+	 */
+	public function Delete_Action() {
+		
+		$this->Index_Action();
+		
+	}
 }
 ?>

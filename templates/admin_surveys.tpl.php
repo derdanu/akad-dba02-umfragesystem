@@ -5,7 +5,7 @@
 			foreach ($this->view['surveys'] as $key=>$value) {
 				print   "<tr><td>$key</td>" .
 						"<td><a href='?controller=Survey&action=Show&survey=$key'>$value</a></td>" .
-						"<td class='text-right'><button type='button' class='btn btn-danger'>Löschen</button></td></tr>";	
+						"<td class='text-right'><a href=\"?controller=Admin\Survey&action=Delete&survey=$key\" class='btn btn-danger'>Löschen</button></td></tr>";	
 			}
 			?>
 		</table>
