@@ -22,7 +22,7 @@ class Survey {
 
 		$this->view = new \View();
 		$this->model = new \Model\Survey();
-		$this->survey = intval($_GET['survey']);
+		if (isset($_GET['survey'])) $this->survey = intval($_GET['survey']);
 		
 	}
 	
