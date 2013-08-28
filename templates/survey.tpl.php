@@ -10,7 +10,7 @@
 				foreach ($this->view['survey_items'] as $arr) {
 					print 	"<div class='checkbox'>" .
 							"<label>" .
-							"<input type='checkbox' value='{$arr['ID']}' name='items[]'>{$arr['Name']}" .
+							"<input type='checkbox' value='{$arr['ID']}' name='answer[]'>{$arr['Name']}" .
 							"</label>" .
 							"</div>";	
 				}

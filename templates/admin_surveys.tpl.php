@@ -2,10 +2,10 @@
 		<table class="table table-hover">
 			<tr><th>ID</th><th>Umfrage</th><th></th></tr>
   			<?php
-			foreach ($this->view['surveys'] as $key=>$value) {
-				print   "<tr><td>$key</td>" .
-						"<td><a href='?controller=Survey&action=Show&survey=$key'>$value</a></td>" .
-						"<td class='text-right'><a href=\"?controller=Admin\Survey&action=Delete&survey=$key\" class='btn btn-danger'>Löschen</button></td></tr>";	
+			foreach ($this->view['surveys'] as $arr) {
+				print   "<tr><td>{$arr['ID']}</td>" .
+						"<td><a href='?controller=Survey&action=Show&survey={$arr['ID']}'>{$arr['Name']}</a></td>" .
+						"<td class='text-right'><a href=\"?controller=Admin\Survey&action=Delete&survey={$arr['ID']}\" class='btn btn-danger'>Löschen</button></td></tr>";	
 			}
 			?>
 		</table>

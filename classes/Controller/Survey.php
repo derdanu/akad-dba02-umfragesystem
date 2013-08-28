@@ -63,9 +63,20 @@ class Survey {
 	 */
 	public function Save_POST_Action() {
 
-		//Speichern Wenn > 0
+		if ($this->survey > 0 && $_GET['action'] == 'Save') {
 		
-		$this->showSurveyResult();
+			$answerArr = $_POST['answer'];
+			
+			$this->model->saveNewAnswers($answerArr);
+			
+			$this->showSurveyResult();
+			
+		} else {
+			
+			//Exception werfen
+			
+		}	
+		
 				
 	}
 		

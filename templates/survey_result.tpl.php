@@ -5,11 +5,11 @@
 			</div>
 			<table class="table table-bordered table-survey">
 			<?php
-			foreach ($this->view['survey_result'] as $key=>$value) {
-				$percent = round($key / $this->view['survey_cnt'] * 100);
-				print   "<tr><td>$value</td>" .
+			foreach ($this->view['survey_result'] as $arr) {
+				$percent = round($arr['cnt'] / $this->view['survey_cnt'] * 100);
+				print   "<tr><td>{$arr['Name']}</td>" .
 						"<td>" .
-						"<div style='background-color:#428BCA; width:{$percent}%; padding-left:10px; border-radius: 18px;'>$key ($percent %)</div>" .
+						"<div style='background-color:#428BCA; width:{$percent}%; padding-left:10px; border-radius: 18px;'>{$arr['cnt']} ($percent %)</div>" .
 						"</td>" .
 						"</tr>";	
 			}

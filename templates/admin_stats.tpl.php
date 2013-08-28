@@ -2,11 +2,15 @@
 
 		<ul class="list-group">
   			<li class="list-group-item">
-    			<span class="badge"><?php print $this->view['stats'][survey_cnt]; ?></span>
+    			<span class="badge"><?php print $this->view['stats']['survey_cnt']; ?></span>
     			Umfragen
   			</li>
   			<li class="list-group-item">
-    			<span class="badge"><?php print $this->view['stats'][record_cnt]; ?></span>
+    			<span class="badge"><?php print $this->view['stats']['survey_items_cnt']; ?></span>
+    			Umfragen
+  			</li>  			
+  			<li class="list-group-item">
+    			<span class="badge"><?php print $this->view['stats']['answer_cnt']; ?></span>
     			Antworten
   			</li>
 		</ul>
