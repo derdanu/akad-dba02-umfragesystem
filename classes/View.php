@@ -22,7 +22,7 @@ class View {
 	 * 
 	 * Template Variable zuweisen
 	 * 
-	 * @param	String	$key	Schlüssel
+	 * @param	String	$key	Schluessel
 	 * @param	String	$value	Wert
 	 * 
 	 */
@@ -65,7 +65,7 @@ class View {
 	
 	/**
 	 * 
-	 * Anhand des Templatenamen den vollen Pfad inkl Datei zurückgeben
+	 * Anhand des Templatenamen den vollen Pfad inkl Datei zurueckgeben
 	 * 
 	 * @param	String	$template	Templatename
 	 * 

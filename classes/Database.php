@@ -16,7 +16,7 @@ class Database extends PDO {
 	 * 
 	 * Konstruktor.
 	 * 
-	 * Konfiguration laden und der Elternklasse übergeben.
+	 * Konfiguration laden und der Elternklasse uebergeben.
 	 * 
 	 */
 	public function __construct() {

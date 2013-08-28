@@ -11,7 +11,7 @@ class User {
 
 	/**
 	 * 
-	 * Berechtigung überprüfen
+	 * Berechtigung ueberprüfen
 	 * 
 	 * @param	String	$user	Benutzername
 	 * @param	String 	$pass	Passwort

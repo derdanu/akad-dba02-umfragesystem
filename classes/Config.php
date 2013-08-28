@@ -7,7 +7,7 @@ define('CONFIGFILE', 'config/config.ini');
  * $conf = \Config::getInstance();
  * $value = $conf->key;
  * 
- * Die Werte stehen in der Ini Datei und können direkt abgerufen werden.
+ * Die Werte stehen in der Ini Datei und koennen direkt abgerufen werden.
  * 
  */
 class Config {

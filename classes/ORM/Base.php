@@ -58,7 +58,7 @@ abstract class Base {
 
 	/**
 	 * 
-	 * Save Funktion
+	 * Speichern Methode
 	 * 
 	 * Daten werden peristent auf die Datenbank geschrieben
 	 * 

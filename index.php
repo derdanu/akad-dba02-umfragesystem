@@ -48,7 +48,7 @@ try {
 	
 	$view = new \View();
 	$view->setTemplate('exception');
-	$view->assign('h1', "Das hätte nicht passieren sollen");
+	$view->assign('h1', "Das h&auml;tte nicht passieren d&uuml;rfen");
 	$view->assign('exception', $e->getMessage());
 	$view->display();
 

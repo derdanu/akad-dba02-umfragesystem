@@ -80,7 +80,7 @@ class Session {
 	
 	/**
 	 * 
-	 * Überprüfen ob Benutzer Authentifiziert ist
+	 * Ueberprüfen ob Benutzer Authentifiziert ist
 	 * 
 	 * @return	Boolean
 	 * 
@@ -95,7 +95,7 @@ class Session {
 	
 	/**
 	 * 
-	 * Überprüfen ob Benutzer Authentifiziert ist
+	 * Ueberprüfen ob Benutzer Authentifiziert ist
 	 * 
 	 * Ansonsten Exception werfen
 	 * 
@@ -108,7 +108,7 @@ class Session {
 	
 	/**
 	 * 
-	 * Session löschen
+	 * Session loeschen
 	 * 
 	 */
 	public static function destroy() {

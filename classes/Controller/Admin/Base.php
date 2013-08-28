@@ -11,7 +11,7 @@ class Base {
 	
 	/** 
 	 * 
-	 * Im Konstruktur generell überprüfen ob 
+	 * Im Konstruktur generell ueberpruefen ob 
 	 * sich der User eingeloggt hat.
 	 * 
 	 */

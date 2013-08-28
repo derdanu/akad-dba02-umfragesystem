@@ -9,7 +9,7 @@
 			}
 			?>
 		</table>
-		<a data-toggle="modal" href="#addSurveyModal" class="btn btn-success">Hinzufügen</a>
+		<a data-toggle="modal" href="#addSurveyModal" class="btn btn-success">Hinzuf&uuml;gen</a>
 
 	  <!-- Modal -->
 	  <form class="form-survey" method="post" action="?controller=Admin\Survey&action=Add">
@@ -19,7 +19,7 @@
 	      <div class="modal-content">
 	        <div class="modal-header">
 	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	          <h4 class="modal-title">Neue Umfrage hinzufügen</h4>
+	          <h4 class="modal-title">Neue Umfrage hinzuf&uuml;gen</h4>
 	        </div>
 	        <div class="modal-body">
 	       	 <div class="form-group">
@@ -35,7 +35,7 @@
 	        </div>	  
 
 			<div style="padding: 20px;">
-				<a class="btn btn-default" onClick="newAnswer()">Weitere Antwort hinzufügen</a>
+				<a class="btn btn-default" onClick="newAnswer()">Weitere Antwort hinzuf&uumlgen</a>
 			</div>  		  
 	                  
 	        <div class="modal-footer">

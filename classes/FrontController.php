@@ -51,7 +51,7 @@ class FrontController {
 
 	/**
 	 * 
-	 * FrontController ausführen
+	 * FrontController ausfuehren
 	 * 
 	 */
 	public function run() {

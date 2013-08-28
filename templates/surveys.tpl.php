@@ -1,6 +1,6 @@
       
       <div class="jumbotron">
-        <h1>Bitte Umfrage auswählen</h1>
+        <h1>Bitte Umfrage ausw&auml;hlen</h1>
 		<ul class="list-group">
 			<?php 
 			foreach ($this->view['surveys'] as $key=>$value) {

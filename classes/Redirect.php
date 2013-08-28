@@ -8,7 +8,7 @@ class Redirect {
 	
 	/**
 	 * 
-	 * Header Redirect durchführen
+	 * Header Redirect durchfuehren
 	 * 
 	 * @param	String	$url	URL
 	 * 
@@ -20,7 +20,7 @@ class Redirect {
 
 	/**
 	 * 
-	 * Controller Redirect durchführen
+	 * Controller Redirect durchfuehren
 	 * 
 	 * @param	String	$controller	Controllername
 	 * 

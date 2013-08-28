@@ -26,12 +26,22 @@ class User extends Base{
 		
 	}	
 	
+	/**
+	 * 
+	 * Benutzer hinzufuegen
+	 * 
+	 */
 	public function Add_POST_Action() {
 		
 		$this->Index_Action();
 		
 	}
 	
+	/**
+	 * 
+	 * Benutzer loeschen
+	 * 
+	 */
 	public function Delete_Action() {
 		
 		$this->Index_Action();

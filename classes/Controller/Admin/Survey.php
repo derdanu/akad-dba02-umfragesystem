@@ -27,7 +27,7 @@ class Survey extends Base {
 	
 	/**
 	 * 
-	 * neue Umfragen hinzufügen
+	 * neue Umfragen hinzufuegen
 	 * 
 	 */
 	public function Add_POST_Action() {

@@ -9,7 +9,7 @@
 			}
 			?>
 		</table>
-		<a data-toggle="modal" href="#addUserModal" class="btn btn-success">Hinzufügen</a>
+		<a data-toggle="modal" href="#addUserModal" class="btn btn-success">Hinzuf&uuml;gen</a>
 
 	  <!-- Modal -->
 	  <form class="form-user" method="post" action="?controller=Admin\User&action=Add">
@@ -19,7 +19,7 @@
 	      <div class="modal-content">
 	        <div class="modal-header">
 	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	          <h4 class="modal-title">Neuen Benutzer hinzufügen</h4>
+	          <h4 class="modal-title">Neuen Benutzer hinzuf&uuml;gen</h4>
 	        </div>
 	        <div class="modal-body">
 	          <div class="form-group">
