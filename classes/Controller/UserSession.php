@@ -12,27 +12,13 @@ class UserSession {
 	
 	/**
 	 * 
-	 * Login Formular anzeigen
-	 * 
-	 */
-	public function Login_Action() {
-
-		$view = new \View();
-		$view->setTemplate('login');
-		$view->display();
-
-		
-	}
-	
-	/**
-	 * 
 	 * Verarbeitung der Logindaten
 	 * 
 	 */
 	public function Login_POST_Action() {
 		
-		$user = $_GET['user'];
-		$pass = $_GET['pass'];
+		$user = $_POST['user'];
+		$pass = $_POST['pass'];
 		
 		$model = new \Model\User();
 			
@@ -43,7 +29,7 @@ class UserSession {
 
 		} else {
 		
-			$this->Login_Action();			
+			\Redirect::toController("Index");
 			
 		}
 
