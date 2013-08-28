@@ -4,7 +4,7 @@
   			<?php
 			foreach ($this->view['surveys'] as $key=>$value) {
 				print   "<tr><td>$key</td>" .
-						"<td>$value</td>" .
+						"<td><a href='?controller=Survey&action=Show&survey=$key'>$value</a></td>" .
 						"<td class='text-right'><button type='button' class='btn btn-danger'>Löschen</button></td></tr>";	
 			}
 			?>
