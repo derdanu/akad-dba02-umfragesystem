@@ -6,7 +6,7 @@ namespace Model;
  * Umfrage Datenmodell
  * 
  */
-class Survey {
+class Survey extends Base{
 
 	/**
 	 * 
@@ -17,8 +17,9 @@ class Survey {
 	 */
 	public function getSurveys() {
 		
-		return array(1 => "Umfrage 1", 2 => "Umfrage 2");
-		
+		$stmt = $this->dbh->query("SELECT * FROM Survey");
+		return $stmt->fetchAll();	
+				
 	}
 	
 	/**
@@ -32,7 +33,12 @@ class Survey {
 	 */
 	public function getSurveyName($survey) {
 		
-		return "Name der Umfrage $survey";
+		$stmt = $this->dbh->prepare("SELECT Name FROM Survey WHERE ID = :id");
+		$stmt->bindParam(':id', $survey);
+		$stmt->execute();
+		$res = $stmt->fetchObject();
+
+ 		return $res->Name;
 		
 	}
 	
@@ -47,7 +53,13 @@ class Survey {
 	 */
 	public function getSurveyItems($survey) {
 		
-		return (array(10 => "Antwort 1", 11 => "Antwort 2"));
+		$stmt = $this->dbh->prepare("SELECT ID, Name FROM SurveyItems WHERE SurveyID = :id");
+		$stmt->bindParam(':id', $survey);
+		$stmt->execute();
+		
+		return $stmt->fetchAll();
+
+ 		
 		
 	}
 

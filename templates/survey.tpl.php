@@ -7,10 +7,10 @@
 			</div>
 			<div class="panel-body">
 				<?php 
-				foreach ($this->view['survey_items'] as $key=>$value) {
+				foreach ($this->view['survey_items'] as $arr) {
 					print 	"<div class='checkbox'>" .
 							"<label>" .
-							"<input type='checkbox' value='$key' name='items[]'>$value" .
+							"<input type='checkbox' value='{$arr['ID']}' name='items[]'>{$arr['Name']}" .
 							"</label>" .
 							"</div>";	
 				}
