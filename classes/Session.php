@@ -87,7 +87,7 @@ class Session {
 	 */
 	public static function isUserAuthed() {
 		
-		if ($_SESSION['__AUTH'] == 1) return true;
+		if (array_key_exists('__AUTH', $_SESSION) && $_SESSION['__AUTH'] == 1) return true;
 		
 		return false;
 		
