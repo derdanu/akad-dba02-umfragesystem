@@ -7,7 +7,7 @@
   			</li>
   			<li class="list-group-item">
     			<span class="badge"><?php print $this->view['stats']['survey_items_cnt']; ?></span>
-    			Umfragen
+    			Fragen
   			</li>  			
   			<li class="list-group-item">
     			<span class="badge"><?php print $this->view['stats']['answer_cnt']; ?></span>
