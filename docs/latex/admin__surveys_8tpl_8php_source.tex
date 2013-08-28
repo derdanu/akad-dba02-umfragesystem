@@ -9,9 +9,10 @@
 00004                         <?php
 00005                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'surveys'}] as $key=>$value) \{
 00006                                 print   \textcolor{stringliteral}{"<tr><td>$key</td>"} .
-00007                                                 \textcolor{stringliteral}{"<td>$value</td>"} .
-00008                                                 \textcolor{stringliteral}{"<td class='text-right'><button type='button' class='btn
-       btn-danger'>Löschen</button></td></tr>"};   
+00007                                                 \textcolor{stringliteral}{"<td><a
+       href='?controller=Survey&action=Show&survey=$key'>$value</a></td>"} .
+00008                                                 \textcolor{stringliteral}{"<td class='text-right'><a href=\(\backslash\)"?controller=Admin\(\backslash\)S
+      urvey&action=Delete&survey=$key\(\backslash\)" class='btn btn-danger'>Löschen</button></td></tr>"};  
 00009                         \}
 00010                         ?>
 00011                 </table>
