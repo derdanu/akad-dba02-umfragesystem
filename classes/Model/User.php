@@ -6,7 +6,7 @@ namespace Model;
  * Benutzer Datenmodell
  * 
  */
-class User {
+class User extends Base {
 
 
 	/**
@@ -20,9 +20,17 @@ class User {
 	 * 
 	 */
 	public function checkCredentials($user, $pass) {
+
+		if (empty($user) || empty($pass)) return false;
 		
-		return true;
-		
+		$stmt = $this->dbh->prepare("SELECT Passwort FROM User WHERE Name = :name");
+		$stmt->bindParam(':name', $user);
+	
+		$stmt->execute();
+		$res = $stmt->fetchObject();
+
+ 		return ($res->Passwort == $pass);
+ 
 	}
 	
 	/**
@@ -33,8 +41,10 @@ class User {
 	 * 
 	 */
 	public function getUsers() {
+
+		$stmt = $this->dbh->query("SELECT ID, Name, LastLogIn FROM User");
+		return 	$stmt->fetchAll();	
 		
-		return array("sepp" => date("d.m.Y H:i", time()), "franz" => date("d.m.Y H:i", time()), "test" => date("d.m.Y H:i", time()));
 	}
 		
 }

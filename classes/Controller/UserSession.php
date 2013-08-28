@@ -1,6 +1,8 @@
 <?php
 namespace Controller;
 
+use \CustomException as Ex;
+
 /**
  * 
  * Login Controller
@@ -29,7 +31,7 @@ class UserSession {
 
 		} else {
 		
-			\Redirect::toController("Index");
+			throw new Ex\InvalidUserPassException();
 			
 		}
 

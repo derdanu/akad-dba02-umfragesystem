@@ -1,5 +1,5 @@
 <?php
-define('DEBUG', false);
+define('DEBUG', true);
 
 define('CLASS_DIR', 'classes/');
 
@@ -44,6 +44,15 @@ try {
 	$view->assign('exception', $e->getMessage());
 	$view->display();
 
+} catch (CustomException\InvalidUserPassException $e) {
+
+	$view = new \View();
+	$view->setTemplate('exception');
+	$view->assign('h1', "Loginfehler");
+	$view->assign('exception', "Benutzername und/oder Passwort falsch");
+	$view->display();
+	
+	
 } catch (Exception $e)  {	
 	
 	$view = new \View();
