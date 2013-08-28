@@ -33,7 +33,16 @@ class Session {
 	}
 	
 	private function __clone(){}
-
+	
+	/**
+	 * 
+	 * Getter Methode
+	 * 
+	 * @param	String	$key	Schlüssel
+	 * 
+	 * @return	String	Wert
+	 * 
+	 */
 	public function __get($key) {
 				
 		if (array_key_exists($key, $_SESSION)) {
@@ -44,6 +53,14 @@ class Session {
 		
 	}
 	
+	/**
+	 * 
+	 * Setter Methode
+	 * 
+	 * @param	String	$key	Schlüssel
+	 * @param	String	$value	Wert
+	 * 
+	 */
 	public function __set($key, $value) {
 				
 		$_SESSION[$key] = $value;

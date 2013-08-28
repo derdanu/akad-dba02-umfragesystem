@@ -94,10 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a2da2caf16a5e784a38fb4d8eede4c6fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2da2caf16a5e784a38fb4d8eede4c6fc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__get</b> ($key)</td></tr>
-<tr class="memitem:a23489b711b32f8820e3a0c78e03cc9b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23489b711b32f8820e3a0c78e03cc9b3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__set</b> ($key, $value)</td></tr>
+<tr class="memitem:a2da2caf16a5e784a38fb4d8eede4c6fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a2da2caf16a5e784a38fb4d8eede4c6fc">__get</a> ($key)</td></tr>
+<tr class="memitem:a23489b711b32f8820e3a0c78e03cc9b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_session.html#a23489b711b32f8820e3a0c78e03cc9b3">__set</a> ($key, $value)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Öffentliche, statische Methoden</h2></td></tr>
@@ -130,6 +128,82 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 
 <p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00017">17</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 </div><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a2da2caf16a5e784a38fb4d8eede4c6fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Session::__get </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Getter Methode</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">String</td><td class="paramname">$key</td><td>Schlüssel</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>String Wert </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00046">46</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<div class="fragment"><div class="line">                                    {</div>
+<div class="line">                                </div>
+<div class="line">                <span class="keywordflow">if</span> (array_key_exists($key, $_SESSION)) {</div>
+<div class="line">                        <span class="keywordflow">return</span> $_SESSION;</div>
+<div class="line">                } <span class="keywordflow">else</span> {</div>
+<div class="line">                        <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Session Schluessel &#39;$key&#39; nicht verfuegbar&quot;</span>);</div>
+<div class="line">                }</div>
+<div class="line">                </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a23489b711b32f8820e3a0c78e03cc9b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Session::__set </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Setter Methode</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">String</td><td class="paramname">$key</td><td>Schlüssel </td></tr>
+    <tr><td class="paramtype">String</td><td class="paramname">$value</td><td>Wert </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00064">64</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">                                </div>
+<div class="line">                $_SESSION[$key] = $value;</div>
+<div class="line">                </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="ab5ee063ee1dd4a5026c1b87caf98c9a0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +226,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div><div class="memdoc">
 <p>Benutzer Authentifizeren </p>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00058">58</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00075">75</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line">                                          {</div>
 <div class="line">                </div>
 <div class="line">                $_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] = 1;</div>
@@ -183,7 +257,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div><div class="memdoc">
 <p><a class="el" href="class_session.html">Session</a> löschen </p>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00097">97</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00114">114</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line">                                         {</div>
 <div class="line">                </div>
 <div class="line">                session_destroy();</div>
@@ -215,7 +289,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <p>Überprüfen ob Benutzer Authentifiziert ist</p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Boolean </dd></dl>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00071">71</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00088">88</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line">                                              {</div>
 <div class="line">                </div>
 <div class="line">                <span class="keywordflow">if</span> ($_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] == 1) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -249,7 +323,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <p>Überprüfen ob Benutzer Authentifiziert ist</p>
 <p>Ansonsten Exception werfen </p>
 
-<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00086">86</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00103">103</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line">                                                   {</div>
 <div class="line">                </div>
 <div class="line">                <span class="keywordflow">if</span> (!self::isUserAuthed()) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_custom_exception_1_1_user_not_authed_exception.html">Ex\UserNotAuthedException</a>(<span class="stringliteral">&quot;Sie haben keine Berechtigung für diese Seite&quot;</span>);</div>
@@ -264,7 +338,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Aug 28 2013 10:31:02 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

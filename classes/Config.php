@@ -24,13 +24,30 @@ class Config {
 		return self::$instance;
 	}
 
+	/**
+	 * 
+	 * Konstruktor
+	 * 
+	 * Wird nur einmal aufgerufen wegen Singleton Pattern
+	 * 
+	 * Konfigurationsdatei einlesen
+	 * 
+	 */
 	private function __construct() {
-		// Konfigurationsdatei nur einmal laden.
 		$this->config = parse_ini_file(CONFIGFILE);
 	}
 	
 	private function __clone(){}
 
+	/**
+	 * 
+	 * Getter Methode
+	 * 
+	 * @param	String	$key	Schlüssel
+	 * 
+	 * @return	String	Wert
+	 * 
+	 */
 	public function __get($key) {
 				
 		if (array_key_exists($key, $this->config)) {

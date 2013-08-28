@@ -8,6 +8,7 @@ namespace ORM;
  */
 class SurveyItem extends Base {
 	
+	// Mapping der Datenbank Attribute
 	protected $id;
 	protected $survey_id;
 	protected $name;

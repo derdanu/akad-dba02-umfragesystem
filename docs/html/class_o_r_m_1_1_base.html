@@ -107,6 +107,7 @@ Klassendiagramm für ORM\Base:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:af9d558b16cde9cc899e2e92eca6aa291"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_r_m_1_1_base.html#af9d558b16cde9cc899e2e92eca6aa291">__construct</a> ()</td></tr>
 <tr class="memitem:ae565838472750c09be01a7a1ea28e298"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_r_m_1_1_base.html#ae565838472750c09be01a7a1ea28e298">__get</a> ($key)</td></tr>
 <tr class="memitem:ae70dc3fff63316e69afe7dff77ab989c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_r_m_1_1_base.html#ae70dc3fff63316e69afe7dff77ab989c">__set</a> ($key, $val)</td></tr>
 <tr class="memitem:abbd9e115026168bcc5c2dd7c7bed21c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_r_m_1_1_base.html#abbd9e115026168bcc5c2dd7c7bed21c0">save</a> ()</td></tr>
@@ -126,7 +127,32 @@ Geschützte Attribute</h2></td></tr>
 <p>Alle ORM Klassen Erben von dieser Klasse </p>
 
 <p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00014">14</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
-</div><h2>Dokumentation der Elementfunktionen</h2>
+</div><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="af9d558b16cde9cc899e2e92eca6aa291"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ORM\Base::__construct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Konstruktor</p>
+<p>Datenbank Verbindung herstellen. </p>
+
+<p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00026">26</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">                </div>
+<div class="line">                $this-&gt;dbh = new \Database();</div>
+<div class="line">                </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Dokumentation der Elementfunktionen</h2>
 <a class="anchor" id="ae565838472750c09be01a7a1ea28e298"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +168,7 @@ Geschützte Attribute</h2></td></tr>
 </div><div class="memdoc">
 <p>Getter Methode </p>
 
-<p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00038">38</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00046">46</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
 <div class="fragment"><div class="line">                                    {</div>
 <div class="line">                <span class="keywordflow">return</span> $this-&gt;{$key};</div>
 <div class="line">        }</div>
@@ -174,7 +200,7 @@ Geschützte Attribute</h2></td></tr>
 </div><div class="memdoc">
 <p>Setter Methode </p>
 
-<p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00047">47</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00055">55</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
 <div class="fragment"><div class="line">                                          {</div>
 <div class="line">                $this-&gt;{$key} = $val;</div>
 <div class="line">        }</div>
@@ -223,7 +249,7 @@ Geschützte Attribute</h2></td></tr>
 <p>Save Funktion</p>
 <p>Daten werden peristent auf die Datenbank geschrieben </p>
 
-<p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00058">58</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_o_r_m_2_base_8php_source.html#l00066">66</a> der Datei <a class="el" href="_o_r_m_2_base_8php_source.html">ORM/Base.php</a>.</p>
 <div class="fragment"><div class="line">                                {</div>
 <div class="line">         </div>
 <div class="line">                $stmt = $this-&gt;<a class="code" href="class_o_r_m_1_1_base.html#ad69276f684d8ee3f5ec98b1006c42a79">getInsertStmt</a>(); </div>
@@ -239,7 +265,7 @@ Geschützte Attribute</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Aug 28 2013 10:31:02 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

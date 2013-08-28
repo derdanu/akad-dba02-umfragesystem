@@ -8,6 +8,7 @@ namespace ORM;
  */
 class User extends Base {
 	
+	// Mapping der Datenbank Attribute
 	protected $id;
 	protected $username;
 	protected $password;

@@ -94,8 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:aeb4233e287af07c75fff2d77e28a1eba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb4233e287af07c75fff2d77e28a1eba"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__get</b> ($key)</td></tr>
+<tr class="memitem:aeb4233e287af07c75fff2d77e28a1eba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">__get</a> ($key)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Öffentliche, statische Methoden</h2></td></tr>
@@ -104,6 +103,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
 Private Methoden</h2></td></tr>
+<tr class="memitem:ac1c75b1b53a17a028629ba8127e06f82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config.html#ac1c75b1b53a17a028629ba8127e06f82">__construct</a> ()</td></tr>
 <tr class="memitem:aa84beb1afac47a0723dbfa5be7e6be72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa84beb1afac47a0723dbfa5be7e6be72"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>__clone</b> ()</td></tr>
 </table><table class="memberdecls">
@@ -123,13 +123,81 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <p>Die Werte stehen in der Ini Datei und können direkt abgerufen werden. </p>
 
 <p>Definiert in Zeile <a class="el" href="_config_8php_source.html#l00013">13</a> der Datei <a class="el" href="_config_8php_source.html">Config.php</a>.</p>
-</div><hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+</div><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="ac1c75b1b53a17a028629ba8127e06f82"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Config::__construct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Konstruktor</p>
+<p>Wird nur einmal aufgerufen wegen Singleton Pattern</p>
+<p>Konfigurationsdatei einlesen </p>
+
+<p>Definiert in Zeile <a class="el" href="_config_8php_source.html#l00036">36</a> der Datei <a class="el" href="_config_8php_source.html">Config.php</a>.</p>
+<div class="fragment"><div class="line">                                       {</div>
+<div class="line">                $this-&gt;config = parse_ini_file(CONFIGFILE);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="aeb4233e287af07c75fff2d77e28a1eba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Config::__get </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Getter Methode</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">String</td><td class="paramname">$key</td><td>Schlüssel</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>String Wert </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="_config_8php_source.html#l00051">51</a> der Datei <a class="el" href="_config_8php_source.html">Config.php</a>.</p>
+<div class="fragment"><div class="line">                                    {</div>
+<div class="line">                                </div>
+<div class="line">                <span class="keywordflow">if</span> (array_key_exists($key, $this-&gt;config)) {</div>
+<div class="line">                        <span class="keywordflow">return</span> $this-&gt;config[$key];</div>
+<div class="line">                } <span class="keywordflow">else</span> {</div>
+<div class="line">                        <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Config Schluessel &#39;$key&#39; nicht verfuegbar&quot;</span>);</div>
+<div class="line">                }</div>
+<div class="line">                </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
 <li><a class="el" href="_config_8php_source.html">Config.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Aug 27 2013 19:23:57 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Aug 28 2013 10:31:02 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
