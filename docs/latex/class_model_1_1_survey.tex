@@ -1,0 +1,194 @@
+\hypertarget{class_model_1_1_survey}{\section{Model\textbackslash{}Survey Klassenreferenz}
+\label{class_model_1_1_survey}\index{Model\textbackslash{}\-Survey@{Model\textbackslash{}\-Survey}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_model_1_1_survey_a259373a6fdcae5796fc6e14586c98474}{get\-Surveys} ()
+\item 
+\hyperlink{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}{get\-Survey\-Name} (\$survey)
+\item 
+\hyperlink{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}{get\-Survey\-Items} (\$survey)
+\item 
+\hyperlink{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}{get\-Survey\-Item\-Count} (\$survey)
+\item 
+\hyperlink{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{get\-Survey\-Result} (\$survey)
+\item 
+\hyperlink{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{get\-Stats} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Umfrage Datenmodell 
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00009}{9} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Stats@{get\-Stats}}
+\index{get\-Stats@{get\-Stats}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{get\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}
+Statistiken holen 
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00088}{88} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00088                                    \{
+00089                 
+00090                 $stat[survey\_cnt] = 17;
+00091                 $stat[record\_cnt] = 343;
+00092                 
+00093                 \textcolor{keywordflow}{return} $stat;
+00094         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Item\-Count@{get\-Survey\-Item\-Count}}
+\index{get\-Survey\-Item\-Count@{get\-Survey\-Item\-Count}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{get\-Survey\-Item\-Count}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Survey\-Item\-Count (
+\begin{DoxyParamCaption}
+\item[{}]{\$survey}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}
+Anzahl der Abgegeben Umfragewerte
+
+
+\begin{DoxyParams}[1]{Parameter}
+Integer & {\em \$survey} & Umfrage\-Id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Integer Anzahl der Ergebnisse zur Umfrage 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00063}{63} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00063                                                     \{
+00064                 
+00065                 \textcolor{keywordflow}{return} 564;
+00066                 
+00067         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Items@{get\-Survey\-Items}}
+\index{get\-Survey\-Items@{get\-Survey\-Items}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{get\-Survey\-Items}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Survey\-Items (
+\begin{DoxyParamCaption}
+\item[{}]{\$survey}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}
+Umfrage Punkte holen
+
+
+\begin{DoxyParams}[1]{Parameter}
+Integer & {\em \$survey} & Umfrage\-Id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Array 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00048}{48} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00048                                                 \{
+00049                 
+00050                 \textcolor{keywordflow}{return} (array(10 => \textcolor{stringliteral}{"Antwort 1"}, 11 => \textcolor{stringliteral}{"Antwort 2"}));
+00051                 
+00052         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Name@{get\-Survey\-Name}}
+\index{get\-Survey\-Name@{get\-Survey\-Name}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{get\-Survey\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Survey\-Name (
+\begin{DoxyParamCaption}
+\item[{}]{\$survey}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}
+Umfragename holen
+
+
+\begin{DoxyParams}[1]{Parameter}
+Integer & {\em \$survey} & Umfrage\-Id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+String Name der Umfrage 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00033}{33} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00033                                                \{
+00034                 
+00035                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Name der Umfrage $survey"};
+00036                 
+00037         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Result@{get\-Survey\-Result}}
+\index{get\-Survey\-Result@{get\-Survey\-Result}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{get\-Survey\-Result}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Survey\-Result (
+\begin{DoxyParamCaption}
+\item[{}]{\$survey}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}
+Umfrage Ergebnisse holen
+
+
+\begin{DoxyParams}[1]{Parameter}
+Integer & {\em \$survey} & Umfrage\-Id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Array 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00077}{77} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00077                                                  \{
+00078                 
+00079                 \textcolor{keywordflow}{return} (array(232 => \textcolor{stringliteral}{"Antwort 1"}, 332 => \textcolor{stringliteral}{"Antwort 2"}));
+00080                 
+00081         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_a259373a6fdcae5796fc6e14586c98474}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Surveys@{get\-Surveys}}
+\index{get\-Surveys@{get\-Surveys}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{get\-Surveys}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Surveys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_a259373a6fdcae5796fc6e14586c98474}
+Umfragen holen
+
+\begin{DoxyReturn}{Rückgabe}
+Array 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00018}{18} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00018                                      \{
+00019                 
+00020                 \textcolor{keywordflow}{return} array(1 => \textcolor{stringliteral}{"Umfrage 1"}, 2 => \textcolor{stringliteral}{"Umfrage 2"});
+00021                 
+00022         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Model/\-Survey.\-php\end{DoxyCompactItemize}

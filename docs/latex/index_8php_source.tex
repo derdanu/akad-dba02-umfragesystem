@@ -1,0 +1,74 @@
+\hypertarget{index_8php_source}{\section{index.\-php}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00002 define(\textcolor{stringliteral}{'DEBUG'}, \textcolor{keyword}{false});
+00003 
+00004 define(\textcolor{stringliteral}{'CLASS\_DIR'}, \textcolor{stringliteral}{'classes/'});
+00005 
+00006 \textcolor{comment}{// PHP Autoloader Funktion definieren.}
+00007 spl\_autoload\_register(\textcolor{stringliteral}{'\_\_autoload'}); 
+00008 \textcolor{comment}{}
+00009 \textcolor{comment}{/**}
+00010 \textcolor{comment}{ * }
+00011 \textcolor{comment}{ * Wir für den Autoloader von Klassen benötigt}
+00012 \textcolor{comment}{ * }
+00013 \textcolor{comment}{ * @param       String  $class  Klassenname}
+00014 \textcolor{comment}{ * }
+00015 \textcolor{comment}{ */}
+00016 \textcolor{keyword}{function} \_\_autoload($class) \{
+00017  
+00018         \textcolor{comment}{// Namespace Backslashe in Slashe für das Filesystem umwandeln}
+00019         $file = str\_replace(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"}, DIRECTORY\_SEPARATOR, $class).\textcolor{stringliteral}{".php"};
+00020  
+00021         \textcolor{comment}{// Klasse einbinden ansonsten Exception werfen.}
+00022         \textcolor{keywordflow}{if} (file\_exists(CLASS\_DIR . $file)) \{
+00023                 require\_once CLASS\_DIR . $file;
+00024         \} \textcolor{keywordflow}{else} \{
+00025                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"Autoloaderfehler: "} . $file . \textcolor{stringliteral}{" not found."});
+00026         \}
+00027 \} 
+00028  
+00029 \textcolor{keywordflow}{try} \{
+00030         
+00031         \textcolor{comment}{// Session Initalisieren}
+00032         $session = \(\backslash\)Session::getInstance();
+00033         
+00034         \textcolor{comment}{// Frontcontroller Initalsieren und Aufrufen}
+00035         $c = new \(\backslash\)FrontController();
+00036         $c->run();
+00037         
+00038                 
+00039 \} \textcolor{keywordflow}{catch} (CustomException\(\backslash\)UserNotAuthedException $e) \{
+00040         
+00041         $view = new \(\backslash\)View();
+00042         $view->setTemplate(\textcolor{stringliteral}{'exception'});
+00043         $view->assign(\textcolor{stringliteral}{'h1'}, \textcolor{stringliteral}{"Illegaler Aufruf"});
+00044         $view->assign(\textcolor{stringliteral}{'exception'}, $e->getMessage());
+00045         $view->display();
+00046 
+00047 \} \textcolor{keywordflow}{catch} (Exception $e)  \{       
+00048         
+00049         $view = new \(\backslash\)View();
+00050         $view->setTemplate(\textcolor{stringliteral}{'exception'});
+00051         $view->assign(\textcolor{stringliteral}{'h1'}, \textcolor{stringliteral}{"Das hätte nicht passieren sollen"});
+00052         $view->assign(\textcolor{stringliteral}{'exception'}, $e->getMessage());
+00053         $view->display();
+00054 
+00055 \}
+00056 
+00057 
+00058 \textcolor{comment}{// Debugging}
+00059 \textcolor{keywordflow}{if} (DEBUG) \{
+00060         print \textcolor{stringliteral}{"<hr>Debug<br>"};
+00061         print \textcolor{stringliteral}{"<pre>"};
+00062         print\_r($\_GET);
+00063         print\_r($\_POST);
+00064         print\_r($\_SESSION);
+00065         print \textcolor{stringliteral}{"</pre>"};
+00066 \}
+00067 
+00068 
+00069 ?>
+\end{DoxyCode}

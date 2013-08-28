@@ -1,0 +1,127 @@
+\hypertarget{_session_8php}{\section{Session.\-php}
+\label{_session_8php}\index{Session.\-php@{Session.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00002 
+00003 use \(\backslash\)CustomException as Ex;
+00004 \textcolor{comment}{}
+00005 \textcolor{comment}{/**}
+00006 \textcolor{comment}{ * }
+00007 \textcolor{comment}{ * Session Klasse als Singleton Pattern}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ * $session = \(\backslash\)Session::getInstance();}
+00010 \textcolor{comment}{ * $session->key = "value";}
+00011 \textcolor{comment}{ * }
+00012 \textcolor{comment}{ * }
+00013 \textcolor{comment}{ * \(\backslash\)Session::destroy();}
+00014 \textcolor{comment}{ * }
+00015 \textcolor{comment}{ * }
+00016 \textcolor{comment}{ */}
+\hypertarget{_session_8php_source_l00017}{}\hyperlink{class_session}{00017} \textcolor{keyword}{class }\hyperlink{class_session}{Session} \{
+00018         
+00019         \textcolor{keyword}{private} $session = array();
+00020         
+00021         \textcolor{keyword}{static} \textcolor{keyword}{private} $instance = null;
+00022 
+00023         \textcolor{keyword}{static} \textcolor{keyword}{public} \textcolor{keyword}{function} getInstance() \{
+00024                 \textcolor{keywordflow}{if} (null === self::$instance) \{
+00025                         self::$instance = \textcolor{keyword}{new} \textcolor{keyword}{self};
+00026                 \}
+00027                 
+00028                 \textcolor{keywordflow}{return} self::$instance;
+00029         \}
+00030 
+00031         \textcolor{keyword}{private} \textcolor{keyword}{function} \_\_construct() \{
+00032                 session\_start();
+00033         \}
+00034         
+00035         \textcolor{keyword}{private} \textcolor{keyword}{function} \_\_clone()\{\}
+00036         \textcolor{comment}{}
+00037 \textcolor{comment}{        /**}
+00038 \textcolor{comment}{         * }
+00039 \textcolor{comment}{         * Getter Methode}
+00040 \textcolor{comment}{         * }
+00041 \textcolor{comment}{         * @param       String  $key    Schlüssel}
+00042 \textcolor{comment}{         * }
+00043 \textcolor{comment}{         * @return      String  Wert}
+00044 \textcolor{comment}{         * }
+00045 \textcolor{comment}{         */}
+\hypertarget{_session_8php_source_l00046}{}\hyperlink{class_session_a2da2caf16a5e784a38fb4d8eede4c6fc}{00046}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_session_a2da2caf16a5e784a38fb4d8eede4c6fc}{\_\_get}($key) \{
+00047                                 
+00048                 \textcolor{keywordflow}{if} (array\_key\_exists($key, $\_SESSION)) \{
+00049                         \textcolor{keywordflow}{return} $\_SESSION;
+00050                 \} \textcolor{keywordflow}{else} \{
+00051                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"Session Schluessel '$key' nicht verfuegbar"});
+00052                 \}
+00053                 
+00054         \}
+00055         \textcolor{comment}{}
+00056 \textcolor{comment}{        /**}
+00057 \textcolor{comment}{         * }
+00058 \textcolor{comment}{         * Setter Methode}
+00059 \textcolor{comment}{         * }
+00060 \textcolor{comment}{         * @param       String  $key    Schlüssel}
+00061 \textcolor{comment}{         * @param       String  $value  Wert}
+00062 \textcolor{comment}{         * }
+00063 \textcolor{comment}{         */}
+\hypertarget{_session_8php_source_l00064}{}\hyperlink{class_session_a23489b711b32f8820e3a0c78e03cc9b3}{00064}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_session_a23489b711b32f8820e3a0c78e03cc9b3}{\_\_set}($key, $value) \{
+00065                                 
+00066                 $\_SESSION[$key] = $value;
+00067                 
+00068         \}
+00069         \textcolor{comment}{}
+00070 \textcolor{comment}{        /**}
+00071 \textcolor{comment}{         * }
+00072 \textcolor{comment}{         * Benutzer Authentifizeren}
+00073 \textcolor{comment}{         * }
+00074 \textcolor{comment}{         */}
+\hypertarget{_session_8php_source_l00075}{}\hyperlink{class_session_ab5ee063ee1dd4a5026c1b87caf98c9a0}{00075}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{class_session_ab5ee063ee1dd4a5026c1b87caf98c9a0}{authUser}() \{
+00076                 
+00077                 $\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] = 1;
+00078                 
+00079         \}
+00080         \textcolor{comment}{}
+00081 \textcolor{comment}{        /**}
+00082 \textcolor{comment}{         * }
+00083 \textcolor{comment}{         * Überprüfen ob Benutzer Authentifiziert ist}
+00084 \textcolor{comment}{         * }
+00085 \textcolor{comment}{         * @return      Boolean}
+00086 \textcolor{comment}{         * }
+00087 \textcolor{comment}{         */}
+\hypertarget{_session_8php_source_l00088}{}\hyperlink{class_session_a23cee49624385c6af65af96fb1c682f6}{00088}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{class_session_a23cee49624385c6af65af96fb1c682f6}{isUserAuthed}() \{
+00089                 
+00090                 \textcolor{keywordflow}{if} ($\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] == 1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00091                 
+00092                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00093                 
+00094         \}
+00095         \textcolor{comment}{}
+00096 \textcolor{comment}{        /**}
+00097 \textcolor{comment}{         * }
+00098 \textcolor{comment}{         * Überprüfen ob Benutzer Authentifiziert ist}
+00099 \textcolor{comment}{         * }
+00100 \textcolor{comment}{         * Ansonsten Exception werfen}
+00101 \textcolor{comment}{         * }
+00102 \textcolor{comment}{         */}
+\hypertarget{_session_8php_source_l00103}{}\hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{00103}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{isUserAuthedCheck}() \{
+00104                 
+00105                 \textcolor{keywordflow}{if} (!self::isUserAuthed()) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_custom_exception_1_1_user_not_authed_exception}{Ex\(\backslash\)UserNotAuthedException}(\textcolor{stringliteral}{"
+      Sie haben keine Berechtigung für diese Seite"});
+00106                 
+00107         \} 
+00108         \textcolor{comment}{}
+00109 \textcolor{comment}{        /**}
+00110 \textcolor{comment}{         * }
+00111 \textcolor{comment}{         * Session löschen}
+00112 \textcolor{comment}{         * }
+00113 \textcolor{comment}{         */}
+\hypertarget{_session_8php_source_l00114}{}\hyperlink{class_session_a5dde74b6fa44649e5b73cb1096930dd4}{00114}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{class_session_a5dde74b6fa44649e5b73cb1096930dd4}{destroy}() \{
+00115                 
+00116                 session\_destroy();
+00117                 
+00118         \}
+00119 
+00120 \}
+\end{DoxyCode}

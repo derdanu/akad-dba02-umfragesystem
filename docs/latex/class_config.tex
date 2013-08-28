@@ -1,0 +1,110 @@
+\hypertarget{class_config}{\section{Config Klassenreferenz}
+\label{class_config}\index{Config@{Config}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_config_aeb4233e287af07c75fff2d77e28a1eba}{\-\_\-\-\_\-get} (\$key)
+\end{DoxyCompactItemize}
+\subsection*{Öffentliche, statische Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_config_aef7aac9c02b60638561fe777a87a5673}{static {\bfseries get\-Instance} ()}\label{class_config_aef7aac9c02b60638561fe777a87a5673}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_config_ac1c75b1b53a17a028629ba8127e06f82}{\-\_\-\-\_\-construct} ()
+\item 
+\hypertarget{class_config_aa84beb1afac47a0723dbfa5be7e6be72}{{\bfseries \-\_\-\-\_\-clone} ()}\label{class_config_aa84beb1afac47a0723dbfa5be7e6be72}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_config_abdb13aa29fd63a731b31ba0e709c7faa}{{\bfseries \$config} = array()}\label{class_config_abdb13aa29fd63a731b31ba0e709c7faa}
+
+\end{DoxyCompactItemize}
+\subsection*{Statische, private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_config_ac75489237154302980c51f1d1464d0af}{static {\bfseries \$instance} = null}\label{class_config_ac75489237154302980c51f1d1464d0af}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+\hyperlink{class_config}{Config} Klasse als Singleton Pattern
+
+\$conf = \-::get\-Instance(); \$value = \$conf-\/$>$key;
+
+Die Werte stehen in der Ini Datei und können direkt abgerufen werden. 
+
+Definiert in Zeile \hyperlink{_config_8php_source_l00013}{13} der Datei \hyperlink{_config_8php_source}{Config.\-php}.
+
+
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\hypertarget{class_config_ac1c75b1b53a17a028629ba8127e06f82}{\index{Config@{Config}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!Config@{Config}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}Config\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_config_ac1c75b1b53a17a028629ba8127e06f82}
+Konstruktor
+
+Wird nur einmal aufgerufen wegen Singleton Pattern
+
+Konfigurationsdatei einlesen 
+
+Definiert in Zeile \hyperlink{_config_8php_source_l00036}{36} der Datei \hyperlink{_config_8php_source}{Config.\-php}.
+
+
+\begin{DoxyCode}
+00036                                        \{
+00037                 $this->config = parse\_ini\_file(CONFIGFILE);
+00038         \}
+\end{DoxyCode}
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_config_aeb4233e287af07c75fff2d77e28a1eba}{\index{Config@{Config}!\-\_\-\-\_\-get@{\-\_\-\-\_\-get}}
+\index{\-\_\-\-\_\-get@{\-\_\-\-\_\-get}!Config@{Config}}
+\subsubsection[{\-\_\-\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}Config\-::\-\_\-\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}}\label{class_config_aeb4233e287af07c75fff2d77e28a1eba}
+Getter Methode
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$key} & Schlüssel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+String Wert 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_config_8php_source_l00051}{51} der Datei \hyperlink{_config_8php_source}{Config.\-php}.
+
+
+\begin{DoxyCode}
+00051                                     \{
+00052                                 
+00053                 \textcolor{keywordflow}{if} (array\_key\_exists($key, $this->config)) \{
+00054                         \textcolor{keywordflow}{return} $this->config[$key];
+00055                 \} \textcolor{keywordflow}{else} \{
+00056                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"Config Schluessel '$key' nicht verfuegbar"});
+00057                 \}
+00058                 
+00059         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Config.\-php\end{DoxyCompactItemize}

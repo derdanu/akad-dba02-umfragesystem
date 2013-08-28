@@ -1,0 +1,67 @@
+\hypertarget{_config_8php}{\section{Config.\-php}
+\label{_config_8php}\index{Config.\-php@{Config.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00002 define(\textcolor{stringliteral}{'CONFIGFILE'}, \textcolor{stringliteral}{'config/config.ini'});\textcolor{comment}{}
+00003 \textcolor{comment}{/**}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * Config Klasse als Singleton Pattern}
+00006 \textcolor{comment}{ * }
+00007 \textcolor{comment}{ * $conf = \(\backslash\)Config::getInstance();}
+00008 \textcolor{comment}{ * $value = $conf->key;}
+00009 \textcolor{comment}{ * }
+00010 \textcolor{comment}{ * Die Werte stehen in der Ini Datei und können direkt abgerufen werden.}
+00011 \textcolor{comment}{ * }
+00012 \textcolor{comment}{ */}
+\hypertarget{_config_8php_source_l00013}{}\hyperlink{class_config}{00013} \textcolor{keyword}{class }\hyperlink{class_config}{Config} \{
+00014         
+00015         \textcolor{keyword}{private} $config = array();
+00016         
+00017         \textcolor{keyword}{static} \textcolor{keyword}{private} $instance = null;
+00018 
+00019         \textcolor{keyword}{static} \textcolor{keyword}{public} \textcolor{keyword}{function} getInstance() \{
+00020                 \textcolor{keywordflow}{if} (null === self::$instance) \{
+00021                         self::$instance = \textcolor{keyword}{new} \textcolor{keyword}{self};
+00022                 \}
+00023                 
+00024                 \textcolor{keywordflow}{return} self::$instance;
+00025         \}
+00026 \textcolor{comment}{}
+00027 \textcolor{comment}{        /**}
+00028 \textcolor{comment}{         * }
+00029 \textcolor{comment}{         * Konstruktor}
+00030 \textcolor{comment}{         * }
+00031 \textcolor{comment}{         * Wird nur einmal aufgerufen wegen Singleton Pattern}
+00032 \textcolor{comment}{         * }
+00033 \textcolor{comment}{         * Konfigurationsdatei einlesen}
+00034 \textcolor{comment}{         * }
+00035 \textcolor{comment}{         */}
+\hypertarget{_config_8php_source_l00036}{}\hyperlink{class_config_ac1c75b1b53a17a028629ba8127e06f82}{00036}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_config_ac1c75b1b53a17a028629ba8127e06f82}{\_\_construct}() \{
+00037                 $this->config = parse\_ini\_file(CONFIGFILE);
+00038         \}
+00039         
+00040         \textcolor{keyword}{private} \textcolor{keyword}{function} \_\_clone()\{\}
+00041 \textcolor{comment}{}
+00042 \textcolor{comment}{        /**}
+00043 \textcolor{comment}{         * }
+00044 \textcolor{comment}{         * Getter Methode}
+00045 \textcolor{comment}{         * }
+00046 \textcolor{comment}{         * @param       String  $key    Schlüssel}
+00047 \textcolor{comment}{         * }
+00048 \textcolor{comment}{         * @return      String  Wert}
+00049 \textcolor{comment}{         * }
+00050 \textcolor{comment}{         */}
+\hypertarget{_config_8php_source_l00051}{}\hyperlink{class_config_aeb4233e287af07c75fff2d77e28a1eba}{00051}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_config_aeb4233e287af07c75fff2d77e28a1eba}{\_\_get}($key) \{
+00052                                 
+00053                 \textcolor{keywordflow}{if} (array\_key\_exists($key, $this->config)) \{
+00054                         \textcolor{keywordflow}{return} $this->config[$key];
+00055                 \} \textcolor{keywordflow}{else} \{
+00056                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"Config Schluessel '$key' nicht verfuegbar"});
+00057                 \}
+00058                 
+00059         \}
+00060 
+00061 \}
+\end{DoxyCode}

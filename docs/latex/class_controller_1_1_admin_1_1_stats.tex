@@ -1,0 +1,53 @@
+\hypertarget{class_controller_1_1_admin_1_1_stats}{\section{Controller\textbackslash{}Admin\textbackslash{}Stats Klassenreferenz}
+\label{class_controller_1_1_admin_1_1_stats}\index{Controller\textbackslash{}\-Admin\textbackslash{}\-Stats@{Controller\textbackslash{}\-Admin\textbackslash{}\-Stats}}
+}
+Klassendiagramm für Controller\textbackslash{}Admin\textbackslash{}Stats\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_controller_1_1_admin_1_1_stats}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_1_1_admin_1_1_stats_a04ab2733a1fb549ca76f4c78d946f5c7}{Index\-\_\-\-Action} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Admin Statistik Controller 
+
+Definiert in Zeile \hyperlink{_stats_8php_source_l00010}{10} der Datei \hyperlink{_stats_8php_source}{Stats.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_controller_1_1_admin_1_1_stats_a04ab2733a1fb549ca76f4c78d946f5c7}{\index{Controller\-::\-Admin\-::\-Stats@{Controller\-::\-Admin\-::\-Stats}!Index\-\_\-\-Action@{Index\-\_\-\-Action}}
+\index{Index\-\_\-\-Action@{Index\-\_\-\-Action}!Controller::Admin::Stats@{Controller\-::\-Admin\-::\-Stats}}
+\subsubsection[{Index\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Admin\textbackslash{}\-Stats\-::\-Index\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_admin_1_1_stats_a04ab2733a1fb549ca76f4c78d946f5c7}
+Default \hyperlink{class_controller_1_1_index}{Index} Get Action 
+
+Definiert in Zeile \hyperlink{_stats_8php_source_l00018}{18} der Datei \hyperlink{_stats_8php_source}{Stats.\-php}.
+
+
+\begin{DoxyCode}
+00018                                        \{
+00019                 
+00020                 $model = new \(\backslash\)Model\(\backslash\)Survey();
+00021                 
+00022                 $view = new \(\backslash\)View();
+00023                 $view->setTemplate(\textcolor{stringliteral}{'admin\_stats'});
+00024                 $view->assign(\textcolor{stringliteral}{'stats'}, $model->getStats());
+00025                 $view->display();
+00026                 
+00027         \}       
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Stats.\-php\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{class_controller_1_1_admin_1_1_user}{\section{Controller\textbackslash{}Admin\textbackslash{}User Klassenreferenz}
+\label{class_controller_1_1_admin_1_1_user}\index{Controller\textbackslash{}\-Admin\textbackslash{}\-User@{Controller\textbackslash{}\-Admin\textbackslash{}\-User}}
+}
+Klassendiagramm für Controller\textbackslash{}Admin\textbackslash{}User\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_controller_1_1_admin_1_1_user}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\-\_\-\-Action} ()
+\item 
+\hypertarget{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}{{\bfseries Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action} ()}\label{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}
+
+\item 
+\hypertarget{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}{{\bfseries Delete\-\_\-\-Action} ()}\label{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Admin Benutzer Controller 
+
+Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00010}{10} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{\index{Controller\-::\-Admin\-::\-User@{Controller\-::\-Admin\-::\-User}!Index\-\_\-\-Action@{Index\-\_\-\-Action}}
+\index{Index\-\_\-\-Action@{Index\-\_\-\-Action}!Controller::Admin::User@{Controller\-::\-Admin\-::\-User}}
+\subsubsection[{Index\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Admin\textbackslash{}\-User\-::\-Index\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}
+Default \hyperlink{class_controller_1_1_index}{Index} Get Action 
+
+Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00017}{17} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
+
+
+\begin{DoxyCode}
+00017                                        \{
+00018                 
+00019                 $model = new \(\backslash\)Model\(\backslash\)User();
+00020                 
+00021                 $view = new \(\backslash\)View();
+00022                 $view->setTemplate(\textcolor{stringliteral}{'admin\_user'});
+00023                 $view->assign(\textcolor{stringliteral}{'users'}, $model->getUsers());
+00024                 
+00025                 $view->display();
+00026                 
+00027         \}       
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Controller/\-Admin/\-User.\-php\end{DoxyCompactItemize}

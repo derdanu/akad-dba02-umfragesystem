@@ -1,0 +1,72 @@
+\hypertarget{class_database}{\section{Database Klassenreferenz}
+\label{class_database}\index{Database@{Database}}
+}
+Klassendiagramm für Database\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_database}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{\-\_\-\-\_\-construct} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_database_acf4bc044b7d1c3e54536ea4f2b0da56a}{{\bfseries \$dsn}}\label{class_database_acf4bc044b7d1c3e54536ea4f2b0da56a}
+
+\item 
+\hypertarget{class_database_ae9e43fb2a274428ec75ae70be7ab045f}{{\bfseries \$user}}\label{class_database_ae9e43fb2a274428ec75ae70be7ab045f}
+
+\item 
+\hypertarget{class_database_a8783a2890064e9d86b48a55fa09432f5}{{\bfseries \$pass}}\label{class_database_a8783a2890064e9d86b48a55fa09432f5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+\hyperlink{class_database}{Database} Klasse erweitert P\-H\-P P\-D\-O
+
+\$db = new \hyperlink{class_database}{Database()}; 
+
+Definiert in Zeile \hyperlink{_database_8php_source_l00009}{9} der Datei \hyperlink{_database_8php_source}{Database.\-php}.
+
+
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\hypertarget{class_database_a2852f635197e76a838486e64e00aac9f}{\index{Database@{Database}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!Database@{Database}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}Database\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_a2852f635197e76a838486e64e00aac9f}
+Konstruktor.
+
+Konfiguration laden und der Elternklasse übergeben. 
+
+Definiert in Zeile \hyperlink{_database_8php_source_l00022}{22} der Datei \hyperlink{_database_8php_source}{Database.\-php}.
+
+
+\begin{DoxyCode}
+00022                                       \{
+00023                 
+00024                 $conf = \(\backslash\)Config::getInstance();
+00025 
+00026                 $this->dsn = $conf->database\_type . \textcolor{stringliteral}{":host="} . $conf->database\_host . \textcolor{stringliteral}{";port="} . $conf->
+      database\_port . \textcolor{stringliteral}{";dbname="} . $conf->database\_name; 
+00027                 
+00028                 $this->user = $conf->database\_user;
+00029                 $this->pass = $conf->database\_pass;
+00030 
+00031                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
+00032                 
+00033         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Database.\-php\end{DoxyCompactItemize}

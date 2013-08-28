@@ -1,0 +1,43 @@
+\hypertarget{_redirect_8php}{\section{Redirect.\-php}
+\label{_redirect_8php}\index{Redirect.\-php@{Redirect.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php\textcolor{comment}{}
+00002 \textcolor{comment}{/**}
+00003 \textcolor{comment}{ * }
+00004 \textcolor{comment}{ * Redirect Klasse}
+00005 \textcolor{comment}{ * }
+00006 \textcolor{comment}{ */}
+\hypertarget{_redirect_8php_source_l00007}{}\hyperlink{class_redirect}{00007} \textcolor{keyword}{class }\hyperlink{class_redirect}{Redirect} \{        
+00008         \textcolor{comment}{}
+00009 \textcolor{comment}{        /**}
+00010 \textcolor{comment}{         * }
+00011 \textcolor{comment}{         * Header Redirect durchführen}
+00012 \textcolor{comment}{         * }
+00013 \textcolor{comment}{         * @param       String  $url    URL}
+00014 \textcolor{comment}{         * }
+00015 \textcolor{comment}{         */}
+\hypertarget{_redirect_8php_source_l00016}{}\hyperlink{class_redirect_aa19514457e9dddc565309a40f2ecc66c}{00016}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{class_redirect_aa19514457e9dddc565309a40f2ecc66c}{Header}($url) \{
+00017                 
+00018                 header(\textcolor{stringliteral}{"Location: $url"});
+00019         \}
+00020 \textcolor{comment}{}
+00021 \textcolor{comment}{        /**}
+00022 \textcolor{comment}{         * }
+00023 \textcolor{comment}{         * Controller Redirect durchführen}
+00024 \textcolor{comment}{         * }
+00025 \textcolor{comment}{         * @param       String  $controller     Controllername}
+00026 \textcolor{comment}{         * }
+00027 \textcolor{comment}{         */}
+\hypertarget{_redirect_8php_source_l00028}{}\hyperlink{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{00028}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{toController}($controller) \{
+00029                 
+00030                 header(\textcolor{stringliteral}{"Location: index.php?controller=$controller"});
+00031         \}
+00032         
+00033 \}
+00034 
+00035 
+00036 
+00037 ?>
+\end{DoxyCode}

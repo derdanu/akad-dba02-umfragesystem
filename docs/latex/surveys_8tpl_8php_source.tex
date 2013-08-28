@@ -1,0 +1,18 @@
+\hypertarget{surveys_8tpl_8php}{\section{surveys.\-tpl.\-php}
+\label{surveys_8tpl_8php}\index{surveys.\-tpl.\-php@{surveys.\-tpl.\-php}}
+}
+
+\begin{DoxyCode}
+00001       
+00002       <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"jumbotron"}>
+00003         <h1>Bitte Umfrage auswählen</h1>
+00004                 <ul \textcolor{keyword}{class}=\textcolor{stringliteral}{"list-group"}>
+00005                         <?php 
+00006                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'surveys'}] as $key=>$value) \{
+00007                                 print \textcolor{stringliteral}{"<li class='list-group-item'><a
+       href='?controller=Survey&survey=$key'>$value</a></li>"};       
+00008                         \}
+00009                         ?>
+00010                 </ul>
+00011       </div>
+\end{DoxyCode}

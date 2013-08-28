@@ -1,0 +1,143 @@
+\hypertarget{class_o_r_m_1_1_base}{\section{O\-R\-M\textbackslash{}Base Klassenreferenz}
+\label{class_o_r_m_1_1_base}\index{O\-R\-M\textbackslash{}\-Base@{O\-R\-M\textbackslash{}\-Base}}
+}
+Klassendiagramm für O\-R\-M\textbackslash{}Base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_r_m_1_1_base}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_r_m_1_1_base_af9d558b16cde9cc899e2e92eca6aa291}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_o_r_m_1_1_base_ae565838472750c09be01a7a1ea28e298}{\-\_\-\-\_\-get} (\$key)
+\item 
+\hyperlink{class_o_r_m_1_1_base_ae70dc3fff63316e69afe7dff77ab989c}{\-\_\-\-\_\-set} (\$key, \$val)
+\item 
+\hyperlink{class_o_r_m_1_1_base_abbd9e115026168bcc5c2dd7c7bed21c0}{save} ()
+\end{DoxyCompactItemize}
+\subsection*{Geschützte Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_r_m_1_1_base_ad69276f684d8ee3f5ec98b1006c42a79}{get\-Insert\-Stmt} ()
+\end{DoxyCompactItemize}
+\subsection*{Geschützte Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_o_r_m_1_1_base_a8656b49e90859ab436111b8e212cdbe1}{{\bfseries \$dbh}}\label{class_o_r_m_1_1_base_a8656b49e90859ab436111b8e212cdbe1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Sehr einfache und minimale Objekt Relationen Abbildung
+
+Abstrakte Basis Klasse
+
+Alle O\-R\-M Klassen Erben von dieser Klasse 
+
+Definiert in Zeile \hyperlink{_o_r_m_2_base_8php_source_l00014}{14} der Datei \hyperlink{_o_r_m_2_base_8php_source}{O\-R\-M/\-Base.\-php}.
+
+
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\hypertarget{class_o_r_m_1_1_base_af9d558b16cde9cc899e2e92eca6aa291}{\index{O\-R\-M\-::\-Base@{O\-R\-M\-::\-Base}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!ORM::Base@{O\-R\-M\-::\-Base}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}O\-R\-M\textbackslash{}\-Base\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_o_r_m_1_1_base_af9d558b16cde9cc899e2e92eca6aa291}
+Konstruktor
+
+Datenbank Verbindung herstellen. 
+
+Definiert in Zeile \hyperlink{_o_r_m_2_base_8php_source_l00026}{26} der Datei \hyperlink{_o_r_m_2_base_8php_source}{O\-R\-M/\-Base.\-php}.
+
+
+\begin{DoxyCode}
+00026                                       \{
+00027                 
+00028                 $this->dbh = new \(\backslash\)Database();
+00029                 
+00030         \}
+\end{DoxyCode}
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_o_r_m_1_1_base_ae565838472750c09be01a7a1ea28e298}{\index{O\-R\-M\-::\-Base@{O\-R\-M\-::\-Base}!\-\_\-\-\_\-get@{\-\_\-\-\_\-get}}
+\index{\-\_\-\-\_\-get@{\-\_\-\-\_\-get}!ORM::Base@{O\-R\-M\-::\-Base}}
+\subsubsection[{\-\_\-\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}O\-R\-M\textbackslash{}\-Base\-::\-\_\-\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}}\label{class_o_r_m_1_1_base_ae565838472750c09be01a7a1ea28e298}
+Getter Methode 
+
+Definiert in Zeile \hyperlink{_o_r_m_2_base_8php_source_l00046}{46} der Datei \hyperlink{_o_r_m_2_base_8php_source}{O\-R\-M/\-Base.\-php}.
+
+
+\begin{DoxyCode}
+00046                                     \{
+00047                 \textcolor{keywordflow}{return} $this->\{$key\};
+00048         \}
+\end{DoxyCode}
+\hypertarget{class_o_r_m_1_1_base_ae70dc3fff63316e69afe7dff77ab989c}{\index{O\-R\-M\-::\-Base@{O\-R\-M\-::\-Base}!\-\_\-\-\_\-set@{\-\_\-\-\_\-set}}
+\index{\-\_\-\-\_\-set@{\-\_\-\-\_\-set}!ORM::Base@{O\-R\-M\-::\-Base}}
+\subsubsection[{\-\_\-\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}O\-R\-M\textbackslash{}\-Base\-::\-\_\-\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$val}
+\end{DoxyParamCaption}
+)}}\label{class_o_r_m_1_1_base_ae70dc3fff63316e69afe7dff77ab989c}
+Setter Methode 
+
+Definiert in Zeile \hyperlink{_o_r_m_2_base_8php_source_l00055}{55} der Datei \hyperlink{_o_r_m_2_base_8php_source}{O\-R\-M/\-Base.\-php}.
+
+
+\begin{DoxyCode}
+00055                                           \{
+00056                 $this->\{$key\} = $val;
+00057         \}
+\end{DoxyCode}
+\hypertarget{class_o_r_m_1_1_base_ad69276f684d8ee3f5ec98b1006c42a79}{\index{O\-R\-M\-::\-Base@{O\-R\-M\-::\-Base}!get\-Insert\-Stmt@{get\-Insert\-Stmt}}
+\index{get\-Insert\-Stmt@{get\-Insert\-Stmt}!ORM::Base@{O\-R\-M\-::\-Base}}
+\subsubsection[{get\-Insert\-Stmt}]{\setlength{\rightskip}{0pt plus 5cm}O\-R\-M\textbackslash{}\-Base\-::get\-Insert\-Stmt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}}\label{class_o_r_m_1_1_base_ad69276f684d8ee3f5ec98b1006c42a79}
+Abstrake Funktion mit dem Insert Statements des Datensatzes
+
+\begin{DoxyReturn}{Rückgabe}
+string Insert Statement 
+\end{DoxyReturn}
+\hypertarget{class_o_r_m_1_1_base_abbd9e115026168bcc5c2dd7c7bed21c0}{\index{O\-R\-M\-::\-Base@{O\-R\-M\-::\-Base}!save@{save}}
+\index{save@{save}!ORM::Base@{O\-R\-M\-::\-Base}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}O\-R\-M\textbackslash{}\-Base\-::save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_o_r_m_1_1_base_abbd9e115026168bcc5c2dd7c7bed21c0}
+Save Funktion
+
+Daten werden peristent auf die Datenbank geschrieben 
+
+Definiert in Zeile \hyperlink{_o_r_m_2_base_8php_source_l00066}{66} der Datei \hyperlink{_o_r_m_2_base_8php_source}{O\-R\-M/\-Base.\-php}.
+
+
+\begin{DoxyCode}
+00066                                 \{
+00067          
+00068                 $stmt = $this->\hyperlink{class_o_r_m_1_1_base_ad69276f684d8ee3f5ec98b1006c42a79}{getInsertStmt}();    
+00069                 $stmt->execute();
+00070                 
+00071          \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+O\-R\-M/\-Base.\-php\end{DoxyCompactItemize}

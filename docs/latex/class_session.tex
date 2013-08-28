@@ -1,0 +1,209 @@
+\hypertarget{class_session}{\section{Session Klassenreferenz}
+\label{class_session}\index{Session@{Session}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_session_a2da2caf16a5e784a38fb4d8eede4c6fc}{\-\_\-\-\_\-get} (\$key)
+\item 
+\hyperlink{class_session_a23489b711b32f8820e3a0c78e03cc9b3}{\-\_\-\-\_\-set} (\$key, \$value)
+\end{DoxyCompactItemize}
+\subsection*{Öffentliche, statische Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_session_a8e7c2ae20ee90a0499c48e05cafafccf}{static {\bfseries get\-Instance} ()}\label{class_session_a8e7c2ae20ee90a0499c48e05cafafccf}
+
+\item 
+static \hyperlink{class_session_ab5ee063ee1dd4a5026c1b87caf98c9a0}{auth\-User} ()
+\item 
+static \hyperlink{class_session_a23cee49624385c6af65af96fb1c682f6}{is\-User\-Authed} ()
+\item 
+static \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{is\-User\-Authed\-Check} ()
+\item 
+static \hyperlink{class_session_a5dde74b6fa44649e5b73cb1096930dd4}{destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_session_a09e5dba2aa1cb9edf024641fd7fcec9c}{{\bfseries \-\_\-\-\_\-clone} ()}\label{class_session_a09e5dba2aa1cb9edf024641fd7fcec9c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_session_ab7f2fef2f9f2501956a7139fdf060397}{{\bfseries \$session} = array()}\label{class_session_ab7f2fef2f9f2501956a7139fdf060397}
+
+\end{DoxyCompactItemize}
+\subsection*{Statische, private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_session_a86a6e52b2a48eeafaaff766db1973cef}{static {\bfseries \$instance} = null}\label{class_session_a86a6e52b2a48eeafaaff766db1973cef}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+\hyperlink{class_session}{Session} Klasse als Singleton Pattern
+
+\$session = \-::get\-Instance(); \$session-\/$>$key = \char`\"{}value\char`\"{};
+
+\-::destroy(); 
+
+Definiert in Zeile \hyperlink{_session_8php_source_l00017}{17} der Datei \hyperlink{_session_8php_source}{Session.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_session_a2da2caf16a5e784a38fb4d8eede4c6fc}{\index{Session@{Session}!\-\_\-\-\_\-get@{\-\_\-\-\_\-get}}
+\index{\-\_\-\-\_\-get@{\-\_\-\-\_\-get}!Session@{Session}}
+\subsubsection[{\-\_\-\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}Session\-::\-\_\-\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}}\label{class_session_a2da2caf16a5e784a38fb4d8eede4c6fc}
+Getter Methode
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$key} & Schlüssel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+String Wert 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_session_8php_source_l00046}{46} der Datei \hyperlink{_session_8php_source}{Session.\-php}.
+
+
+\begin{DoxyCode}
+00046                                     \{
+00047                                 
+00048                 \textcolor{keywordflow}{if} (array\_key\_exists($key, $\_SESSION)) \{
+00049                         \textcolor{keywordflow}{return} $\_SESSION;
+00050                 \} \textcolor{keywordflow}{else} \{
+00051                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"Session Schluessel '$key' nicht verfuegbar"});
+00052                 \}
+00053                 
+00054         \}
+\end{DoxyCode}
+\hypertarget{class_session_a23489b711b32f8820e3a0c78e03cc9b3}{\index{Session@{Session}!\-\_\-\-\_\-set@{\-\_\-\-\_\-set}}
+\index{\-\_\-\-\_\-set@{\-\_\-\-\_\-set}!Session@{Session}}
+\subsubsection[{\-\_\-\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}Session\-::\-\_\-\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value}
+\end{DoxyParamCaption}
+)}}\label{class_session_a23489b711b32f8820e3a0c78e03cc9b3}
+Setter Methode
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$key} & Schlüssel \\
+\hline
+String & {\em \$value} & Wert \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_session_8php_source_l00064}{64} der Datei \hyperlink{_session_8php_source}{Session.\-php}.
+
+
+\begin{DoxyCode}
+00064                                             \{
+00065                                 
+00066                 $\_SESSION[$key] = $value;
+00067                 
+00068         \}
+\end{DoxyCode}
+\hypertarget{class_session_ab5ee063ee1dd4a5026c1b87caf98c9a0}{\index{Session@{Session}!auth\-User@{auth\-User}}
+\index{auth\-User@{auth\-User}!Session@{Session}}
+\subsubsection[{auth\-User}]{\setlength{\rightskip}{0pt plus 5cm}static Session\-::auth\-User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_session_ab5ee063ee1dd4a5026c1b87caf98c9a0}
+Benutzer Authentifizeren 
+
+Definiert in Zeile \hyperlink{_session_8php_source_l00075}{75} der Datei \hyperlink{_session_8php_source}{Session.\-php}.
+
+
+\begin{DoxyCode}
+00075                                           \{
+00076                 
+00077                 $\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] = 1;
+00078                 
+00079         \}
+\end{DoxyCode}
+\hypertarget{class_session_a5dde74b6fa44649e5b73cb1096930dd4}{\index{Session@{Session}!destroy@{destroy}}
+\index{destroy@{destroy}!Session@{Session}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}static Session\-::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_session_a5dde74b6fa44649e5b73cb1096930dd4}
+\hyperlink{class_session}{Session} löschen 
+
+Definiert in Zeile \hyperlink{_session_8php_source_l00114}{114} der Datei \hyperlink{_session_8php_source}{Session.\-php}.
+
+
+\begin{DoxyCode}
+00114                                          \{
+00115                 
+00116                 session\_destroy();
+00117                 
+00118         \}
+\end{DoxyCode}
+\hypertarget{class_session_a23cee49624385c6af65af96fb1c682f6}{\index{Session@{Session}!is\-User\-Authed@{is\-User\-Authed}}
+\index{is\-User\-Authed@{is\-User\-Authed}!Session@{Session}}
+\subsubsection[{is\-User\-Authed}]{\setlength{\rightskip}{0pt plus 5cm}static Session\-::is\-User\-Authed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_session_a23cee49624385c6af65af96fb1c682f6}
+Überprüfen ob Benutzer Authentifiziert ist
+
+\begin{DoxyReturn}{Rückgabe}
+Boolean 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_session_8php_source_l00088}{88} der Datei \hyperlink{_session_8php_source}{Session.\-php}.
+
+
+\begin{DoxyCode}
+00088                                               \{
+00089                 
+00090                 \textcolor{keywordflow}{if} ($\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] == 1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00091                 
+00092                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00093                 
+00094         \}
+\end{DoxyCode}
+\hypertarget{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\index{Session@{Session}!is\-User\-Authed\-Check@{is\-User\-Authed\-Check}}
+\index{is\-User\-Authed\-Check@{is\-User\-Authed\-Check}!Session@{Session}}
+\subsubsection[{is\-User\-Authed\-Check}]{\setlength{\rightskip}{0pt plus 5cm}static Session\-::is\-User\-Authed\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}
+Überprüfen ob Benutzer Authentifiziert ist
+
+Ansonsten Exception werfen 
+
+Definiert in Zeile \hyperlink{_session_8php_source_l00103}{103} der Datei \hyperlink{_session_8php_source}{Session.\-php}.
+
+
+\begin{DoxyCode}
+00103                                                    \{
+00104                 
+00105                 \textcolor{keywordflow}{if} (!self::isUserAuthed()) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_custom_exception_1_1_user_not_authed_exception}{Ex\(\backslash\)UserNotAuthedException}(\textcolor{stringliteral}{"
+      Sie haben keine Berechtigung für diese Seite"});
+00106                 
+00107         \} 
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Session.\-php\end{DoxyCompactItemize}

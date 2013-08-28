@@ -1,0 +1,124 @@
+\hypertarget{class_controller_1_1_survey}{\section{Controller\textbackslash{}Survey Klassenreferenz}
+\label{class_controller_1_1_survey}\index{Controller\textbackslash{}\-Survey@{Controller\textbackslash{}\-Survey}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_1_1_survey_a96fc5091aa3b11390854987ecf667f15}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_controller_1_1_survey_ab9a687bf4e1fe3c36b13ff873e94b212}{Index\-\_\-\-Action} ()
+\item 
+\hyperlink{class_controller_1_1_survey_a1a671d9a36a993bab69c12c16fcc60cc}{Save\-\_\-\-P\-O\-S\-T\-\_\-\-Action} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_controller_1_1_survey_af4dfeefe4184d06ce16596852d1699fe}{{\bfseries \$view}}\label{class_controller_1_1_survey_af4dfeefe4184d06ce16596852d1699fe}
+
+\item 
+\hypertarget{class_controller_1_1_survey_aaf7d79f033911a2dccb8a9b86335f608}{{\bfseries \$model}}\label{class_controller_1_1_survey_aaf7d79f033911a2dccb8a9b86335f608}
+
+\item 
+\hypertarget{class_controller_1_1_survey_a5dbe38a79e94073188649d98023be07f}{{\bfseries \$survey}}\label{class_controller_1_1_survey_a5dbe38a79e94073188649d98023be07f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Umfrage Controller 
+
+Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00010}{10} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
+
+
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\hypertarget{class_controller_1_1_survey_a96fc5091aa3b11390854987ecf667f15}{\index{Controller\-::\-Survey@{Controller\-::\-Survey}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!Controller::Survey@{Controller\-::\-Survey}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Survey\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_survey_a96fc5091aa3b11390854987ecf667f15}
+Kontruktor 
+
+Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00021}{21} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00021                                       \{
+00022                 
+00023                 $this->view = new \(\backslash\)View();
+00024                 $this->model = new \(\backslash\)Model\(\backslash\)Survey();
+00025                 $this->survey = intval($\_GET[\textcolor{stringliteral}{'survey'}]);
+00026                 
+00027         \}
+\end{DoxyCode}
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_controller_1_1_survey_ab9a687bf4e1fe3c36b13ff873e94b212}{\index{Controller\-::\-Survey@{Controller\-::\-Survey}!Index\-\_\-\-Action@{Index\-\_\-\-Action}}
+\index{Index\-\_\-\-Action@{Index\-\_\-\-Action}!Controller::Survey@{Controller\-::\-Survey}}
+\subsubsection[{Index\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Survey\-::\-Index\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_survey_ab9a687bf4e1fe3c36b13ff873e94b212}
+Default \hyperlink{class_controller_1_1_index}{Index} Get Action 
+
+Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00034}{34} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00034                                        \{
+00035                 
+00036 
+00037 
+00038                 \textcolor{keywordflow}{if} ($this->survey == 0) \{
+00039                         
+00040                         $this->view->setTemplate(\textcolor{stringliteral}{'surveys'});
+00041                         $this->view->assign(\textcolor{stringliteral}{'surveys'}, $this->model->getSurveys());
+00042                         $this->view->display();
+00043                                                 
+00044                 \} \textcolor{keywordflow}{else} \{
+00045 
+00046                         $this->view->setTemplate(\textcolor{stringliteral}{'survey'});
+00047                         $this->view->assign(\textcolor{stringliteral}{'survey\_id'}, $this->survey);
+00048                         $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
+00049                         $this->view->assign(\textcolor{stringliteral}{'survey\_items'}, $this->model->getSurveyItems($this->survey));
+00050                         $this->view->display();
+00051         
+00052                         
+00053                 \}
+00054                 
+00055         \}
+\end{DoxyCode}
+\hypertarget{class_controller_1_1_survey_a1a671d9a36a993bab69c12c16fcc60cc}{\index{Controller\-::\-Survey@{Controller\-::\-Survey}!Save\-\_\-\-P\-O\-S\-T\-\_\-\-Action@{Save\-\_\-\-P\-O\-S\-T\-\_\-\-Action}}
+\index{Save\-\_\-\-P\-O\-S\-T\-\_\-\-Action@{Save\-\_\-\-P\-O\-S\-T\-\_\-\-Action}!Controller::Survey@{Controller\-::\-Survey}}
+\subsubsection[{Save\-\_\-\-P\-O\-S\-T\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Survey\-::\-Save\-\_\-\-P\-O\-S\-T\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_survey_a1a671d9a36a993bab69c12c16fcc60cc}
+Umfrage Ergebnisse speichern
+
+Auswertung anzeigen 
+
+Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00064}{64} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00064                                            \{
+00065 
+00066                 $this->view->setTemplate(\textcolor{stringliteral}{'survey\_result'});
+00067                 $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
+00068                 $this->view->assign(\textcolor{stringliteral}{'survey\_cnt'}, $this->model->getSurveyItemCount($this->survey));
+00069                 $this->view->assign(\textcolor{stringliteral}{'survey\_result'}, $this->model->getSurveyResult($this->survey));
+00070                 $this->view->display();
+00071                                 
+00072         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Controller/\-Survey.\-php\end{DoxyCompactItemize}

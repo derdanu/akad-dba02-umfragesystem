@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
 <title>DBA02: Database Klassenreferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -29,7 +37,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.1.2 -->
+<!-- Erzeugt von Doxygen 1.8.5 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </script>
@@ -64,6 +72,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
       <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_database.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,7 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
@@ -88,26 +110,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="title">Database Klassenreferenz</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Klassendiagramm für Database:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_database.png" usemap="#Database_map" alt=""/>
+  <map id="Database_map" name="Database_map">
+</map>
+ </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:a2852f635197e76a838486e64e00aac9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database.html#a2852f635197e76a838486e64e00aac9f">__construct</a> ()</td></tr>
+<tr class="separator:a2852f635197e76a838486e64e00aac9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
 <tr class="memitem:acf4bc044b7d1c3e54536ea4f2b0da56a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf4bc044b7d1c3e54536ea4f2b0da56a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$dsn</b></td></tr>
+<tr class="separator:acf4bc044b7d1c3e54536ea4f2b0da56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9e43fb2a274428ec75ae70be7ab045f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9e43fb2a274428ec75ae70be7ab045f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$user</b></td></tr>
+<tr class="separator:ae9e43fb2a274428ec75ae70be7ab045f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8783a2890064e9d86b48a55fa09432f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8783a2890064e9d86b48a55fa09432f5"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$pass</b></td></tr>
+<tr class="separator:a8783a2890064e9d86b48a55fa09432f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2>Ausführliche Beschreibung</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p><a class="el" href="class_database.html">Database</a> Klasse erweitert PHP PDO</p>
-<p>$db = new Database(); </p>
+<p>$db = new <a class="el" href="class_database.html">Database()</a>; </p>
 
 <p>Definiert in Zeile <a class="el" href="_database_8php_source.html#l00009">9</a> der Datei <a class="el" href="_database_8php_source.html">Database.php</a>.</p>
-</div><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a class="anchor" id="a2852f635197e76a838486e64e00aac9f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -124,18 +158,18 @@ Private Attribute</h2></td></tr>
 <p>Konfiguration laden und der Elternklasse übergeben. </p>
 
 <p>Definiert in Zeile <a class="el" href="_database_8php_source.html#l00022">22</a> der Datei <a class="el" href="_database_8php_source.html">Database.php</a>.</p>
-<div class="fragment"><div class="line">                                      {</div>
-<div class="line">                </div>
-<div class="line">                $conf = \Config::getInstance();</div>
-<div class="line"></div>
-<div class="line">                $this-&gt;dsn = $conf-&gt;database_type . <span class="stringliteral">&quot;:host=&quot;</span> . $conf-&gt;database_host . <span class="stringliteral">&quot;;port=&quot;</span> . $conf-&gt;database_port . <span class="stringliteral">&quot;;dbname=&quot;</span> . $conf-&gt;database_name; </div>
-<div class="line">                </div>
-<div class="line">                $this-&gt;user = $conf-&gt;database_user;</div>
-<div class="line">                $this-&gt;pass = $conf-&gt;database_pass;</div>
-<div class="line"></div>
-<div class="line">                <a class="code" href="class_database.html#a2852f635197e76a838486e64e00aac9f">parent::__construct</a>($this-&gt;dsn, $this-&gt;user, $this-&gt;pass);</div>
-<div class="line">                </div>
-<div class="line">        }</div>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                      {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                $conf = \Config::getInstance();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                $this-&gt;dsn = $conf-&gt;database_type . <span class="stringliteral">&quot;:host=&quot;</span> . $conf-&gt;database_host . <span class="stringliteral">&quot;;port=&quot;</span> . $conf-&gt;database_port . <span class="stringliteral">&quot;;dbname=&quot;</span> . $conf-&gt;database_name; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                $this-&gt;user = $conf-&gt;database_user;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                $this-&gt;pass = $conf-&gt;database_pass;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                parent::__construct($this-&gt;dsn, $this-&gt;user, $this-&gt;pass);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -143,11 +177,15 @@ Private Attribute</h2></td></tr>
 <li><a class="el" href="_database_8php_source.html">Database.php</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Erzeugt am Mit Aug 28 2013 10:31:02 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_database.html">Database</a></li>
+    <li class="footer">Erzeugt am Mit Aug 28 2013 13:11:19 für DBA02 von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

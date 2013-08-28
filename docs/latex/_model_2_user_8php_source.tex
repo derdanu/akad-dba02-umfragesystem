@@ -1,0 +1,50 @@
+\hypertarget{_model_2_user_8php}{\section{Model/\-User.php}
+\label{_model_2_user_8php}\index{User.\-php@{User.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00002 \textcolor{keyword}{namespace }Model;
+00003 \textcolor{comment}{}
+00004 \textcolor{comment}{/**}
+00005 \textcolor{comment}{ * }
+00006 \textcolor{comment}{ * Benutzer Datenmodell}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ */}
+\hypertarget{_model_2_user_8php_source_l00009}{}\hyperlink{class_model_1_1_user}{00009} \textcolor{keyword}{class }\hyperlink{class_model_1_1_user}{User} \{
+00010 
+00011 \textcolor{comment}{}
+00012 \textcolor{comment}{        /**}
+00013 \textcolor{comment}{         * }
+00014 \textcolor{comment}{         * Berechtigung überprüfen}
+00015 \textcolor{comment}{         * }
+00016 \textcolor{comment}{         * @param       String  $user   Benutzername}
+00017 \textcolor{comment}{         * @param       String  $pass   Passwort}
+00018 \textcolor{comment}{         * }
+00019 \textcolor{comment}{         * @return      Boolean }
+00020 \textcolor{comment}{         * }
+00021 \textcolor{comment}{         */}
+\hypertarget{_model_2_user_8php_source_l00022}{}\hyperlink{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}{00022}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}{checkCredentials}($user, $pass) \{
+00023                 
+00024                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00025                 
+00026         \}
+00027         \textcolor{comment}{}
+00028 \textcolor{comment}{        /**}
+00029 \textcolor{comment}{         * }
+00030 \textcolor{comment}{         * Benutzer holen}
+00031 \textcolor{comment}{         * }
+00032 \textcolor{comment}{         * @return      Array}
+00033 \textcolor{comment}{         * }
+00034 \textcolor{comment}{         */}
+\hypertarget{_model_2_user_8php_source_l00035}{}\hyperlink{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{00035}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{getUsers}() \{
+00036                 
+00037                 \textcolor{keywordflow}{return} array(\textcolor{stringliteral}{"sepp"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()), \textcolor{stringliteral}{"franz"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()), \textcolor{stringliteral}{"
+      test"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()));
+00038         \}
+00039                 
+00040 \}
+00041 
+00042 
+00043 ?>
+\end{DoxyCode}

@@ -1,2 +1,2 @@
 #!/bin/bash
-doxygen doxygen.conf
+doxygen-1.8.5 doxygen.conf

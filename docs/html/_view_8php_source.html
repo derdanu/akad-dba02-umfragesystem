@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
 <title>DBA02: View.php Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -29,7 +37,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.1.2 -->
+<!-- Erzeugt von Doxygen 1.8.5 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </script>
@@ -61,6 +69,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
       <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_view_8php_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -75,11 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">View.php</div>  </div>
@@ -91,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * View Klasse</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="class_view.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_view.html">View</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_view.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_view.html">View</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="comment">// Template Pfad</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">private</span> $templatePath = <span class="stringliteral">&#39;templates&#39;</span>;</div>
@@ -113,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         * @param       String  $value  Wert</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="class_view.html#a2c338778c398ef0e4040bc377242611a">   29</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a2c338778c398ef0e4040bc377242611a">assign</a>($key, $value) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_view.html#a2c338778c398ef0e4040bc377242611a">   29</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a2c338778c398ef0e4040bc377242611a">assign</a>($key, $value) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                $this-&gt;view[$key] = $value;  </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }               </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment"></span></div>
@@ -124,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">         * @param       String  $template       Templatename</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_view.html#a956eb733dd01bd0c42f06d71e11afef3">   40</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a956eb733dd01bd0c42f06d71e11afef3">setTemplate</a>($template) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_view.html#a956eb733dd01bd0c42f06d71e11afef3">   40</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a956eb733dd01bd0c42f06d71e11afef3">setTemplate</a>($template) {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                $this-&gt;<span class="keyword">template</span> = $template;  </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }  </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment"></span></div>
@@ -133,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">         * Template anzeigen</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="class_view.html#a0924100c5e1690a4150bb1c446859e07">   49</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a0924100c5e1690a4150bb1c446859e07">display</a>() {</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_view.html#a0924100c5e1690a4150bb1c446859e07">   49</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a0924100c5e1690a4150bb1c446859e07">display</a>() {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                $this-&gt;includetemplate = $this-&gt;<a class="code" href="class_view.html#a157300b213657f283da80e7430d9e98b">getTemplateOnFilesystem</a>($this-&gt;<span class="keyword">template</span>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                </div>
@@ -159,19 +177,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * @return      String  Pfad inkl Dateiname zum Template</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="class_view.html#a157300b213657f283da80e7430d9e98b">   75</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a157300b213657f283da80e7430d9e98b">getTemplateOnFilesystem</a>($template)      {</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_view.html#a157300b213657f283da80e7430d9e98b">   75</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">function</span> <a class="code" href="class_view.html#a157300b213657f283da80e7430d9e98b">getTemplateOnFilesystem</a>($template)      {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">return</span> $this-&gt;templatePath . DIRECTORY_SEPARATOR . $template . <span class="stringliteral">&quot;.tpl.php&quot;</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }       </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;?&gt;</div>
+<div class="ttc" id="class_view_html_a157300b213657f283da80e7430d9e98b"><div class="ttname"><a href="class_view.html#a157300b213657f283da80e7430d9e98b">View\getTemplateOnFilesystem</a></div><div class="ttdeci">getTemplateOnFilesystem($template)</div><div class="ttdef"><b>Definition:</b> <a href="_view_8php_source.html#l00075">View.php:75</a></div></div>
+<div class="ttc" id="class_view_html_a956eb733dd01bd0c42f06d71e11afef3"><div class="ttname"><a href="class_view.html#a956eb733dd01bd0c42f06d71e11afef3">View\setTemplate</a></div><div class="ttdeci">setTemplate($template)</div><div class="ttdef"><b>Definition:</b> <a href="_view_8php_source.html#l00040">View.php:40</a></div></div>
+<div class="ttc" id="class_view_html_a2c338778c398ef0e4040bc377242611a"><div class="ttname"><a href="class_view.html#a2c338778c398ef0e4040bc377242611a">View\assign</a></div><div class="ttdeci">assign($key, $value)</div><div class="ttdef"><b>Definition:</b> <a href="_view_8php_source.html#l00029">View.php:29</a></div></div>
+<div class="ttc" id="class_view_html_a0924100c5e1690a4150bb1c446859e07"><div class="ttname"><a href="class_view.html#a0924100c5e1690a4150bb1c446859e07">View\display</a></div><div class="ttdeci">display()</div><div class="ttdef"><b>Definition:</b> <a href="_view_8php_source.html#l00049">View.php:49</a></div></div>
+<div class="ttc" id="class_view_html"><div class="ttname"><a href="class_view.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="_view_8php_source.html#l00007">View.php:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Erzeugt am Mit Aug 28 2013 10:31:02 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li><li class="navelem"><b>View.php</b></li>
+    <li class="footer">Erzeugt am Mit Aug 28 2013 13:11:19 für DBA02 von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

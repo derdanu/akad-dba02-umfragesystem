@@ -1,0 +1,89 @@
+\hypertarget{_view_8php}{\section{View.\-php}
+\label{_view_8php}\index{View.\-php@{View.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php\textcolor{comment}{}
+00002 \textcolor{comment}{/**}
+00003 \textcolor{comment}{ * }
+00004 \textcolor{comment}{ * View Klasse}
+00005 \textcolor{comment}{ * }
+00006 \textcolor{comment}{ */}
+\hypertarget{_view_8php_source_l00007}{}\hyperlink{class_view}{00007} \textcolor{keyword}{class }\hyperlink{class_view}{View} \{
+00008         
+00009         \textcolor{comment}{// Template Pfad}
+00010         \textcolor{keyword}{private} $templatePath = \textcolor{stringliteral}{'templates'};
+00011         \textcolor{comment}{// Default Template index.tpl.php}
+00012         \textcolor{keyword}{private} $template = \textcolor{stringliteral}{'index'};
+00013         \textcolor{comment}{// Layout Template}
+00014         \textcolor{keyword}{private} $layouttemplate = \textcolor{stringliteral}{'\_layout'};
+00015         \textcolor{comment}{// Anzuzeigenedes Template inkl Pfad;}
+00016         \textcolor{keyword}{private} $includetemplate;
+00017         \textcolor{comment}{// Variablen innerhalb des Templates}
+00018         \textcolor{keyword}{private} $view = array();
+00019         
+00020 \textcolor{comment}{}
+00021 \textcolor{comment}{        /**}
+00022 \textcolor{comment}{         * }
+00023 \textcolor{comment}{         * Template Variable zuweisen}
+00024 \textcolor{comment}{         * }
+00025 \textcolor{comment}{         * @param       String  $key    Schlüssel}
+00026 \textcolor{comment}{         * @param       String  $value  Wert}
+00027 \textcolor{comment}{         * }
+00028 \textcolor{comment}{         */}
+\hypertarget{_view_8php_source_l00029}{}\hyperlink{class_view_a2c338778c398ef0e4040bc377242611a}{00029}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_view_a2c338778c398ef0e4040bc377242611a}{assign}($key, $value) \{
+00030                 $this->view[$key] = $value;  
+00031         \}               
+00032         \textcolor{comment}{}
+00033 \textcolor{comment}{        /**}
+00034 \textcolor{comment}{         * }
+00035 \textcolor{comment}{         * Template setzen}
+00036 \textcolor{comment}{         * }
+00037 \textcolor{comment}{         * @param       String  $template       Templatename}
+00038 \textcolor{comment}{         * }
+00039 \textcolor{comment}{         */}
+\hypertarget{_view_8php_source_l00040}{}\hyperlink{class_view_a956eb733dd01bd0c42f06d71e11afef3}{00040}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_view_a956eb733dd01bd0c42f06d71e11afef3}{setTemplate}($template) \{
+00041                 $this->\textcolor{keyword}{template} = $template;  
+00042         \}  
+00043         \textcolor{comment}{}
+00044 \textcolor{comment}{        /**}
+00045 \textcolor{comment}{         * }
+00046 \textcolor{comment}{         * Template anzeigen}
+00047 \textcolor{comment}{         * }
+00048 \textcolor{comment}{         */}
+\hypertarget{_view_8php_source_l00049}{}\hyperlink{class_view_a0924100c5e1690a4150bb1c446859e07}{00049}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_view_a0924100c5e1690a4150bb1c446859e07}{display}() \{
+00050                 
+00051                 $this->includetemplate = $this->\hyperlink{class_view_a157300b213657f283da80e7430d9e98b}{getTemplateOnFilesystem}($this->\textcolor{keyword}{
+      template});
+00052                 
+00053                 \textcolor{comment}{// Überprüfen ob das angeforderte Template Exitiert}
+00054                 \textcolor{keywordflow}{if} (file\_exists($this->includetemplate)) \{
+00055                         \textcolor{comment}{// Layouttemplate einbinden}
+00056                         include $this->\hyperlink{class_view_a157300b213657f283da80e7430d9e98b}{getTemplateOnFilesystem}($this->layouttemplate
+      );
+00057                         
+00058                 \} \textcolor{keywordflow}{else} \{
+00059                         
+00060                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"Template '\{$this->template\}' nicht gefunden"});
+00061                         
+00062                 \}
+00063                         
+00064         \}
+00065         \textcolor{comment}{}
+00066 \textcolor{comment}{        /**}
+00067 \textcolor{comment}{         * }
+00068 \textcolor{comment}{         * Anhand des Templatenamen den vollen Pfad inkl Datei zurückgeben}
+00069 \textcolor{comment}{         * }
+00070 \textcolor{comment}{         * @param       String  $template       Templatename}
+00071 \textcolor{comment}{         * }
+00072 \textcolor{comment}{         * @return      String  Pfad inkl Dateiname zum Template}
+00073 \textcolor{comment}{         * }
+00074 \textcolor{comment}{         */}
+\hypertarget{_view_8php_source_l00075}{}\hyperlink{class_view_a157300b213657f283da80e7430d9e98b}{00075}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_view_a157300b213657f283da80e7430d9e98b}{getTemplateOnFilesystem}($template)       \{
+00076                 
+00077                 \textcolor{keywordflow}{return} $this->templatePath . DIRECTORY\_SEPARATOR . $template . \textcolor{stringliteral}{".tpl.php"};
+00078                 
+00079         \}       
+00080 \}
+00081 ?>
+\end{DoxyCode}

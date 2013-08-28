@@ -1,0 +1,43 @@
+\hypertarget{_database_8php}{\section{Database.\-php}
+\label{_database_8php}\index{Database.\-php@{Database.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php\textcolor{comment}{}
+00002 \textcolor{comment}{/**}
+00003 \textcolor{comment}{ * }
+00004 \textcolor{comment}{ * Database Klasse erweitert PHP PDO}
+00005 \textcolor{comment}{ * }
+00006 \textcolor{comment}{ * $db = new Database();}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ */}
+\hypertarget{_database_8php_source_l00009}{}\hyperlink{class_database}{00009} \textcolor{keyword}{class }\hyperlink{class_database}{Database} \textcolor{keyword}{extends} PDO \{
+00010         
+00011         \textcolor{keyword}{private} $dsn;
+00012         \textcolor{keyword}{private} $user;
+00013         \textcolor{keyword}{private} $pass;
+00014         \textcolor{comment}{}
+00015 \textcolor{comment}{        /**}
+00016 \textcolor{comment}{         * }
+00017 \textcolor{comment}{         * Konstruktor.}
+00018 \textcolor{comment}{         * }
+00019 \textcolor{comment}{         * Konfiguration laden und der Elternklasse übergeben.}
+00020 \textcolor{comment}{         * }
+00021 \textcolor{comment}{         */}
+\hypertarget{_database_8php_source_l00022}{}\hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{00022}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{\_\_construct}() \{
+00023                 
+00024                 $conf = \(\backslash\)Config::getInstance();
+00025 
+00026                 $this->dsn = $conf->database\_type . \textcolor{stringliteral}{":host="} . $conf->database\_host . \textcolor{stringliteral}{";port="} . $conf->
+      database\_port . \textcolor{stringliteral}{";dbname="} . $conf->database\_name; 
+00027                 
+00028                 $this->user = $conf->database\_user;
+00029                 $this->pass = $conf->database\_pass;
+00030 
+00031                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
+00032                 
+00033         \}
+00034         
+00035 
+00036 \}
+\end{DoxyCode}

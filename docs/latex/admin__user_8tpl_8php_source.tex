@@ -1,0 +1,52 @@
+\hypertarget{admin__user_8tpl_8php}{\section{admin\-\_\-user.\-tpl.\-php}
+\label{admin__user_8tpl_8php}\index{admin\-\_\-user.\-tpl.\-php@{admin\-\_\-user.\-tpl.\-php}}
+}
+
+\begin{DoxyCode}
+00001                 <h1>Benutzer Adminstration</h1>
+00002                 <table \textcolor{keyword}{class}=\textcolor{stringliteral}{"table table-hover"}>
+00003                         <tr><th>Benutername</th><th>Letzer Login</th><th></th></tr>
+00004                         <?php
+00005                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'users'}] as $userid=>$lastlogin) \{
+00006                                 print   \textcolor{stringliteral}{"<tr><td>$userid</td>"} .
+00007                                                 \textcolor{stringliteral}{"<td>$lastlogin</td>"} .
+00008                                                 \textcolor{stringliteral}{"<td class='text-right'><a href=\(\backslash\)"?controller=Admin\(\backslash\)U
+      ser&action=Delete&user=$userid\(\backslash\)" class='btn btn-danger'>Löschen</button></td></tr>"};   
+00009                         \}
+00010                         ?>
+00011                 </table>
+00012                 <a data-toggle=\textcolor{stringliteral}{"modal"} href=\textcolor{stringliteral}{"#addUserModal"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-success"}>Hinzufügen</a>
+00013 
+00014           <!-- Modal -->
+00015           <form \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-user"} method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)User&action=Add"}>
+00016           
+00017           <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"addUserModal"}>
+00018             <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-dialog"}>
+00019               <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-content"}>
+00020                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-header"}>
+00021                   <button type=\textcolor{stringliteral}{"button"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"close"} data-dismiss=\textcolor{stringliteral}{"modal"} aria-hidden=\textcolor{stringliteral}{"true"}>&times;</
+      button>
+00022                   <h4 \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-title"}>Neuen Benutzer hinzufügen</h4>
+00023                 </div>
+00024                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-body"}>
+00025                   <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-group"}>
+00026                             <label \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"name"}>Name</label>
+00027                             <input type=\textcolor{stringliteral}{"text"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"name"} name=\textcolor{stringliteral}{"name"} placeholder=\textcolor{stringliteral}{"
+      Benutzername eingeben"}>
+00028                           </div>
+00029                           <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-group"}>
+00030                             <label \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"pass"}>Passwort</label>
+00031                             <input type=\textcolor{stringliteral}{"text"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"pass"} name=\textcolor{stringliteral}{"pass"} placeholder=\textcolor{stringliteral}{"
+      Passwort eingeben"}>
+00032                           </div>
+00033                 </div>
+00034                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-footer"}>
+00035                   <a href=\textcolor{stringliteral}{"#"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn"} data-dismiss=\textcolor{stringliteral}{"modal"}>Verwerfen</a>
+00036                   <button \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-primary"} type=\textcolor{stringliteral}{"submit"}>Speichern</button>
+00037                 </div>
+00038               </div><!-- /.modal-content -->
+00039             </div><!-- /.modal-dialog -->
+00040           </div><!-- /.modal -->
+00041           
+00042           </form>
+\end{DoxyCode}

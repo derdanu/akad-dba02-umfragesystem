@@ -1,0 +1,162 @@
+\hypertarget{class_view}{\section{View Klassenreferenz}
+\label{class_view}\index{View@{View}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_view_a2c338778c398ef0e4040bc377242611a}{assign} (\$key, \$value)
+\item 
+\hyperlink{class_view_a956eb733dd01bd0c42f06d71e11afef3}{set\-Template} (\$template)
+\item 
+\hyperlink{class_view_a0924100c5e1690a4150bb1c446859e07}{display} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_view_a157300b213657f283da80e7430d9e98b}{get\-Template\-On\-Filesystem} (\$template)
+\end{DoxyCompactItemize}
+\subsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_view_a46020b2880e3138be7fd04e0a2a2944f}{{\bfseries \$template\-Path} = 'templates'}\label{class_view_a46020b2880e3138be7fd04e0a2a2944f}
+
+\item 
+\hypertarget{class_view_a4833469062d3f9086f204d4be985e9bc}{{\bfseries \$template} = 'index'}\label{class_view_a4833469062d3f9086f204d4be985e9bc}
+
+\item 
+\hypertarget{class_view_a6f6d4ba4ff5891b9fcaabf5ab1a888cd}{{\bfseries \$layouttemplate} = '\-\_\-layout'}\label{class_view_a6f6d4ba4ff5891b9fcaabf5ab1a888cd}
+
+\item 
+\hypertarget{class_view_add138b1b1fd0769b37c5338f2aa1316d}{{\bfseries \$includetemplate}}\label{class_view_add138b1b1fd0769b37c5338f2aa1316d}
+
+\item 
+\hypertarget{class_view_ad4ffe360a4edcdce1cf6abe276f1370f}{{\bfseries \$view} = array()}\label{class_view_ad4ffe360a4edcdce1cf6abe276f1370f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+\hyperlink{class_view}{View} Klasse 
+
+Definiert in Zeile \hyperlink{_view_8php_source_l00007}{7} der Datei \hyperlink{_view_8php_source}{View.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_view_a2c338778c398ef0e4040bc377242611a}{\index{View@{View}!assign@{assign}}
+\index{assign@{assign}!View@{View}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}View\-::assign (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value}
+\end{DoxyParamCaption}
+)}}\label{class_view_a2c338778c398ef0e4040bc377242611a}
+Template Variable zuweisen
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$key} & Schlüssel \\
+\hline
+String & {\em \$value} & Wert \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_view_8php_source_l00029}{29} der Datei \hyperlink{_view_8php_source}{View.\-php}.
+
+
+\begin{DoxyCode}
+00029                                              \{
+00030                 $this->view[$key] = $value;  
+00031         \}               
+\end{DoxyCode}
+\hypertarget{class_view_a0924100c5e1690a4150bb1c446859e07}{\index{View@{View}!display@{display}}
+\index{display@{display}!View@{View}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}View\-::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_view_a0924100c5e1690a4150bb1c446859e07}
+Template anzeigen 
+
+Definiert in Zeile \hyperlink{_view_8php_source_l00049}{49} der Datei \hyperlink{_view_8php_source}{View.\-php}.
+
+
+\begin{DoxyCode}
+00049                                   \{
+00050                 
+00051                 $this->includetemplate = $this->\hyperlink{class_view_a157300b213657f283da80e7430d9e98b}{getTemplateOnFilesystem}($this->\textcolor{keyword}{
+      template});
+00052                 
+00053                 \textcolor{comment}{// Überprüfen ob das angeforderte Template Exitiert}
+00054                 \textcolor{keywordflow}{if} (file\_exists($this->includetemplate)) \{
+00055                         \textcolor{comment}{// Layouttemplate einbinden}
+00056                         include $this->\hyperlink{class_view_a157300b213657f283da80e7430d9e98b}{getTemplateOnFilesystem}($this->layouttemplate
+      );
+00057                         
+00058                 \} \textcolor{keywordflow}{else} \{
+00059                         
+00060                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"Template '\{$this->template\}' nicht gefunden"});
+00061                         
+00062                 \}
+00063                         
+00064         \}
+\end{DoxyCode}
+\hypertarget{class_view_a157300b213657f283da80e7430d9e98b}{\index{View@{View}!get\-Template\-On\-Filesystem@{get\-Template\-On\-Filesystem}}
+\index{get\-Template\-On\-Filesystem@{get\-Template\-On\-Filesystem}!View@{View}}
+\subsubsection[{get\-Template\-On\-Filesystem}]{\setlength{\rightskip}{0pt plus 5cm}View\-::get\-Template\-On\-Filesystem (
+\begin{DoxyParamCaption}
+\item[{}]{\$template}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_view_a157300b213657f283da80e7430d9e98b}
+Anhand des Templatenamen den vollen Pfad inkl Datei zurückgeben
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$template} & Templatename\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+String Pfad inkl Dateiname zum Template 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_view_8php_source_l00075}{75} der Datei \hyperlink{_view_8php_source}{View.\-php}.
+
+
+\begin{DoxyCode}
+00075                                                                  \{
+00076                 
+00077                 \textcolor{keywordflow}{return} $this->templatePath . DIRECTORY\_SEPARATOR . $template . \textcolor{stringliteral}{".tpl.php"};
+00078                 
+00079         \}       
+\end{DoxyCode}
+\hypertarget{class_view_a956eb733dd01bd0c42f06d71e11afef3}{\index{View@{View}!set\-Template@{set\-Template}}
+\index{set\-Template@{set\-Template}!View@{View}}
+\subsubsection[{set\-Template}]{\setlength{\rightskip}{0pt plus 5cm}View\-::set\-Template (
+\begin{DoxyParamCaption}
+\item[{}]{\$template}
+\end{DoxyParamCaption}
+)}}\label{class_view_a956eb733dd01bd0c42f06d71e11afef3}
+Template setzen
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$template} & Templatename \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_view_8php_source_l00040}{40} der Datei \hyperlink{_view_8php_source}{View.\-php}.
+
+
+\begin{DoxyCode}
+00040                                                \{
+00041                 $this->\textcolor{keyword}{template} = $template;  
+00042         \}  
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+View.\-php\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\hypertarget{class_controller_1_1_admin_1_1_survey}{\section{Controller\textbackslash{}Admin\textbackslash{}Survey Klassenreferenz}
+\label{class_controller_1_1_admin_1_1_survey}\index{Controller\textbackslash{}\-Admin\textbackslash{}\-Survey@{Controller\textbackslash{}\-Admin\textbackslash{}\-Survey}}
+}
+Klassendiagramm für Controller\textbackslash{}Admin\textbackslash{}Survey\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_controller_1_1_admin_1_1_survey}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\-\_\-\-Action} ()
+\item 
+\hyperlink{class_controller_1_1_admin_1_1_survey_a618d9d0d906df279c7b34ae9458fa977}{Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Admin Umfrage Controller 
+
+Definiert in Zeile \hyperlink{_controller_2_admin_2_survey_8php_source_l00010}{10} der Datei \hyperlink{_controller_2_admin_2_survey_8php_source}{Controller/\-Admin/\-Survey.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_controller_1_1_admin_1_1_survey_a618d9d0d906df279c7b34ae9458fa977}{\index{Controller\-::\-Admin\-::\-Survey@{Controller\-::\-Admin\-::\-Survey}!Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action@{Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action}}
+\index{Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action@{Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action}!Controller::Admin::Survey@{Controller\-::\-Admin\-::\-Survey}}
+\subsubsection[{Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Admin\textbackslash{}\-Survey\-::\-Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_admin_1_1_survey_a618d9d0d906df279c7b34ae9458fa977}
+neue Umfragen hinzufügen 
+
+Definiert in Zeile \hyperlink{_controller_2_admin_2_survey_8php_source_l00033}{33} der Datei \hyperlink{_controller_2_admin_2_survey_8php_source}{Controller/\-Admin/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00033                                           \{
+00034                 
+00035                 $this->\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\_Action}();
+00036                 
+00037         \}
+\end{DoxyCode}
+\hypertarget{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{\index{Controller\-::\-Admin\-::\-Survey@{Controller\-::\-Admin\-::\-Survey}!Index\-\_\-\-Action@{Index\-\_\-\-Action}}
+\index{Index\-\_\-\-Action@{Index\-\_\-\-Action}!Controller::Admin::Survey@{Controller\-::\-Admin\-::\-Survey}}
+\subsubsection[{Index\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Admin\textbackslash{}\-Survey\-::\-Index\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}
+Default \hyperlink{class_controller_1_1_index}{Index} Get Action 
+
+Definiert in Zeile \hyperlink{_controller_2_admin_2_survey_8php_source_l00017}{17} der Datei \hyperlink{_controller_2_admin_2_survey_8php_source}{Controller/\-Admin/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00017                                        \{
+00018                 
+00019                 $model = new \(\backslash\)Model\(\backslash\)Survey();
+00020                 
+00021                 $view = new \(\backslash\)View();
+00022                 $view->setTemplate(\textcolor{stringliteral}{'admin\_surveys'});
+00023                 $view->assign(\textcolor{stringliteral}{'surveys'}, $model->getSurveys());
+00024                 $view->display();
+00025                 
+00026         \}       
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Controller/\-Admin/\-Survey.\-php\end{DoxyCompactItemize}

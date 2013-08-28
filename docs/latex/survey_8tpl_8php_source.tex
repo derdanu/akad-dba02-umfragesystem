@@ -1,0 +1,30 @@
+\hypertarget{survey_8tpl_8php}{\section{survey.\-tpl.\-php}
+\label{survey_8tpl_8php}\index{survey.\-tpl.\-php@{survey.\-tpl.\-php}}
+}
+
+\begin{DoxyCode}
+00001       
+00002       <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"jumbotron"}>
+00003                 <form role=\textcolor{stringliteral}{"form"} method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{"?controller=Survey&action=Save&survey=<?php print
+       $this->view['survey\_id']; ?>"}>
+00004                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel panel-default"}>
+00005                         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-heading"}>
+00006                         <h3 \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-title"}><?php print $this->view[\textcolor{stringliteral}{'survey\_name'}]; ?></h3>
+00007                         </div>
+00008                         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-body"}>
+00009                                 <?php 
+00010                                 \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_items'}] as $key=>$value) \{
+00011                                         print   \textcolor{stringliteral}{"<div class='checkbox'>"} .
+00012                                                         \textcolor{stringliteral}{"<label>"} .
+00013                                                         \textcolor{stringliteral}{"<input type='checkbox' value='$key'
+       name='items[]'>$value"} .
+00014                                                         \textcolor{stringliteral}{"</label>"} .
+00015                                                         \textcolor{stringliteral}{"</div>"};       
+00016                                 \}
+00017                                 ?>
+00018                                 <button type=\textcolor{stringliteral}{"submit"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-primary"}>Absenden</button>
+00019                         </div>
+00020                 </div>
+00021                 </form>
+00022       </div>
+\end{DoxyCode}

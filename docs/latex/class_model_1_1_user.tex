@@ -1,0 +1,81 @@
+\hypertarget{class_model_1_1_user}{\section{Model\textbackslash{}User Klassenreferenz}
+\label{class_model_1_1_user}\index{Model\textbackslash{}\-User@{Model\textbackslash{}\-User}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}{check\-Credentials} (\$user, \$pass)
+\item 
+\hyperlink{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{get\-Users} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Benutzer Datenmodell 
+
+Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00009}{9} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}{\index{Model\-::\-User@{Model\-::\-User}!check\-Credentials@{check\-Credentials}}
+\index{check\-Credentials@{check\-Credentials}!Model::User@{Model\-::\-User}}
+\subsubsection[{check\-Credentials}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-User\-::check\-Credentials (
+\begin{DoxyParamCaption}
+\item[{}]{\$user, }
+\item[{}]{\$pass}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}
+Berechtigung überprüfen
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$user} & Benutzername \\
+\hline
+String & {\em \$pass} & Passwort\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Boolean 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00022}{22} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
+
+
+\begin{DoxyCode}
+00022                                                        \{
+00023                 
+00024                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00025                 
+00026         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{\index{Model\-::\-User@{Model\-::\-User}!get\-Users@{get\-Users}}
+\index{get\-Users@{get\-Users}!Model::User@{Model\-::\-User}}
+\subsubsection[{get\-Users}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-User\-::get\-Users (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}
+Benutzer holen
+
+\begin{DoxyReturn}{Rückgabe}
+Array 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00035}{35} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
+
+
+\begin{DoxyCode}
+00035                                    \{
+00036                 
+00037                 \textcolor{keywordflow}{return} array(\textcolor{stringliteral}{"sepp"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()), \textcolor{stringliteral}{"franz"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()), \textcolor{stringliteral}{"
+      test"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()));
+00038         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Model/\-User.\-php\end{DoxyCompactItemize}

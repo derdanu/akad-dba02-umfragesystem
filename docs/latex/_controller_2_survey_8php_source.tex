@@ -1,0 +1,83 @@
+\hypertarget{_controller_2_survey_8php}{\section{Controller/\-Survey.php}
+\label{_controller_2_survey_8php}\index{Survey.\-php@{Survey.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00002 \textcolor{keyword}{namespace }Controller;
+00003 \textcolor{comment}{}
+00004 \textcolor{comment}{/**}
+00005 \textcolor{comment}{ * }
+00006 \textcolor{comment}{ * Umfrage Controller}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ */}
+\hypertarget{_controller_2_survey_8php_source_l00010}{}\hyperlink{class_controller_1_1_survey}{00010} \textcolor{keyword}{class }\hyperlink{class_controller_1_1_survey}{Survey} \{
+00011         
+00012         \textcolor{keyword}{private} $view;
+00013         \textcolor{keyword}{private} $model;
+00014         \textcolor{keyword}{private} $survey;
+00015         \textcolor{comment}{}
+00016 \textcolor{comment}{        /**}
+00017 \textcolor{comment}{         * }
+00018 \textcolor{comment}{         * Kontruktor}
+00019 \textcolor{comment}{         *  }
+00020 \textcolor{comment}{         */}
+\hypertarget{_controller_2_survey_8php_source_l00021}{}\hyperlink{class_controller_1_1_survey_a96fc5091aa3b11390854987ecf667f15}{00021}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_a96fc5091aa3b11390854987ecf667f15}{\_\_construct}() \{
+00022                 
+00023                 $this->view = new \(\backslash\)View();
+00024                 $this->model = new \(\backslash\)Model\(\backslash\)Survey();
+00025                 $this->survey = intval($\_GET[\textcolor{stringliteral}{'survey'}]);
+00026                 
+00027         \}
+00028         \textcolor{comment}{}
+00029 \textcolor{comment}{        /**}
+00030 \textcolor{comment}{         * }
+00031 \textcolor{comment}{         * Default Index Get Action}
+00032 \textcolor{comment}{         * }
+00033 \textcolor{comment}{         */}
+\hypertarget{_controller_2_survey_8php_source_l00034}{}\hyperlink{class_controller_1_1_survey_ab9a687bf4e1fe3c36b13ff873e94b212}{00034}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_ab9a687bf4e1fe3c36b13ff873e94b212}{Index\_Action}() \{
+00035                 
+00036 
+00037 
+00038                 \textcolor{keywordflow}{if} ($this->survey == 0) \{
+00039                         
+00040                         $this->view->setTemplate(\textcolor{stringliteral}{'surveys'});
+00041                         $this->view->assign(\textcolor{stringliteral}{'surveys'}, $this->model->getSurveys());
+00042                         $this->view->display();
+00043                                                 
+00044                 \} \textcolor{keywordflow}{else} \{
+00045 
+00046                         $this->view->setTemplate(\textcolor{stringliteral}{'survey'});
+00047                         $this->view->assign(\textcolor{stringliteral}{'survey\_id'}, $this->survey);
+00048                         $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
+00049                         $this->view->assign(\textcolor{stringliteral}{'survey\_items'}, $this->model->getSurveyItems($this->survey));
+00050                         $this->view->display();
+00051         
+00052                         
+00053                 \}
+00054                 
+00055         \}
+00056         \textcolor{comment}{}
+00057 \textcolor{comment}{        /**}
+00058 \textcolor{comment}{         * }
+00059 \textcolor{comment}{         * Umfrage Ergebnisse speichern}
+00060 \textcolor{comment}{         * }
+00061 \textcolor{comment}{         * Auswertung anzeigen}
+00062 \textcolor{comment}{         * }
+00063 \textcolor{comment}{         */}
+\hypertarget{_controller_2_survey_8php_source_l00064}{}\hyperlink{class_controller_1_1_survey_a1a671d9a36a993bab69c12c16fcc60cc}{00064}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_a1a671d9a36a993bab69c12c16fcc60cc}{Save\_POST\_Action}() \{
+00065 
+00066                 $this->view->setTemplate(\textcolor{stringliteral}{'survey\_result'});
+00067                 $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
+00068                 $this->view->assign(\textcolor{stringliteral}{'survey\_cnt'}, $this->model->getSurveyItemCount($this->survey));
+00069                 $this->view->assign(\textcolor{stringliteral}{'survey\_result'}, $this->model->getSurveyResult($this->survey));
+00070                 $this->view->display();
+00071                                 
+00072         \}
+00073                 
+00074 \}
+00075 
+00076 
+00077 ?>
+\end{DoxyCode}

@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
 <title>DBA02: Config.php Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -29,7 +37,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.1.2 -->
+<!-- Erzeugt von Doxygen 1.8.5 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </script>
@@ -61,6 +69,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
       <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_config_8php_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -75,11 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Config.php</div>  </div>
@@ -97,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Die Werte stehen in der Ini Datei und können direkt abgerufen werden.</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="class_config.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_config.html">Config</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_config.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_config.html">Config</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">private</span> $config = array();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
@@ -120,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">         * Konfigurationsdatei einlesen</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_config.html#ac1c75b1b53a17a028629ba8127e06f82">   36</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">function</span> <a class="code" href="class_config.html#ac1c75b1b53a17a028629ba8127e06f82">__construct</a>() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_config.html#ac1c75b1b53a17a028629ba8127e06f82">   36</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">function</span> <a class="code" href="class_config.html#ac1c75b1b53a17a028629ba8127e06f82">__construct</a>() {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                $this-&gt;config = parse_ini_file(CONFIGFILE);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div>
@@ -135,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         * @return      String  Wert</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">   51</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">__get</a>($key) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">   51</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">__get</a>($key) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">if</span> (array_key_exists($key, $this-&gt;config)) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <span class="keywordflow">return</span> $this-&gt;config[$key];</div>
@@ -146,12 +164,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="ttc" id="class_config_html_ac1c75b1b53a17a028629ba8127e06f82"><div class="ttname"><a href="class_config.html#ac1c75b1b53a17a028629ba8127e06f82">Config\__construct</a></div><div class="ttdeci">__construct()</div><div class="ttdef"><b>Definition:</b> <a href="_config_8php_source.html#l00036">Config.php:36</a></div></div>
+<div class="ttc" id="class_config_html"><div class="ttname"><a href="class_config.html">Config</a></div><div class="ttdef"><b>Definition:</b> <a href="_config_8php_source.html#l00013">Config.php:13</a></div></div>
+<div class="ttc" id="class_config_html_aeb4233e287af07c75fff2d77e28a1eba"><div class="ttname"><a href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">Config\__get</a></div><div class="ttdeci">__get($key)</div><div class="ttdef"><b>Definition:</b> <a href="_config_8php_source.html#l00051">Config.php:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Erzeugt am Mit Aug 28 2013 10:31:02 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li><li class="navelem"><b>Config.php</b></li>
+    <li class="footer">Erzeugt am Mit Aug 28 2013 13:11:19 für DBA02 von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

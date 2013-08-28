@@ -1,0 +1,75 @@
+\hypertarget{class_redirect}{\section{Redirect Klassenreferenz}
+\label{class_redirect}\index{Redirect@{Redirect}}
+}
+\subsection*{Öffentliche, statische Methoden}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_redirect_aa19514457e9dddc565309a40f2ecc66c}{Header} (\$url)
+\item 
+static \hyperlink{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{to\-Controller} (\$controller)
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+\hyperlink{class_redirect}{Redirect} Klasse 
+
+Definiert in Zeile \hyperlink{_redirect_8php_source_l00007}{7} der Datei \hyperlink{_redirect_8php_source}{Redirect.\-php}.
+
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_redirect_aa19514457e9dddc565309a40f2ecc66c}{\index{Redirect@{Redirect}!Header@{Header}}
+\index{Header@{Header}!Redirect@{Redirect}}
+\subsubsection[{Header}]{\setlength{\rightskip}{0pt plus 5cm}static Redirect\-::\-Header (
+\begin{DoxyParamCaption}
+\item[{}]{\$url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_redirect_aa19514457e9dddc565309a40f2ecc66c}
+Header \hyperlink{class_redirect}{Redirect} durchführen
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$url} & U\-R\-L \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_redirect_8php_source_l00016}{16} der Datei \hyperlink{_redirect_8php_source}{Redirect.\-php}.
+
+
+\begin{DoxyCode}
+00016                                             \{
+00017                 
+00018                 header(\textcolor{stringliteral}{"Location: $url"});
+00019         \}
+\end{DoxyCode}
+\hypertarget{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{\index{Redirect@{Redirect}!to\-Controller@{to\-Controller}}
+\index{to\-Controller@{to\-Controller}!Redirect@{Redirect}}
+\subsubsection[{to\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}static Redirect\-::to\-Controller (
+\begin{DoxyParamCaption}
+\item[{}]{\$controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}
+Controller \hyperlink{class_redirect}{Redirect} durchführen
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$controller} & Controllername \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_redirect_8php_source_l00028}{28} der Datei \hyperlink{_redirect_8php_source}{Redirect.\-php}.
+
+
+\begin{DoxyCode}
+00028                                                          \{
+00029                 
+00030                 header(\textcolor{stringliteral}{"Location: index.php?controller=$controller"});
+00031         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Redirect.\-php\end{DoxyCompactItemize}

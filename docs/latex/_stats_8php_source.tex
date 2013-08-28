@@ -1,0 +1,35 @@
+\hypertarget{_stats_8php}{\section{Stats.\-php}
+\label{_stats_8php}\index{Stats.\-php@{Stats.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00002 \textcolor{keyword}{namespace }Controller\(\backslash\)Admin;
+00003 \textcolor{comment}{}
+00004 \textcolor{comment}{/**}
+00005 \textcolor{comment}{ * }
+00006 \textcolor{comment}{ * Admin Statistik Controller}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ */}
+\hypertarget{_stats_8php_source_l00010}{}\hyperlink{class_controller_1_1_admin_1_1_stats}{00010} \textcolor{keyword}{class }\hyperlink{class_controller_1_1_admin_1_1_stats}{Stats} \textcolor{keyword}{extends} \hyperlink{class_controller_1_1_admin_1_1_base}{Base} \{
+00011         
+00012         \textcolor{comment}{}
+00013 \textcolor{comment}{        /**}
+00014 \textcolor{comment}{         * }
+00015 \textcolor{comment}{         * Default Index Get Action}
+00016 \textcolor{comment}{         * }
+00017 \textcolor{comment}{         */}
+\hypertarget{_stats_8php_source_l00018}{}\hyperlink{class_controller_1_1_admin_1_1_stats_a04ab2733a1fb549ca76f4c78d946f5c7}{00018}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_stats_a04ab2733a1fb549ca76f4c78d946f5c7}{Index\_Action}() \{
+00019                 
+00020                 $model = new \(\backslash\)Model\(\backslash\)Survey();
+00021                 
+00022                 $view = new \(\backslash\)View();
+00023                 $view->setTemplate(\textcolor{stringliteral}{'admin\_stats'});
+00024                 $view->assign(\textcolor{stringliteral}{'stats'}, $model->getStats());
+00025                 $view->display();
+00026                 
+00027         \}       
+00028 \}
+00029 ?>
+\end{DoxyCode}

@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
 <title>DBA02: UserSession.php Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -29,7 +37,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.1.2 -->
+<!-- Erzeugt von Doxygen 1.8.5 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </script>
@@ -61,6 +69,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
       <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_user_session_8php_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -75,11 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li><li class="navelem"><a class="el" href="dir_cd8010ab25fcdf3b558acc16dbba1dc1.html">Controller</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UserSession.php</div>  </div>
@@ -94,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_controller_1_1_user_session.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller_1_1_user_session.html">UserSession</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_controller_1_1_user_session.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller_1_1_user_session.html">UserSession</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="comment"></span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">        /**</span></div>
@@ -102,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * Login Formular anzeigen</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="class_controller_1_1_user_session.html#a3ab4801a36620e4a99cf3066970ebaf4">   18</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_user_session.html#a3ab4801a36620e4a99cf3066970ebaf4">Login_Action</a>() {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_controller_1_1_user_session.html#a3ab4801a36620e4a99cf3066970ebaf4">   18</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_user_session.html#a3ab4801a36620e4a99cf3066970ebaf4">Login_Action</a>() {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                $view = new \View();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                $view-&gt;setTemplate(<span class="stringliteral">&#39;login&#39;</span>);</div>
@@ -116,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">         * Verarbeitung der Logindaten</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_controller_1_1_user_session.html#a0b902f49ccbff4387dcf5655874cbb1c">   32</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_user_session.html#a0b902f49ccbff4387dcf5655874cbb1c">Login_POST_Action</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_controller_1_1_user_session.html#a0b902f49ccbff4387dcf5655874cbb1c">   32</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_user_session.html#a0b902f49ccbff4387dcf5655874cbb1c">Login_POST_Action</a>() {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                $user = $_GET[<span class="stringliteral">&#39;user&#39;</span>];</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                $pass = $_GET[<span class="stringliteral">&#39;pass&#39;</span>];</div>
@@ -125,8 +143,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">if</span> ($model-&gt;checkCredentials($user, $pass)) {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        \Session::authUser();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        \Redirect::toController(<span class="stringliteral">&quot;Index&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        <a class="code" href="class_session.html#ab5ee063ee1dd4a5026c1b87caf98c9a0">\Session::authUser</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <a class="code" href="class_redirect.html#a5a8f456a5318387c966b24c0cbe2c083">\Redirect::toController</a>(<span class="stringliteral">&quot;Index&quot;</span>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                </div>
@@ -142,10 +160,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">         * Logout Action</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="class_controller_1_1_user_session.html#a2078537fe028f203be44fdfe2b3c0036">   58</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_user_session.html#a2078537fe028f203be44fdfe2b3c0036">Logout_Action</a>() {</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_controller_1_1_user_session.html#a2078537fe028f203be44fdfe2b3c0036">   58</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_user_session.html#a2078537fe028f203be44fdfe2b3c0036">Logout_Action</a>() {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                \Session::destroy();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                \Redirect::toController(<span class="stringliteral">&quot;Index&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="class_session.html#a5dde74b6fa44649e5b73cb1096930dd4">\Session::destroy</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="class_redirect.html#a5a8f456a5318387c966b24c0cbe2c083">\Redirect::toController</a>(<span class="stringliteral">&quot;Index&quot;</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                </div>
@@ -153,12 +171,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;?&gt;</div>
+<div class="ttc" id="class_controller_1_1_user_session_html_a0b902f49ccbff4387dcf5655874cbb1c"><div class="ttname"><a href="class_controller_1_1_user_session.html#a0b902f49ccbff4387dcf5655874cbb1c">Controller\UserSession\Login_POST_Action</a></div><div class="ttdeci">Login_POST_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_user_session_8php_source.html#l00032">UserSession.php:32</a></div></div>
+<div class="ttc" id="class_session_html_ab5ee063ee1dd4a5026c1b87caf98c9a0"><div class="ttname"><a href="class_session.html#ab5ee063ee1dd4a5026c1b87caf98c9a0">Session\authUser</a></div><div class="ttdeci">static authUser()</div><div class="ttdef"><b>Definition:</b> <a href="_session_8php_source.html#l00075">Session.php:75</a></div></div>
+<div class="ttc" id="class_controller_1_1_user_session_html_a2078537fe028f203be44fdfe2b3c0036"><div class="ttname"><a href="class_controller_1_1_user_session.html#a2078537fe028f203be44fdfe2b3c0036">Controller\UserSession\Logout_Action</a></div><div class="ttdeci">Logout_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_user_session_8php_source.html#l00058">UserSession.php:58</a></div></div>
+<div class="ttc" id="class_controller_1_1_user_session_html"><div class="ttname"><a href="class_controller_1_1_user_session.html">Controller\UserSession</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_session_8php_source.html#l00010">UserSession.php:10</a></div></div>
+<div class="ttc" id="class_redirect_html_a5a8f456a5318387c966b24c0cbe2c083"><div class="ttname"><a href="class_redirect.html#a5a8f456a5318387c966b24c0cbe2c083">Redirect\toController</a></div><div class="ttdeci">static toController($controller)</div><div class="ttdef"><b>Definition:</b> <a href="_redirect_8php_source.html#l00028">Redirect.php:28</a></div></div>
+<div class="ttc" id="class_session_html_a5dde74b6fa44649e5b73cb1096930dd4"><div class="ttname"><a href="class_session.html#a5dde74b6fa44649e5b73cb1096930dd4">Session\destroy</a></div><div class="ttdeci">static destroy()</div><div class="ttdef"><b>Definition:</b> <a href="_session_8php_source.html#l00114">Session.php:114</a></div></div>
+<div class="ttc" id="class_controller_1_1_user_session_html_a3ab4801a36620e4a99cf3066970ebaf4"><div class="ttname"><a href="class_controller_1_1_user_session.html#a3ab4801a36620e4a99cf3066970ebaf4">Controller\UserSession\Login_Action</a></div><div class="ttdeci">Login_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_user_session_8php_source.html#l00018">UserSession.php:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Erzeugt am Mit Aug 28 2013 10:31:02 für DBA02 von &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li><li class="navelem"><a class="el" href="dir_cd8010ab25fcdf3b558acc16dbba1dc1.html">Controller</a></li><li class="navelem"><b>UserSession.php</b></li>
+    <li class="footer">Erzeugt am Mit Aug 28 2013 13:11:19 für DBA02 von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

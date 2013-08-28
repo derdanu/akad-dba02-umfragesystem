@@ -1,0 +1,28 @@
+\hypertarget{survey__result_8tpl_8php}{\section{survey\-\_\-result.\-tpl.\-php}
+\label{survey__result_8tpl_8php}\index{survey\-\_\-result.\-tpl.\-php@{survey\-\_\-result.\-tpl.\-php}}
+}
+
+\begin{DoxyCode}
+00001       <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"jumbotron"}>
+00002         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel panel-default"}>
+00003                         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-heading"}>
+00004                         <h3 \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-title"}><?php print $this->view[\textcolor{stringliteral}{'survey\_name'}]; ?></h3>
+00005                         </div>
+00006                         <table \textcolor{keyword}{class}=\textcolor{stringliteral}{"table table-bordered table-survey"}>
+00007                         <?php
+00008                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_result'}] as $key=>$value) \{
+00009                                 $percent = round($key / $this->view[\textcolor{stringliteral}{'survey\_cnt'}] * 100);
+00010                                 print   \textcolor{stringliteral}{"<tr><td>$value</td>"} .
+00011                                                 \textcolor{stringliteral}{"<td>"} .
+00012                                                 \textcolor{stringliteral}{"<div style='background-color:#428BCA; width:\{$percent\}%;
+       padding-left:10px; border-radius: 18px;'>$key ($percent %)</div>"} .
+00013                                                 \textcolor{stringliteral}{"</td>"} .
+00014                                                 \textcolor{stringliteral}{"</tr>"};        
+00015                         \}
+00016                         ?>
+00017                         
+00018                         </table>
+00019                         </div>
+00020                 </div>
+00021       </div>
+\end{DoxyCode}

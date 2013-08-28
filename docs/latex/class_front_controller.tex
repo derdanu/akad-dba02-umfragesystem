@@ -1,0 +1,106 @@
+\hypertarget{class_front_controller}{\section{Front\-Controller Klassenreferenz}
+\label{class_front_controller}\index{Front\-Controller@{Front\-Controller}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_front_controller_ad0793ef177eb6e77a45a476567b531b2}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_front_controller_aee82b9818875d037d6312b856f76403c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_front_controller_ac37e637f55efd166dfcce76240310cd3}{{\bfseries \$controller}}\label{class_front_controller_ac37e637f55efd166dfcce76240310cd3}
+
+\item 
+\hypertarget{class_front_controller_a281612757251bf7b0398826d6d9e1450}{{\bfseries \$action}}\label{class_front_controller_a281612757251bf7b0398826d6d9e1450}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+\hyperlink{class_front_controller}{Front\-Controller} Klasse
+
+Get Request\-: ?controller=test\&action=machwas
+
+Ergebsniss\-: Automatisches Einbinden der Controllerklasse \char`\"{}test\char`\"{} und Aufruf der Methode machwas\-\_\-\-Action()
+
+Beim gleichen Request als Post wird die Methode machwas\-\_\-\-Action\-\_\-\-P\-O\-S\-T() aufgerufen 
+
+Definiert in Zeile \hyperlink{_front_controller_8php_source_l00018}{18} der Datei \hyperlink{_front_controller_8php_source}{Front\-Controller.\-php}.
+
+
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\hypertarget{class_front_controller_ad0793ef177eb6e77a45a476567b531b2}{\index{Front\-Controller@{Front\-Controller}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!FrontController@{Front\-Controller}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}Front\-Controller\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_front_controller_ad0793ef177eb6e77a45a476567b531b2}
+Konstruktor
+
+\$c = new Front\-Crontroller() \$c-\/$>$\hyperlink{class_front_controller_aee82b9818875d037d6312b856f76403c}{run()}; 
+
+Definiert in Zeile \hyperlink{_front_controller_8php_source_l00031}{31} der Datei \hyperlink{_front_controller_8php_source}{Front\-Controller.\-php}.
+
+
+\begin{DoxyCode}
+00031                                       \{
+00032 
+00033                 $controller = $\_GET[\textcolor{stringliteral}{'controller'}];              
+00034                 \textcolor{comment}{// Workaround magic\_quotes() . Ab PHP 5.4 DEPRICATED}
+00035                 \textcolor{keywordflow}{if} (get\_magic\_quotes\_gpc()) \{
+00036                         $controller =   str\_replace(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)"}, \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"}, $controller); 
+00037                 \}
+00038                 
+00039                 $action = $\_GET[\textcolor{stringliteral}{'action'}];
+00040                 
+00041                 
+00042                 $this->controller = !empty($controller) ? CONTROLLERNAMESPACE . $controller : 
+      CONTROLLERNAMESPACE . \textcolor{stringliteral}{"Index"};
+00043 
+00044                 $this->action = !empty($action) ? $action : \textcolor{stringliteral}{"Index"};
+00045                 \textcolor{keywordflow}{if} ($\_SERVER[\textcolor{stringliteral}{'REQUEST\_METHOD'}] == \textcolor{stringliteral}{'POST'}) \{
+00046                         $this->action .= \textcolor{stringliteral}{"\_POST"};
+00047                 \}
+00048         $this->action .= \textcolor{stringliteral}{"\_Action"};
+00049 
+00050         \}
+\end{DoxyCode}
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_front_controller_aee82b9818875d037d6312b856f76403c}{\index{Front\-Controller@{Front\-Controller}!run@{run}}
+\index{run@{run}!FrontController@{Front\-Controller}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}Front\-Controller\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_front_controller_aee82b9818875d037d6312b856f76403c}
+\hyperlink{class_front_controller}{Front\-Controller} ausführen 
+
+Definiert in Zeile \hyperlink{_front_controller_8php_source_l00057}{57} der Datei \hyperlink{_front_controller_8php_source}{Front\-Controller.\-php}.
+
+
+\begin{DoxyCode}
+00057                               \{
+00058 
+00059                 $controller = \textcolor{keyword}{new} $this->controller();
+00060 
+00061                 \textcolor{keywordflow}{if}(in\_array($this->action, get\_class\_methods($controller))) \{
+00062                 $controller->\{$this->action\}();
+00063         \} \textcolor{keywordflow}{else} \{
+00064                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"'\{$this->controller\}' hat keine Aktion '\{$this->action\}'"});
+00065         \}
+00066         
+00067   
+00068         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Front\-Controller.\-php\end{DoxyCompactItemize}

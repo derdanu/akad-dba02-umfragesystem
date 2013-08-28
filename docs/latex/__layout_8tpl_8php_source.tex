@@ -1,0 +1,108 @@
+\hypertarget{__layout_8tpl_8php}{\section{\-\_\-layout.\-tpl.\-php}
+\label{__layout_8tpl_8php}\index{\-\_\-layout.\-tpl.\-php@{\-\_\-layout.\-tpl.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <!DOCTYPE html>
+00002 <html lang=\textcolor{stringliteral}{"en"}>
+00003   <head>
+00004     <meta charset=\textcolor{stringliteral}{"utf-8"}>
+00005     <meta name=\textcolor{stringliteral}{"viewport"} content=\textcolor{stringliteral}{"width=device-width, initial-scale=1.0"}>
+00006     <meta name=\textcolor{stringliteral}{"description"} content=\textcolor{stringliteral}{""}>
+00007     <meta name=\textcolor{stringliteral}{"author"} content=\textcolor{stringliteral}{""}>
+00008     <link rel=\textcolor{stringliteral}{"shortcut icon"} href=\textcolor{stringliteral}{"ico/favicon.gif"}>
+00009 
+00010     <title>DBA02</title>
+00011 
+00012     <!-- Bootstrap core CSS -->
+00013     <link href=\textcolor{stringliteral}{"css/bootstrap.css"} rel=\textcolor{stringliteral}{"stylesheet"}>
+00014 
+00015     <!-- Custom styles \textcolor{keywordflow}{for} \textcolor{keyword}{this} \textcolor{keyword}{template} -->
+00016     <link href=\textcolor{stringliteral}{"css/navbar-fixed-top.css"} rel=\textcolor{stringliteral}{"stylesheet"}>
+00017 
+00018     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+00019     <!--[\textcolor{keywordflow}{if} lt IE 9]>
+00020       <script src=\textcolor{stringliteral}{"js/html5shiv.js"}></script>s
+00021       <script src=\textcolor{stringliteral}{"js/respond.min.js"}></script>
+00022     <![endif]-->
+00023   </head>
+00024 
+00025   <body>
+00026 
+00027     <!-- Fixed navbar -->
+00028     <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"navbar navbar-default navbar-fixed-top"}>
+00029       <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"container"}>
+00030         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"navbar-header"}>
+00031           <button type=\textcolor{stringliteral}{"button"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"navbar-toggle"} data-toggle=\textcolor{stringliteral}{"collapse"} data-target=\textcolor{stringliteral}{".navbar-collapse"}
+      >
+00032             <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"icon-bar"}></span>
+00033             <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"icon-bar"}></span>
+00034             <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"icon-bar"}></span>
+00035           </button>
+00036           <a \textcolor{keyword}{class}=\textcolor{stringliteral}{"navbar-brand"} href=\textcolor{stringliteral}{"index.php"}>DBA02</a>
+00037         </div>
+00038         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"navbar-collapse collapse"}>
+00039           <ul \textcolor{keyword}{class}=\textcolor{stringliteral}{"nav navbar-nav"}>
+00040             <li><a href=\textcolor{stringliteral}{"?controller=Survey"}>Umfragen</a></li>
+00041             <?php \textcolor{keywordflow}{if} (\(\backslash\)\hyperlink{class_session_a23cee49624385c6af65af96fb1c682f6}{Session::isUserAuthed}()) \{ ?>
+00042             <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown"}>
+00043               <a href=\textcolor{stringliteral}{"#"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown-toggle"} data-toggle=\textcolor{stringliteral}{"dropdown"}>Administration <b \textcolor{keyword}{class}=\textcolor{stringliteral}{"caret"}></
+      b></a>
+00044               <ul \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown-menu"}>
+00045                 <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown-header"}>Verwaltung</li>
+00046                 <li><a href=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)User"}>Benutzer</a></li>
+00047                 <li><a href=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)Survey"}>Umfragen</a></li>
+00048                 <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"divider"}></li>
+00049                 <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown-header"}>Statistik</li>
+00050                 <li><a href=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)Stats"}>Umfragen</a></li>
+00051               </ul>
+00052              <?php \} ?>
+00053             </li>
+00054           </ul>
+00055           <ul \textcolor{keyword}{class}=\textcolor{stringliteral}{"nav navbar-nav navbar-right"}>
+00056                                 <li><a href=\textcolor{stringliteral}{"docs/html/index.html"} target=\textcolor{stringliteral}{"\_blank"}>Code Dokumentation</a></
+      li>
+00057         
+00058             <?php \textcolor{keywordflow}{if} (\(\backslash\)\hyperlink{class_session_a23cee49624385c6af65af96fb1c682f6}{Session::isUserAuthed}()) \{ ?>
+00059                                 <li><a href=\textcolor{stringliteral}{"?controller=UserSession&action=Logout"}>Logout</a></li>
+00060             <?php \} \textcolor{keywordflow}{else} \{ ?>
+00061                           <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown"}>
+00062                             <a \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown-toggle"} href=\textcolor{stringliteral}{"#"} data-toggle=\textcolor{stringliteral}{"dropdown"}>Login <strong \textcolor{keyword}{class}=\textcolor{stringliteral}{
+      "caret"}></strong></a>
+00063                             <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"dropdown-menu"} style=\textcolor{stringliteral}{"padding: 15px; padding-bottom: 0px;"}>
+00064                                 
+00065                                 <link href=\textcolor{stringliteral}{"css/signin.css"} rel=\textcolor{stringliteral}{"stylesheet"}>
+00066         
+00067                                                 <form \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-signin"} method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{"
+      ?controller=UserSession&action=Login"}>
+00068                                                 <input type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"user"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} 
+      placeholder=\textcolor{stringliteral}{"Benutzername"} autofocus>
+00069                                                 <input type=\textcolor{stringliteral}{"password"} name=\textcolor{stringliteral}{"pass"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} 
+      placeholder=\textcolor{stringliteral}{"Passwort"}>
+00070                                                 <button \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-primary btn-block"} type=\textcolor{stringliteral}{"submit"}>
+      Anmelden</button>
+00071                                                 </form>
+00072         
+00073                             </div>
+00074                           </li>
+00075                 
+00076             <?php \} ?>
+00077           </ul>
+00078           
+00079         </div><!--/.nav-collapse -->
+00080       </div>
+00081     </div>
+00082 
+00083     <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"container"}>
+00084         <?php include($this->includetemplate); ?>
+00085     </div> <!-- /container -->
+00086 
+00087 
+00088     <!-- Bootstrap core JavaScript
+00089     ================================================== -->
+00090     <!-- Placed at the end of the document so the pages load faster -->
+00091     <script src=\textcolor{stringliteral}{"js/jquery.js"}></script>
+00092     <script src=\textcolor{stringliteral}{"js/bootstrap.min.js"}></script>
+00093   </body>
+00094 </html>
+\end{DoxyCode}
