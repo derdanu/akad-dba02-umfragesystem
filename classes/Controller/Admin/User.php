@@ -44,7 +44,21 @@ class User extends Base{
 	 */
 	public function Add_POST_Action() {
 		
-		$this->Index_Action();
+		if (isset($_POST['name']) && isset($_POST['pass'])) {
+
+			$name = $_POST['name'];
+			$pass = $_POST['pass'];
+
+			$this->model->addUser($name, $pass);
+			
+			$this->Index_Action();
+			
+		} else {
+			
+			throw new \Exception("Illegaler Aufruf");
+			
+		}
+
 		
 	}
 	

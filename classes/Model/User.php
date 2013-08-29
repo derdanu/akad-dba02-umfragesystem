@@ -58,7 +58,7 @@ class User extends Base {
 	
 	/**
 	 * 
-	 * Benutzer Löschen
+	 * Benutzer löschen
 	 * 
 	 * @param	Integer	$id 	BenutzerID
 	 * 
@@ -71,6 +71,25 @@ class User extends Base {
 		$stmt->execute();
 		
 	}
+	
+	/**
+	 * 
+	 * Benutzer hinzufügen
+	 * 
+	 * @param	String	$name	Benutzername
+	 * @param	String 	$pass	Passwort
+	 * 
+	 */
+	public function addUser($name, $pass) {
+		
+		$stmt = $this->dbh->prepare("INSERT INTO User SET Name = :name, Passwort = :pass");
+		$stmt->bindParam(':name', $name);
+		$stmt->bindParam(':pass', $pass);
+			
+		$stmt->execute();
+		
+	}
+	
 	
 	/**
 	 * 
