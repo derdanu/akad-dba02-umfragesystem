@@ -49,12 +49,22 @@
                 <li class="dropdown-header">Statistik</li>
                 <li><a href="?controller=Admin\Stats">Umfragen</a></li>
               </ul>
-             <?php } ?>
             </li>
+            <?php } ?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <?php if (\Session::isUserAuthed()) { ?>
-            	<li><a href="docs/html/index.html" target="_blank">Code Dokumentation</a></li>
+            	<li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internals<b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+					<li class="dropdown-header">Code</li>
+                 	<li><a href="docs/html/index.html" target="_blank">Dokumentation</a></li>
+                	<li class="divider"></li>
+                	<li class="dropdown-header">Datenbank</li>
+                 	<li><a href="?controller=Database&action=Diagramm">UML Diagramm</a></li>
+                 	<li><a href="?controller=Database&action=CreateTable">Create Table SQL</a></li>
+              </ul>
+            </li>
 				<li><a href="?controller=UserSession&action=Logout">Logout</a></li>
             <?php } else { ?>
 		          <li class="dropdown">
