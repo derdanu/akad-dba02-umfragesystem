@@ -56,8 +56,28 @@ class User extends Base{
 	public function Delete_Action() {
 		
 		
-		
-		$this->Index_Action();
+		if (isset($_GET['user'])) {
+			
+			$id = intval($_GET['user']);
+
+			if ($id > 0) {
+				
+				$this->model->deleteUser($id);
+						
+				$this->Index_Action();				
+			
+			} else {
+				
+				throw new \Exception("Illegaler Aufruf");
+				
+			}
+						
+	
+		} else {
+			
+			throw new \Exception("Illegaler Aufruf");
+			
+		}
 	}
 }
 ?>

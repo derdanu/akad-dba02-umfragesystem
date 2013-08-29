@@ -58,6 +58,22 @@ class User extends Base {
 	
 	/**
 	 * 
+	 * Benutzer Löschen
+	 * 
+	 * @param	Integert	$id 	BenutzerID
+	 * 
+	 */
+	public function deleteUser($id) {
+		
+		$stmt = $this->dbh->prepare("DELETE FROM User WHERE ID = :id");
+		$stmt->bindParam(':id', $id);
+	
+		$stmt->execute();
+		
+	}
+	
+	/**
+	 * 
 	 * Zeitstempel des letzten Logins vom User Updaten
 	 * 
 	 * @param	String	$user	Benutzername
