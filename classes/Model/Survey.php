@@ -166,6 +166,7 @@ class Survey extends Base{
 	 */
 	public function addSurvey($name, $answerArr) {
 		
+		if (empty($name)) return;
 		
 		$stmt = $this->dbh->prepare("INSERT INTO Survey SET Name = :name");
 		$stmt->bindParam(':name', $name);
