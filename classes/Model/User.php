@@ -60,7 +60,7 @@ class User extends Base {
 	 * 
 	 * Benutzer Löschen
 	 * 
-	 * @param	Integert	$id 	BenutzerID
+	 * @param	Integer	$id 	BenutzerID
 	 * 
 	 */
 	public function deleteUser($id) {
