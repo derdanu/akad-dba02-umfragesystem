@@ -66,6 +66,7 @@ $conf = \Config::getInstance();
 
 // Debugging
 if ($conf->application_debugging == 1) {
+	print "<br /><br />";
 	print "<pre>";
 	print '$_GET ';
 	print_r($_GET);
