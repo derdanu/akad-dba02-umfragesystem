@@ -29,8 +29,20 @@ class Database extends PDO {
 		$this->pass = $conf->database_pass;
 
 		parent::__construct($this->dsn, $this->user, $this->pass);
+
+    	
+    	if ($conf->database_verbose == 1) $this->beMoreVerbose(); 
+    	
 		
 	}
 	
+
+	private function beMoreVerbose() {
+		
+		$this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    	$this->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+		
+	}
+
 
 }

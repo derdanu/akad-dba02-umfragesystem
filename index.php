@@ -1,6 +1,4 @@
 <?php
-define('DEBUG', true);
-
 define('CLASS_DIR', 'classes/');
 
 // PHP Autoloader Funktion definieren.
@@ -64,13 +62,19 @@ try {
 }
 
 
+$conf = \Config::getInstance();
+
 // Debugging
-if (DEBUG) {
-	print "<hr>Debug<br>";
+if ($conf->application_debugging == 1) {
 	print "<pre>";
+	print '$_GET ';
 	print_r($_GET);
+	print '$_POST ';
 	print_r($_POST);
+	print '$_SESSION ';
 	print_r($_SESSION);
+	print '$_SERVER ';
+	print_r($_SERVER);	
 	print "</pre>";
 }
 
