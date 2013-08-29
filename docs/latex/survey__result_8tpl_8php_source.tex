@@ -17,18 +17,22 @@
 00012                                 \} \textcolor{keywordflow}{else} \{
 00013                                         $percent = 0;
 00014                                 \}
-00015                                 
-00016                                 print   \textcolor{stringliteral}{"<tr><td>\{$arr['Name']\}</td>"} .
-00017                                                 \textcolor{stringliteral}{"<td>"} .
-00018                                                 \textcolor{stringliteral}{"<div style='background-color:#428BCA; width:\{$percent\}%;
-       padding-left:10px; border-radius: 18px;'>\{$arr['cnt']\} ($percent %)</div>"} .
-00019                                                 \textcolor{stringliteral}{"</td>"} .
-00020                                                 \textcolor{stringliteral}{"</tr>"};        
-00021                         \}
-00022                         ?>
-00023                         
-00024                         </table>
-00025                         </div>
-00026                 </div>
-00027       </div>
+00015                         ?>      
+00016                                 <tr><td><?php print $arr[\textcolor{stringliteral}{'Name'}]; ?></td><td>
+00017                                 
+00018                                 <?php \textcolor{keywordflow}{if} ($arr[\textcolor{stringliteral}{'cnt'}] > 0) \{ ?>
+00019                                         <div style=\textcolor{stringliteral}{"background-color:#428BCA; width:<?php print $percent;
+       ?>%; padding-left:10px; border-radius: 18px;"}><?php print $arr[\textcolor{stringliteral}{'cnt'}]; ?> (<?php print $percent; ?> %)</div>
+00020                                 <?php \} \textcolor{keywordflow}{else} \{ ?>
+00021                                         <div><?php print $arr[\textcolor{stringliteral}{'cnt'}]; ?> (<?php print $percent; ?> %)</div>
+00022                                 <?php \} ?>                              
+00023                                 
+00024                                 </td></tr>      
+00025                         
+00026                         <?php \} ?>
+00027                         
+00028                         </table>
+00029                         </div>
+00030                 </div>
+00031       </div>
 \end{DoxyCode}

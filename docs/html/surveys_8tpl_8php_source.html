@@ -107,20 +107,18 @@ $(document).ready(function(){initNavTree('surveys_8tpl_8php_source.html','');});
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;      &lt;div <span class="keyword">class</span>=<span class="stringliteral">&quot;jumbotron&quot;</span>&gt;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        &lt;h1&gt;Bitte Umfrage ausw&amp;auml;hlen&lt;/h1&gt;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                &lt;ul <span class="keyword">class</span>=<span class="stringliteral">&quot;list-group&quot;</span>&gt;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                        &lt;?php </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                        <span class="keywordflow">foreach</span> ($this-&gt;view[<span class="stringliteral">&#39;surveys&#39;</span>] as $arr) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                print <span class="stringliteral">&quot;&lt;li class=&#39;list-group-item&#39;&gt;&lt;a href=&#39;?controller=Survey&amp;survey={$arr[&#39;ID&#39;]}&#39;&#39;&gt;{$arr[&#39;Name&#39;]}&lt;/a&gt;&lt;/li&gt;&quot;</span>;  </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                        }</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                        ?&gt;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                &lt;/ul&gt;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      &lt;/div&gt;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                        &lt;?php <span class="keywordflow">foreach</span> ($this-&gt;view[<span class="stringliteral">&#39;surveys&#39;</span>] as $arr) { ?&gt;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                &lt;li <span class="keyword">class</span>=<span class="stringliteral">&quot;list-group-item&quot;</span>&gt;&lt;a href=<span class="stringliteral">&quot;?controller=Survey&amp;survey=&lt;?php print $arr[&#39;ID&#39;] ?&gt;&quot;</span>&gt;&lt;?php print $arr[<span class="stringliteral">&#39;Name&#39;</span>] ?&gt;&lt;/a&gt;&lt;/li&gt;  </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                        &lt;?php } ?&gt;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                &lt;/ul&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;      &lt;/div&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_dffbf13c22df868c1450a46ae79da766.html">templates</a></li><li class="navelem"><b>surveys.tpl.php</b></li>
-    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:01 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 09:33:05 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

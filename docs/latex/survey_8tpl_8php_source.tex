@@ -12,19 +12,17 @@
 00006                         <h3 \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-title"}><?php print $this->view[\textcolor{stringliteral}{'survey\_name'}]; ?></h3>
 00007                         </div>
 00008                         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-body"}>
-00009                                 <?php 
-00010                                 \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_items'}] as $arr) \{
-00011                                         print   \textcolor{stringliteral}{"<div class='checkbox'>"} .
-00012                                                         \textcolor{stringliteral}{"<label>"} .
-00013                                                         \textcolor{stringliteral}{"<input type='checkbox' value='\{$arr['ID']\}'
-       name='answer[]'>\{$arr['Name']\}"} .
-00014                                                         \textcolor{stringliteral}{"</label>"} .
-00015                                                         \textcolor{stringliteral}{"</div>"};       
-00016                                 \}
-00017                                 ?>
-00018                                 <button type=\textcolor{stringliteral}{"submit"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-primary"}>Absenden</button>
-00019                         </div>
-00020                 </div>
-00021                 </form>
-00022       </div>
+00009                                 <?php \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_items'}] as $arr) \{ ?>
+00010                                         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{'checkbox'}>
+00011                                                 <label>
+00012                                                         <input type=\textcolor{stringliteral}{"checkbox"} value=\textcolor{stringliteral}{"<?php print
+       $arr['ID']; ?>"} name=\textcolor{stringliteral}{"answer[]"}><?php print $arr[\textcolor{stringliteral}{'Name'}]; ?>
+00013                                                 </label>
+00014                                         </div>  
+00015                                 <?php \} ?>
+00016                                 <button type=\textcolor{stringliteral}{"submit"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-primary"}>Absenden</button>
+00017                         </div>
+00018                 </div>
+00019                 </form>
+00020       </div>
 \end{DoxyCode}

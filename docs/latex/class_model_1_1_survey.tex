@@ -69,26 +69,29 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00167}{167} der Datei
 \begin{DoxyCode}
 00167                                                      \{
 00168                 
-00169                 
-00170                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
-00171                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
-00172                 
-00173                 $stmt->execute();
-00174 
-00175                 $surveyID = $this->dbh->lastInsertId();
-00176                 
-00177                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
-00178                 
-00179                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
-00180 
-00181                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
-00182 
-00183                         $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
-00184                         $stmt->execute();
-00185                         
-00186                 \}
-00187                 
-00188         \}
+00169                 \textcolor{keywordflow}{if} (empty($name)) \textcolor{keywordflow}{return};
+00170                 
+00171                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
+00172                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
+00173                 
+00174                 $stmt->execute();
+00175 
+00176                 $surveyID = $this->dbh->lastInsertId();
+00177                 
+00178                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
+00179                 
+00180                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
+00181 
+00182                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00183 
+00184                         \textcolor{keywordflow}{if} (!empty($answer)) \{
+00185                                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
+00186                                 $stmt->execute();
+00187                         \}
+00188                         
+00189                 \}
+00190                 
+00191         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}{\index{Model\-::\-Survey@{Model\-::\-Survey}!delete\-Survey@{delete\-Survey}}
 \index{delete\-Survey@{delete\-Survey}!Model::Survey@{Model\-::\-Survey}}
@@ -327,28 +330,28 @@ Integer Anzahl der Tupel
 \end{DoxyReturn}
 
 
-Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00199}{199} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00202}{202} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00199                                                \{
-00200                 
-00201                 
-00202                 \textcolor{keywordflow}{switch} ($table) \{
-00203                         
-00204                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
-00205                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
-00206                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
-00207                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
-00208                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
-00209                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
-00210                                 \textcolor{keywordflow}{break};  
-00211                         \textcolor{keywordflow}{default}:
-00212                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
-00213                                 
-00214                 \}
-00215                                 
-00216         \}
+00202                                                \{
+00203                 
+00204                 
+00205                 \textcolor{keywordflow}{switch} ($table) \{
+00206                         
+00207                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
+00208                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
+00209                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
+00210                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
+00211                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
+00212                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
+00213                                 \textcolor{keywordflow}{break};  
+00214                         \textcolor{keywordflow}{default}:
+00215                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
+00216                                 
+00217                 \}
+00218                                 
+00219         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a39a47b914740e87bc133a72c4721b018}{\index{Model\-::\-Survey@{Model\-::\-Survey}!save\-New\-Answers@{save\-New\-Answers}}
 \index{save\-New\-Answers@{save\-New\-Answers}!Model::Survey@{Model\-::\-Survey}}
@@ -376,8 +379,8 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00128}{128} der Datei
 00131                 
 00132                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
 00133 
-00134                         $stmt->bindParam(\textcolor{stringliteral}{':id'}, $answer);
-00135                         $stmt->execute();
+00134                                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $answer);
+00135                                 $stmt->execute();       
 00136                         
 00137                 \}
 00138         
