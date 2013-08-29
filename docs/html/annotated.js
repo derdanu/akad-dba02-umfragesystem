@@ -12,17 +12,13 @@ var annotated =
       [ "UserSession", "class_controller_1_1_user_session.html", "class_controller_1_1_user_session" ]
     ] ],
     [ "CustomException", null, [
+      [ "InvalidUserPassException", "class_custom_exception_1_1_invalid_user_pass_exception.html", null ],
       [ "UserNotAuthedException", "class_custom_exception_1_1_user_not_authed_exception.html", null ]
     ] ],
     [ "Model", null, [
+      [ "Base", "class_model_1_1_base.html", "class_model_1_1_base" ],
       [ "Survey", "class_model_1_1_survey.html", "class_model_1_1_survey" ],
       [ "User", "class_model_1_1_user.html", "class_model_1_1_user" ]
-    ] ],
-    [ "ORM", null, [
-      [ "Base", "class_o_r_m_1_1_base.html", "class_o_r_m_1_1_base" ],
-      [ "Survey", "class_o_r_m_1_1_survey.html", "class_o_r_m_1_1_survey" ],
-      [ "SurveyItem", "class_o_r_m_1_1_survey_item.html", "class_o_r_m_1_1_survey_item" ],
-      [ "User", "class_o_r_m_1_1_user.html", "class_o_r_m_1_1_user" ]
     ] ],
     [ "Config", "class_config.html", "class_config" ],
     [ "Database", "class_database.html", "class_database" ],

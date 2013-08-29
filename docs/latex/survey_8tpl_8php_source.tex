@@ -13,11 +13,11 @@
 00007                         </div>
 00008                         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"panel-body"}>
 00009                                 <?php 
-00010                                 \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_items'}] as $key=>$value) \{
+00010                                 \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_items'}] as $arr) \{
 00011                                         print   \textcolor{stringliteral}{"<div class='checkbox'>"} .
 00012                                                         \textcolor{stringliteral}{"<label>"} .
-00013                                                         \textcolor{stringliteral}{"<input type='checkbox' value='$key'
-       name='items[]'>$value"} .
+00013                                                         \textcolor{stringliteral}{"<input type='checkbox' value='\{$arr['ID']\}'
+       name='answer[]'>\{$arr['Name']\}"} .
 00014                                                         \textcolor{stringliteral}{"</label>"} .
 00015                                                         \textcolor{stringliteral}{"</div>"};       
 00016                                 \}

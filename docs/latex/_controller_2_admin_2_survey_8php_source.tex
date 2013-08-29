@@ -16,41 +16,86 @@
 00011         \textcolor{comment}{}
 00012 \textcolor{comment}{        /**}
 00013 \textcolor{comment}{         * }
-00014 \textcolor{comment}{         * Default Index Get Action}
+00014 \textcolor{comment}{         * Modell initialisieren}
 00015 \textcolor{comment}{         * }
 00016 \textcolor{comment}{         */}
-\hypertarget{_controller_2_admin_2_survey_8php_source_l00017}{}\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{00017}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\_Action}() \{
+\hypertarget{_controller_2_admin_2_survey_8php_source_l00017}{}\hyperlink{class_controller_1_1_admin_1_1_survey_af87ac54e8b5b29bb33fb0897f9de547a}{00017}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_survey_af87ac54e8b5b29bb33fb0897f9de547a}{\_\_construct}() \{
 00018                 
-00019                 $model = new \(\backslash\)Model\(\backslash\)Survey();
+00019                 $this->model = new \(\backslash\)Model\(\backslash\)Survey();
 00020                 
-00021                 $view = new \(\backslash\)View();
-00022                 $view->setTemplate(\textcolor{stringliteral}{'admin\_surveys'});
-00023                 $view->assign(\textcolor{stringliteral}{'surveys'}, $model->getSurveys());
-00024                 $view->display();
-00025                 
-00026         \}       
-00027         \textcolor{comment}{}
-00028 \textcolor{comment}{        /**}
-00029 \textcolor{comment}{         * }
-00030 \textcolor{comment}{         * neue Umfragen hinzufuegen}
-00031 \textcolor{comment}{         * }
-00032 \textcolor{comment}{         */}
-\hypertarget{_controller_2_admin_2_survey_8php_source_l00033}{}\hyperlink{class_controller_1_1_admin_1_1_survey_a618d9d0d906df279c7b34ae9458fa977}{00033}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_survey_a618d9d0d906df279c7b34ae9458fa977}{Add\_POST\_Action}() \{
-00034                 
-00035                 $this->\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\_Action}();
-00036                 
-00037         \}
-00038         \textcolor{comment}{}
-00039 \textcolor{comment}{        /**}
-00040 \textcolor{comment}{         * }
-00041 \textcolor{comment}{         * Umfragen loeschen}
-00042 \textcolor{comment}{         * }
-00043 \textcolor{comment}{         */}
-\hypertarget{_controller_2_admin_2_survey_8php_source_l00044}{}\hyperlink{class_controller_1_1_admin_1_1_survey_aeb20127715fb6ab072bf09e0aa69e9f3}{00044}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_survey_aeb20127715fb6ab072bf09e0aa69e9f3}{Delete\_Action}() \{
-00045                 
-00046                 $this->\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\_Action}();
-00047                 
-00048         \}
-00049 \}
-00050 ?>
+00021                 parent::\_\_construct();
+00022                 
+00023         \}
+00024         \textcolor{comment}{}
+00025 \textcolor{comment}{        /**}
+00026 \textcolor{comment}{         * }
+00027 \textcolor{comment}{         * Default Index Get Action}
+00028 \textcolor{comment}{         * }
+00029 \textcolor{comment}{         */}
+\hypertarget{_controller_2_admin_2_survey_8php_source_l00030}{}\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{00030}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\_Action}() \{
+00031                 
+00032                 $this->view->setTemplate(\textcolor{stringliteral}{'admin\_surveys'});
+00033                 $this->view->assign(\textcolor{stringliteral}{'surveys'}, $this->model->getSurveys());
+00034                 $this->view->display();
+00035                 
+00036         \}       
+00037         \textcolor{comment}{}
+00038 \textcolor{comment}{        /**}
+00039 \textcolor{comment}{         * }
+00040 \textcolor{comment}{         * neue Umfragen hinzufuegen}
+00041 \textcolor{comment}{         * }
+00042 \textcolor{comment}{         */}
+\hypertarget{_controller_2_admin_2_survey_8php_source_l00043}{}\hyperlink{class_controller_1_1_admin_1_1_survey_a618d9d0d906df279c7b34ae9458fa977}{00043}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_survey_a618d9d0d906df279c7b34ae9458fa977}{Add\_POST\_Action}() \{
+00044                 
+00045                 \textcolor{keywordflow}{if} (isset($\_POST[\textcolor{stringliteral}{'name'}]) && isset($\_POST[\textcolor{stringliteral}{'answer'}])) \{
+00046 
+00047                         $name = $\_POST[\textcolor{stringliteral}{'name'}];
+00048                         $answer\_arr = $\_POST[\textcolor{stringliteral}{'answer'}];
+00049 
+00050                         $this->model->addSurvey($name, $answer\_arr);
+00051                         
+00052                         $this->\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\_Action}();
+00053                         
+00054                 \} \textcolor{keywordflow}{else} \{
+00055                         
+00056                         \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00057                         
+00058                 \}
+00059                 
+00060         \}
+00061         \textcolor{comment}{}
+00062 \textcolor{comment}{        /**}
+00063 \textcolor{comment}{         * }
+00064 \textcolor{comment}{         * Umfragen loeschen}
+00065 \textcolor{comment}{         * }
+00066 \textcolor{comment}{         */}
+\hypertarget{_controller_2_admin_2_survey_8php_source_l00067}{}\hyperlink{class_controller_1_1_admin_1_1_survey_aeb20127715fb6ab072bf09e0aa69e9f3}{00067}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_survey_aeb20127715fb6ab072bf09e0aa69e9f3}{Delete\_Action}() \{
+00068                 
+00069                 
+00070                 \textcolor{keywordflow}{if} (isset($\_GET[\textcolor{stringliteral}{'survey'}])) \{
+00071                         
+00072                         $id = intval($\_GET[\textcolor{stringliteral}{'survey'}]);
+00073 
+00074                         \textcolor{keywordflow}{if} ($id > 0) \{
+00075                                 
+00076                                 $this->model->deleteSurvey($id);
+00077                                                 
+00078                                 $this->\hyperlink{class_controller_1_1_admin_1_1_survey_ab79ba5fab3d2048a72c71fcd3176dd72}{Index\_Action}();                              
+00079                         
+00080                         \} \textcolor{keywordflow}{else} \{
+00081                                 
+00082                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00083                                 
+00084                         \}
+00085                                                 
+00086         
+00087                 \} \textcolor{keywordflow}{else} \{
+00088                         
+00089                         \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00090                         
+00091                 \}
+00092                 
+00093         \}
+00094 \}
+00095 ?>
 \end{DoxyCode}

@@ -116,47 +116,93 @@ $(document).ready(function(){initNavTree('_controller_2_admin_2_survey_8php_sour
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        /**</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * Default Index Get Action</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * Modell initialisieren</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * </span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>() {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_controller_1_1_admin_1_1_survey.html#af87ac54e8b5b29bb33fb0897f9de547a">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#af87ac54e8b5b29bb33fb0897f9de547a">__construct</a>() {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                $model = new \Model\Survey();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                $this-&gt;model = new \Model\Survey();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                $view = new \View();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                $view-&gt;setTemplate(<span class="stringliteral">&#39;admin_surveys&#39;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                $view-&gt;assign(<span class="stringliteral">&#39;surveys&#39;</span>, $model-&gt;getSurveys());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                $view-&gt;display();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }       </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">         * neue Umfragen hinzufuegen</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_controller_1_1_admin_1_1_survey.html#a618d9d0d906df279c7b34ae9458fa977">   33</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#a618d9d0d906df279c7b34ae9458fa977">Add_POST_Action</a>() {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                $this-&gt;<a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">         * Umfragen loeschen</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_controller_1_1_admin_1_1_survey.html#aeb20127715fb6ab072bf09e0aa69e9f3">   44</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#aeb20127715fb6ab072bf09e0aa69e9f3">Delete_Action</a>() {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                $this-&gt;<a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;?&gt;</div>
-<div class="ttc" id="class_controller_1_1_admin_1_1_survey_html_a618d9d0d906df279c7b34ae9458fa977"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html#a618d9d0d906df279c7b34ae9458fa977">Controller\Admin\Survey\Add_POST_Action</a></div><div class="ttdeci">Add_POST_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00033">Controller/Admin/Survey.php:33</a></div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                parent::__construct();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">         * Default Index Get Action</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">   30</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>() {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                $this-&gt;view-&gt;setTemplate(<span class="stringliteral">&#39;admin_surveys&#39;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;surveys&#39;</span>, $this-&gt;model-&gt;getSurveys());</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                $this-&gt;view-&gt;display();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }       </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">         * neue Umfragen hinzufuegen</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_controller_1_1_admin_1_1_survey.html#a618d9d0d906df279c7b34ae9458fa977">   43</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#a618d9d0d906df279c7b34ae9458fa977">Add_POST_Action</a>() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&#39;name&#39;</span>]) &amp;&amp; isset($_POST[<span class="stringliteral">&#39;answer&#39;</span>])) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        $name = $_POST[<span class="stringliteral">&#39;name&#39;</span>];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        $answer_arr = $_POST[<span class="stringliteral">&#39;answer&#39;</span>];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        $this-&gt;model-&gt;addSurvey($name, $answer_arr);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        $this-&gt;<a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Illegaler Aufruf&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">         * Umfragen loeschen</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_controller_1_1_admin_1_1_survey.html#aeb20127715fb6ab072bf09e0aa69e9f3">   67</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_controller_1_1_admin_1_1_survey.html#aeb20127715fb6ab072bf09e0aa69e9f3">Delete_Action</a>() {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span> (isset($_GET[<span class="stringliteral">&#39;survey&#39;</span>])) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        $id = intval($_GET[<span class="stringliteral">&#39;survey&#39;</span>]);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordflow">if</span> ($id &gt; 0) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                $this-&gt;model-&gt;deleteSurvey($id);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                $this-&gt;<a class="code" href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Index_Action</a>();                          </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Illegaler Aufruf&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Illegaler Aufruf&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;?&gt;</div>
+<div class="ttc" id="class_controller_1_1_admin_1_1_survey_html_a618d9d0d906df279c7b34ae9458fa977"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html#a618d9d0d906df279c7b34ae9458fa977">Controller\Admin\Survey\Add_POST_Action</a></div><div class="ttdeci">Add_POST_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00043">Controller/Admin/Survey.php:43</a></div></div>
 <div class="ttc" id="class_controller_1_1_admin_1_1_survey_html"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html">Controller\Admin\Survey</a></div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00010">Controller/Admin/Survey.php:10</a></div></div>
-<div class="ttc" id="class_controller_1_1_admin_1_1_survey_html_aeb20127715fb6ab072bf09e0aa69e9f3"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html#aeb20127715fb6ab072bf09e0aa69e9f3">Controller\Admin\Survey\Delete_Action</a></div><div class="ttdeci">Delete_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00044">Controller/Admin/Survey.php:44</a></div></div>
-<div class="ttc" id="class_controller_1_1_admin_1_1_survey_html_ab79ba5fab3d2048a72c71fcd3176dd72"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Controller\Admin\Survey\Index_Action</a></div><div class="ttdeci">Index_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00017">Controller/Admin/Survey.php:17</a></div></div>
+<div class="ttc" id="class_controller_1_1_admin_1_1_survey_html_aeb20127715fb6ab072bf09e0aa69e9f3"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html#aeb20127715fb6ab072bf09e0aa69e9f3">Controller\Admin\Survey\Delete_Action</a></div><div class="ttdeci">Delete_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00067">Controller/Admin/Survey.php:67</a></div></div>
+<div class="ttc" id="class_controller_1_1_admin_1_1_survey_html_af87ac54e8b5b29bb33fb0897f9de547a"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html#af87ac54e8b5b29bb33fb0897f9de547a">Controller\Admin\Survey\__construct</a></div><div class="ttdeci">__construct()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00017">Controller/Admin/Survey.php:17</a></div></div>
+<div class="ttc" id="class_controller_1_1_admin_1_1_survey_html_ab79ba5fab3d2048a72c71fcd3176dd72"><div class="ttname"><a href="class_controller_1_1_admin_1_1_survey.html#ab79ba5fab3d2048a72c71fcd3176dd72">Controller\Admin\Survey\Index_Action</a></div><div class="ttdeci">Index_Action()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_survey_8php_source.html#l00030">Controller/Admin/Survey.php:30</a></div></div>
 <div class="ttc" id="class_controller_1_1_admin_1_1_base_html"><div class="ttname"><a href="class_controller_1_1_admin_1_1_base.html">Controller\Admin\Base</a></div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_admin_2_base_8php_source.html#l00010">Controller/Admin/Base.php:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -164,7 +210,7 @@ $(document).ready(function(){initNavTree('_controller_2_admin_2_survey_8php_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li><li class="navelem"><a class="el" href="dir_cd8010ab25fcdf3b558acc16dbba1dc1.html">Controller</a></li><li class="navelem"><a class="el" href="dir_f01fa536799a4186155ed5cc07285d25.html">Admin</a></li><li class="navelem"><b>Survey.php</b></li>
-    <li class="footer">Erzeugt am Mit Aug 28 2013 15:49:32 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:01 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

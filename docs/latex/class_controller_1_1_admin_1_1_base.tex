@@ -12,6 +12,15 @@ Klassendiagramm für Controller\textbackslash{}Admin\textbackslash{}Base\-:\begi
 \item 
 \hyperlink{class_controller_1_1_admin_1_1_base_a7e433734833c21c222186860f4cd8ce5}{\-\_\-\-\_\-construct} ()
 \end{DoxyCompactItemize}
+\subsection*{Geschützte Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_controller_1_1_admin_1_1_base_a81e643de0230305e97280882958503bc}{{\bfseries \$model}}\label{class_controller_1_1_admin_1_1_base_a81e643de0230305e97280882958503bc}
+
+\item 
+\hypertarget{class_controller_1_1_admin_1_1_base_a4ec09c707c52e90309310f35575706d3}{{\bfseries \$view}}\label{class_controller_1_1_admin_1_1_base_a4ec09c707c52e90309310f35575706d3}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Ausführliche Beschreibung}
@@ -31,15 +40,17 @@ Definiert in Zeile \hyperlink{_controller_2_admin_2_base_8php_source_l00010}{10}
 )}}\label{class_controller_1_1_admin_1_1_base_a7e433734833c21c222186860f4cd8ce5}
 Im Konstruktur generell ueberpruefen ob sich der \hyperlink{class_controller_1_1_admin_1_1_user}{User} eingeloggt hat. 
 
-Definiert in Zeile \hyperlink{_controller_2_admin_2_base_8php_source_l00018}{18} der Datei \hyperlink{_controller_2_admin_2_base_8php_source}{Controller/\-Admin/\-Base.\-php}.
+Definiert in Zeile \hyperlink{_controller_2_admin_2_base_8php_source_l00022}{22} der Datei \hyperlink{_controller_2_admin_2_base_8php_source}{Controller/\-Admin/\-Base.\-php}.
 
 
 \begin{DoxyCode}
-00018                                       \{
-00019                 
-00020                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
-00021                 
-00022         \}
+00022                                       \{
+00023                 
+00024                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
+00025                 
+00026                 $this->view = new \(\backslash\)View();
+00027                 
+00028         \}
 \end{DoxyCode}
 
 

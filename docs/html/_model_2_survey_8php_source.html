@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_model_2_survey_8php_source.html','');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Umfrage Datenmodell</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_model_1_1_survey.html">Survey</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_model_1_1_survey.html">Survey</a> <span class="keyword">extends</span> <a class="code" href="class_model_1_1_base.html">Base</a>{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">        /**</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">         * </span></div>
@@ -122,99 +122,228 @@ $(document).ready(function(){initNavTree('_model_2_survey_8php_source.html','');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">         */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a259373a6fdcae5796fc6e14586c98474">   18</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a259373a6fdcae5796fc6e14586c98474">getSurveys</a>() {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">return</span> array(1 =&gt; <span class="stringliteral">&quot;Umfrage 1&quot;</span>, 2 =&gt; <span class="stringliteral">&quot;Umfrage 2&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         * Umfragename holen</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">         * @return      String  Name der Umfrage</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a85d138e55d090b11ba406db39f7d2e72">   33</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a85d138e55d090b11ba406db39f7d2e72">getSurveyName</a>($survey) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Name der Umfrage $survey&quot;</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">         * Umfrage Punkte holen</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">         * @return      Array</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                $stmt = $this-&gt;dbh-&gt;query(<span class="stringliteral">&quot;SELECT * FROM Survey&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">return</span> $stmt-&gt;fetchAll();       </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">         * Umfragename holen</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">         * @return      String  Name der Umfrage</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a85d138e55d090b11ba406db39f7d2e72">   34</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a85d138e55d090b11ba406db39f7d2e72">getSurveyName</a>($survey) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;SELECT Name FROM Survey WHERE ID = :id&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $survey);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                $res = $stmt-&gt;fetchObject();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> $res-&gt;Name;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">        /**</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a7f2d5fba208ba0f2ec426db9b9075115">   48</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a7f2d5fba208ba0f2ec426db9b9075115">getSurveyItems</a>($survey) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">return</span> (array(10 =&gt; <span class="stringliteral">&quot;Antwort 1&quot;</span>, 11 =&gt; <span class="stringliteral">&quot;Antwort 2&quot;</span>));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">         * Anzahl der Abgegeben Umfragewerte</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">         * @return      Integer Anzahl der Ergebnisse zur Umfrage</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">   63</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">getSurveyItemCount</a>($survey) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> 564;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">         * Umfrage Ergebnisse holen</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">         * @return      Array</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">   77</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">getSurveyResult</a>($survey) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">return</span> (array(232 =&gt; <span class="stringliteral">&quot;Antwort 1&quot;</span>, 332 =&gt; <span class="stringliteral">&quot;Antwort 2&quot;</span>));</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">        /**</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">         * Statistiken holen</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">         * </span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">   88</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">getStats</a>() {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                $stat[survey_cnt] = 17;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                $stat[record_cnt] = 343;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> $stat;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;?&gt;</div>
-<div class="ttc" id="class_model_1_1_survey_html_ae8dbded81f45b3d84c061bb1bf5ba97f"><div class="ttname"><a href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">Model\Survey\getStats</a></div><div class="ttdeci">getStats()</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00088">Model/Survey.php:88</a></div></div>
-<div class="ttc" id="class_model_1_1_survey_html_a85d138e55d090b11ba406db39f7d2e72"><div class="ttname"><a href="class_model_1_1_survey.html#a85d138e55d090b11ba406db39f7d2e72">Model\Survey\getSurveyName</a></div><div class="ttdeci">getSurveyName($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00033">Model/Survey.php:33</a></div></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">         * Umfrage Punkte holen</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">         * @return      Array</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a7f2d5fba208ba0f2ec426db9b9075115">   54</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a7f2d5fba208ba0f2ec426db9b9075115">getSurveyItems</a>($survey) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;SELECT ID, Name FROM SurveyItems WHERE SurveyID = :id ORDER BY Name&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $survey);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> $stmt-&gt;fetchAll();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">         * Anzahl der Abgegeben Umfragewerte</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * @return      Integer Anzahl der Ergebnisse zur Umfrage</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">   75</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">getSurveyItemCount</a>($survey) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;SELECT COUNT(*) AS cnt FROM SurveyAnswer WHERE SurveyItemID IN (SELECT ID FROM SurveyItems WHERE SurveyID = :id)&quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $survey);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                $res = $stmt-&gt;fetchObject();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">return</span> $res-&gt;cnt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">         * Umfrage Ergebnisse holen</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">         * @param       Integer $survey UmfrageId       </span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">         * @return      Array</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">   94</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">getSurveyResult</a>($survey) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;SELECT i.Name, COUNT(a.ID) as cnt FROM SurveyItems i LEFT JOIN SurveyAnswer a ON i.ID = a. SurveyItemID WHERE i.SurveyID = :id GROUP BY Name ORDER BY i.Name&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $survey);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">return</span> $stmt-&gt;fetchAll();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">         * Statistiken holen</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">  109</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">getStats</a>() {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                $stat = array();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                $stat[<span class="stringliteral">&#39;user_cnt&#39;</span>] = $this-&gt;getTableCount(<span class="stringliteral">&quot;User&quot;</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                $stat[<span class="stringliteral">&#39;survey_cnt&#39;</span>] = $this-&gt;getTableCount(<span class="stringliteral">&quot;Survey&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                $stat[<span class="stringliteral">&#39;survey_items_cnt&#39;</span>] = $this-&gt;getTableCount(<span class="stringliteral">&quot;SurveyItems&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                $stat[<span class="stringliteral">&#39;answer_cnt&#39;</span>] = $this-&gt;getTableCount(<span class="stringliteral">&quot;SurveyAnswer&quot;</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">return</span> $stat;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">         * Antworten Speichern</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">         * @param       Integer $answerArr      Array mit den Antwort IDs</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a39a47b914740e87bc133a72c4721b018">  128</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a39a47b914740e87bc133a72c4721b018">saveNewAnswers</a>($answerArr) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;INSERT INTO SurveyAnswer SET SurveyItemID = :id&quot;</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">foreach</span> ($answerArr as $answer) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $answer);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        $stmt-&gt;execute();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">         * Umfrage löschen</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">         * @param       Integer $id     UmfragenID</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a80276047e075565b781c60d7ac25b3a6">  149</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a80276047e075565b781c60d7ac25b3a6">deleteSurvey</a>($id) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;DELETE FROM Survey WHERE ID = :id&quot;</span>);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $id);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }       </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">         * neue Umfrage hinzufügen</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">         * @param       String  $name   Name der Umfrage</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">         * @param       Array   $anserArr       Array mit den möglichen Antworten</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#acf9f6e213e5fd9a31a998db3ddf9026c">  167</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#acf9f6e213e5fd9a31a998db3ddf9026c">addSurvey</a>($name, $answerArr) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;INSERT INTO Survey SET Name = :name&quot;</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:name&#39;</span>, $name);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                $surveyID = $this-&gt;dbh-&gt;lastInsertId();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;INSERT INTO SurveyItems SET Name = :name, SurveyID = :id&quot;</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $surveyID);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                <span class="keywordflow">foreach</span> ($answerArr as $answer) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                        $stmt-&gt;bindParam(<span class="stringliteral">&#39;:name&#39;</span>, $answer);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                        $stmt-&gt;execute();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                        </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">        /**</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">         * Anzahl der Tupel zurückgeben</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">         * @param       String  $table  Tabellenname</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">         * @return      Integer Anzahl der Tupel</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="class_model_1_1_survey.html#a5c2c5d322a7ae1786acb783f472cc074">  199</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">function</span> <a class="code" href="class_model_1_1_survey.html#a5c2c5d322a7ae1786acb783f472cc074">getTableCount</a>($table) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">switch</span> ($table) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;User&quot;</span>:</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;Survey&quot;</span>:</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;SurveyItems&quot;</span>:     </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;SurveyAnswer&quot;</span>:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                                $stmt = $this-&gt;dbh-&gt;query(<span class="stringliteral">&quot;SELECT COUNT(*) AS cnt FROM $table&quot;</span>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                <span class="keywordflow">return</span> $stmt-&gt;fetchObject()-&gt;cnt;       </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                                <span class="keywordflow">break</span>;  </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Illegaler Tabellenname $table&quot;</span>);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;?&gt;</div>
+<div class="ttc" id="class_model_1_1_survey_html_acf9f6e213e5fd9a31a998db3ddf9026c"><div class="ttname"><a href="class_model_1_1_survey.html#acf9f6e213e5fd9a31a998db3ddf9026c">Model\Survey\addSurvey</a></div><div class="ttdeci">addSurvey($name, $answerArr)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00167">Model/Survey.php:167</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_ae8dbded81f45b3d84c061bb1bf5ba97f"><div class="ttname"><a href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">Model\Survey\getStats</a></div><div class="ttdeci">getStats()</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00109">Model/Survey.php:109</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_a5c2c5d322a7ae1786acb783f472cc074"><div class="ttname"><a href="class_model_1_1_survey.html#a5c2c5d322a7ae1786acb783f472cc074">Model\Survey\getTableCount</a></div><div class="ttdeci">getTableCount($table)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00199">Model/Survey.php:199</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_a85d138e55d090b11ba406db39f7d2e72"><div class="ttname"><a href="class_model_1_1_survey.html#a85d138e55d090b11ba406db39f7d2e72">Model\Survey\getSurveyName</a></div><div class="ttdeci">getSurveyName($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00034">Model/Survey.php:34</a></div></div>
 <div class="ttc" id="class_model_1_1_survey_html"><div class="ttname"><a href="class_model_1_1_survey.html">Model\Survey</a></div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00009">Model/Survey.php:9</a></div></div>
-<div class="ttc" id="class_model_1_1_survey_html_ac4b8b489fe806c31bd05d8ec626aae16"><div class="ttname"><a href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">Model\Survey\getSurveyItemCount</a></div><div class="ttdeci">getSurveyItemCount($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00063">Model/Survey.php:63</a></div></div>
-<div class="ttc" id="class_model_1_1_survey_html_a7f2d5fba208ba0f2ec426db9b9075115"><div class="ttname"><a href="class_model_1_1_survey.html#a7f2d5fba208ba0f2ec426db9b9075115">Model\Survey\getSurveyItems</a></div><div class="ttdeci">getSurveyItems($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00048">Model/Survey.php:48</a></div></div>
+<div class="ttc" id="class_model_1_1_base_html"><div class="ttname"><a href="class_model_1_1_base.html">Model\Base</a></div><div class="ttdef"><b>Definition:</b> <a href="_model_2_base_8php_source.html#l00009">Model/Base.php:9</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_ac4b8b489fe806c31bd05d8ec626aae16"><div class="ttname"><a href="class_model_1_1_survey.html#ac4b8b489fe806c31bd05d8ec626aae16">Model\Survey\getSurveyItemCount</a></div><div class="ttdeci">getSurveyItemCount($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00075">Model/Survey.php:75</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_a39a47b914740e87bc133a72c4721b018"><div class="ttname"><a href="class_model_1_1_survey.html#a39a47b914740e87bc133a72c4721b018">Model\Survey\saveNewAnswers</a></div><div class="ttdeci">saveNewAnswers($answerArr)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00128">Model/Survey.php:128</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_a7f2d5fba208ba0f2ec426db9b9075115"><div class="ttname"><a href="class_model_1_1_survey.html#a7f2d5fba208ba0f2ec426db9b9075115">Model\Survey\getSurveyItems</a></div><div class="ttdeci">getSurveyItems($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00054">Model/Survey.php:54</a></div></div>
 <div class="ttc" id="class_model_1_1_survey_html_a259373a6fdcae5796fc6e14586c98474"><div class="ttname"><a href="class_model_1_1_survey.html#a259373a6fdcae5796fc6e14586c98474">Model\Survey\getSurveys</a></div><div class="ttdeci">getSurveys()</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00018">Model/Survey.php:18</a></div></div>
-<div class="ttc" id="class_model_1_1_survey_html_a3423f530767905dd0b52858c70d82877"><div class="ttname"><a href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">Model\Survey\getSurveyResult</a></div><div class="ttdeci">getSurveyResult($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00077">Model/Survey.php:77</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_a3423f530767905dd0b52858c70d82877"><div class="ttname"><a href="class_model_1_1_survey.html#a3423f530767905dd0b52858c70d82877">Model\Survey\getSurveyResult</a></div><div class="ttdeci">getSurveyResult($survey)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00094">Model/Survey.php:94</a></div></div>
+<div class="ttc" id="class_model_1_1_survey_html_a80276047e075565b781c60d7ac25b3a6"><div class="ttname"><a href="class_model_1_1_survey.html#a80276047e075565b781c60d7ac25b3a6">Model\Survey\deleteSurvey</a></div><div class="ttdeci">deleteSurvey($id)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_survey_8php_source.html#l00149">Model/Survey.php:149</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_42204e5c393c83af151c4bb7e69f420b.html">classes</a></li><li class="navelem"><a class="el" href="dir_6d3b1c361b48725847da37ba64dbf5e5.html">Model</a></li><li class="navelem"><b>Survey.php</b></li>
-    <li class="footer">Erzeugt am Mit Aug 28 2013 15:49:32 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:01 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

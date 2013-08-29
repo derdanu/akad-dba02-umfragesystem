@@ -1,6 +1,12 @@
 \hypertarget{class_model_1_1_survey}{\section{Model\textbackslash{}Survey Klassenreferenz}
 \label{class_model_1_1_survey}\index{Model\textbackslash{}\-Survey@{Model\textbackslash{}\-Survey}}
 }
+Klassendiagramm für Model\textbackslash{}Survey\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_model_1_1_survey}
+\end{center}
+\end{figure}
 \subsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,7 +21,19 @@
 \hyperlink{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{get\-Survey\-Result} (\$survey)
 \item 
 \hyperlink{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{get\-Stats} ()
+\item 
+\hyperlink{class_model_1_1_survey_a39a47b914740e87bc133a72c4721b018}{save\-New\-Answers} (\$answer\-Arr)
+\item 
+\hyperlink{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}{delete\-Survey} (\$id)
+\item 
+\hyperlink{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}{add\-Survey} (\$name, \$answer\-Arr)
 \end{DoxyCompactItemize}
+\subsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{get\-Table\-Count} (\$table)
+\end{DoxyCompactItemize}
+\subsection*{Weitere Geerbte Elemente}
 
 
 \subsection{Ausführliche Beschreibung}
@@ -26,6 +44,81 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00009}{9} der Datei \
 
 
 \subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}{\index{Model\-::\-Survey@{Model\-::\-Survey}!add\-Survey@{add\-Survey}}
+\index{add\-Survey@{add\-Survey}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{add\-Survey}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::add\-Survey (
+\begin{DoxyParamCaption}
+\item[{}]{\$name, }
+\item[{}]{\$answer\-Arr}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}
+neue Umfrage hinzufügen
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$name} & Name der Umfrage \\
+\hline
+Array & {\em \$anser\-Arr} & Array mit den möglichen Antworten \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00167}{167} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00167                                                      \{
+00168                 
+00169                 
+00170                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
+00171                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
+00172                 
+00173                 $stmt->execute();
+00174 
+00175                 $surveyID = $this->dbh->lastInsertId();
+00176                 
+00177                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
+00178                 
+00179                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
+00180 
+00181                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00182 
+00183                         $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
+00184                         $stmt->execute();
+00185                         
+00186                 \}
+00187                 
+00188         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}{\index{Model\-::\-Survey@{Model\-::\-Survey}!delete\-Survey@{delete\-Survey}}
+\index{delete\-Survey@{delete\-Survey}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{delete\-Survey}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::delete\-Survey (
+\begin{DoxyParamCaption}
+\item[{}]{\$id}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}
+Umfrage löschen
+
+
+\begin{DoxyParams}[1]{Parameter}
+Integer & {\em \$id} & Umfragen\-I\-D \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00149}{149} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00149                                           \{
+00150                 
+00151                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"DELETE FROM Survey WHERE ID = :id"});
+00152                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $id);
+00153         
+00154                 $stmt->execute();
+00155                 
+00156         \}       
+\end{DoxyCode}
 \hypertarget{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Stats@{get\-Stats}}
 \index{get\-Stats@{get\-Stats}!Model::Survey@{Model\-::\-Survey}}
 \subsubsection[{get\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Stats (
@@ -35,17 +128,21 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00009}{9} der Datei \
 )}}\label{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}
 Statistiken holen 
 
-Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00088}{88} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00109}{109} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00088                                    \{
-00089                 
-00090                 $stat[survey\_cnt] = 17;
-00091                 $stat[record\_cnt] = 343;
-00092                 
-00093                 \textcolor{keywordflow}{return} $stat;
-00094         \}
+00109                                    \{
+00110                 
+00111                 $stat = array();
+00112 
+00113                 $stat[\textcolor{stringliteral}{'user\_cnt'}] = $this->\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{getTableCount}(\textcolor{stringliteral}{"User"});
+00114                 $stat[\textcolor{stringliteral}{'survey\_cnt'}] = $this->\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{getTableCount}(\textcolor{stringliteral}{"Survey"});
+00115                 $stat[\textcolor{stringliteral}{'survey\_items\_cnt'}] = $this->\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{getTableCount}(\textcolor{stringliteral}{"SurveyItems"});
+00116                 $stat[\textcolor{stringliteral}{'answer\_cnt'}] = $this->\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{getTableCount}(\textcolor{stringliteral}{"SurveyAnswer"});
+00117                 
+00118                 \textcolor{keywordflow}{return} $stat;
+00119         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Item\-Count@{get\-Survey\-Item\-Count}}
 \index{get\-Survey\-Item\-Count@{get\-Survey\-Item\-Count}!Model::Survey@{Model\-::\-Survey}}
@@ -66,15 +163,21 @@ Integer Anzahl der Ergebnisse zur Umfrage
 \end{DoxyReturn}
 
 
-Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00063}{63} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00075}{75} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00063                                                     \{
-00064                 
-00065                 \textcolor{keywordflow}{return} 564;
-00066                 
-00067         \}
+00075                                                     \{
+00076                 
+00077                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM SurveyAnswer WHERE SurveyItemID IN
+       (SELECT ID FROM SurveyItems WHERE SurveyID = :id)"});
+00078                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00079                 $stmt->execute();
+00080                 $res = $stmt->fetchObject();
+00081 
+00082                 \textcolor{keywordflow}{return} $res->cnt;
+00083         
+00084         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Items@{get\-Survey\-Items}}
 \index{get\-Survey\-Items@{get\-Survey\-Items}!Model::Survey@{Model\-::\-Survey}}
@@ -95,15 +198,22 @@ Array
 \end{DoxyReturn}
 
 
-Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00048}{48} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00054}{54} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00048                                                 \{
-00049                 
-00050                 \textcolor{keywordflow}{return} (array(10 => \textcolor{stringliteral}{"Antwort 1"}, 11 => \textcolor{stringliteral}{"Antwort 2"}));
-00051                 
-00052         \}
+00054                                                 \{
+00055                 
+00056                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT ID, Name FROM SurveyItems WHERE SurveyID = :id ORDER BY
+       Name"});
+00057                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00058                 $stmt->execute();
+00059                 
+00060                 \textcolor{keywordflow}{return} $stmt->fetchAll();
+00061 
+00062                 
+00063                 
+00064         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Name@{get\-Survey\-Name}}
 \index{get\-Survey\-Name@{get\-Survey\-Name}!Model::Survey@{Model\-::\-Survey}}
@@ -124,15 +234,20 @@ String Name der Umfrage
 \end{DoxyReturn}
 
 
-Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00033}{33} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00034}{34} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00033                                                \{
-00034                 
-00035                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Name der Umfrage $survey"};
-00036                 
-00037         \}
+00034                                                \{
+00035                 
+00036                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT Name FROM Survey WHERE ID = :id"});
+00037                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00038                 $stmt->execute();
+00039                 $res = $stmt->fetchObject();
+00040 
+00041                 \textcolor{keywordflow}{return} $res->Name;
+00042                 
+00043         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Survey\-Result@{get\-Survey\-Result}}
 \index{get\-Survey\-Result@{get\-Survey\-Result}!Model::Survey@{Model\-::\-Survey}}
@@ -153,15 +268,20 @@ Array
 \end{DoxyReturn}
 
 
-Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00077}{77} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00094}{94} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00077                                                  \{
-00078                 
-00079                 \textcolor{keywordflow}{return} (array(232 => \textcolor{stringliteral}{"Antwort 1"}, 332 => \textcolor{stringliteral}{"Antwort 2"}));
-00080                 
-00081         \}
+00094                                                  \{
+00095                 
+00096                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT i.Name, COUNT(a.ID) as cnt FROM SurveyItems i LEFT JOIN
+       SurveyAnswer a ON i.ID = a. SurveyItemID WHERE i.SurveyID = :id GROUP BY Name ORDER BY i.Name"});
+00097                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00098                 $stmt->execute();
+00099                 
+00100                 \textcolor{keywordflow}{return} $stmt->fetchAll();
+00101                 
+00102         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a259373a6fdcae5796fc6e14586c98474}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Surveys@{get\-Surveys}}
 \index{get\-Surveys@{get\-Surveys}!Model::Survey@{Model\-::\-Survey}}
@@ -183,9 +303,85 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00018}{18} der Datei 
 \begin{DoxyCode}
 00018                                      \{
 00019                 
-00020                 \textcolor{keywordflow}{return} array(1 => \textcolor{stringliteral}{"Umfrage 1"}, 2 => \textcolor{stringliteral}{"Umfrage 2"});
-00021                 
-00022         \}
+00020                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT * FROM Survey"});
+00021                 \textcolor{keywordflow}{return} $stmt->fetchAll();       
+00022                                 
+00023         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{\index{Model\-::\-Survey@{Model\-::\-Survey}!get\-Table\-Count@{get\-Table\-Count}}
+\index{get\-Table\-Count@{get\-Table\-Count}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{get\-Table\-Count}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::get\-Table\-Count (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}
+Anzahl der Tupel zurückgeben
+
+
+\begin{DoxyParams}[1]{Parameter}
+String & {\em \$table} & Tabellenname\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Integer Anzahl der Tupel 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00199}{199} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00199                                                \{
+00200                 
+00201                 
+00202                 \textcolor{keywordflow}{switch} ($table) \{
+00203                         
+00204                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
+00205                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
+00206                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
+00207                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
+00208                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
+00209                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
+00210                                 \textcolor{keywordflow}{break};  
+00211                         \textcolor{keywordflow}{default}:
+00212                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
+00213                                 
+00214                 \}
+00215                                 
+00216         \}
+\end{DoxyCode}
+\hypertarget{class_model_1_1_survey_a39a47b914740e87bc133a72c4721b018}{\index{Model\-::\-Survey@{Model\-::\-Survey}!save\-New\-Answers@{save\-New\-Answers}}
+\index{save\-New\-Answers@{save\-New\-Answers}!Model::Survey@{Model\-::\-Survey}}
+\subsubsection[{save\-New\-Answers}]{\setlength{\rightskip}{0pt plus 5cm}Model\textbackslash{}\-Survey\-::save\-New\-Answers (
+\begin{DoxyParamCaption}
+\item[{}]{\$answer\-Arr}
+\end{DoxyParamCaption}
+)}}\label{class_model_1_1_survey_a39a47b914740e87bc133a72c4721b018}
+Antworten Speichern
+
+
+\begin{DoxyParams}[1]{Parameter}
+Integer & {\em \$answer\-Arr} & Array mit den Antwort I\-Ds \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00128}{128} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+
+
+\begin{DoxyCode}
+00128                                                    \{
+00129 
+00130                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyAnswer SET SurveyItemID = :id"});
+00131                 
+00132                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00133 
+00134                         $stmt->bindParam(\textcolor{stringliteral}{':id'}, $answer);
+00135                         $stmt->execute();
+00136                         
+00137                 \}
+00138         
+00139         \}
 \end{DoxyCode}
 
 

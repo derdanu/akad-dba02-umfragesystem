@@ -11,7 +11,7 @@
 00006 \textcolor{comment}{ * Benutzer Datenmodell}
 00007 \textcolor{comment}{ * }
 00008 \textcolor{comment}{ */}
-\hypertarget{_model_2_user_8php_source_l00009}{}\hyperlink{class_model_1_1_user}{00009} \textcolor{keyword}{class }\hyperlink{class_model_1_1_user}{User} \{
+\hypertarget{_model_2_user_8php_source_l00009}{}\hyperlink{class_model_1_1_user}{00009} \textcolor{keyword}{class }\hyperlink{class_model_1_1_user}{User} \textcolor{keyword}{extends} \hyperlink{class_model_1_1_base}{Base} \{
 00010 
 00011 \textcolor{comment}{}
 00012 \textcolor{comment}{        /**}
@@ -25,26 +25,96 @@
 00020 \textcolor{comment}{         * }
 00021 \textcolor{comment}{         */}
 \hypertarget{_model_2_user_8php_source_l00022}{}\hyperlink{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}{00022}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}{checkCredentials}($user, $pass) \{
-00023                 
-00024                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00023 
+00024                 \textcolor{keywordflow}{if} (empty($user) || empty($pass)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 00025                 
-00026         \}
-00027         \textcolor{comment}{}
-00028 \textcolor{comment}{        /**}
-00029 \textcolor{comment}{         * }
-00030 \textcolor{comment}{         * Benutzer holen}
-00031 \textcolor{comment}{         * }
-00032 \textcolor{comment}{         * @return      Array}
-00033 \textcolor{comment}{         * }
-00034 \textcolor{comment}{         */}
-\hypertarget{_model_2_user_8php_source_l00035}{}\hyperlink{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{00035}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{getUsers}() \{
-00036                 
-00037                 \textcolor{keywordflow}{return} array(\textcolor{stringliteral}{"sepp"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()), \textcolor{stringliteral}{"franz"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()), \textcolor{stringliteral}{"
-      test"} => date(\textcolor{stringliteral}{"d.m.Y H:i"}, time()));
-00038         \}
-00039                 
-00040 \}
-00041 
-00042 
-00043 ?>
+00026                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT Passwort FROM User WHERE Name = :name"});
+00027                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $user);
+00028         
+00029                 $stmt->execute();
+00030                 $res = $stmt->fetchObject();
+00031 
+00032                 \textcolor{keywordflow}{if} ($res->Passwort == $pass) \{
+00033                         
+00034                         $this->updateLastLogIn($user);
+00035                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00036                         
+00037                 \} \textcolor{keywordflow}{else} \{
+00038                         
+00039                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00040                         
+00041                 \}
+00042  
+00043         \}
+00044         \textcolor{comment}{}
+00045 \textcolor{comment}{        /**}
+00046 \textcolor{comment}{         * }
+00047 \textcolor{comment}{         * Benutzer holen}
+00048 \textcolor{comment}{         * }
+00049 \textcolor{comment}{         * @return      Array}
+00050 \textcolor{comment}{         * }
+00051 \textcolor{comment}{         */}
+\hypertarget{_model_2_user_8php_source_l00052}{}\hyperlink{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{00052}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{getUsers}() \{
+00053 
+00054                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT ID, Name, LastLogIn FROM User"});
+00055                 \textcolor{keywordflow}{return}  $stmt->fetchAll();      
+00056                 
+00057         \}
+00058         \textcolor{comment}{}
+00059 \textcolor{comment}{        /**}
+00060 \textcolor{comment}{         * }
+00061 \textcolor{comment}{         * Benutzer löschen}
+00062 \textcolor{comment}{         * }
+00063 \textcolor{comment}{         * @param       Integer $id     BenutzerID}
+00064 \textcolor{comment}{         * }
+00065 \textcolor{comment}{         */}
+\hypertarget{_model_2_user_8php_source_l00066}{}\hyperlink{class_model_1_1_user_a458a6d6adff444603045434301b02246}{00066}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a458a6d6adff444603045434301b02246}{deleteUser}($id) \{
+00067                 
+00068                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"DELETE FROM User WHERE ID = :id"});
+00069                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $id);
+00070         
+00071                 $stmt->execute();
+00072                 
+00073         \}
+00074         \textcolor{comment}{}
+00075 \textcolor{comment}{        /**}
+00076 \textcolor{comment}{         * }
+00077 \textcolor{comment}{         * Benutzer hinzufügen}
+00078 \textcolor{comment}{         * }
+00079 \textcolor{comment}{         * @param       String  $name   Benutzername}
+00080 \textcolor{comment}{         * @param       String  $pass   Passwort}
+00081 \textcolor{comment}{         * }
+00082 \textcolor{comment}{         */}
+\hypertarget{_model_2_user_8php_source_l00083}{}\hyperlink{class_model_1_1_user_a7a13080a106b3b3adb0b4856c144064e}{00083}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a7a13080a106b3b3adb0b4856c144064e}{addUser}($name, $pass) \{
+00084                 
+00085                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO User SET Name = :name, Passwort = :pass"});
+00086                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
+00087                 $stmt->bindParam(\textcolor{stringliteral}{':pass'}, $pass);
+00088                         
+00089                 $stmt->execute();
+00090                 
+00091         \}
+00092         
+00093         \textcolor{comment}{}
+00094 \textcolor{comment}{        /**}
+00095 \textcolor{comment}{         * }
+00096 \textcolor{comment}{         * Zeitstempel des letzten Logins vom User Updaten}
+00097 \textcolor{comment}{         * }
+00098 \textcolor{comment}{         * @param       String  $user   Benutzername}
+00099 \textcolor{comment}{         * }
+00100 \textcolor{comment}{         */}
+\hypertarget{_model_2_user_8php_source_l00101}{}\hyperlink{class_model_1_1_user_a45d6132fe4ea721dea485ff7c65bc412}{00101}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_model_1_1_user_a45d6132fe4ea721dea485ff7c65bc412}{updateLastLogIn}($user) \{
+00102 
+00103                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"UPDATE User SET LastLogIn = :lastlogin WHERE Name = :name"});
+00104                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $user);
+00105                 $stmt->bindValue(\textcolor{stringliteral}{':lastlogin'}, date(\textcolor{stringliteral}{"Y-m-d H:i:s"}));
+00106 
+00107                 $stmt->execute();
+00108                         
+00109         \}
+00110                 
+00111 \}
+00112 
+00113 
+00114 ?>
 \end{DoxyCode}

@@ -4,8 +4,6 @@
 \subsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_controller_1_1_user_session_a3ab4801a36620e4a99cf3066970ebaf4}{Login\-\_\-\-Action} ()
-\item 
 \hyperlink{class_controller_1_1_user_session_a0b902f49ccbff4387dcf5655874cbb1c}{Login\-\_\-\-P\-O\-S\-T\-\_\-\-Action} ()
 \item 
 \hyperlink{class_controller_1_1_user_session_a2078537fe028f203be44fdfe2b3c0036}{Logout\-\_\-\-Action} ()
@@ -15,33 +13,11 @@
 \subsection{Ausführliche Beschreibung}
 Login Controller 
 
-Definiert in Zeile \hyperlink{_user_session_8php_source_l00010}{10} der Datei \hyperlink{_user_session_8php_source}{User\-Session.\-php}.
+Definiert in Zeile \hyperlink{_user_session_8php_source_l00012}{12} der Datei \hyperlink{_user_session_8php_source}{User\-Session.\-php}.
 
 
 
 \subsection{Dokumentation der Elementfunktionen}
-\hypertarget{class_controller_1_1_user_session_a3ab4801a36620e4a99cf3066970ebaf4}{\index{Controller\-::\-User\-Session@{Controller\-::\-User\-Session}!Login\-\_\-\-Action@{Login\-\_\-\-Action}}
-\index{Login\-\_\-\-Action@{Login\-\_\-\-Action}!Controller::UserSession@{Controller\-::\-User\-Session}}
-\subsubsection[{Login\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-User\-Session\-::\-Login\-\_\-\-Action (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_controller_1_1_user_session_a3ab4801a36620e4a99cf3066970ebaf4}
-Login Formular anzeigen 
-
-Definiert in Zeile \hyperlink{_user_session_8php_source_l00018}{18} der Datei \hyperlink{_user_session_8php_source}{User\-Session.\-php}.
-
-
-\begin{DoxyCode}
-00018                                        \{
-00019 
-00020                 $view = new \(\backslash\)View();
-00021                 $view->setTemplate(\textcolor{stringliteral}{'login'});
-00022                 $view->display();
-00023 
-00024                 
-00025         \}
-\end{DoxyCode}
 \hypertarget{class_controller_1_1_user_session_a0b902f49ccbff4387dcf5655874cbb1c}{\index{Controller\-::\-User\-Session@{Controller\-::\-User\-Session}!Login\-\_\-\-P\-O\-S\-T\-\_\-\-Action@{Login\-\_\-\-P\-O\-S\-T\-\_\-\-Action}}
 \index{Login\-\_\-\-P\-O\-S\-T\-\_\-\-Action@{Login\-\_\-\-P\-O\-S\-T\-\_\-\-Action}!Controller::UserSession@{Controller\-::\-User\-Session}}
 \subsubsection[{Login\-\_\-\-P\-O\-S\-T\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-User\-Session\-::\-Login\-\_\-\-P\-O\-S\-T\-\_\-\-Action (
@@ -51,30 +27,30 @@ Definiert in Zeile \hyperlink{_user_session_8php_source_l00018}{18} der Datei \h
 )}}\label{class_controller_1_1_user_session_a0b902f49ccbff4387dcf5655874cbb1c}
 Verarbeitung der Logindaten 
 
-Definiert in Zeile \hyperlink{_user_session_8php_source_l00032}{32} der Datei \hyperlink{_user_session_8php_source}{User\-Session.\-php}.
+Definiert in Zeile \hyperlink{_user_session_8php_source_l00020}{20} der Datei \hyperlink{_user_session_8php_source}{User\-Session.\-php}.
 
 
 \begin{DoxyCode}
-00032                                             \{
+00020                                             \{
+00021                 
+00022                 $user = $\_POST[\textcolor{stringliteral}{'user'}];
+00023                 $pass = $\_POST[\textcolor{stringliteral}{'pass'}];
+00024                 
+00025                 $model = new \(\backslash\)Model\(\backslash\)User();
+00026                         
+00027                 \textcolor{keywordflow}{if} ($model->checkCredentials($user, $pass)) \{
+00028 
+00029                         \hyperlink{class_session_ab5ee063ee1dd4a5026c1b87caf98c9a0}{\(\backslash\)Session::authUser}();
+00030                         \hyperlink{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{\(\backslash\)Redirect::toController}(\textcolor{stringliteral}{"Index"});
+00031 
+00032                 \} \textcolor{keywordflow}{else} \{
 00033                 
-00034                 $user = $\_GET[\textcolor{stringliteral}{'user'}];
-00035                 $pass = $\_GET[\textcolor{stringliteral}{'pass'}];
-00036                 
-00037                 $model = new \(\backslash\)Model\(\backslash\)User();
-00038                         
-00039                 \textcolor{keywordflow}{if} ($model->checkCredentials($user, $pass)) \{
-00040 
-00041                         \hyperlink{class_session_ab5ee063ee1dd4a5026c1b87caf98c9a0}{\(\backslash\)Session::authUser}();
-00042                         \hyperlink{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{\(\backslash\)Redirect::toController}(\textcolor{stringliteral}{"Index"});
-00043 
-00044                 \} \textcolor{keywordflow}{else} \{
-00045                 
-00046                         $this->\hyperlink{class_controller_1_1_user_session_a3ab4801a36620e4a99cf3066970ebaf4}{Login\_Action}();                      
-00047                         
-00048                 \}
-00049 
-00050                 
-00051         \}
+00034                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_custom_exception_1_1_invalid_user_pass_exception}{Ex\(\backslash\)InvalidUserPassException}();
+00035                         
+00036                 \}
+00037 
+00038                 
+00039         \}
 \end{DoxyCode}
 \hypertarget{class_controller_1_1_user_session_a2078537fe028f203be44fdfe2b3c0036}{\index{Controller\-::\-User\-Session@{Controller\-::\-User\-Session}!Logout\-\_\-\-Action@{Logout\-\_\-\-Action}}
 \index{Logout\-\_\-\-Action@{Logout\-\_\-\-Action}!Controller::UserSession@{Controller\-::\-User\-Session}}
@@ -85,16 +61,16 @@ Definiert in Zeile \hyperlink{_user_session_8php_source_l00032}{32} der Datei \h
 )}}\label{class_controller_1_1_user_session_a2078537fe028f203be44fdfe2b3c0036}
 Logout Action 
 
-Definiert in Zeile \hyperlink{_user_session_8php_source_l00058}{58} der Datei \hyperlink{_user_session_8php_source}{User\-Session.\-php}.
+Definiert in Zeile \hyperlink{_user_session_8php_source_l00046}{46} der Datei \hyperlink{_user_session_8php_source}{User\-Session.\-php}.
 
 
 \begin{DoxyCode}
-00058                                         \{
-00059 
-00060                 \hyperlink{class_session_a5dde74b6fa44649e5b73cb1096930dd4}{\(\backslash\)Session::destroy}();
-00061                 \hyperlink{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{\(\backslash\)Redirect::toController}(\textcolor{stringliteral}{"Index"});
-00062                 
-00063         \}
+00046                                         \{
+00047 
+00048                 \hyperlink{class_session_a5dde74b6fa44649e5b73cb1096930dd4}{\(\backslash\)Session::destroy}();
+00049                 \hyperlink{class_redirect_a5a8f456a5318387c966b24c0cbe2c083}{\(\backslash\)Redirect::toController}(\textcolor{stringliteral}{"Index"});
+00050                 
+00051         \}
 \end{DoxyCode}
 
 

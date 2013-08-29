@@ -107,10 +107,10 @@ $(document).ready(function(){initNavTree('admin__surveys_8tpl_8php_source.html',
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                &lt;table <span class="keyword">class</span>=<span class="stringliteral">&quot;table table-hover&quot;</span>&gt;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                        &lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Umfrage&lt;/th&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                        &lt;?php</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                        <span class="keywordflow">foreach</span> ($this-&gt;view[<span class="stringliteral">&#39;surveys&#39;</span>] as $key=&gt;$value) {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                print   <span class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;$key&lt;/td&gt;&quot;</span> .</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                <span class="stringliteral">&quot;&lt;td&gt;&lt;a href=&#39;?controller=Survey&amp;action=Show&amp;survey=$key&#39;&gt;$value&lt;/a&gt;&lt;/td&gt;&quot;</span> .</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                                <span class="stringliteral">&quot;&lt;td class=&#39;text-right&#39;&gt;&lt;a href=\&quot;?controller=Admin\Survey&amp;action=Delete&amp;survey=$key\&quot; class=&#39;btn btn-danger&#39;&gt;Löschen&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</span>;      </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                        <span class="keywordflow">foreach</span> ($this-&gt;view[<span class="stringliteral">&#39;surveys&#39;</span>] as $arr) {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                print   <span class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;{$arr[&#39;ID&#39;]}&lt;/td&gt;&quot;</span> .</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                <span class="stringliteral">&quot;&lt;td&gt;&lt;a href=&#39;?controller=Survey&amp;action=Show&amp;survey={$arr[&#39;ID&#39;]}&#39;&gt;{$arr[&#39;Name&#39;]}&lt;/a&gt;&lt;/td&gt;&quot;</span> .</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                                <span class="stringliteral">&quot;&lt;td class=&#39;text-right&#39;&gt;&lt;a href=\&quot;?controller=Admin\Survey&amp;action=Delete&amp;survey={$arr[&#39;ID&#39;]}\&quot; class=&#39;btn btn-danger&#39;&gt;Löschen&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</span>;      </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                        }</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                        ?&gt;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                &lt;/table&gt;</div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('admin__surveys_8tpl_8php_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_dffbf13c22df868c1450a46ae79da766.html">templates</a></li><li class="navelem"><b>admin_surveys.tpl.php</b></li>
-    <li class="footer">Erzeugt am Mit Aug 28 2013 15:49:32 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:01 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

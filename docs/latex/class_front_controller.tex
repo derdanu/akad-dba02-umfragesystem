@@ -50,25 +50,26 @@ Definiert in Zeile \hyperlink{_front_controller_8php_source_l00031}{31} der Date
 \begin{DoxyCode}
 00031                                       \{
 00032 
-00033                 $controller = $\_GET[\textcolor{stringliteral}{'controller'}];              
-00034                 \textcolor{comment}{// Workaround magic\_quotes() . Ab PHP 5.4 DEPRICATED}
-00035                 \textcolor{keywordflow}{if} (get\_magic\_quotes\_gpc()) \{
-00036                         $controller =   str\_replace(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)"}, \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"}, $controller); 
-00037                 \}
-00038                 
-00039                 $action = $\_GET[\textcolor{stringliteral}{'action'}];
-00040                 
+00033                 \textcolor{keywordflow}{if} (isset($\_GET[\textcolor{stringliteral}{'controller'}])) $controller = $\_GET[\textcolor{stringliteral}{'controller'}]; 
+00034                                 
+00035                 \textcolor{comment}{// Workaround magic\_quotes() . Ab PHP 5.4 DEPRICATED}
+00036                 \textcolor{keywordflow}{if} (get\_magic\_quotes\_gpc()) \{
+00037                         $controller =   str\_replace(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)"}, \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"}, $controller); 
+00038                 \}
+00039                 
+00040                 \textcolor{keywordflow}{if} (isset($\_GET[\textcolor{stringliteral}{'action'}])) $action = $\_GET[\textcolor{stringliteral}{'action'}];
 00041                 
-00042                 $this->controller = !empty($controller) ? CONTROLLERNAMESPACE . $controller : 
+00042                 
+00043                 $this->controller = !empty($controller) ? CONTROLLERNAMESPACE . $controller : 
       CONTROLLERNAMESPACE . \textcolor{stringliteral}{"Index"};
-00043 
-00044                 $this->action = !empty($action) ? $action : \textcolor{stringliteral}{"Index"};
-00045                 \textcolor{keywordflow}{if} ($\_SERVER[\textcolor{stringliteral}{'REQUEST\_METHOD'}] == \textcolor{stringliteral}{'POST'}) \{
-00046                         $this->action .= \textcolor{stringliteral}{"\_POST"};
-00047                 \}
-00048         $this->action .= \textcolor{stringliteral}{"\_Action"};
-00049 
-00050         \}
+00044 
+00045                 $this->action = !empty($action) ? $action : \textcolor{stringliteral}{"Index"};
+00046                 \textcolor{keywordflow}{if} ($\_SERVER[\textcolor{stringliteral}{'REQUEST\_METHOD'}] == \textcolor{stringliteral}{'POST'}) \{
+00047                         $this->action .= \textcolor{stringliteral}{"\_POST"};
+00048                 \}
+00049         $this->action .= \textcolor{stringliteral}{"\_Action"};
+00050 
+00051         \}
 \end{DoxyCode}
 
 
@@ -82,22 +83,22 @@ Definiert in Zeile \hyperlink{_front_controller_8php_source_l00031}{31} der Date
 )}}\label{class_front_controller_aee82b9818875d037d6312b856f76403c}
 \hyperlink{class_front_controller}{Front\-Controller} ausfuehren 
 
-Definiert in Zeile \hyperlink{_front_controller_8php_source_l00057}{57} der Datei \hyperlink{_front_controller_8php_source}{Front\-Controller.\-php}.
+Definiert in Zeile \hyperlink{_front_controller_8php_source_l00058}{58} der Datei \hyperlink{_front_controller_8php_source}{Front\-Controller.\-php}.
 
 
 \begin{DoxyCode}
-00057                               \{
-00058 
-00059                 $controller = \textcolor{keyword}{new} $this->controller();
-00060 
-00061                 \textcolor{keywordflow}{if}(in\_array($this->action, get\_class\_methods($controller))) \{
-00062                 $controller->\{$this->action\}();
-00063         \} \textcolor{keywordflow}{else} \{
-00064                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"'\{$this->controller\}' hat keine Aktion '\{$this->action\}'"});
-00065         \}
-00066         
-00067   
-00068         \}
+00058                               \{
+00059 
+00060                 $controller = \textcolor{keyword}{new} $this->controller();
+00061 
+00062                 \textcolor{keywordflow}{if}(in\_array($this->action, get\_class\_methods($controller))) \{
+00063                 $controller->\{$this->action\}();
+00064         \} \textcolor{keywordflow}{else} \{
+00065                         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"'\{$this->controller\}' hat keine Aktion '\{$this->action\}'"});
+00066         \}
+00067         
+00068   
+00069         \}
 \end{DoxyCode}
 
 

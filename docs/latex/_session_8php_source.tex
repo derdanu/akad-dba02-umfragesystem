@@ -92,7 +92,7 @@
 00087 \textcolor{comment}{         */}
 \hypertarget{_session_8php_source_l00088}{}\hyperlink{class_session_a23cee49624385c6af65af96fb1c682f6}{00088}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{class_session_a23cee49624385c6af65af96fb1c682f6}{isUserAuthed}() \{
 00089                 
-00090                 \textcolor{keywordflow}{if} ($\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] == 1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00090                 \textcolor{keywordflow}{if} (array\_key\_exists(\textcolor{stringliteral}{'\_\_AUTH'}, $\_SESSION) && $\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] == 1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
 00091                 
 00092                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 00093                 

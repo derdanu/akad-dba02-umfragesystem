@@ -7,11 +7,11 @@
 00002                 <table \textcolor{keyword}{class}=\textcolor{stringliteral}{"table table-hover"}>
 00003                         <tr><th>Benutername</th><th>Letzer Login</th><th></th></tr>
 00004                         <?php
-00005                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'users'}] as $userid=>$lastlogin) \{
-00006                                 print   \textcolor{stringliteral}{"<tr><td>$userid</td>"} .
-00007                                                 \textcolor{stringliteral}{"<td>$lastlogin</td>"} .
+00005                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'users'}] as $arr) \{
+00006                                 print   \textcolor{stringliteral}{"<tr><td>\{$arr['Name']\}</td>"} .
+00007                                                 \textcolor{stringliteral}{"<td>\{$arr['LastLogIn']\}</td>"} .
 00008                                                 \textcolor{stringliteral}{"<td class='text-right'><a href=\(\backslash\)"?controller=Admin\(\backslash\)U
-      ser&action=Delete&user=$userid\(\backslash\)" class='btn btn-danger'>Löschen</button></td></tr>"};   
+      ser&action=Delete&user=\{$arr['ID']\}\(\backslash\)" class='btn btn-danger'>Löschen</button></td></tr>"};      
 00009                         \}
 00010                         ?>
 00011                 </table>

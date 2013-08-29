@@ -11,7 +11,7 @@
 00006 \textcolor{comment}{ * Umfrage Datenmodell}
 00007 \textcolor{comment}{ * }
 00008 \textcolor{comment}{ */}
-\hypertarget{_model_2_survey_8php_source_l00009}{}\hyperlink{class_model_1_1_survey}{00009} \textcolor{keyword}{class }\hyperlink{class_model_1_1_survey}{Survey} \{
+\hypertarget{_model_2_survey_8php_source_l00009}{}\hyperlink{class_model_1_1_survey}{00009} \textcolor{keyword}{class }\hyperlink{class_model_1_1_survey}{Survey} \textcolor{keyword}{extends} \hyperlink{class_model_1_1_base}{Base}\{
 00010 \textcolor{comment}{}
 00011 \textcolor{comment}{        /**}
 00012 \textcolor{comment}{         * }
@@ -22,83 +22,210 @@
 00017 \textcolor{comment}{         */}
 \hypertarget{_model_2_survey_8php_source_l00018}{}\hyperlink{class_model_1_1_survey_a259373a6fdcae5796fc6e14586c98474}{00018}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a259373a6fdcae5796fc6e14586c98474}{getSurveys}() \{
 00019                 
-00020                 \textcolor{keywordflow}{return} array(1 => \textcolor{stringliteral}{"Umfrage 1"}, 2 => \textcolor{stringliteral}{"Umfrage 2"});
-00021                 
-00022         \}
-00023         \textcolor{comment}{}
-00024 \textcolor{comment}{        /**}
-00025 \textcolor{comment}{         * }
-00026 \textcolor{comment}{         * Umfragename holen}
-00027 \textcolor{comment}{         * }
-00028 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
-00029 \textcolor{comment}{         * }
-00030 \textcolor{comment}{         * @return      String  Name der Umfrage}
-00031 \textcolor{comment}{         * }
-00032 \textcolor{comment}{         */}
-\hypertarget{_model_2_survey_8php_source_l00033}{}\hyperlink{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}{00033}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}{getSurveyName}($survey) \{
-00034                 
-00035                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Name der Umfrage $survey"};
-00036                 
-00037         \}
-00038         \textcolor{comment}{}
-00039 \textcolor{comment}{        /**}
-00040 \textcolor{comment}{         * }
-00041 \textcolor{comment}{         * Umfrage Punkte holen}
-00042 \textcolor{comment}{         * }
-00043 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
-00044 \textcolor{comment}{         * }
-00045 \textcolor{comment}{         * @return      Array}
+00020                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT * FROM Survey"});
+00021                 \textcolor{keywordflow}{return} $stmt->fetchAll();       
+00022                                 
+00023         \}
+00024         \textcolor{comment}{}
+00025 \textcolor{comment}{        /**}
+00026 \textcolor{comment}{         * }
+00027 \textcolor{comment}{         * Umfragename holen}
+00028 \textcolor{comment}{         * }
+00029 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
+00030 \textcolor{comment}{         * }
+00031 \textcolor{comment}{         * @return      String  Name der Umfrage}
+00032 \textcolor{comment}{         * }
+00033 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00034}{}\hyperlink{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}{00034}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a85d138e55d090b11ba406db39f7d2e72}{getSurveyName}($survey) \{
+00035                 
+00036                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT Name FROM Survey WHERE ID = :id"});
+00037                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00038                 $stmt->execute();
+00039                 $res = $stmt->fetchObject();
+00040 
+00041                 \textcolor{keywordflow}{return} $res->Name;
+00042                 
+00043         \}
+00044         \textcolor{comment}{}
+00045 \textcolor{comment}{        /**}
 00046 \textcolor{comment}{         * }
-00047 \textcolor{comment}{         */}
-\hypertarget{_model_2_survey_8php_source_l00048}{}\hyperlink{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}{00048}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}{getSurveyItems}($survey) \{
-00049                 
-00050                 \textcolor{keywordflow}{return} (array(10 => \textcolor{stringliteral}{"Antwort 1"}, 11 => \textcolor{stringliteral}{"Antwort 2"}));
-00051                 
-00052         \}
-00053 \textcolor{comment}{}
-00054 \textcolor{comment}{        /**}
-00055 \textcolor{comment}{         * }
-00056 \textcolor{comment}{         * Anzahl der Abgegeben Umfragewerte}
-00057 \textcolor{comment}{         * }
-00058 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
-00059 \textcolor{comment}{         * }
-00060 \textcolor{comment}{         * @return      Integer Anzahl der Ergebnisse zur Umfrage}
-00061 \textcolor{comment}{         * }
-00062 \textcolor{comment}{         */}
-\hypertarget{_model_2_survey_8php_source_l00063}{}\hyperlink{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}{00063}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}{getSurveyItemCount}($survey) \{
-00064                 
-00065                 \textcolor{keywordflow}{return} 564;
-00066                 
-00067         \}
-00068 \textcolor{comment}{}
-00069 \textcolor{comment}{        /**}
-00070 \textcolor{comment}{         * }
-00071 \textcolor{comment}{         * Umfrage Ergebnisse holen}
-00072 \textcolor{comment}{         * }
-00073 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
-00074 \textcolor{comment}{         * }
-00075 \textcolor{comment}{         * @return      Array}
-00076 \textcolor{comment}{         */}
-\hypertarget{_model_2_survey_8php_source_l00077}{}\hyperlink{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{00077}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{getSurveyResult}($survey) \{
-00078                 
-00079                 \textcolor{keywordflow}{return} (array(232 => \textcolor{stringliteral}{"Antwort 1"}, 332 => \textcolor{stringliteral}{"Antwort 2"}));
-00080                 
-00081         \}
-00082         \textcolor{comment}{}
-00083 \textcolor{comment}{        /**}
-00084 \textcolor{comment}{         * }
-00085 \textcolor{comment}{         * Statistiken holen}
-00086 \textcolor{comment}{         * }
-00087 \textcolor{comment}{         */}
-\hypertarget{_model_2_survey_8php_source_l00088}{}\hyperlink{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{00088}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{getStats}() \{
-00089                 
-00090                 $stat[survey\_cnt] = 17;
-00091                 $stat[record\_cnt] = 343;
-00092                 
-00093                 \textcolor{keywordflow}{return} $stat;
-00094         \}
-00095 \}
-00096 
-00097 
-00098 ?>
+00047 \textcolor{comment}{         * Umfrage Punkte holen}
+00048 \textcolor{comment}{         * }
+00049 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
+00050 \textcolor{comment}{         * }
+00051 \textcolor{comment}{         * @return      Array}
+00052 \textcolor{comment}{         * }
+00053 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00054}{}\hyperlink{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}{00054}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a7f2d5fba208ba0f2ec426db9b9075115}{getSurveyItems}($survey) \{
+00055                 
+00056                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT ID, Name FROM SurveyItems WHERE SurveyID = :id ORDER BY
+       Name"});
+00057                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00058                 $stmt->execute();
+00059                 
+00060                 \textcolor{keywordflow}{return} $stmt->fetchAll();
+00061 
+00062                 
+00063                 
+00064         \}
+00065 \textcolor{comment}{}
+00066 \textcolor{comment}{        /**}
+00067 \textcolor{comment}{         * }
+00068 \textcolor{comment}{         * Anzahl der Abgegeben Umfragewerte}
+00069 \textcolor{comment}{         * }
+00070 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
+00071 \textcolor{comment}{         * }
+00072 \textcolor{comment}{         * @return      Integer Anzahl der Ergebnisse zur Umfrage}
+00073 \textcolor{comment}{         * }
+00074 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00075}{}\hyperlink{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}{00075}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_ac4b8b489fe806c31bd05d8ec626aae16}{getSurveyItemCount}($survey) \{
+00076                 
+00077                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM SurveyAnswer WHERE SurveyItemID IN
+       (SELECT ID FROM SurveyItems WHERE SurveyID = :id)"});
+00078                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00079                 $stmt->execute();
+00080                 $res = $stmt->fetchObject();
+00081 
+00082                 \textcolor{keywordflow}{return} $res->cnt;
+00083         
+00084         \}
+00085 \textcolor{comment}{}
+00086 \textcolor{comment}{        /**}
+00087 \textcolor{comment}{         * }
+00088 \textcolor{comment}{         * Umfrage Ergebnisse holen}
+00089 \textcolor{comment}{         * }
+00090 \textcolor{comment}{         * @param       Integer $survey UmfrageId       }
+00091 \textcolor{comment}{         * }
+00092 \textcolor{comment}{         * @return      Array}
+00093 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00094}{}\hyperlink{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{00094}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a3423f530767905dd0b52858c70d82877}{getSurveyResult}($survey) \{
+00095                 
+00096                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"SELECT i.Name, COUNT(a.ID) as cnt FROM SurveyItems i LEFT JOIN
+       SurveyAnswer a ON i.ID = a. SurveyItemID WHERE i.SurveyID = :id GROUP BY Name ORDER BY i.Name"});
+00097                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $survey);
+00098                 $stmt->execute();
+00099                 
+00100                 \textcolor{keywordflow}{return} $stmt->fetchAll();
+00101                 
+00102         \}
+00103         \textcolor{comment}{}
+00104 \textcolor{comment}{        /**}
+00105 \textcolor{comment}{         * }
+00106 \textcolor{comment}{         * Statistiken holen}
+00107 \textcolor{comment}{         * }
+00108 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00109}{}\hyperlink{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{00109}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_ae8dbded81f45b3d84c061bb1bf5ba97f}{getStats}() \{
+00110                 
+00111                 $stat = array();
+00112 
+00113                 $stat[\textcolor{stringliteral}{'user\_cnt'}] = $this->getTableCount(\textcolor{stringliteral}{"User"});
+00114                 $stat[\textcolor{stringliteral}{'survey\_cnt'}] = $this->getTableCount(\textcolor{stringliteral}{"Survey"});
+00115                 $stat[\textcolor{stringliteral}{'survey\_items\_cnt'}] = $this->getTableCount(\textcolor{stringliteral}{"SurveyItems"});
+00116                 $stat[\textcolor{stringliteral}{'answer\_cnt'}] = $this->getTableCount(\textcolor{stringliteral}{"SurveyAnswer"});
+00117                 
+00118                 \textcolor{keywordflow}{return} $stat;
+00119         \}
+00120 \textcolor{comment}{}
+00121 \textcolor{comment}{        /**}
+00122 \textcolor{comment}{         * }
+00123 \textcolor{comment}{         * Antworten Speichern}
+00124 \textcolor{comment}{         * }
+00125 \textcolor{comment}{         * @param       Integer $answerArr      Array mit den Antwort IDs}
+00126 \textcolor{comment}{         * }
+00127 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00128}{}\hyperlink{class_model_1_1_survey_a39a47b914740e87bc133a72c4721b018}{00128}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a39a47b914740e87bc133a72c4721b018}{saveNewAnswers}($answerArr) \{
+00129 
+00130                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyAnswer SET SurveyItemID = :id"});
+00131                 
+00132                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00133 
+00134                         $stmt->bindParam(\textcolor{stringliteral}{':id'}, $answer);
+00135                         $stmt->execute();
+00136                         
+00137                 \}
+00138         
+00139         \}
+00140         
+00141         \textcolor{comment}{}
+00142 \textcolor{comment}{        /**}
+00143 \textcolor{comment}{         * }
+00144 \textcolor{comment}{         * Umfrage löschen}
+00145 \textcolor{comment}{         * }
+00146 \textcolor{comment}{         * @param       Integer $id     UmfragenID}
+00147 \textcolor{comment}{         * }
+00148 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00149}{}\hyperlink{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}{00149}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}{deleteSurvey}($id) \{
+00150                 
+00151                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"DELETE FROM Survey WHERE ID = :id"});
+00152                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $id);
+00153         
+00154                 $stmt->execute();
+00155                 
+00156         \}       
+00157         
+00158         \textcolor{comment}{}
+00159 \textcolor{comment}{        /**}
+00160 \textcolor{comment}{         * }
+00161 \textcolor{comment}{         * neue Umfrage hinzufügen}
+00162 \textcolor{comment}{         * }
+00163 \textcolor{comment}{         * @param       String  $name   Name der Umfrage}
+00164 \textcolor{comment}{         * @param       Array   $anserArr       Array mit den möglichen Antworten}
+00165 \textcolor{comment}{         * }
+00166 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00167}{}\hyperlink{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}{00167}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}{addSurvey}($name, $answerArr) \{
+00168                 
+00169                 
+00170                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
+00171                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
+00172                 
+00173                 $stmt->execute();
+00174 
+00175                 $surveyID = $this->dbh->lastInsertId();
+00176                 
+00177                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
+00178                 
+00179                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
+00180 
+00181                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00182 
+00183                         $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
+00184                         $stmt->execute();
+00185                         
+00186                 \}
+00187                 
+00188         \}
+00189         \textcolor{comment}{}
+00190 \textcolor{comment}{        /**}
+00191 \textcolor{comment}{         * }
+00192 \textcolor{comment}{         * Anzahl der Tupel zurückgeben}
+00193 \textcolor{comment}{         * }
+00194 \textcolor{comment}{         * @param       String  $table  Tabellenname}
+00195 \textcolor{comment}{         * }
+00196 \textcolor{comment}{         * @return      Integer Anzahl der Tupel}
+00197 \textcolor{comment}{         * }
+00198 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00199}{}\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{00199}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{getTableCount}($table) \{
+00200                 
+00201                 
+00202                 \textcolor{keywordflow}{switch} ($table) \{
+00203                         
+00204                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
+00205                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
+00206                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
+00207                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
+00208                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
+00209                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
+00210                                 \textcolor{keywordflow}{break};  
+00211                         \textcolor{keywordflow}{default}:
+00212                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
+00213                                 
+00214                 \}
+00215                                 
+00216         \}
+00217 
+00218 \}
+00219 
+00220 
+00221 
+00222 ?>
 \end{DoxyCode}

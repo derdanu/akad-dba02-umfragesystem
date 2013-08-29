@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('class_controller_1_1_admin_1_1_base.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pro-attribs">Geschützte Attribute</a> &#124;
 <a href="class_controller_1_1_admin_1_1_base-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
 <div class="title">Controller\Admin\Base Klassenreferenz</div>  </div>
@@ -125,6 +126,15 @@ Klassendiagramm für Controller\Admin\Base:</div>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:a7e433734833c21c222186860f4cd8ce5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_1_1_admin_1_1_base.html#a7e433734833c21c222186860f4cd8ce5">__construct</a> ()</td></tr>
 <tr class="separator:a7e433734833c21c222186860f4cd8ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Geschützte Attribute</h2></td></tr>
+<tr class="memitem:a81e643de0230305e97280882958503bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81e643de0230305e97280882958503bc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$model</b></td></tr>
+<tr class="separator:a81e643de0230305e97280882958503bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec09c707c52e90309310f35575706d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ec09c707c52e90309310f35575706d3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$view</b></td></tr>
+<tr class="separator:a4ec09c707c52e90309310f35575706d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Admin <a class="el" href="class_controller_1_1_admin_1_1_base.html">Base</a> Controller </p>
@@ -145,12 +155,14 @@ Klassendiagramm für Controller\Admin\Base:</div>
 </div><div class="memdoc">
 <p>Im Konstruktur generell ueberpruefen ob sich der <a class="el" href="class_controller_1_1_admin_1_1_user.html">User</a> eingeloggt hat. </p>
 
-<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_base_8php_source.html#l00018">18</a> der Datei <a class="el" href="_controller_2_admin_2_base_8php_source.html">Controller/Admin/Base.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                      {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <a class="code" href="class_session.html#a49f0fb7185ab07bdbf6bdff477b43ff8">\Session::isUserAuthedCheck</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<p>Definiert in Zeile <a class="el" href="_controller_2_admin_2_base_8php_source.html#l00022">22</a> der Datei <a class="el" href="_controller_2_admin_2_base_8php_source.html">Controller/Admin/Base.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                      {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="class_session.html#a49f0fb7185ab07bdbf6bdff477b43ff8">\Session::isUserAuthedCheck</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                $this-&gt;view = new \View();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
 <div class="ttc" id="class_session_html_a49f0fb7185ab07bdbf6bdff477b43ff8"><div class="ttname"><a href="class_session.html#a49f0fb7185ab07bdbf6bdff477b43ff8">Session\isUserAuthedCheck</a></div><div class="ttdeci">static isUserAuthedCheck()</div><div class="ttdef"><b>Definition:</b> <a href="_session_8php_source.html#l00103">Session.php:103</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -164,7 +176,7 @@ Klassendiagramm für Controller\Admin\Base:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>Controller</b></li><li class="navelem"><b>Admin</b></li><li class="navelem"><a class="el" href="class_controller_1_1_admin_1_1_base.html">Base</a></li>
-    <li class="footer">Erzeugt am Mit Aug 28 2013 15:49:32 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:02 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

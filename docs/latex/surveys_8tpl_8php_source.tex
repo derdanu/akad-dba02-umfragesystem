@@ -8,9 +8,9 @@
 00003         <h1>Bitte Umfrage ausw&auml;hlen</h1>
 00004                 <ul \textcolor{keyword}{class}=\textcolor{stringliteral}{"list-group"}>
 00005                         <?php 
-00006                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'surveys'}] as $key=>$value) \{
+00006                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'surveys'}] as $arr) \{
 00007                                 print \textcolor{stringliteral}{"<li class='list-group-item'><a
-       href='?controller=Survey&survey=$key'>$value</a></li>"};       
+       href='?controller=Survey&survey=\{$arr['ID']\}''>\{$arr['Name']\}</a></li>"};      
 00008                         \}
 00009                         ?>
 00010                 </ul>

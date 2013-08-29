@@ -35,9 +35,21 @@
 00029                 $this->pass = $conf->database\_pass;
 00030 
 00031                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
-00032                 
-00033         \}
-00034         
-00035 
-00036 \}
+00032 
+00033         
+00034         \textcolor{keywordflow}{if} ($conf->database\_verbose == 1) $this->beMoreVerbose(); 
+00035         
+00036                 
+00037         \}
+00038         
+00039 
+00040         \textcolor{keyword}{private} \textcolor{keyword}{function} beMoreVerbose() \{
+00041                 
+00042                 $this->setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);
+00043         $this->setAttribute(PDO::ATTR\_EMULATE\_PREPARES, \textcolor{keyword}{false});
+00044                 
+00045         \}
+00046 
+00047 
+00048 \}
 \end{DoxyCode}

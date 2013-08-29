@@ -324,7 +324,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <p>Definiert in Zeile <a class="el" href="_session_8php_source.html#l00088">88</a> der Datei <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 <div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                              {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span> ($_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] == 1) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span> (array_key_exists(<span class="stringliteral">&#39;__AUTH&#39;</span>, $_SESSION) &amp;&amp; $_SESSION[<span class="stringliteral">&#39;__AUTH&#39;</span>] == 1) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                </div>
@@ -374,7 +374,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_session.html">Session</a></li>
-    <li class="footer">Erzeugt am Mit Aug 28 2013 15:49:32 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:01 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

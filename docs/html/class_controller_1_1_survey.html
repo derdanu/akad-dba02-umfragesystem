@@ -164,7 +164,7 @@ Private Attribute</h2></td></tr>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                $this-&gt;view = new \View();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                $this-&gt;model = new \Model\Survey();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                $this-&gt;survey = intval($_GET[<span class="stringliteral">&#39;survey&#39;</span>]);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">if</span> (isset($_GET[<span class="stringliteral">&#39;survey&#39;</span>])) $this-&gt;survey = intval($_GET[<span class="stringliteral">&#39;survey&#39;</span>]);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -228,12 +228,23 @@ Private Attribute</h2></td></tr>
 <p>Definiert in Zeile <a class="el" href="_controller_2_survey_8php_source.html#l00064">64</a> der Datei <a class="el" href="_controller_2_survey_8php_source.html">Controller/Survey.php</a>.</p>
 <div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                           {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="comment">//Speichern Wenn &gt; 0</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">if</span> ($this-&gt;survey &gt; 0 &amp;&amp; $_GET[<span class="stringliteral">&#39;action&#39;</span>] == <span class="stringliteral">&#39;Save&#39;</span>) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                $this-&gt;<a class="code" href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">showSurveyResult</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="ttc" id="class_controller_1_1_survey_html_a623581300b3866aaad9ed74511913544"><div class="ttname"><a href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">Controller\Survey\showSurveyResult</a></div><div class="ttdeci">showSurveyResult()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_survey_8php_source.html#l00094">Controller/Survey.php:94</a></div></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        $answerArr = $_POST[<span class="stringliteral">&#39;answer&#39;</span>];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        $this-&gt;model-&gt;saveNewAnswers($answerArr);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        $this-&gt;<a class="code" href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">showSurveyResult</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <span class="comment">//Exception werfen</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                }       </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="ttc" id="class_controller_1_1_survey_html_a623581300b3866aaad9ed74511913544"><div class="ttname"><a href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">Controller\Survey\showSurveyResult</a></div><div class="ttdeci">showSurveyResult()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_survey_8php_source.html#l00105">Controller/Survey.php:105</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -252,18 +263,18 @@ Private Attribute</h2></td></tr>
 <p>Umfrage Ergebnisse anzeigen</p>
 <p>Direkt nur fuer Adminstratoren moeglich </p>
 
-<p>Definiert in Zeile <a class="el" href="_controller_2_survey_8php_source.html#l00079">79</a> der Datei <a class="el" href="_controller_2_survey_8php_source.html">Controller/Survey.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                      {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> ($this-&gt;survey == 0) <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Illegaler Aufruf&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="class_session.html#a49f0fb7185ab07bdbf6bdff477b43ff8">\Session::isUserAuthedCheck</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                $this-&gt;<a class="code" href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">showSurveyResult</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<p>Definiert in Zeile <a class="el" href="_controller_2_survey_8php_source.html#l00090">90</a> der Datei <a class="el" href="_controller_2_survey_8php_source.html">Controller/Survey.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                      {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span> ($this-&gt;survey == 0) <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Illegaler Aufruf&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="class_session.html#a49f0fb7185ab07bdbf6bdff477b43ff8">\Session::isUserAuthedCheck</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                $this-&gt;<a class="code" href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">showSurveyResult</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
 <div class="ttc" id="class_session_html_a49f0fb7185ab07bdbf6bdff477b43ff8"><div class="ttname"><a href="class_session.html#a49f0fb7185ab07bdbf6bdff477b43ff8">Session\isUserAuthedCheck</a></div><div class="ttdeci">static isUserAuthedCheck()</div><div class="ttdef"><b>Definition:</b> <a href="_session_8php_source.html#l00103">Session.php:103</a></div></div>
-<div class="ttc" id="class_controller_1_1_survey_html_a623581300b3866aaad9ed74511913544"><div class="ttname"><a href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">Controller\Survey\showSurveyResult</a></div><div class="ttdeci">showSurveyResult()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_survey_8php_source.html#l00094">Controller/Survey.php:94</a></div></div>
+<div class="ttc" id="class_controller_1_1_survey_html_a623581300b3866aaad9ed74511913544"><div class="ttname"><a href="class_controller_1_1_survey.html#a623581300b3866aaad9ed74511913544">Controller\Survey\showSurveyResult</a></div><div class="ttdeci">showSurveyResult()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_2_survey_8php_source.html#l00105">Controller/Survey.php:105</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -289,16 +300,16 @@ Private Attribute</h2></td></tr>
 </div><div class="memdoc">
 <p>Auswertung anzeigen </p>
 
-<p>Definiert in Zeile <a class="el" href="_controller_2_survey_8php_source.html#l00094">94</a> der Datei <a class="el" href="_controller_2_survey_8php_source.html">Controller/Survey.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                            {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                $this-&gt;view-&gt;setTemplate(<span class="stringliteral">&#39;survey_result&#39;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_name&#39;</span>, $this-&gt;model-&gt;getSurveyName($this-&gt;survey));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_cnt&#39;</span>, $this-&gt;model-&gt;getSurveyItemCount($this-&gt;survey));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_result&#39;</span>, $this-&gt;model-&gt;getSurveyResult($this-&gt;survey));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                $this-&gt;view-&gt;display();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }               </div>
+<p>Definiert in Zeile <a class="el" href="_controller_2_survey_8php_source.html#l00105">105</a> der Datei <a class="el" href="_controller_2_survey_8php_source.html">Controller/Survey.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                            {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                $this-&gt;view-&gt;setTemplate(<span class="stringliteral">&#39;survey_result&#39;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_name&#39;</span>, $this-&gt;model-&gt;getSurveyName($this-&gt;survey));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_cnt&#39;</span>, $this-&gt;model-&gt;getSurveyItemCount($this-&gt;survey));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                $this-&gt;view-&gt;assign(<span class="stringliteral">&#39;survey_result&#39;</span>, $this-&gt;model-&gt;getSurveyResult($this-&gt;survey));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                $this-&gt;view-&gt;display();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }               </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,7 +322,7 @@ Private Attribute</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>Controller</b></li><li class="navelem"><a class="el" href="class_controller_1_1_survey.html">Survey</a></li>
-    <li class="footer">Erzeugt am Mit Aug 28 2013 15:49:32 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:01 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

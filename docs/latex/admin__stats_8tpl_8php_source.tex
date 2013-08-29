@@ -7,13 +7,21 @@
 00002 
 00003                 <ul \textcolor{keyword}{class}=\textcolor{stringliteral}{"list-group"}>
 00004                         <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"list-group-item"}>
-00005                         <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"badge"}><?php print $this->view[\textcolor{stringliteral}{'stats'}][survey\_cnt]; ?></span>
-00006                         Umfragen
+00005                         <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"badge"}><?php print $this->view[\textcolor{stringliteral}{'stats'}][\textcolor{stringliteral}{'user\_cnt'}]; ?></span>
+00006                         Benutzer
 00007                         </li>
 00008                         <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"list-group-item"}>
-00009                         <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"badge"}><?php print $this->view[\textcolor{stringliteral}{'stats'}][record\_cnt]; ?></span>
-00010                         Antworten
+00009                         <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"badge"}><?php print $this->view[\textcolor{stringliteral}{'stats'}][\textcolor{stringliteral}{'survey\_cnt'}]; ?></span>
+00010                         Umfragen
 00011                         </li>
-00012                 </ul>
-00013                 
+00012                         <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"list-group-item"}>
+00013                         <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"badge"}><?php print $this->view[\textcolor{stringliteral}{'stats'}][\textcolor{stringliteral}{'survey\_items\_cnt'}]; ?></span>
+00014                         Fragen
+00015                         </li>                   
+00016                         <li \textcolor{keyword}{class}=\textcolor{stringliteral}{"list-group-item"}>
+00017                         <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"badge"}><?php print $this->view[\textcolor{stringliteral}{'stats'}][\textcolor{stringliteral}{'answer\_cnt'}]; ?></span>
+00018                         Antworten
+00019                         </li>
+00020                 </ul>
+00021                 
 \end{DoxyCode}

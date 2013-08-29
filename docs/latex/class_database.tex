@@ -12,6 +12,12 @@ Klassendiagramm für Database\-:\begin{figure}[H]
 \item 
 \hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{\-\_\-\-\_\-construct} ()
 \end{DoxyCompactItemize}
+\subsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{{\bfseries be\-More\-Verbose} ()}\label{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}
+
+\end{DoxyCompactItemize}
 \subsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,8 +68,12 @@ Definiert in Zeile \hyperlink{_database_8php_source_l00022}{22} der Datei \hyper
 00029                 $this->pass = $conf->database\_pass;
 00030 
 00031                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
-00032                 
-00033         \}
+00032 
+00033         
+00034         \textcolor{keywordflow}{if} ($conf->database\_verbose == 1) $this->beMoreVerbose(); 
+00035         
+00036                 
+00037         \}
 \end{DoxyCode}
 
 

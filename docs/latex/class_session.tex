@@ -174,7 +174,7 @@ Definiert in Zeile \hyperlink{_session_8php_source_l00088}{88} der Datei \hyperl
 \begin{DoxyCode}
 00088                                               \{
 00089                 
-00090                 \textcolor{keywordflow}{if} ($\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] == 1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00090                 \textcolor{keywordflow}{if} (array\_key\_exists(\textcolor{stringliteral}{'\_\_AUTH'}, $\_SESSION) && $\_SESSION[\textcolor{stringliteral}{'\_\_AUTH'}] == 1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
 00091                 
 00092                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 00093                 

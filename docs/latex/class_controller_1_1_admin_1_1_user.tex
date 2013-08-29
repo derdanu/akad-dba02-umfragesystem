@@ -10,12 +10,15 @@ Klassendiagramm für Controller\textbackslash{}Admin\textbackslash{}User\-:\begi
 \subsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_controller_1_1_admin_1_1_user_acbbf0aeb45206f2d0c9e347e8a1d19c9}{\-\_\-\-\_\-construct} ()
+\item 
 \hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\-\_\-\-Action} ()
 \item 
 \hyperlink{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}{Add\-\_\-\-P\-O\-S\-T\-\_\-\-Action} ()
 \item 
 \hyperlink{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}{Delete\-\_\-\-Action} ()
 \end{DoxyCompactItemize}
+\subsection*{Weitere Geerbte Elemente}
 
 
 \subsection{Ausführliche Beschreibung}
@@ -23,6 +26,30 @@ Admin Benutzer Controller
 
 Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00010}{10} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
 
+
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\hypertarget{class_controller_1_1_admin_1_1_user_acbbf0aeb45206f2d0c9e347e8a1d19c9}{\index{Controller\-::\-Admin\-::\-User@{Controller\-::\-Admin\-::\-User}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!Controller::Admin::User@{Controller\-::\-Admin\-::\-User}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Admin\textbackslash{}\-User\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_admin_1_1_user_acbbf0aeb45206f2d0c9e347e8a1d19c9}
+Modell initialisieren 
+
+Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00018}{18} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
+
+
+\begin{DoxyCode}
+00018                                       \{
+00019                 
+00020                 $this->model = new \(\backslash\)Model\(\backslash\)User();
+00021                 
+00022                 parent::\_\_construct();
+00023         
+00024         \}
+\end{DoxyCode}
 
 
 \subsection{Dokumentation der Elementfunktionen}
@@ -35,15 +62,29 @@ Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00010}{10}
 )}}\label{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}
 Benutzer hinzufuegen 
 
-Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00034}{34} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
+Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00045}{45} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
 
 
 \begin{DoxyCode}
-00034                                           \{
-00035                 
-00036                 $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();
-00037                 
-00038         \}
+00045                                           \{
+00046                 
+00047                 \textcolor{keywordflow}{if} (isset($\_POST[\textcolor{stringliteral}{'name'}]) && isset($\_POST[\textcolor{stringliteral}{'pass'}])) \{
+00048 
+00049                         $name = $\_POST[\textcolor{stringliteral}{'name'}];
+00050                         $pass = $\_POST[\textcolor{stringliteral}{'pass'}];
+00051 
+00052                         $this->model->addUser($name, $pass);
+00053                         
+00054                         $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();
+00055                         
+00056                 \} \textcolor{keywordflow}{else} \{
+00057                         
+00058                         \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00059                         
+00060                 \}
+00061 
+00062                 
+00063         \}
 \end{DoxyCode}
 \hypertarget{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}{\index{Controller\-::\-Admin\-::\-User@{Controller\-::\-Admin\-::\-User}!Delete\-\_\-\-Action@{Delete\-\_\-\-Action}}
 \index{Delete\-\_\-\-Action@{Delete\-\_\-\-Action}!Controller::Admin::User@{Controller\-::\-Admin\-::\-User}}
@@ -54,14 +95,36 @@ Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00034}{34}
 )}}\label{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}
 Benutzer loeschen 
 
-Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00045}{45} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
+Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00070}{70} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
 
 
 \begin{DoxyCode}
-00045                                         \{
-00046                 
-00047                 $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();
-00048         \}
+00070                                         \{
+00071                 
+00072                 
+00073                 \textcolor{keywordflow}{if} (isset($\_GET[\textcolor{stringliteral}{'user'}])) \{
+00074                         
+00075                         $id = intval($\_GET[\textcolor{stringliteral}{'user'}]);
+00076 
+00077                         \textcolor{keywordflow}{if} ($id > 0) \{
+00078                                 
+00079                                 $this->model->deleteUser($id);
+00080                                                 
+00081                                 $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();                              
+00082                         
+00083                         \} \textcolor{keywordflow}{else} \{
+00084                                 
+00085                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00086                                 
+00087                         \}
+00088                                                 
+00089         
+00090                 \} \textcolor{keywordflow}{else} \{
+00091                         
+00092                         \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00093                         
+00094                 \}
+00095         \}
 \end{DoxyCode}
 \hypertarget{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{\index{Controller\-::\-Admin\-::\-User@{Controller\-::\-Admin\-::\-User}!Index\-\_\-\-Action@{Index\-\_\-\-Action}}
 \index{Index\-\_\-\-Action@{Index\-\_\-\-Action}!Controller::Admin::User@{Controller\-::\-Admin\-::\-User}}
@@ -72,21 +135,18 @@ Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00045}{45}
 )}}\label{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}
 Default \hyperlink{class_controller_1_1_index}{Index} Get Action 
 
-Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00017}{17} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
+Definiert in Zeile \hyperlink{_controller_2_admin_2_user_8php_source_l00031}{31} der Datei \hyperlink{_controller_2_admin_2_user_8php_source}{Controller/\-Admin/\-User.\-php}.
 
 
 \begin{DoxyCode}
-00017                                        \{
-00018                 
-00019                 $model = new \(\backslash\)Model\(\backslash\)User();
-00020                 
-00021                 $view = new \(\backslash\)View();
-00022                 $view->setTemplate(\textcolor{stringliteral}{'admin\_user'});
-00023                 $view->assign(\textcolor{stringliteral}{'users'}, $model->getUsers());
-00024                 
-00025                 $view->display();
-00026                 
-00027         \}       
+00031                                        \{
+00032                 
+00033                 $this->view->setTemplate(\textcolor{stringliteral}{'admin\_user'});
+00034                 $this->view->assign(\textcolor{stringliteral}{'users'}, $this->model->getUsers());
+00035                 
+00036                 $this->view->display();
+00037                 
+00038         \}       
 \end{DoxyCode}
 
 

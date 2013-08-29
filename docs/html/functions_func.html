@@ -91,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -129,19 +130,20 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>__construct()
 : <a class="el" href="class_config.html#ac1c75b1b53a17a028629ba8127e06f82">Config</a>
 , <a class="el" href="class_controller_1_1_admin_1_1_base.html#a7e433734833c21c222186860f4cd8ce5">Controller\Admin\Base</a>
-, <a class="el" href="class_database.html#a2852f635197e76a838486e64e00aac9f">Database</a>
+, <a class="el" href="class_controller_1_1_admin_1_1_survey.html#af87ac54e8b5b29bb33fb0897f9de547a">Controller\Admin\Survey</a>
 , <a class="el" href="class_front_controller.html#ad0793ef177eb6e77a45a476567b531b2">FrontController</a>
+, <a class="el" href="class_model_1_1_base.html#a72e3b51dec693b4a3f33f445e837d7e8">Model\Base</a>
+, <a class="el" href="class_controller_1_1_admin_1_1_user.html#acbbf0aeb45206f2d0c9e347e8a1d19c9">Controller\Admin\User</a>
+, <a class="el" href="class_database.html#a2852f635197e76a838486e64e00aac9f">Database</a>
 , <a class="el" href="class_controller_1_1_survey.html#a96fc5091aa3b11390854987ecf667f15">Controller\Survey</a>
-, <a class="el" href="class_o_r_m_1_1_base.html#af9d558b16cde9cc899e2e92eca6aa291">ORM\Base</a>
+, <a class="el" href="class_controller_1_1_admin_1_1_stats.html#a1b2eaef2ffa53730eb9780e82a4e9c6c">Controller\Admin\Stats</a>
 </li>
 <li>__get()
-: <a class="el" href="class_session.html#a2da2caf16a5e784a38fb4d8eede4c6fc">Session</a>
-, <a class="el" href="class_o_r_m_1_1_base.html#ae565838472750c09be01a7a1ea28e298">ORM\Base</a>
-, <a class="el" href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">Config</a>
+: <a class="el" href="class_config.html#aeb4233e287af07c75fff2d77e28a1eba">Config</a>
+, <a class="el" href="class_session.html#a2da2caf16a5e784a38fb4d8eede4c6fc">Session</a>
 </li>
 <li>__set()
 : <a class="el" href="class_session.html#a23489b711b32f8820e3a0c78e03cc9b3">Session</a>
-, <a class="el" href="class_o_r_m_1_1_base.html#ae70dc3fff63316e69afe7dff77ab989c">ORM\Base</a>
 </li>
 </ul>
 
@@ -150,6 +152,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>Add_POST_Action()
 : <a class="el" href="class_controller_1_1_admin_1_1_survey.html#a618d9d0d906df279c7b34ae9458fa977">Controller\Admin\Survey</a>
 , <a class="el" href="class_controller_1_1_admin_1_1_user.html#a381c8672d1cec6440138d0bf939fb5ec">Controller\Admin\User</a>
+</li>
+<li>addSurvey()
+: <a class="el" href="class_model_1_1_survey.html#acf9f6e213e5fd9a31a998db3ddf9026c">Model\Survey</a>
+</li>
+<li>addUser()
+: <a class="el" href="class_model_1_1_user.html#a7a13080a106b3b3adb0b4856c144064e">Model\User</a>
 </li>
 <li>assign()
 : <a class="el" href="class_view.html#a2c338778c398ef0e4040bc377242611a">View</a>
@@ -172,6 +180,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_controller_1_1_admin_1_1_survey.html#aeb20127715fb6ab072bf09e0aa69e9f3">Controller\Admin\Survey</a>
 , <a class="el" href="class_controller_1_1_admin_1_1_user.html#a96952a534cf944ff774fdab36d8efaaa">Controller\Admin\User</a>
 </li>
+<li>deleteSurvey()
+: <a class="el" href="class_model_1_1_survey.html#a80276047e075565b781c60d7ac25b3a6">Model\Survey</a>
+</li>
+<li>deleteUser()
+: <a class="el" href="class_model_1_1_user.html#a458a6d6adff444603045434301b02246">Model\User</a>
+</li>
 <li>destroy()
 : <a class="el" href="class_session.html#a5dde74b6fa44649e5b73cb1096930dd4">Session</a>
 </li>
@@ -182,12 +196,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
-<li>getInsertStmt()
-: <a class="el" href="class_o_r_m_1_1_base.html#ad69276f684d8ee3f5ec98b1006c42a79">ORM\Base</a>
-, <a class="el" href="class_o_r_m_1_1_survey.html#a4c6f22552b020a5e4c16267b6a03b0d2">ORM\Survey</a>
-, <a class="el" href="class_o_r_m_1_1_user.html#a1946784416c90347ef61d1db5a8c372c">ORM\User</a>
-, <a class="el" href="class_o_r_m_1_1_survey_item.html#a59e2dfd9594f69554297a2ef0e4a124d">ORM\SurveyItem</a>
-</li>
 <li>getStats()
 : <a class="el" href="class_model_1_1_survey.html#ae8dbded81f45b3d84c061bb1bf5ba97f">Model\Survey</a>
 </li>
@@ -205,6 +213,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>getSurveys()
 : <a class="el" href="class_model_1_1_survey.html#a259373a6fdcae5796fc6e14586c98474">Model\Survey</a>
+</li>
+<li>getTableCount()
+: <a class="el" href="class_model_1_1_survey.html#a5c2c5d322a7ae1786acb783f472cc074">Model\Survey</a>
 </li>
 <li>getTemplateOnFilesystem()
 : <a class="el" href="class_view.html#a157300b213657f283da80e7430d9e98b">View</a>
@@ -240,9 +251,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
-<li>Login_Action()
-: <a class="el" href="class_controller_1_1_user_session.html#a3ab4801a36620e4a99cf3066970ebaf4">Controller\UserSession</a>
-</li>
 <li>Login_POST_Action()
 : <a class="el" href="class_controller_1_1_user_session.html#a0b902f49ccbff4387dcf5655874cbb1c">Controller\UserSession</a>
 </li>
@@ -260,11 +268,11 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>save()
-: <a class="el" href="class_o_r_m_1_1_base.html#abbd9e115026168bcc5c2dd7c7bed21c0">ORM\Base</a>
-</li>
 <li>Save_POST_Action()
 : <a class="el" href="class_controller_1_1_survey.html#a1a671d9a36a993bab69c12c16fcc60cc">Controller\Survey</a>
+</li>
+<li>saveNewAnswers()
+: <a class="el" href="class_model_1_1_survey.html#a39a47b914740e87bc133a72c4721b018">Model\Survey</a>
 </li>
 <li>setTemplate()
 : <a class="el" href="class_view.html#a956eb733dd01bd0c42f06d71e11afef3">View</a>
@@ -283,12 +291,19 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_redirect.html#a5a8f456a5318387c966b24c0cbe2c083">Redirect</a>
 </li>
 </ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>updateLastLogIn()
+: <a class="el" href="class_model_1_1_user.html#a45d6132fe4ea721dea485ff7c65bc412">Model\User</a>
+</li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Erzeugt am Mit Aug 28 2013 15:49:34 für DBA02 von
+    <li class="footer">Erzeugt am Don Aug 29 2013 08:47:03 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

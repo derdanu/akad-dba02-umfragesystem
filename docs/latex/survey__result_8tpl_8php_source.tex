@@ -10,19 +10,25 @@
 00005                         </div>
 00006                         <table \textcolor{keyword}{class}=\textcolor{stringliteral}{"table table-bordered table-survey"}>
 00007                         <?php
-00008                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_result'}] as $key=>$value) \{
-00009                                 $percent = round($key / $this->view[\textcolor{stringliteral}{'survey\_cnt'}] * 100);
-00010                                 print   \textcolor{stringliteral}{"<tr><td>$value</td>"} .
-00011                                                 \textcolor{stringliteral}{"<td>"} .
-00012                                                 \textcolor{stringliteral}{"<div style='background-color:#428BCA; width:\{$percent\}%;
-       padding-left:10px; border-radius: 18px;'>$key ($percent %)</div>"} .
-00013                                                 \textcolor{stringliteral}{"</td>"} .
-00014                                                 \textcolor{stringliteral}{"</tr>"};        
-00015                         \}
-00016                         ?>
-00017                         
-00018                         </table>
-00019                         </div>
-00020                 </div>
-00021       </div>
+00008                         \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'survey\_result'}] as $arr) \{
+00009                         
+00010                                 \textcolor{keywordflow}{if} ($this->view[\textcolor{stringliteral}{'survey\_cnt'}] > 0) \{
+00011                                         $percent = round($arr[\textcolor{stringliteral}{'cnt'}] / $this->view[\textcolor{stringliteral}{'survey\_cnt'}] * 100);        
+00012                                 \} \textcolor{keywordflow}{else} \{
+00013                                         $percent = 0;
+00014                                 \}
+00015                                 
+00016                                 print   \textcolor{stringliteral}{"<tr><td>\{$arr['Name']\}</td>"} .
+00017                                                 \textcolor{stringliteral}{"<td>"} .
+00018                                                 \textcolor{stringliteral}{"<div style='background-color:#428BCA; width:\{$percent\}%;
+       padding-left:10px; border-radius: 18px;'>\{$arr['cnt']\} ($percent %)</div>"} .
+00019                                                 \textcolor{stringliteral}{"</td>"} .
+00020                                                 \textcolor{stringliteral}{"</tr>"};        
+00021                         \}
+00022                         ?>
+00023                         
+00024                         </table>
+00025                         </div>
+00026                 </div>
+00027       </div>
 \end{DoxyCode}

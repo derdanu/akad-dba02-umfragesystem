@@ -13,44 +13,91 @@
 00008 \textcolor{comment}{ * }
 00009 \textcolor{comment}{ */}
 \hypertarget{_controller_2_admin_2_user_8php_source_l00010}{}\hyperlink{class_controller_1_1_admin_1_1_user}{00010} \textcolor{keyword}{class }\hyperlink{class_controller_1_1_admin_1_1_user}{User} \textcolor{keyword}{extends} \hyperlink{class_controller_1_1_admin_1_1_base}{Base}\{
-00011         \textcolor{comment}{}
-00012 \textcolor{comment}{        /**}
-00013 \textcolor{comment}{         * }
-00014 \textcolor{comment}{         * Default Index Get Action}
-00015 \textcolor{comment}{         * }
-00016 \textcolor{comment}{         */}
-\hypertarget{_controller_2_admin_2_user_8php_source_l00017}{}\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{00017}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}() \{
-00018                 
-00019                 $model = new \(\backslash\)Model\(\backslash\)User();
-00020                 
-00021                 $view = new \(\backslash\)View();
-00022                 $view->setTemplate(\textcolor{stringliteral}{'admin\_user'});
-00023                 $view->assign(\textcolor{stringliteral}{'users'}, $model->getUsers());
-00024                 
-00025                 $view->display();
-00026                 
-00027         \}       
-00028         \textcolor{comment}{}
-00029 \textcolor{comment}{        /**}
-00030 \textcolor{comment}{         * }
-00031 \textcolor{comment}{         * Benutzer hinzufuegen}
-00032 \textcolor{comment}{         * }
-00033 \textcolor{comment}{         */}
-\hypertarget{_controller_2_admin_2_user_8php_source_l00034}{}\hyperlink{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}{00034}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}{Add\_POST\_Action}() \{
+00011         
+00012         \textcolor{comment}{}
+00013 \textcolor{comment}{        /**}
+00014 \textcolor{comment}{         * }
+00015 \textcolor{comment}{         * Modell initialisieren}
+00016 \textcolor{comment}{         * }
+00017 \textcolor{comment}{         */}
+\hypertarget{_controller_2_admin_2_user_8php_source_l00018}{}\hyperlink{class_controller_1_1_admin_1_1_user_acbbf0aeb45206f2d0c9e347e8a1d19c9}{00018}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_user_acbbf0aeb45206f2d0c9e347e8a1d19c9}{\_\_construct}() \{
+00019                 
+00020                 $this->model = new \(\backslash\)Model\(\backslash\)User();
+00021                 
+00022                 parent::\_\_construct();
+00023         
+00024         \}
+00025         \textcolor{comment}{}
+00026 \textcolor{comment}{        /**}
+00027 \textcolor{comment}{         * }
+00028 \textcolor{comment}{         * Default Index Get Action}
+00029 \textcolor{comment}{         * }
+00030 \textcolor{comment}{         */}
+\hypertarget{_controller_2_admin_2_user_8php_source_l00031}{}\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{00031}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}() \{
+00032                 
+00033                 $this->view->setTemplate(\textcolor{stringliteral}{'admin\_user'});
+00034                 $this->view->assign(\textcolor{stringliteral}{'users'}, $this->model->getUsers());
 00035                 
-00036                 $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();
+00036                 $this->view->display();
 00037                 
-00038         \}
+00038         \}       
 00039         \textcolor{comment}{}
 00040 \textcolor{comment}{        /**}
 00041 \textcolor{comment}{         * }
-00042 \textcolor{comment}{         * Benutzer loeschen}
+00042 \textcolor{comment}{         * Benutzer hinzufuegen}
 00043 \textcolor{comment}{         * }
 00044 \textcolor{comment}{         */}
-\hypertarget{_controller_2_admin_2_user_8php_source_l00045}{}\hyperlink{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}{00045}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}{Delete\_Action}() \{
+\hypertarget{_controller_2_admin_2_user_8php_source_l00045}{}\hyperlink{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}{00045}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_user_a381c8672d1cec6440138d0bf939fb5ec}{Add\_POST\_Action}() \{
 00046                 
-00047                 $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();
-00048         \}
-00049 \}
-00050 ?>
+00047                 \textcolor{keywordflow}{if} (isset($\_POST[\textcolor{stringliteral}{'name'}]) && isset($\_POST[\textcolor{stringliteral}{'pass'}])) \{
+00048 
+00049                         $name = $\_POST[\textcolor{stringliteral}{'name'}];
+00050                         $pass = $\_POST[\textcolor{stringliteral}{'pass'}];
+00051 
+00052                         $this->model->addUser($name, $pass);
+00053                         
+00054                         $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();
+00055                         
+00056                 \} \textcolor{keywordflow}{else} \{
+00057                         
+00058                         \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00059                         
+00060                 \}
+00061 
+00062                 
+00063         \}
+00064         \textcolor{comment}{}
+00065 \textcolor{comment}{        /**}
+00066 \textcolor{comment}{         * }
+00067 \textcolor{comment}{         * Benutzer loeschen}
+00068 \textcolor{comment}{         * }
+00069 \textcolor{comment}{         */}
+\hypertarget{_controller_2_admin_2_user_8php_source_l00070}{}\hyperlink{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}{00070}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_admin_1_1_user_a96952a534cf944ff774fdab36d8efaaa}{Delete\_Action}() \{
+00071                 
+00072                 
+00073                 \textcolor{keywordflow}{if} (isset($\_GET[\textcolor{stringliteral}{'user'}])) \{
+00074                         
+00075                         $id = intval($\_GET[\textcolor{stringliteral}{'user'}]);
+00076 
+00077                         \textcolor{keywordflow}{if} ($id > 0) \{
+00078                                 
+00079                                 $this->model->deleteUser($id);
+00080                                                 
+00081                                 $this->\hyperlink{class_controller_1_1_admin_1_1_user_a006c1efe9d23f5307039c1beb0ce18a5}{Index\_Action}();                              
+00082                         
+00083                         \} \textcolor{keywordflow}{else} \{
+00084                                 
+00085                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00086                                 
+00087                         \}
+00088                                                 
+00089         
+00090                 \} \textcolor{keywordflow}{else} \{
+00091                         
+00092                         \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00093                         
+00094                 \}
+00095         \}
+00096 \}
+00097 ?>
 \end{DoxyCode}
