@@ -2,6 +2,10 @@
 
 		<ul class="list-group">
   			<li class="list-group-item">
+    			<span class="badge"><?php print $this->view['stats']['user_cnt']; ?></span>
+    			Benutzer
+  			</li>
+  			<li class="list-group-item">
     			<span class="badge"><?php print $this->view['stats']['survey_cnt']; ?></span>
     			Umfragen
   			</li>

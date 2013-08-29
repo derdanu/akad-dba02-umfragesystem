@@ -109,7 +109,8 @@ class Survey extends Base{
 	public function getStats() {
 		
 		$stat = array();
-					
+
+		$stat['user_cnt'] = $this->getTableCount("User");
 		$stat['survey_cnt'] = $this->getTableCount("Survey");
 		$stat['survey_items_cnt'] = $this->getTableCount("SurveyItems");
 		$stat['answer_cnt'] = $this->getTableCount("SurveyAnswer");
@@ -151,6 +152,7 @@ class Survey extends Base{
 		
 		switch ($table) {
 			
+			case "User":
 			case "Survey":
 			case "SurveyItems":	
 			case "SurveyAnswer":
