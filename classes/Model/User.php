@@ -29,6 +29,8 @@ class User extends Base {
 		$stmt->execute();
 		$res = $stmt->fetchObject();
 
+		if (!is_object($res)) return false;
+
 		if ($res->Passwort == $pass) {
 			
 			$this->updateLastLogIn($user);
