@@ -1,0 +1,60 @@
+\hypertarget{_controller_2_database_8php}{\section{Controller/\-Database.php}
+\label{_controller_2_database_8php}\index{Database.\-php@{Database.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00002 \textcolor{keyword}{namespace }Controller;
+00003 \textcolor{comment}{}
+00004 \textcolor{comment}{/**}
+00005 \textcolor{comment}{ * }
+00006 \textcolor{comment}{ * Datenbankinformationen Controller}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ *  }
+00009 \textcolor{comment}{ * }
+00010 \textcolor{comment}{ */}
+\hypertarget{_controller_2_database_8php_source_l00011}{}\hyperlink{class_controller_1_1_database}{00011} \textcolor{keyword}{class }\hyperlink{class_controller_1_1_database}{Database} \{
+00012         
+00013         \textcolor{keyword}{private} $view;
+00014         \textcolor{comment}{}
+00015 \textcolor{comment}{        /**}
+00016 \textcolor{comment}{         * }
+00017 \textcolor{comment}{         * Kontruktor}
+00018 \textcolor{comment}{         * }
+00019 \textcolor{comment}{         * View Initalisieren}
+00020 \textcolor{comment}{         * }
+00021 \textcolor{comment}{         */}
+\hypertarget{_controller_2_database_8php_source_l00022}{}\hyperlink{class_controller_1_1_database_acb62b350f84d79c898b3e483fdd1374f}{00022}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_database_acb62b350f84d79c898b3e483fdd1374f}{\_\_construct}() \{
+00023                 
+00024                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
+00025                 
+00026                 $this->view = new \(\backslash\)View();
+00027                 
+00028         \}
+00029         \textcolor{comment}{}
+00030 \textcolor{comment}{        /**}
+00031 \textcolor{comment}{         * }
+00032 \textcolor{comment}{         * UML Diagramm anzeigen}
+00033 \textcolor{comment}{         * }
+00034 \textcolor{comment}{         */}
+\hypertarget{_controller_2_database_8php_source_l00035}{}\hyperlink{class_controller_1_1_database_a18a6d9b78f0d78340c001c016dd14e16}{00035}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_database_a18a6d9b78f0d78340c001c016dd14e16}{Diagramm\_Action}() \{
+00036                 
+00037                 $this->view->setTemplate(\textcolor{stringliteral}{'database\_diagramm'});
+00038                 $this->view->display();
+00039                                 
+00040         \}
+00041         \textcolor{comment}{}
+00042 \textcolor{comment}{        /**}
+00043 \textcolor{comment}{         * }
+00044 \textcolor{comment}{         * SQL Statements anzeigen}
+00045 \textcolor{comment}{         * }
+00046 \textcolor{comment}{         */}
+\hypertarget{_controller_2_database_8php_source_l00047}{}\hyperlink{class_controller_1_1_database_a81098fd2214f6c2d2378e2613c808ddd}{00047}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_database_a81098fd2214f6c2d2378e2613c808ddd}{CreateTable\_Action}() \{
+00048                 
+00049                 $this->view->setTemplate(\textcolor{stringliteral}{'database\_create\_table'});
+00050                 $this->view->display();
+00051                                 
+00052         \}               
+00053 \}
+00054 ?>
+\end{DoxyCode}

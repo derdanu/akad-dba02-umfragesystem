@@ -1,0 +1,99 @@
+\hypertarget{class_controller_1_1_database}{\section{Controller\textbackslash{}Database Klassenreferenz}
+\label{class_controller_1_1_database}\index{Controller\textbackslash{}\-Database@{Controller\textbackslash{}\-Database}}
+}
+\subsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_1_1_database_acb62b350f84d79c898b3e483fdd1374f}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_controller_1_1_database_a18a6d9b78f0d78340c001c016dd14e16}{Diagramm\-\_\-\-Action} ()
+\item 
+\hyperlink{class_controller_1_1_database_a81098fd2214f6c2d2378e2613c808ddd}{Create\-Table\-\_\-\-Action} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_controller_1_1_database_a0b19843c0dc92a1f8c665ed9ac6a0caf}{{\bfseries \$view}}\label{class_controller_1_1_database_a0b19843c0dc92a1f8c665ed9ac6a0caf}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Datenbankinformationen Controller 
+
+Definiert in Zeile \hyperlink{_controller_2_database_8php_source_l00011}{11} der Datei \hyperlink{_controller_2_database_8php_source}{Controller/\-Database.\-php}.
+
+
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\hypertarget{class_controller_1_1_database_acb62b350f84d79c898b3e483fdd1374f}{\index{Controller\-::\-Database@{Controller\-::\-Database}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!Controller::Database@{Controller\-::\-Database}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Database\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_database_acb62b350f84d79c898b3e483fdd1374f}
+Kontruktor
+
+\hyperlink{class_view}{View} Initalisieren 
+
+Definiert in Zeile \hyperlink{_controller_2_database_8php_source_l00022}{22} der Datei \hyperlink{_controller_2_database_8php_source}{Controller/\-Database.\-php}.
+
+
+\begin{DoxyCode}
+00022                                       \{
+00023                 
+00024                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
+00025                 
+00026                 $this->view = new \(\backslash\)View();
+00027                 
+00028         \}
+\end{DoxyCode}
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_controller_1_1_database_a81098fd2214f6c2d2378e2613c808ddd}{\index{Controller\-::\-Database@{Controller\-::\-Database}!Create\-Table\-\_\-\-Action@{Create\-Table\-\_\-\-Action}}
+\index{Create\-Table\-\_\-\-Action@{Create\-Table\-\_\-\-Action}!Controller::Database@{Controller\-::\-Database}}
+\subsubsection[{Create\-Table\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Database\-::\-Create\-Table\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_database_a81098fd2214f6c2d2378e2613c808ddd}
+S\-Q\-L Statements anzeigen 
+
+Definiert in Zeile \hyperlink{_controller_2_database_8php_source_l00047}{47} der Datei \hyperlink{_controller_2_database_8php_source}{Controller/\-Database.\-php}.
+
+
+\begin{DoxyCode}
+00047                                              \{
+00048                 
+00049                 $this->view->setTemplate(\textcolor{stringliteral}{'database\_create\_table'});
+00050                 $this->view->display();
+00051                                 
+00052         \}               
+\end{DoxyCode}
+\hypertarget{class_controller_1_1_database_a18a6d9b78f0d78340c001c016dd14e16}{\index{Controller\-::\-Database@{Controller\-::\-Database}!Diagramm\-\_\-\-Action@{Diagramm\-\_\-\-Action}}
+\index{Diagramm\-\_\-\-Action@{Diagramm\-\_\-\-Action}!Controller::Database@{Controller\-::\-Database}}
+\subsubsection[{Diagramm\-\_\-\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Controller\textbackslash{}\-Database\-::\-Diagramm\-\_\-\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_1_1_database_a18a6d9b78f0d78340c001c016dd14e16}
+U\-M\-L Diagramm anzeigen 
+
+Definiert in Zeile \hyperlink{_controller_2_database_8php_source_l00035}{35} der Datei \hyperlink{_controller_2_database_8php_source}{Controller/\-Database.\-php}.
+
+
+\begin{DoxyCode}
+00035                                           \{
+00036                 
+00037                 $this->view->setTemplate(\textcolor{stringliteral}{'database\_diagramm'});
+00038                 $this->view->display();
+00039                                 
+00040         \}
+\end{DoxyCode}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\-:\begin{DoxyCompactItemize}
+\item 
+Controller/\-Database.\-php\end{DoxyCompactItemize}

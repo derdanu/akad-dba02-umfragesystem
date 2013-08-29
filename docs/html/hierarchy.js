@@ -10,6 +10,7 @@ var hierarchy =
       [ "Model\\User", "class_model_1_1_user.html", null ]
     ] ],
     [ "Config", "class_config.html", null ],
+    [ "Controller\\Database", "class_controller_1_1_database.html", null ],
     [ "Exception", null, [
       [ "CustomException\\InvalidUserPassException", "class_custom_exception_1_1_invalid_user_pass_exception.html", null ],
       [ "CustomException\\UserNotAuthedException", "class_custom_exception_1_1_user_not_authed_exception.html", null ]

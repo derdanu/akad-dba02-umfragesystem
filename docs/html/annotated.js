@@ -7,6 +7,7 @@ var annotated =
         [ "Survey", "class_controller_1_1_admin_1_1_survey.html", "class_controller_1_1_admin_1_1_survey" ],
         [ "User", "class_controller_1_1_admin_1_1_user.html", "class_controller_1_1_admin_1_1_user" ]
       ] ],
+      [ "Database", "class_controller_1_1_database.html", "class_controller_1_1_database" ],
       [ "Index", "class_controller_1_1_index.html", "class_controller_1_1_index" ],
       [ "Survey", "class_controller_1_1_survey.html", "class_controller_1_1_survey" ],
       [ "UserSession", "class_controller_1_1_user_session.html", "class_controller_1_1_user_session" ]
