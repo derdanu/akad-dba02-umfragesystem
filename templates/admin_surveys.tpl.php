@@ -1,13 +1,11 @@
 		<h1>Umfragen Adminstration</h1>
 		<table class="table table-hover">
 			<tr><th>ID</th><th>Umfrage</th><th></th></tr>
-  			<?php
-			foreach ($this->view['surveys'] as $arr) {
-				print   "<tr><td>{$arr['ID']}</td>" .
-						"<td><a href='?controller=Survey&action=Show&survey={$arr['ID']}'>{$arr['Name']}</a></td>" .
-						"<td class='text-right'><a href=\"?controller=Admin\Survey&action=Delete&survey={$arr['ID']}\" class='btn btn-danger'>Löschen</button></td></tr>";	
-			}
-			?>
+  			<?php foreach ($this->view['surveys'] as $arr) { ?>
+				<tr><td><?php print $arr['ID']; ?></td>
+					<td><a href="?controller=Survey&action=Show&survey=<?php print $arr['ID']; ?>"><?php print $arr['Name']; ?></a></td>
+					<td class="text-right"><a href="?controller=Admin\Survey&action=Delete&survey=<?php print $arr['ID']; ?>" class='btn btn-danger'>L&ouml;schen</button></td></tr>	
+			<?php } ?>
 		</table>
 		<a data-toggle="modal" href="#addSurveyModal" class="btn btn-success">Hinzuf&uuml;gen</a>
 
