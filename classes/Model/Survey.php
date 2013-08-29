@@ -93,7 +93,7 @@ class Survey extends Base{
 	 */
 	public function getSurveyResult($survey) {
 		
-		$stmt = $this->dbh->prepare("SELECT i.Name, COUNT(*) as cnt FROM SurveyItems i LEFT JOIN SurveyAnswer a ON i.ID = a. SurveyItemID WHERE i.SurveyID = :id GROUP BY Name ORDER BY i.Name");
+		$stmt = $this->dbh->prepare("SELECT i.Name, COUNT(a.ID) as cnt FROM SurveyItems i LEFT JOIN SurveyAnswer a ON i.ID = a. SurveyItemID WHERE i.SurveyID = :id GROUP BY Name ORDER BY i.Name");
 		$stmt->bindParam(':id', $survey);
 		$stmt->execute();
 		
@@ -154,6 +154,38 @@ class Survey extends Base{
 		$stmt->execute();
 		
 	}	
+	
+	
+	/**
+	 * 
+	 * neue Umfrage hinzufügen
+	 * 
+	 * @param	String	$name	Name der Umfrage
+	 * @param	Array	$anserArr	Array mit den möglichen Antworten
+	 * 
+	 */
+	public function addSurvey($name, $answerArr) {
+		
+		
+		$stmt = $this->dbh->prepare("INSERT INTO Survey SET Name = :name");
+		$stmt->bindParam(':name', $name);
+		
+		$stmt->execute();
+
+		$surveyID = $this->dbh->lastInsertId();
+		
+		$stmt = $this->dbh->prepare("INSERT INTO SurveyItems SET Name = :name, SurveyID = :id");
+		
+		$stmt->bindParam(':id', $surveyID);
+
+		foreach ($answerArr as $answer) {
+
+			$stmt->bindParam(':name', $answer);
+			$stmt->execute();
+			
+		}
+		
+	}
 	
 	/**
 	 * 

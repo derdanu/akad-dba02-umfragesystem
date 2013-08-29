@@ -6,7 +6,13 @@
 			<table class="table table-bordered table-survey">
 			<?php
 			foreach ($this->view['survey_result'] as $arr) {
-				$percent = round($arr['cnt'] / $this->view['survey_cnt'] * 100);
+			
+				if ($this->view['survey_cnt'] > 0) {
+					$percent = round($arr['cnt'] / $this->view['survey_cnt'] * 100);	
+				} else {
+					$percent = 0;
+				}
+				
 				print   "<tr><td>{$arr['Name']}</td>" .
 						"<td>" .
 						"<div style='background-color:#428BCA; width:{$percent}%; padding-left:10px; border-radius: 18px;'>{$arr['cnt']} ($percent %)</div>" .

@@ -42,7 +42,20 @@ class Survey extends Base {
 	 */
 	public function Add_POST_Action() {
 		
-		$this->Index_Action();
+		if (isset($_POST['name']) && isset($_POST['answer'])) {
+
+			$name = $_POST['name'];
+			$answer_arr = $_POST['answer'];
+
+			$this->model->addSurvey($name, $answer_arr);
+			
+			$this->Index_Action();
+			
+		} else {
+			
+			throw new \Exception("Illegaler Aufruf");
+			
+		}
 		
 	}
 	
