@@ -21,6 +21,8 @@ class Database {
 	 */
 	public function __construct() {
 		
+		\Session::isUserAuthedCheck();
+		
 		$this->view = new \View();
 		
 	}
