@@ -30,3 +30,12 @@ CREATE TABLE `User` (
  PRIMARY KEY (`ID`),
  UNIQUE KEY `Name` (`Name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+
+INSERT INTO `User` (
+ `ID` ,
+ `Name` ,
+ `Passwort` ,
+ `LastLogIn`
+) VALUES (
+ NULL , 'admin', 'test', '0000-00-00 00:00:00'
+);
