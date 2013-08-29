@@ -12,14 +12,18 @@
 				} else {
 					$percent = 0;
 				}
+			?>	
+				<tr><td><?php print $arr['Name']; ?></td><td>
 				
-				print   "<tr><td>{$arr['Name']}</td>" .
-						"<td>" .
-						"<div style='background-color:#428BCA; width:{$percent}%; padding-left:10px; border-radius: 18px;'>{$arr['cnt']} ($percent %)</div>" .
-						"</td>" .
-						"</tr>";	
-			}
-			?>
+				<?php if ($arr['cnt'] > 0) { ?>
+					<div style="background-color:#428BCA; width:<?php print $percent; ?>%; padding-left:10px; border-radius: 18px;"><?php print $arr['cnt']; ?> (<?php print $percent; ?> %)</div>
+				<?php } else { ?>
+					<div><?php print $arr['cnt']; ?> (<?php print $percent; ?> %)</div>
+				<?php }	?>				
+				
+				</td></tr>	
+			
+			<?php }	?>
 			
 			</table>
 			</div>
