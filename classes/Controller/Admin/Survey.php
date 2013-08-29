@@ -53,7 +53,29 @@ class Survey extends Base {
 	 */
 	public function Delete_Action() {
 		
-		$this->Index_Action();
+		
+		if (isset($_GET['survey'])) {
+			
+			$id = intval($_GET['survey']);
+
+			if ($id > 0) {
+				
+				$this->model->deleteSurvey($id);
+						
+				$this->Index_Action();				
+			
+			} else {
+				
+				throw new \Exception("Illegaler Aufruf");
+				
+			}
+						
+	
+		} else {
+			
+			throw new \Exception("Illegaler Aufruf");
+			
+		}
 		
 	}
 }

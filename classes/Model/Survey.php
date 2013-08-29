@@ -138,6 +138,23 @@ class Survey extends Base{
 	
 	}
 	
+	
+	/**
+	 * 
+	 * Umfrage Löschen
+	 * 
+	 * @param	Integer	$id 	UmfragenID
+	 * 
+	 */
+	public function deleteSurvey($id) {
+		
+		$stmt = $this->dbh->prepare("DELETE FROM Survey WHERE ID = :id");
+		$stmt->bindParam(':id', $id);
+	
+		$stmt->execute();
+		
+	}	
+	
 	/**
 	 * 
 	 * Anzahl der Tupel zurückgeben
