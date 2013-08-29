@@ -9,6 +9,10 @@ namespace Controller\Admin;
  */
 class Base {
 	
+	
+	protected $model;
+	protected $view;
+	
 	/** 
 	 * 
 	 * Im Konstruktur generell ueberpruefen ob 
@@ -18,6 +22,8 @@ class Base {
 	public function __construct() {
 		
 		\Session::isUserAuthedCheck();
+		
+		$this->view = new \View();
 		
 	}
 	

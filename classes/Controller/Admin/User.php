@@ -9,6 +9,20 @@ namespace Controller\Admin;
  */
 class User extends Base{
 	
+	
+	/**
+	 * 
+	 * Modell initialisieren
+	 * 
+	 */
+	public function __construct() {
+		
+		$this->model = new \Model\User();
+		
+		parent::__construct();
+	
+	}
+	
 	/**
 	 * 
 	 * Default Index Get Action
@@ -16,13 +30,10 @@ class User extends Base{
 	 */
 	public function Index_Action() {
 		
-		$model = new \Model\User();
+		$this->view->setTemplate('admin_user');
+		$this->view->assign('users', $this->model->getUsers());
 		
-		$view = new \View();
-		$view->setTemplate('admin_user');
-		$view->assign('users', $model->getUsers());
-		
-		$view->display();
+		$this->view->display();
 		
 	}	
 	
@@ -43,6 +54,8 @@ class User extends Base{
 	 * 
 	 */
 	public function Delete_Action() {
+		
+		
 		
 		$this->Index_Action();
 	}
