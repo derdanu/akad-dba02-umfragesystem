@@ -29,7 +29,16 @@ class User extends Base {
 		$stmt->execute();
 		$res = $stmt->fetchObject();
 
- 		return ($res->Passwort == $pass);
+		if ($res->Passwort == $pass) {
+			
+			$this->updateLastLogIn($user);
+			return true;
+			
+		} else {
+			
+			return false;
+			
+		}
  
 	}
 	
@@ -45,6 +54,23 @@ class User extends Base {
 		$stmt = $this->dbh->query("SELECT ID, Name, LastLogIn FROM User");
 		return 	$stmt->fetchAll();	
 		
+	}
+	
+	/**
+	 * 
+	 * Zeitstempel des letzten Logins vom User Updaten
+	 * 
+	 * @param	String	$user	Benutzername
+	 * 
+	 */
+	private function updateLastLogIn($user) {
+
+		$stmt = $this->dbh->prepare("UPDATE User SET LastLogIn = :lastlogin WHERE Name = :name");
+		$stmt->bindParam(':name', $user);
+		$stmt->bindValue(':lastlogin', date("Y-m-d H:i:s"));
+
+		$stmt->execute();
+			
 	}
 		
 }
