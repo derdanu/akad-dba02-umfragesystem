@@ -141,7 +141,7 @@ class Survey extends Base{
 	
 	/**
 	 * 
-	 * Umfrage Löschen
+	 * Umfrage löschen
 	 * 
 	 * @param	Integer	$id 	UmfragenID
 	 * 
