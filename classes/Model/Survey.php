@@ -131,8 +131,8 @@ class Survey extends Base{
 		
 		foreach ($answerArr as $answer) {
 
-			$stmt->bindParam(':id', $answer);
-			$stmt->execute();
+				$stmt->bindParam(':id', $answer);
+				$stmt->execute();	
 			
 		}
 	
@@ -180,8 +180,10 @@ class Survey extends Base{
 
 		foreach ($answerArr as $answer) {
 
-			$stmt->bindParam(':name', $answer);
-			$stmt->execute();
+			if (!empty($answer)) {
+				$stmt->bindParam(':name', $answer);
+				$stmt->execute();
+			}
 			
 		}
 		
