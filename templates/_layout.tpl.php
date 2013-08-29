@@ -53,9 +53,8 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-				<li><a href="docs/html/index.html" target="_blank">Code Dokumentation</a></li>
-	
             <?php if (\Session::isUserAuthed()) { ?>
+            	<li><a href="docs/html/index.html" target="_blank">Code Dokumentation</a></li>
 				<li><a href="?controller=UserSession&action=Logout">Logout</a></li>
             <?php } else { ?>
 		          <li class="dropdown">
