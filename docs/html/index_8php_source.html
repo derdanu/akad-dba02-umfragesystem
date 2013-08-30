@@ -141,17 +141,17 @@ $(document).ready(function(){initNavTree('index_8php_source.html','');});
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <span class="keywordflow">catch</span> (CustomException\UserNotAuthedException $e) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        displayException($e, <span class="stringliteral">&quot;Illegaler Aufruf&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        displayException($e-&gt;getMessage(), <span class="stringliteral">&quot;Illegaler Aufruf&quot;</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="keywordflow">catch</span> (CustomException\InvalidUserPassException $e) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        displayException($e, <span class="stringliteral">&quot;Benutzername und/oder Passwort falsch&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        displayException(<span class="stringliteral">&quot;Benutzername und/oder Passwort falsch&quot;</span>, <span class="stringliteral">&quot;Loginfehler&quot;</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <span class="keywordflow">catch</span> (Exception $e)  {       </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        displayException($e, <span class="stringliteral">&quot;Das h&amp;auml;tte nicht passieren d&amp;uuml;rfen&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        displayException($e-&gt;getMessage(), <span class="stringliteral">&quot;Das h&amp;auml;tte nicht passieren d&amp;uuml;rfen&quot;</span>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span></div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('index_8php_source.html','');});
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * Exception Anzeigen</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> *  </span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * @param Exception $e  Exception Klasse</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * @param String        $e      Exceptiontext</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * @param String        $h1     Ueberschrift</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * </span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> */</span></div>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('index_8php_source.html','');});
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        $view = new \View();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        $view-&gt;setTemplate(<span class="stringliteral">&#39;exception&#39;</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        $view-&gt;assign(<span class="stringliteral">&#39;h1&#39;</span>, $h1);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        $view-&gt;assign(<span class="stringliteral">&#39;exception&#39;</span>, $e-&gt;getMessage());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        $view-&gt;assign(<span class="stringliteral">&#39;exception&#39;</span>, $e);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        $view-&gt;display();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('index_8php_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>index.php</b></li>
-    <li class="footer">Erzeugt am Fre Aug 30 2013 09:39:07 für DBA02 von
+    <li class="footer">Erzeugt am Fre Aug 30 2013 09:45:16 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
