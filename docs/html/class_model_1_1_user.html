@@ -183,16 +183,16 @@ Weitere Geerbte Elemente</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00083">83</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                              {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;INSERT INTO User SET Name = :name, Passwort = :pass&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:name&#39;</span>, $name);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:pass&#39;</span>, $pass);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                $stmt-&gt;execute();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00085">85</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                              {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;INSERT INTO User SET Name = :name, Passwort = :pass&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:name&#39;</span>, $name);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:pass&#39;</span>, $pass);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -240,19 +240,21 @@ Weitere Geerbte Elemente</h2></td></tr>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                $stmt-&gt;execute();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                $res = $stmt-&gt;fetchObject();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">if</span> ($res-&gt;Passwort == $pass) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        $this-&gt;<a class="code" href="class_model_1_1_user.html#a45d6132fe4ea721dea485ff7c65bc412">updateLastLogIn</a>($user);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">if</span> (!is_object($res)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">if</span> ($res-&gt;Passwort == $pass) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        $this-&gt;<a class="code" href="class_model_1_1_user.html#a45d6132fe4ea721dea485ff7c65bc412">updateLastLogIn</a>($user);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="ttc" id="class_model_1_1_user_html_a45d6132fe4ea721dea485ff7c65bc412"><div class="ttname"><a href="class_model_1_1_user.html#a45d6132fe4ea721dea485ff7c65bc412">Model\User\updateLastLogIn</a></div><div class="ttdeci">updateLastLogIn($user)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_user_8php_source.html#l00101">Model/User.php:101</a></div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="ttc" id="class_model_1_1_user_html_a45d6132fe4ea721dea485ff7c65bc412"><div class="ttname"><a href="class_model_1_1_user.html#a45d6132fe4ea721dea485ff7c65bc412">Model\User\updateLastLogIn</a></div><div class="ttdeci">updateLastLogIn($user)</div><div class="ttdef"><b>Definition:</b> <a href="_model_2_user_8php_source.html#l00103">Model/User.php:103</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -277,15 +279,15 @@ Weitere Geerbte Elemente</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00066">66</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                        {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;DELETE FROM User WHERE ID = :id&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $id);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                $stmt-&gt;execute();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00068">68</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;DELETE FROM User WHERE ID = :id&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:id&#39;</span>, $id);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,13 +306,13 @@ Weitere Geerbte Elemente</h2></td></tr>
 <p>Benutzer holen</p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Array </dd></dl>
 
-<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00052">52</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                   {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                $stmt = $this-&gt;dbh-&gt;query(<span class="stringliteral">&quot;SELECT ID, Name, LastLogIn FROM User&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">return</span>  $stmt-&gt;fetchAll();      </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00054">54</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                   {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                $stmt = $this-&gt;dbh-&gt;query(<span class="stringliteral">&quot;SELECT ID, Name, LastLogIn FROM User&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span>  $stmt-&gt;fetchAll();      </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -343,16 +345,16 @@ Weitere Geerbte Elemente</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00101">101</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;UPDATE User SET LastLogIn = :lastlogin WHERE Name = :name&quot;</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:name&#39;</span>, $user);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                $stmt-&gt;bindValue(<span class="stringliteral">&#39;:lastlogin&#39;</span>, date(<span class="stringliteral">&quot;Y-m-d H:i:s&quot;</span>));</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                $stmt-&gt;execute();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<p>Definiert in Zeile <a class="el" href="_model_2_user_8php_source.html#l00103">103</a> der Datei <a class="el" href="_model_2_user_8php_source.html">Model/User.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                $stmt = $this-&gt;dbh-&gt;prepare(<span class="stringliteral">&quot;UPDATE User SET LastLogIn = :lastlogin WHERE Name = :name&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                $stmt-&gt;bindParam(<span class="stringliteral">&#39;:name&#39;</span>, $user);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                $stmt-&gt;bindValue(<span class="stringliteral">&#39;:lastlogin&#39;</span>, date(<span class="stringliteral">&quot;Y-m-d H:i:s&quot;</span>));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                $stmt-&gt;execute();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,7 +367,7 @@ Weitere Geerbte Elemente</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>Model</b></li><li class="navelem"><a class="el" href="class_model_1_1_user.html">User</a></li>
-    <li class="footer">Erzeugt am Don Aug 29 2013 11:06:44 für DBA02 von
+    <li class="footer">Erzeugt am Fre Aug 30 2013 09:39:10 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

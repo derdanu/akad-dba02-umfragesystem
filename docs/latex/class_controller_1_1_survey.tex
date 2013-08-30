@@ -114,7 +114,7 @@ Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00064}{64} der D
 \begin{DoxyCode}
 00064                                            \{
 00065 
-00066                 \textcolor{keywordflow}{if} ($this->survey > 0 && $\_GET[\textcolor{stringliteral}{'action'}] == \textcolor{stringliteral}{'Save'}) \{
+00066                 \textcolor{keywordflow}{if} ($this->survey > 0 && isset($\_POST[\textcolor{stringliteral}{'answer'}])) \{
 00067                 
 00068                         $answerArr = $\_POST[\textcolor{stringliteral}{'answer'}];
 00069                         
@@ -123,13 +123,14 @@ Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00064}{64} der D
 00072                         $this->\hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{showSurveyResult}();
 00073                         
 00074                 \} \textcolor{keywordflow}{else} \{
-00075                         
-00076                         \textcolor{comment}{//Exception werfen}
-00077                         
-00078                 \}       
-00079                 
-00080                                 
-00081         \}
+00075 
+00076                         \textcolor{comment}{// Wird nichts ausgewaelt einfach das Ergebnis anzeigen.}
+00077                         $this->\hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{showSurveyResult}();
+00078                         
+00079                 \}       
+00080                 
+00081                                 
+00082         \}
 \end{DoxyCode}
 \hypertarget{class_controller_1_1_survey_a6d7373346ea75a9c0f9672fcd54ea4d9}{\index{Controller\-::\-Survey@{Controller\-::\-Survey}!Show\-\_\-\-Action@{Show\-\_\-\-Action}}
 \index{Show\-\_\-\-Action@{Show\-\_\-\-Action}!Controller::Survey@{Controller\-::\-Survey}}
@@ -142,19 +143,19 @@ Umfrage Ergebnisse anzeigen
 
 Direkt nur fuer Adminstratoren moeglich 
 
-Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00090}{90} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00091}{91} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00090                                       \{
-00091                 
-00092                 \textcolor{keywordflow}{if} ($this->survey == 0) \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
-00093                 
-00094                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
-00095                 
-00096                 $this->\hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{showSurveyResult}();
-00097                 
-00098         \}
+00091                                       \{
+00092                 
+00093                 \textcolor{keywordflow}{if} ($this->survey == 0) \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00094                 
+00095                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
+00096                 
+00097                 $this->\hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{showSurveyResult}();
+00098                 
+00099         \}
 \end{DoxyCode}
 \hypertarget{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{\index{Controller\-::\-Survey@{Controller\-::\-Survey}!show\-Survey\-Result@{show\-Survey\-Result}}
 \index{show\-Survey\-Result@{show\-Survey\-Result}!Controller::Survey@{Controller\-::\-Survey}}
@@ -165,19 +166,19 @@ Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00090}{90} der D
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}
 Auswertung anzeigen 
 
-Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00105}{105} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_controller_2_survey_8php_source_l00106}{106} der Datei \hyperlink{_controller_2_survey_8php_source}{Controller/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00105                                             \{
-00106                 
-00107                 $this->view->setTemplate(\textcolor{stringliteral}{'survey\_result'});
-00108                 $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
-00109                 $this->view->assign(\textcolor{stringliteral}{'survey\_cnt'}, $this->model->getSurveyItemCount($this->survey));
-00110                 $this->view->assign(\textcolor{stringliteral}{'survey\_result'}, $this->model->getSurveyResult($this->survey));
-00111                 $this->view->display();
-00112                 
-00113         \}               
+00106                                             \{
+00107                 
+00108                 $this->view->setTemplate(\textcolor{stringliteral}{'survey\_result'});
+00109                 $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
+00110                 $this->view->assign(\textcolor{stringliteral}{'survey\_cnt'}, $this->model->getSurveyItemCount($this->survey));
+00111                 $this->view->assign(\textcolor{stringliteral}{'survey\_result'}, $this->model->getSurveyResult($this->survey));
+00112                 $this->view->display();
+00113                 
+00114         \}               
 \end{DoxyCode}
 
 

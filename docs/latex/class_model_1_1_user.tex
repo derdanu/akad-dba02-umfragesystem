@@ -53,19 +53,19 @@ String & {\em \$pass} & Passwort \\
 \end{DoxyParams}
 
 
-Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00083}{83} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
+Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00085}{85} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
 
 
 \begin{DoxyCode}
-00083                                               \{
-00084                 
-00085                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO User SET Name = :name, Passwort = :pass"});
-00086                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
-00087                 $stmt->bindParam(\textcolor{stringliteral}{':pass'}, $pass);
-00088                         
-00089                 $stmt->execute();
-00090                 
-00091         \}
+00085                                               \{
+00086                 
+00087                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO User SET Name = :name, Passwort = :pass"});
+00088                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
+00089                 $stmt->bindParam(\textcolor{stringliteral}{':pass'}, $pass);
+00090                         
+00091                 $stmt->execute();
+00092                 
+00093         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_user_a6f75fbb91daa84c817340a254bd1aa6f}{\index{Model\-::\-User@{Model\-::\-User}!check\-Credentials@{check\-Credentials}}
 \index{check\-Credentials@{check\-Credentials}!Model::User@{Model\-::\-User}}
@@ -103,18 +103,20 @@ Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00022}{22} der Datei \h
 00029                 $stmt->execute();
 00030                 $res = $stmt->fetchObject();
 00031 
-00032                 \textcolor{keywordflow}{if} ($res->Passwort == $pass) \{
-00033                         
-00034                         $this->\hyperlink{class_model_1_1_user_a45d6132fe4ea721dea485ff7c65bc412}{updateLastLogIn}($user);
-00035                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-00036                         
-00037                 \} \textcolor{keywordflow}{else} \{
+00032                 \textcolor{keywordflow}{if} (!is\_object($res)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00033 
+00034                 \textcolor{keywordflow}{if} ($res->Passwort == $pass) \{
+00035                         
+00036                         $this->\hyperlink{class_model_1_1_user_a45d6132fe4ea721dea485ff7c65bc412}{updateLastLogIn}($user);
+00037                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
 00038                         
-00039                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00039                 \} \textcolor{keywordflow}{else} \{
 00040                         
-00041                 \}
-00042  
-00043         \}
+00041                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00042                         
+00043                 \}
+00044  
+00045         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_user_a458a6d6adff444603045434301b02246}{\index{Model\-::\-User@{Model\-::\-User}!delete\-User@{delete\-User}}
 \index{delete\-User@{delete\-User}!Model::User@{Model\-::\-User}}
@@ -132,18 +134,18 @@ Integer & {\em \$id} & Benutzer\-I\-D \\
 \end{DoxyParams}
 
 
-Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00066}{66} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
+Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00068}{68} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
 
 
 \begin{DoxyCode}
-00066                                         \{
-00067                 
-00068                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"DELETE FROM User WHERE ID = :id"});
-00069                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $id);
-00070         
-00071                 $stmt->execute();
-00072                 
-00073         \}
+00068                                         \{
+00069                 
+00070                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"DELETE FROM User WHERE ID = :id"});
+00071                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $id);
+00072         
+00073                 $stmt->execute();
+00074                 
+00075         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_user_a306c9d8207c01a0dc603dd3fa148094c}{\index{Model\-::\-User@{Model\-::\-User}!get\-Users@{get\-Users}}
 \index{get\-Users@{get\-Users}!Model::User@{Model\-::\-User}}
@@ -159,16 +161,16 @@ Array
 \end{DoxyReturn}
 
 
-Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00052}{52} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
+Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00054}{54} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
 
 
 \begin{DoxyCode}
-00052                                    \{
-00053 
-00054                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT ID, Name, LastLogIn FROM User"});
-00055                 \textcolor{keywordflow}{return}  $stmt->fetchAll();      
-00056                 
-00057         \}
+00054                                    \{
+00055 
+00056                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT ID, Name, LastLogIn FROM User"});
+00057                 \textcolor{keywordflow}{return}  $stmt->fetchAll();      
+00058                 
+00059         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_user_a45d6132fe4ea721dea485ff7c65bc412}{\index{Model\-::\-User@{Model\-::\-User}!update\-Last\-Log\-In@{update\-Last\-Log\-In}}
 \index{update\-Last\-Log\-In@{update\-Last\-Log\-In}!Model::User@{Model\-::\-User}}
@@ -186,19 +188,19 @@ String & {\em \$user} & Benutzername \\
 \end{DoxyParams}
 
 
-Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00101}{101} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
+Definiert in Zeile \hyperlink{_model_2_user_8php_source_l00103}{103} der Datei \hyperlink{_model_2_user_8php_source}{Model/\-User.\-php}.
 
 
 \begin{DoxyCode}
-00101                                                 \{
-00102 
-00103                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"UPDATE User SET LastLogIn = :lastlogin WHERE Name = :name"});
-00104                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $user);
-00105                 $stmt->bindValue(\textcolor{stringliteral}{':lastlogin'}, date(\textcolor{stringliteral}{"Y-m-d H:i:s"}));
-00106 
-00107                 $stmt->execute();
-00108                         
-00109         \}
+00103                                                 \{
+00104 
+00105                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"UPDATE User SET LastLogIn = :lastlogin WHERE Name = :name"});
+00106                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $user);
+00107                 $stmt->bindValue(\textcolor{stringliteral}{':lastlogin'}, date(\textcolor{stringliteral}{"Y-m-d H:i:s"}));
+00108 
+00109                 $stmt->execute();
+00110                         
+00111         \}
 \end{DoxyCode}
 
 

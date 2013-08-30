@@ -68,7 +68,7 @@
 00063 \textcolor{comment}{         */}
 \hypertarget{_controller_2_survey_8php_source_l00064}{}\hyperlink{class_controller_1_1_survey_a1a671d9a36a993bab69c12c16fcc60cc}{00064}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_a1a671d9a36a993bab69c12c16fcc60cc}{Save\_POST\_Action}() \{
 00065 
-00066                 \textcolor{keywordflow}{if} ($this->survey > 0 && $\_GET[\textcolor{stringliteral}{'action'}] == \textcolor{stringliteral}{'Save'}) \{
+00066                 \textcolor{keywordflow}{if} ($this->survey > 0 && isset($\_POST[\textcolor{stringliteral}{'answer'}])) \{
 00067                 
 00068                         $answerArr = $\_POST[\textcolor{stringliteral}{'answer'}];
 00069                         
@@ -77,48 +77,49 @@
 00072                         $this->showSurveyResult();
 00073                         
 00074                 \} \textcolor{keywordflow}{else} \{
-00075                         
-00076                         \textcolor{comment}{//Exception werfen}
-00077                         
-00078                 \}       
-00079                 
-00080                                 
-00081         \}
-00082                 \textcolor{comment}{}
-00083 \textcolor{comment}{        /**}
-00084 \textcolor{comment}{         * }
-00085 \textcolor{comment}{         * Umfrage Ergebnisse anzeigen}
-00086 \textcolor{comment}{         * }
-00087 \textcolor{comment}{         * Direkt nur fuer Adminstratoren moeglich}
-00088 \textcolor{comment}{         * }
-00089 \textcolor{comment}{         */}             
-\hypertarget{_controller_2_survey_8php_source_l00090}{}\hyperlink{class_controller_1_1_survey_a6d7373346ea75a9c0f9672fcd54ea4d9}{00090}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_a6d7373346ea75a9c0f9672fcd54ea4d9}{Show\_Action}() \{
-00091                 
-00092                 \textcolor{keywordflow}{if} ($this->survey == 0) \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
-00093                 
-00094                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
-00095                 
-00096                 $this->showSurveyResult();
-00097                 
-00098         \}
-00099 \textcolor{comment}{}
-00100 \textcolor{comment}{        /**}
-00101 \textcolor{comment}{         * }
-00102 \textcolor{comment}{         * Auswertung anzeigen}
-00103 \textcolor{comment}{         * }
-00104 \textcolor{comment}{         */}
-\hypertarget{_controller_2_survey_8php_source_l00105}{}\hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{00105}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{showSurveyResult}() \{
-00106                 
-00107                 $this->view->setTemplate(\textcolor{stringliteral}{'survey\_result'});
-00108                 $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
-00109                 $this->view->assign(\textcolor{stringliteral}{'survey\_cnt'}, $this->model->getSurveyItemCount($this->survey));
-00110                 $this->view->assign(\textcolor{stringliteral}{'survey\_result'}, $this->model->getSurveyResult($this->survey));
-00111                 $this->view->display();
-00112                 
-00113         \}               
-00114                 
-00115 \}
-00116 
+00075 
+00076                         \textcolor{comment}{// Wird nichts ausgewaelt einfach das Ergebnis anzeigen.}
+00077                         $this->showSurveyResult();
+00078                         
+00079                 \}       
+00080                 
+00081                                 
+00082         \}
+00083                 \textcolor{comment}{}
+00084 \textcolor{comment}{        /**}
+00085 \textcolor{comment}{         * }
+00086 \textcolor{comment}{         * Umfrage Ergebnisse anzeigen}
+00087 \textcolor{comment}{         * }
+00088 \textcolor{comment}{         * Direkt nur fuer Adminstratoren moeglich}
+00089 \textcolor{comment}{         * }
+00090 \textcolor{comment}{         */}             
+\hypertarget{_controller_2_survey_8php_source_l00091}{}\hyperlink{class_controller_1_1_survey_a6d7373346ea75a9c0f9672fcd54ea4d9}{00091}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_a6d7373346ea75a9c0f9672fcd54ea4d9}{Show\_Action}() \{
+00092                 
+00093                 \textcolor{keywordflow}{if} ($this->survey == 0) \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Aufruf"});
+00094                 
+00095                 \hyperlink{class_session_a49f0fb7185ab07bdbf6bdff477b43ff8}{\(\backslash\)Session::isUserAuthedCheck}();
+00096                 
+00097                 $this->showSurveyResult();
+00098                 
+00099         \}
+00100 \textcolor{comment}{}
+00101 \textcolor{comment}{        /**}
+00102 \textcolor{comment}{         * }
+00103 \textcolor{comment}{         * Auswertung anzeigen}
+00104 \textcolor{comment}{         * }
+00105 \textcolor{comment}{         */}
+\hypertarget{_controller_2_survey_8php_source_l00106}{}\hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{00106}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_controller_1_1_survey_a623581300b3866aaad9ed74511913544}{showSurveyResult}() \{
+00107                 
+00108                 $this->view->setTemplate(\textcolor{stringliteral}{'survey\_result'});
+00109                 $this->view->assign(\textcolor{stringliteral}{'survey\_name'}, $this->model->getSurveyName($this->survey));
+00110                 $this->view->assign(\textcolor{stringliteral}{'survey\_cnt'}, $this->model->getSurveyItemCount($this->survey));
+00111                 $this->view->assign(\textcolor{stringliteral}{'survey\_result'}, $this->model->getSurveyResult($this->survey));
+00112                 $this->view->display();
+00113                 
+00114         \}               
+00115                 
+00116 \}
 00117 
-00118 ?>
+00118 
+00119 ?>
 \end{DoxyCode}
