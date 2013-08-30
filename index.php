@@ -1,12 +1,12 @@
 <?php
 define('CLASS_DIR', 'classes/');
 
-// PHP Autoloader Funktion definieren.
-spl_autoload_register('__autoload'); 
-
 /**
  * 
- * Wir für den Autoloader von Klassen benötigt
+ * PHP Klassen Autoloader definieren
+ * 
+ * Andere Variante waere mit spl_autoload_register() 
+ * eine oder mehrere Funktionen definieren
  * 
  * @param	String	$class	Klassenname
  * 
