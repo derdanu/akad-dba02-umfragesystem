@@ -16,9 +16,9 @@
 				<tr><td><?php print $arr['Name']; ?></td><td>
 				
 				<?php if ($arr['cnt'] > 0) { ?>
-					<div style="background-color:#428BCA; width:<?php print $percent; ?>%; padding-left:10px; border-radius: 18px;"><?php print $arr['cnt']; ?> <small>(<?php print $percent; ?> %)</small></div>
+					<div style="background-color:#428BCA; width:<?php print $percent; ?>%; padding-left:10px; border-radius: 18px;"><?php print $arr['cnt']; ?> <small>(<?php print $percent; ?>%)</small></div>
 				<?php } else { ?>
-					<div><?php print $arr['cnt']; ?> (<?php print $percent; ?> %)</div>
+					<div><?php print $arr['cnt']; ?></div>
 				<?php }	?>				
 				
 				</td></tr>	
