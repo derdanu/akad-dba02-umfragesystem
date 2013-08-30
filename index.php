@@ -36,17 +36,17 @@ try {
 		
 } catch (CustomException\UserNotAuthedException $e) {
 	
-	displayException($e, "Illegaler Aufruf");
+	displayException($e->getMessage(), "Illegaler Aufruf");
 	
 
 } catch (CustomException\InvalidUserPassException $e) {
 
-	displayException($e, "Benutzername und/oder Passwort falsch");
+	displayException("Benutzername und/oder Passwort falsch", "Loginfehler");
 	
 	
 } catch (Exception $e)  {	
 	
-	displayException($e, "Das h&auml;tte nicht passieren d&uuml;rfen");
+	displayException($e->getMessage(), "Das h&auml;tte nicht passieren d&uuml;rfen");
 	
 }
 
@@ -54,7 +54,7 @@ try {
  * 
  * Exception Anzeigen
  *  
- * @param Exception $e	Exception Klasse
+ * @param String 	$e	Exceptiontext
  * @param String	$h1	Ueberschrift
  * 
  */
@@ -63,7 +63,7 @@ function displayException($e, $h1) {
 	$view = new \View();
 	$view->setTemplate('exception');
 	$view->assign('h1', $h1);
-	$view->assign('exception', $e->getMessage());
+	$view->assign('exception', $e);
 	$view->display();
 	
 }
