@@ -2,9 +2,10 @@
 		<table class="table table-hover">
 			<tr><th>Benutername</th><th>Letzer Login</th><th></th></tr>
   			<?php foreach ($this->view['users'] as $arr) { ?>
-				<tr><td><?php print $arr['Name'] ?></td>
+  				<tr>
+					<td><?php print $arr['Name'] ?></td>
 					<td><?php print $arr['LastLogIn'] ?></td>
-					<td class="text-right"><a href="?controller=Admin\User&action=Delete&user=<?php print $arr['ID'] ?>" class="btn btn-danger">L&ouml;schen</button></td>
+					<td class="text-right"><a href="?controller=Admin\User&action=Delete&user=<?php print $arr['ID'] ?>" class="btn btn-danger">L&ouml;schen</a></td>
 				</tr>	
 			<?php } ?>
 		</table>
