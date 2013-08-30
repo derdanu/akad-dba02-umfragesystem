@@ -4,7 +4,7 @@
   			<?php foreach ($this->view['surveys'] as $arr) { ?>
 				<tr><td><?php print $arr['ID']; ?></td>
 					<td><a href="?controller=Survey&action=Show&survey=<?php print $arr['ID']; ?>"><?php print $arr['Name']; ?></a></td>
-					<td class="text-right"><a href="?controller=Admin\Survey&action=Delete&survey=<?php print $arr['ID']; ?>" class='btn btn-danger'>L&ouml;schen</button></td></tr>	
+					<td class="text-right"><a href="?controller=Admin\Survey&action=Delete&survey=<?php print $arr['ID']; ?>" class='btn btn-danger'>L&ouml;schen</a></td></tr>	
 			<?php } ?>
 		</table>
 		<a data-toggle="modal" href="#addSurveyModal" class="btn btn-success">Hinzuf&uuml;gen</a>
