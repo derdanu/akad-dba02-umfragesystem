@@ -36,31 +36,37 @@ try {
 		
 } catch (CustomException\UserNotAuthedException $e) {
 	
-	$view = new \View();
-	$view->setTemplate('exception');
-	$view->assign('h1', "Illegaler Aufruf");
-	$view->assign('exception', $e->getMessage());
-	$view->display();
+	displayException($e, "Illegaler Aufruf");
+	
 
 } catch (CustomException\InvalidUserPassException $e) {
 
-	$view = new \View();
-	$view->setTemplate('exception');
-	$view->assign('h1', "Loginfehler");
-	$view->assign('exception', "Benutzername und/oder Passwort falsch");
-	$view->display();
+	displayException($e, "Benutzername und/oder Passwort falsch");
 	
 	
 } catch (Exception $e)  {	
 	
-	$view = new \View();
-	$view->setTemplate('exception');
-	$view->assign('h1', "Das h&auml;tte nicht passieren d&uuml;rfen");
-	$view->assign('exception', $e->getMessage());
-	$view->display();
-
+	displayException($e, "Das h&auml;tte nicht passieren d&uuml;rfen");
+	
 }
 
+/**
+ * 
+ * Exception Anzeigen
+ *  
+ * @param Exception $e	Exception Klasse
+ * @param String	$h1	Ueberschrift
+ * 
+ */
+function displayException($e, $h1) {
+	
+	$view = new \View();
+	$view->setTemplate('exception');
+	$view->assign('h1', $h1);
+	$view->assign('exception', $e->getMessage());
+	$view->display();
+	
+}
 
 $conf = \Config::getInstance();
 
