@@ -13,15 +13,16 @@
 					$percent = 0;
 				}
 			?>	
-				<tr><td><?php print $arr['Name']; ?></td><td>
-				
+				<tr>
+					<td><?php print $arr['Name']; ?></td>
+					<td>
 				<?php if ($arr['cnt'] > 0) { ?>
-					<div style="background-color:#428BCA; width:<?php print $percent; ?>%; padding-left:10px; border-radius: 18px;"><?php print $arr['cnt']; ?> <small>(<?php print $percent; ?>%)</small></div>
+						<div style="background-color:#428BCA; width:<?php print $percent; ?>%; padding-left:10px; border-radius: 18px;"><?php print $arr['cnt']; ?> <small>(<?php print $percent; ?>%)</small></div>
 				<?php } else { ?>
-					<div>bisher keine Stimmen</div>
+						<div>bisher keine Stimmen</div>
 				<?php }	?>				
-				
-				</td></tr>	
+					</td>
+				</tr>	
 			
 			<?php }	?>
 			
