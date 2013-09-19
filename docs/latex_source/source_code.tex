@@ -1,8 +1,20 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage{hyperref}
+
+
+\usepackage{charter}
+% diese Reihenfolge wichtig !
+\usepackage{tocloft} % keine POC-Puenktchen
+\renewcommand{\cftdotsep}{\cftnodots} 
+\let\thepage=\relax % keine TOC-Seitenzahlen
+
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
 \usepackage[section]{placeins}
 \usepackage{../latex/doxygen}
 
 \begin{document}
+
+\renewcommand{\contentsname}{Anhang}
+\tableofcontents
+\clearpage
 \input{inputs.tex}
 \end{document}
