@@ -18,21 +18,23 @@
 00013                                         $percent = 0;
 00014                                 \}
 00015                         ?>      
-00016                                 <tr><td><?php print $arr[\textcolor{stringliteral}{'Name'}]; ?></td><td>
-00017                                 
-00018                                 <?php \textcolor{keywordflow}{if} ($arr[\textcolor{stringliteral}{'cnt'}] > 0) \{ ?>
-00019                                         <div style=\textcolor{stringliteral}{"background-color:#428BCA; width:<?php print $percent;
-       ?>%; padding-left:10px; border-radius: 18px;"}><?php print $arr[\textcolor{stringliteral}{'cnt'}]; ?> (<?php print $percent; ?> %)</div>
-00020                                 <?php \} \textcolor{keywordflow}{else} \{ ?>
-00021                                         <div><?php print $arr[\textcolor{stringliteral}{'cnt'}]; ?> (<?php print $percent; ?> %)</div>
-00022                                 <?php \} ?>                              
-00023                                 
-00024                                 </td></tr>      
-00025                         
-00026                         <?php \} ?>
-00027                         
-00028                         </table>
-00029                         </div>
-00030                 </div>
-00031       </div>
+00016                                 <tr>
+00017                                         <td><?php print $arr[\textcolor{stringliteral}{'Name'}]; ?></td>
+00018                                         <td>
+00019                                 <?php \textcolor{keywordflow}{if} ($arr[\textcolor{stringliteral}{'cnt'}] > 0) \{ ?>
+00020                                                 <div style=\textcolor{stringliteral}{"background-color:#428BCA; width:<?php print
+       $percent; ?>%; padding-left:10px; border-radius: 18px;"}><?php print $arr[\textcolor{stringliteral}{'cnt'}]; ?> <small>(<?php print 
+      $percent; ?>%)</small></div>
+00021                                 <?php \} \textcolor{keywordflow}{else} \{ ?>
+00022                                                 <div>bisher keine Stimmen</div>
+00023                                 <?php \} ?>                              
+00024                                         </td>
+00025                                 </tr>   
+00026                         
+00027                         <?php \} ?>
+00028                         
+00029                         </table>
+00030                         </div>
+00031                 </div>
+00032       </div>
 \end{DoxyCode}

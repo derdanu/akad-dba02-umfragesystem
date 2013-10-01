@@ -7,45 +7,46 @@
 00002                 <table \textcolor{keyword}{class}=\textcolor{stringliteral}{"table table-hover"}>
 00003                         <tr><th>Benutername</th><th>Letzer Login</th><th></th></tr>
 00004                         <?php \textcolor{keywordflow}{foreach} ($this->view[\textcolor{stringliteral}{'users'}] as $arr) \{ ?>
-00005                                 <tr><td><?php print $arr[\textcolor{stringliteral}{'Name'}] ?></td>
-00006                                         <td><?php print $arr[\textcolor{stringliteral}{'LastLogIn'}] ?></td>
-00007                                         <td \textcolor{keyword}{class}=\textcolor{stringliteral}{"text-right"}><a href=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)U
-      ser&action=Delete&user=<?php print $arr['ID'] ?>"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-danger"}>L&ouml;schen</button></td>
-00008                                 </tr>   
-00009                         <?php \} ?>
-00010                 </table>
-00011                 <a data-toggle=\textcolor{stringliteral}{"modal"} href=\textcolor{stringliteral}{"#addUserModal"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-success"}>Hinzuf&uuml;gen</a>
-00012 
-00013           <!-- Modal -->
-00014           <form \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-user"} method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)User&action=Add"}>
-00015           
-00016           <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"addUserModal"}>
-00017             <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-dialog"}>
-00018               <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-content"}>
-00019                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-header"}>
-00020                   <button type=\textcolor{stringliteral}{"button"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"close"} data-dismiss=\textcolor{stringliteral}{"modal"} aria-hidden=\textcolor{stringliteral}{"true"}>&times;</
+00005                                 <tr>
+00006                                         <td><?php print $arr[\textcolor{stringliteral}{'Name'}] ?></td>
+00007                                         <td><?php print $arr[\textcolor{stringliteral}{'LastLogIn'}] ?></td>
+00008                                         <td \textcolor{keyword}{class}=\textcolor{stringliteral}{"text-right"}><a href=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)U
+      ser&action=Delete&user=<?php print $arr['ID'] ?>"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-danger"}>L&ouml;schen</a></td>
+00009                                 </tr>   
+00010                         <?php \} ?>
+00011                 </table>
+00012                 <a data-toggle=\textcolor{stringliteral}{"modal"} href=\textcolor{stringliteral}{"#addUserModal"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-success"}>Hinzuf&uuml;gen</a>
+00013 
+00014           <!-- Modal -->
+00015           <form \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-user"} method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{"?controller=Admin\(\backslash\)User&action=Add"}>
+00016           
+00017           <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"addUserModal"}>
+00018             <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-dialog"}>
+00019               <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-content"}>
+00020                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-header"}>
+00021                   <button type=\textcolor{stringliteral}{"button"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"close"} data-dismiss=\textcolor{stringliteral}{"modal"} aria-hidden=\textcolor{stringliteral}{"true"}>&times;</
       button>
-00021                   <h4 \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-title"}>Neuen Benutzer hinzuf&uuml;gen</h4>
-00022                 </div>
-00023                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-body"}>
-00024                   <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-group"}>
-00025                             <label \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"name"}>Name</label>
-00026                             <input type=\textcolor{stringliteral}{"text"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"name"} name=\textcolor{stringliteral}{"name"} placeholder=\textcolor{stringliteral}{"
+00022                   <h4 \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-title"}>Neuen Benutzer hinzuf&uuml;gen</h4>
+00023                 </div>
+00024                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-body"}>
+00025                   <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-group"}>
+00026                             <label \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"name"}>Name</label>
+00027                             <input type=\textcolor{stringliteral}{"text"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"name"} name=\textcolor{stringliteral}{"name"} placeholder=\textcolor{stringliteral}{"
       Benutzername eingeben"}>
-00027                           </div>
-00028                           <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-group"}>
-00029                             <label \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"pass"}>Passwort</label>
-00030                             <input type=\textcolor{stringliteral}{"text"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"pass"} name=\textcolor{stringliteral}{"pass"} placeholder=\textcolor{stringliteral}{"
+00028                           </div>
+00029                           <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-group"}>
+00030                             <label \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"pass"}>Passwort</label>
+00031                             <input type=\textcolor{stringliteral}{"text"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"form-control"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"pass"} name=\textcolor{stringliteral}{"pass"} placeholder=\textcolor{stringliteral}{"
       Passwort eingeben"}>
-00031                           </div>
-00032                 </div>
-00033                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-footer"}>
-00034                   <a href=\textcolor{stringliteral}{"#"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn"} data-dismiss=\textcolor{stringliteral}{"modal"}>Verwerfen</a>
-00035                   <button \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-primary"} type=\textcolor{stringliteral}{"submit"}>Speichern</button>
-00036                 </div>
-00037               </div><!-- /.modal-content -->
-00038             </div><!-- /.modal-dialog -->
-00039           </div><!-- /.modal -->
-00040           
-00041           </form>
+00032                           </div>
+00033                 </div>
+00034                 <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"modal-footer"}>
+00035                   <a href=\textcolor{stringliteral}{"#"} \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn"} data-dismiss=\textcolor{stringliteral}{"modal"}>Verwerfen</a>
+00036                   <button \textcolor{keyword}{class}=\textcolor{stringliteral}{"btn btn-primary"} type=\textcolor{stringliteral}{"submit"}>Speichern</button>
+00037                 </div>
+00038               </div><!-- /.modal-content -->
+00039             </div><!-- /.modal-dialog -->
+00040           </div><!-- /.modal -->
+00041           
+00042           </form>
 \end{DoxyCode}

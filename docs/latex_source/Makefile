@@ -5,6 +5,6 @@ inputs:
 
 latex:
 	pdflatex source_code
-
+	pdflatex source_code
 clean:
 	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.out *.brf *.blg *.bbl 
