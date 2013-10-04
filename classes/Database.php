@@ -3,7 +3,8 @@
  * 
  * Database Klasse erweitert PHP PDO
  * 
- * $db = new Database();
+ * $db = new Database(); // fŸr eine eigene Datenbankverbindung.
+ * $db = Database::getInstance(); // Empfohlene Methode
  * 
  */
 class Database extends PDO {
@@ -12,15 +13,28 @@ class Database extends PDO {
 	private $user;
 	private $pass;
 	
+	static private $instance = null;
+	
+	static public function getInstance() {
+		if (null === self::$instance) {
+			self::$instance = new self;
+		}
+		
+		return self::$instance;
+	}
+	
 	/**
 	 * 
-	 * Konstruktor.
+	 * Konstruktor wird nur einmalig aufgerufen.
 	 * 
 	 * Konfiguration laden und der Elternklasse uebergeben.
 	 * 
+	 * Die Funktion muss public sein da die PDO Elternklasse auch einen public 
+	 * Konstruktur liefert. 
+	 * 
 	 */
 	public function __construct() {
-		
+				
 		$conf = \Config::getInstance();
 
 		$this->dsn = $conf->database_type . ":host=" . $conf->database_host . ";port=" . $conf->database_port . ";dbname=" . $conf->database_name; 
@@ -36,7 +50,11 @@ class Database extends PDO {
 		
 	}
 	
-
+	/**
+	 * 
+	 * Error Modus erhšhen
+	 * 
+	 */
 	private function beMoreVerbose() {
 		
 		$this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

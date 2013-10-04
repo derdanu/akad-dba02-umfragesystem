@@ -20,7 +20,7 @@ class Base {
 	 */
 	public function __construct() {
 		
-		$this->dbh = new \Database();
+		$this->dbh = \Database::getInstance();
 		
 	}
 
