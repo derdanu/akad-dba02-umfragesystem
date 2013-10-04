@@ -141,7 +141,7 @@ class Survey extends Base{
 	
 	/**
 	 * 
-	 * Umfrage löschen
+	 * Umfrage loeschen
 	 * 
 	 * @param	Integer	$id 	UmfragenID
 	 * 
@@ -158,15 +158,17 @@ class Survey extends Base{
 	
 	/**
 	 * 
-	 * neue Umfrage hinzufügen
+	 * neue Umfrage hinzufuegen
 	 * 
 	 * @param	String	$name	Name der Umfrage
-	 * @param	Array	$anserArr	Array mit den möglichen Antworten
+	 * @param	Array	$anserArr	Array mit den moeglichen Antworten
 	 * 
 	 */
 	public function addSurvey($name, $answerArr) {
 		
 		if (empty($name)) return;
+		
+		$this->dbh->beginTransaction();
 		
 		$stmt = $this->dbh->prepare("INSERT INTO Survey SET Name = :name");
 		$stmt->bindParam(':name', $name);
@@ -188,11 +190,13 @@ class Survey extends Base{
 			
 		}
 		
+		$this->dbh->commit();
+		
 	}
 	
 	/**
 	 * 
-	 * Anzahl der Tupel zurückgeben
+	 * Anzahl der Tupel zurueckgeben
 	 * 
 	 * @param	String	$table	Tabellenname
 	 * 
