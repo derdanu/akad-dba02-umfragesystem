@@ -1,5 +1,6 @@
 <?php
 define('CLASS_DIR', 'classes/');
+date_default_timezone_set("Europe/Berlin");
 
 /**
  * 
