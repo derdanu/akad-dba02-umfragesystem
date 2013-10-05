@@ -3,7 +3,7 @@
  * 
  * Database Klasse erweitert PHP PDO
  * 
- * $db = new Database(); // für eine eigene Datenbankverbindung.
+ * $db = new Database(); // fuer eine eigene Datenbankverbindung.
  * $db = Database::getInstance(); // Empfohlene Methode
  * 
  */
@@ -52,7 +52,7 @@ class Database extends PDO {
 	
 	/**
 	 * 
-	 * Error Modus erhöhen
+	 * Error Modus erhoehen
 	 * 
 	 */
 	private function beMoreVerbose() {
