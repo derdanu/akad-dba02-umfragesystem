@@ -12,11 +12,16 @@ Klassendiagramm für Database\-:\begin{figure}[H]
 \item 
 \hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{\-\_\-\-\_\-construct} ()
 \end{DoxyCompactItemize}
+\subsection*{Öffentliche, statische Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_database_a8399325825e893103c463e644f817f86}{static {\bfseries get\-Instance} ()}\label{class_database_a8399325825e893103c463e644f817f86}
+
+\end{DoxyCompactItemize}
 \subsection*{Private Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{{\bfseries be\-More\-Verbose} ()}\label{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}
-
+\hyperlink{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{be\-More\-Verbose} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attribute}
 \begin{DoxyCompactItemize}
@@ -30,14 +35,20 @@ Klassendiagramm für Database\-:\begin{figure}[H]
 \hypertarget{class_database_a8783a2890064e9d86b48a55fa09432f5}{{\bfseries \$pass}}\label{class_database_a8783a2890064e9d86b48a55fa09432f5}
 
 \end{DoxyCompactItemize}
+\subsection*{Statische, private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_database_a313173b898c14db2a84f7fd1b14e5fb5}{static {\bfseries \$instance} = null}\label{class_database_a313173b898c14db2a84f7fd1b14e5fb5}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Ausführliche Beschreibung}
 \hyperlink{class_database}{Database} Klasse erweitert P\-H\-P P\-D\-O
 
-\$db = new \hyperlink{class_database}{Database()}; 
+\$db = new \hyperlink{class_database}{Database()}; // fuer eine eigene Datenbankverbindung. \$db = Database\-::get\-Instance(); // Empfohlene Methode 
 
-Definiert in Zeile \hyperlink{_database_8php_source_l00009}{9} der Datei \hyperlink{_database_8php_source}{Database.\-php}.
+Definiert in Zeile \hyperlink{_database_8php_source_l00010}{10} der Datei \hyperlink{_database_8php_source}{Database.\-php}.
 
 
 
@@ -49,31 +60,56 @@ Definiert in Zeile \hyperlink{_database_8php_source_l00009}{9} der Datei \hyperl
 {}
 \end{DoxyParamCaption}
 )}}\label{class_database_a2852f635197e76a838486e64e00aac9f}
-Konstruktor.
+Konstruktor wird nur einmalig aufgerufen.
 
-Konfiguration laden und der Elternklasse uebergeben. 
+Konfiguration laden und der Elternklasse uebergeben.
 
-Definiert in Zeile \hyperlink{_database_8php_source_l00022}{22} der Datei \hyperlink{_database_8php_source}{Database.\-php}.
+Die Funktion muss public sein da die P\-D\-O Elternklasse auch einen public Konstruktur liefert. 
+
+Definiert in Zeile \hyperlink{_database_8php_source_l00036}{36} der Datei \hyperlink{_database_8php_source}{Database.\-php}.
 
 
 \begin{DoxyCode}
-00022                                       \{
-00023                 
-00024                 $conf = \(\backslash\)Config::getInstance();
-00025 
-00026                 $this->dsn = $conf->database\_type . \textcolor{stringliteral}{":host="} . $conf->database\_host . \textcolor{stringliteral}{";port="} . $conf->
+00036                                       \{
+00037                                 
+00038                 $conf = \(\backslash\)Config::getInstance();
+00039 
+00040                 $this->dsn = $conf->database\_type . \textcolor{stringliteral}{":host="} . $conf->database\_host . \textcolor{stringliteral}{";port="} . $conf->
       database\_port . \textcolor{stringliteral}{";dbname="} . $conf->database\_name; 
-00027                 
-00028                 $this->user = $conf->database\_user;
-00029                 $this->pass = $conf->database\_pass;
-00030 
-00031                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
-00032 
-00033         
-00034         \textcolor{keywordflow}{if} ($conf->database\_verbose == 1) $this->beMoreVerbose(); 
-00035         
-00036                 
-00037         \}
+00041                 
+00042                 $this->user = $conf->database\_user;
+00043                 $this->pass = $conf->database\_pass;
+00044 
+00045                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
+00046 
+00047         
+00048         \textcolor{keywordflow}{if} ($conf->database\_verbose == 1) $this->\hyperlink{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{beMoreVerbose}(); 
+00049         
+00050                 
+00051         \}
+\end{DoxyCode}
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\hypertarget{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{\index{Database@{Database}!be\-More\-Verbose@{be\-More\-Verbose}}
+\index{be\-More\-Verbose@{be\-More\-Verbose}!Database@{Database}}
+\subsubsection[{be\-More\-Verbose}]{\setlength{\rightskip}{0pt plus 5cm}Database\-::be\-More\-Verbose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}
+Error Modus erhoehen 
+
+Definiert in Zeile \hyperlink{_database_8php_source_l00058}{58} der Datei \hyperlink{_database_8php_source}{Database.\-php}.
+
+
+\begin{DoxyCode}
+00058                                          \{
+00059                 
+00060                 $this->setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);
+00061         $this->setAttribute(PDO::ATTR\_EMULATE\_PREPARES, \textcolor{keyword}{false});
+00062                 
+00063         \}
 \end{DoxyCode}
 
 

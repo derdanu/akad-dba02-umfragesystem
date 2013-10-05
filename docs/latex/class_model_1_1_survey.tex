@@ -52,13 +52,13 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00009}{9} der Datei \
 \item[{}]{\$answer\-Arr}
 \end{DoxyParamCaption}
 )}}\label{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}
-neue Umfrage hinzufügen
+neue Umfrage hinzufuegen
 
 
 \begin{DoxyParams}[1]{Parameter}
 String & {\em \$name} & Name der Umfrage \\
 \hline
-Array & {\em \$anser\-Arr} & Array mit den möglichen Antworten \\
+Array & {\em \$anser\-Arr} & Array mit den moeglichen Antworten \\
 \hline
 \end{DoxyParams}
 
@@ -71,27 +71,31 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00167}{167} der Datei
 00168                 
 00169                 \textcolor{keywordflow}{if} (empty($name)) \textcolor{keywordflow}{return};
 00170                 
-00171                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
-00172                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
-00173                 
-00174                 $stmt->execute();
-00175 
-00176                 $surveyID = $this->dbh->lastInsertId();
-00177                 
-00178                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
+00171                 $this->dbh->beginTransaction();
+00172                 
+00173                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
+00174                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
+00175                 
+00176                 $stmt->execute();
+00177 
+00178                 $surveyID = $this->dbh->lastInsertId();
 00179                 
-00180                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
-00181 
-00182                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00180                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
+00181                 
+00182                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
 00183 
-00184                         \textcolor{keywordflow}{if} (!empty($answer)) \{
-00185                                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
-00186                                 $stmt->execute();
-00187                         \}
-00188                         
-00189                 \}
-00190                 
-00191         \}
+00184                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00185 
+00186                         \textcolor{keywordflow}{if} (!empty($answer)) \{
+00187                                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
+00188                                 $stmt->execute();
+00189                         \}
+00190                         
+00191                 \}
+00192                 
+00193                 $this->dbh->commit();
+00194                 
+00195         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}{\index{Model\-::\-Survey@{Model\-::\-Survey}!delete\-Survey@{delete\-Survey}}
 \index{delete\-Survey@{delete\-Survey}!Model::Survey@{Model\-::\-Survey}}
@@ -100,7 +104,7 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00167}{167} der Datei
 \item[{}]{\$id}
 \end{DoxyParamCaption}
 )}}\label{class_model_1_1_survey_a80276047e075565b781c60d7ac25b3a6}
-Umfrage löschen
+Umfrage loeschen
 
 
 \begin{DoxyParams}[1]{Parameter}
@@ -318,7 +322,7 @@ Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00018}{18} der Datei 
 \item[{}]{\$table}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}
-Anzahl der Tupel zurückgeben
+Anzahl der Tupel zurueckgeben
 
 
 \begin{DoxyParams}[1]{Parameter}
@@ -330,28 +334,28 @@ Integer Anzahl der Tupel
 \end{DoxyReturn}
 
 
-Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00202}{202} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
+Definiert in Zeile \hyperlink{_model_2_survey_8php_source_l00206}{206} der Datei \hyperlink{_model_2_survey_8php_source}{Model/\-Survey.\-php}.
 
 
 \begin{DoxyCode}
-00202                                                \{
-00203                 
-00204                 
-00205                 \textcolor{keywordflow}{switch} ($table) \{
-00206                         
-00207                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
-00208                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
-00209                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
-00210                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
-00211                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
-00212                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
-00213                                 \textcolor{keywordflow}{break};  
-00214                         \textcolor{keywordflow}{default}:
-00215                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
-00216                                 
-00217                 \}
-00218                                 
-00219         \}
+00206                                                \{
+00207                 
+00208                 
+00209                 \textcolor{keywordflow}{switch} ($table) \{
+00210                         
+00211                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
+00212                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
+00213                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
+00214                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
+00215                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
+00216                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
+00217                                 \textcolor{keywordflow}{break};  
+00218                         \textcolor{keywordflow}{default}:
+00219                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
+00220                                 
+00221                 \}
+00222                                 
+00223         \}
 \end{DoxyCode}
 \hypertarget{class_model_1_1_survey_a39a47b914740e87bc133a72c4721b018}{\index{Model\-::\-Survey@{Model\-::\-Survey}!save\-New\-Answers@{save\-New\-Answers}}
 \index{save\-New\-Answers@{save\-New\-Answers}!Model::Survey@{Model\-::\-Survey}}

@@ -104,8 +104,10 @@ $(document).ready(function(){initNavTree('class_database.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pub-static-methods">Öffentliche, statische Methoden</a> &#124;
 <a href="#pri-methods">Private Methoden</a> &#124;
 <a href="#pri-attribs">Private Attribute</a> &#124;
+<a href="#pri-static-attribs">Statische, private Attribute</a> &#124;
 <a href="class_database-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
 <div class="title">Database Klassenreferenz</div>  </div>
@@ -125,10 +127,15 @@ Klassendiagramm für Database:</div>
 <tr class="memitem:a2852f635197e76a838486e64e00aac9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database.html#a2852f635197e76a838486e64e00aac9f">__construct</a> ()</td></tr>
 <tr class="separator:a2852f635197e76a838486e64e00aac9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Öffentliche, statische Methoden</h2></td></tr>
+<tr class="memitem:a8399325825e893103c463e644f817f86"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8399325825e893103c463e644f817f86"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="separator:a8399325825e893103c463e644f817f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Methoden</h2></td></tr>
-<tr class="memitem:a669fc0eb6ea0dc6bb76411e0338886c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a669fc0eb6ea0dc6bb76411e0338886c7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>beMoreVerbose</b> ()</td></tr>
+<tr class="memitem:a669fc0eb6ea0dc6bb76411e0338886c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database.html#a669fc0eb6ea0dc6bb76411e0338886c7">beMoreVerbose</a> ()</td></tr>
 <tr class="separator:a669fc0eb6ea0dc6bb76411e0338886c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -142,12 +149,18 @@ Private Attribute</h2></td></tr>
 <tr class="memitem:a8783a2890064e9d86b48a55fa09432f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8783a2890064e9d86b48a55fa09432f5"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$pass</b></td></tr>
 <tr class="separator:a8783a2890064e9d86b48a55fa09432f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Statische, private Attribute</h2></td></tr>
+<tr class="memitem:a313173b898c14db2a84f7fd1b14e5fb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a313173b898c14db2a84f7fd1b14e5fb5"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = null</td></tr>
+<tr class="separator:a313173b898c14db2a84f7fd1b14e5fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p><a class="el" href="class_database.html">Database</a> Klasse erweitert PHP PDO</p>
-<p>$db = new <a class="el" href="class_database.html">Database()</a>; </p>
+<p>$db = new <a class="el" href="class_database.html">Database()</a>; // fuer eine eigene Datenbankverbindung. $db = Database::getInstance(); // Empfohlene Methode </p>
 
-<p>Definiert in Zeile <a class="el" href="_database_8php_source.html#l00009">9</a> der Datei <a class="el" href="_database_8php_source.html">Database.php</a>.</p>
+<p>Definiert in Zeile <a class="el" href="_database_8php_source.html#l00010">10</a> der Datei <a class="el" href="_database_8php_source.html">Database.php</a>.</p>
 </div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a class="anchor" id="a2852f635197e76a838486e64e00aac9f"></a>
 <div class="memitem">
@@ -161,26 +174,61 @@ Private Attribute</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Konstruktor.</p>
-<p>Konfiguration laden und der Elternklasse uebergeben. </p>
+<p>Konstruktor wird nur einmalig aufgerufen.</p>
+<p>Konfiguration laden und der Elternklasse uebergeben.</p>
+<p>Die Funktion muss public sein da die PDO Elternklasse auch einen public Konstruktur liefert. </p>
 
-<p>Definiert in Zeile <a class="el" href="_database_8php_source.html#l00022">22</a> der Datei <a class="el" href="_database_8php_source.html">Database.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                      {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                $conf = \Config::getInstance();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                $this-&gt;dsn = $conf-&gt;database_type . <span class="stringliteral">&quot;:host=&quot;</span> . $conf-&gt;database_host . <span class="stringliteral">&quot;;port=&quot;</span> . $conf-&gt;database_port . <span class="stringliteral">&quot;;dbname=&quot;</span> . $conf-&gt;database_name; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                $this-&gt;user = $conf-&gt;database_user;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                $this-&gt;pass = $conf-&gt;database_pass;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                parent::__construct($this-&gt;dsn, $this-&gt;user, $this-&gt;pass);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> ($conf-&gt;database_verbose == 1) $this-&gt;beMoreVerbose(); </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<p>Definiert in Zeile <a class="el" href="_database_8php_source.html#l00036">36</a> der Datei <a class="el" href="_database_8php_source.html">Database.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                      {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                $conf = \Config::getInstance();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                $this-&gt;dsn = $conf-&gt;database_type . <span class="stringliteral">&quot;:host=&quot;</span> . $conf-&gt;database_host . <span class="stringliteral">&quot;;port=&quot;</span> . $conf-&gt;database_port . <span class="stringliteral">&quot;;dbname=&quot;</span> . $conf-&gt;database_name; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                $this-&gt;user = $conf-&gt;database_user;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                $this-&gt;pass = $conf-&gt;database_pass;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                parent::__construct($this-&gt;dsn, $this-&gt;user, $this-&gt;pass);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> ($conf-&gt;database_verbose == 1) $this-&gt;<a class="code" href="class_database.html#a669fc0eb6ea0dc6bb76411e0338886c7">beMoreVerbose</a>(); </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="ttc" id="class_database_html_a669fc0eb6ea0dc6bb76411e0338886c7"><div class="ttname"><a href="class_database.html#a669fc0eb6ea0dc6bb76411e0338886c7">Database\beMoreVerbose</a></div><div class="ttdeci">beMoreVerbose()</div><div class="ttdef"><b>Definition:</b> <a href="_database_8php_source.html#l00058">Database.php:58</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a669fc0eb6ea0dc6bb76411e0338886c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Database::beMoreVerbose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Error Modus erhoehen </p>
+
+<p>Definiert in Zeile <a class="el" href="_database_8php_source.html#l00058">58</a> der Datei <a class="el" href="_database_8php_source.html">Database.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                         {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                $this-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        $this-&gt;setAttribute(PDO::ATTR_EMULATE_PREPARES, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -193,7 +241,7 @@ Private Attribute</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_database.html">Database</a></li>
-    <li class="footer">Erzeugt am Don Sep 19 2013 17:00:15 für DBA02 von
+    <li class="footer">Erzeugt am Sam Okt 5 2013 11:20:54 für DBA02 von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

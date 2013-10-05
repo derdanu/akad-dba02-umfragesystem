@@ -13,7 +13,7 @@ var files =
     [ "database_diagramm.tpl.php", "database__diagramm_8tpl_8php_source.html", null ],
     [ "exception.tpl.php", "exception_8tpl_8php_source.html", null ],
     [ "FrontController.php", "_front_controller_8php_source.html", null ],
-    [ "index.php", "index_8php_source.html", null ],
+    [ "classes/Controller/Index.php", "classes_2_controller_2_index_8php_source.html", null ],
     [ "Index.php", "_index_8php_source.html", null ],
     [ "index.tpl.php", "index_8tpl_8php_source.html", null ],
     [ "InvalidUserPassException.php", "_invalid_user_pass_exception_8php_source.html", null ],

@@ -8,48 +8,66 @@
 00003 \textcolor{comment}{ * }
 00004 \textcolor{comment}{ * Database Klasse erweitert PHP PDO}
 00005 \textcolor{comment}{ * }
-00006 \textcolor{comment}{ * $db = new Database();}
-00007 \textcolor{comment}{ * }
-00008 \textcolor{comment}{ */}
-\hypertarget{_database_8php_source_l00009}{}\hyperlink{class_database}{00009} \textcolor{keyword}{class }\hyperlink{class_database}{Database} \textcolor{keyword}{extends} PDO \{
-00010         
-00011         \textcolor{keyword}{private} $dsn;
-00012         \textcolor{keyword}{private} $user;
-00013         \textcolor{keyword}{private} $pass;
-00014         \textcolor{comment}{}
-00015 \textcolor{comment}{        /**}
-00016 \textcolor{comment}{         * }
-00017 \textcolor{comment}{         * Konstruktor.}
-00018 \textcolor{comment}{         * }
-00019 \textcolor{comment}{         * Konfiguration laden und der Elternklasse uebergeben.}
-00020 \textcolor{comment}{         * }
-00021 \textcolor{comment}{         */}
-\hypertarget{_database_8php_source_l00022}{}\hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{00022}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{\_\_construct}() \{
-00023                 
-00024                 $conf = \(\backslash\)Config::getInstance();
-00025 
-00026                 $this->dsn = $conf->database\_type . \textcolor{stringliteral}{":host="} . $conf->database\_host . \textcolor{stringliteral}{";port="} . $conf->
-      database\_port . \textcolor{stringliteral}{";dbname="} . $conf->database\_name; 
-00027                 
-00028                 $this->user = $conf->database\_user;
-00029                 $this->pass = $conf->database\_pass;
-00030 
-00031                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
-00032 
-00033         
-00034         \textcolor{keywordflow}{if} ($conf->database\_verbose == 1) $this->beMoreVerbose(); 
-00035         
-00036                 
-00037         \}
-00038         
+00006 \textcolor{comment}{ * $db = new Database(); // fuer eine eigene Datenbankverbindung.}
+00007 \textcolor{comment}{ * $db = Database::getInstance(); // Empfohlene Methode}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ */}
+\hypertarget{_database_8php_source_l00010}{}\hyperlink{class_database}{00010} \textcolor{keyword}{class }\hyperlink{class_database}{Database} \textcolor{keyword}{extends} PDO \{
+00011         
+00012         \textcolor{keyword}{private} $dsn;
+00013         \textcolor{keyword}{private} $user;
+00014         \textcolor{keyword}{private} $pass;
+00015         
+00016         \textcolor{keyword}{static} \textcolor{keyword}{private} $instance = null;
+00017         
+00018         \textcolor{keyword}{static} \textcolor{keyword}{public} \textcolor{keyword}{function} getInstance() \{
+00019                 \textcolor{keywordflow}{if} (null === self::$instance) \{
+00020                         self::$instance = \textcolor{keyword}{new} \textcolor{keyword}{self};
+00021                 \}
+00022                 
+00023                 \textcolor{keywordflow}{return} self::$instance;
+00024         \}
+00025         \textcolor{comment}{}
+00026 \textcolor{comment}{        /**}
+00027 \textcolor{comment}{         * }
+00028 \textcolor{comment}{         * Konstruktor wird nur einmalig aufgerufen.}
+00029 \textcolor{comment}{         * }
+00030 \textcolor{comment}{         * Konfiguration laden und der Elternklasse uebergeben.}
+00031 \textcolor{comment}{         * }
+00032 \textcolor{comment}{         * Die Funktion muss public sein da die PDO Elternklasse auch einen public }
+00033 \textcolor{comment}{         * Konstruktur liefert. }
+00034 \textcolor{comment}{         * }
+00035 \textcolor{comment}{         */}
+\hypertarget{_database_8php_source_l00036}{}\hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{00036}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_database_a2852f635197e76a838486e64e00aac9f}{\_\_construct}() \{
+00037                                 
+00038                 $conf = \(\backslash\)Config::getInstance();
 00039 
-00040         \textcolor{keyword}{private} \textcolor{keyword}{function} beMoreVerbose() \{
+00040                 $this->dsn = $conf->database\_type . \textcolor{stringliteral}{":host="} . $conf->database\_host . \textcolor{stringliteral}{";port="} . $conf->
+      database\_port . \textcolor{stringliteral}{";dbname="} . $conf->database\_name; 
 00041                 
-00042                 $this->setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);
-00043         $this->setAttribute(PDO::ATTR\_EMULATE\_PREPARES, \textcolor{keyword}{false});
-00044                 
-00045         \}
+00042                 $this->user = $conf->database\_user;
+00043                 $this->pass = $conf->database\_pass;
+00044 
+00045                 parent::\_\_construct($this->dsn, $this->user, $this->pass);
 00046 
-00047 
-00048 \}
+00047         
+00048         \textcolor{keywordflow}{if} ($conf->database\_verbose == 1) $this->\hyperlink{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{beMoreVerbose}(); 
+00049         
+00050                 
+00051         \}
+00052         \textcolor{comment}{}
+00053 \textcolor{comment}{        /**}
+00054 \textcolor{comment}{         * }
+00055 \textcolor{comment}{         * Error Modus erhoehen}
+00056 \textcolor{comment}{         * }
+00057 \textcolor{comment}{         */}
+\hypertarget{_database_8php_source_l00058}{}\hyperlink{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{00058}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_database_a669fc0eb6ea0dc6bb76411e0338886c7}{beMoreVerbose}() \{
+00059                 
+00060                 $this->setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);
+00061         $this->setAttribute(PDO::ATTR\_EMULATE\_PREPARES, \textcolor{keyword}{false});
+00062                 
+00063         \}
+00064 
+00065 
+00066 \}
 \end{DoxyCode}

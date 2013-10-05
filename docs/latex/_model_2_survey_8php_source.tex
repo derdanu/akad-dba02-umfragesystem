@@ -149,7 +149,7 @@
 00141         \textcolor{comment}{}
 00142 \textcolor{comment}{        /**}
 00143 \textcolor{comment}{         * }
-00144 \textcolor{comment}{         * Umfrage löschen}
+00144 \textcolor{comment}{         * Umfrage loeschen}
 00145 \textcolor{comment}{         * }
 00146 \textcolor{comment}{         * @param       Integer $id     UmfragenID}
 00147 \textcolor{comment}{         * }
@@ -166,69 +166,73 @@
 00158         \textcolor{comment}{}
 00159 \textcolor{comment}{        /**}
 00160 \textcolor{comment}{         * }
-00161 \textcolor{comment}{         * neue Umfrage hinzufügen}
+00161 \textcolor{comment}{         * neue Umfrage hinzufuegen}
 00162 \textcolor{comment}{         * }
 00163 \textcolor{comment}{         * @param       String  $name   Name der Umfrage}
-00164 \textcolor{comment}{         * @param       Array   $anserArr       Array mit den möglichen Antworten}
+00164 \textcolor{comment}{         * @param       Array   $anserArr       Array mit den moeglichen Antworten}
 00165 \textcolor{comment}{         * }
 00166 \textcolor{comment}{         */}
 \hypertarget{_model_2_survey_8php_source_l00167}{}\hyperlink{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}{00167}         \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_acf9f6e213e5fd9a31a998db3ddf9026c}{addSurvey}($name, $answerArr) \{
 00168                 
 00169                 \textcolor{keywordflow}{if} (empty($name)) \textcolor{keywordflow}{return};
 00170                 
-00171                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
-00172                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
-00173                 
-00174                 $stmt->execute();
-00175 
-00176                 $surveyID = $this->dbh->lastInsertId();
-00177                 
-00178                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
+00171                 $this->dbh->beginTransaction();
+00172                 
+00173                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO Survey SET Name = :name"});
+00174                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $name);
+00175                 
+00176                 $stmt->execute();
+00177 
+00178                 $surveyID = $this->dbh->lastInsertId();
 00179                 
-00180                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
-00181 
-00182                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00180                 $stmt = $this->dbh->prepare(\textcolor{stringliteral}{"INSERT INTO SurveyItems SET Name = :name, SurveyID = :id"});
+00181                 
+00182                 $stmt->bindParam(\textcolor{stringliteral}{':id'}, $surveyID);
 00183 
-00184                         \textcolor{keywordflow}{if} (!empty($answer)) \{
-00185                                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
-00186                                 $stmt->execute();
-00187                         \}
-00188                         
-00189                 \}
-00190                 
-00191         \}
-00192         \textcolor{comment}{}
-00193 \textcolor{comment}{        /**}
-00194 \textcolor{comment}{         * }
-00195 \textcolor{comment}{         * Anzahl der Tupel zurückgeben}
-00196 \textcolor{comment}{         * }
-00197 \textcolor{comment}{         * @param       String  $table  Tabellenname}
+00184                 \textcolor{keywordflow}{foreach} ($answerArr as $answer) \{
+00185 
+00186                         \textcolor{keywordflow}{if} (!empty($answer)) \{
+00187                                 $stmt->bindParam(\textcolor{stringliteral}{':name'}, $answer);
+00188                                 $stmt->execute();
+00189                         \}
+00190                         
+00191                 \}
+00192                 
+00193                 $this->dbh->commit();
+00194                 
+00195         \}
+00196         \textcolor{comment}{}
+00197 \textcolor{comment}{        /**}
 00198 \textcolor{comment}{         * }
-00199 \textcolor{comment}{         * @return      Integer Anzahl der Tupel}
+00199 \textcolor{comment}{         * Anzahl der Tupel zurueckgeben}
 00200 \textcolor{comment}{         * }
-00201 \textcolor{comment}{         */}
-\hypertarget{_model_2_survey_8php_source_l00202}{}\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{00202}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{getTableCount}($table) \{
-00203                 
-00204                 
-00205                 \textcolor{keywordflow}{switch} ($table) \{
-00206                         
-00207                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
-00208                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
-00209                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
-00210                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
-00211                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
-00212                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
-00213                                 \textcolor{keywordflow}{break};  
-00214                         \textcolor{keywordflow}{default}:
-00215                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
-00216                                 
-00217                 \}
-00218                                 
-00219         \}
-00220 
-00221 \}
-00222 
-00223 
+00201 \textcolor{comment}{         * @param       String  $table  Tabellenname}
+00202 \textcolor{comment}{         * }
+00203 \textcolor{comment}{         * @return      Integer Anzahl der Tupel}
+00204 \textcolor{comment}{         * }
+00205 \textcolor{comment}{         */}
+\hypertarget{_model_2_survey_8php_source_l00206}{}\hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{00206}         \textcolor{keyword}{private} \textcolor{keyword}{function} \hyperlink{class_model_1_1_survey_a5c2c5d322a7ae1786acb783f472cc074}{getTableCount}($table) \{
+00207                 
+00208                 
+00209                 \textcolor{keywordflow}{switch} ($table) \{
+00210                         
+00211                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"User"}:
+00212                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"Survey"}:
+00213                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyItems"}:     
+00214                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"SurveyAnswer"}:
+00215                                 $stmt = $this->dbh->query(\textcolor{stringliteral}{"SELECT COUNT(*) AS cnt FROM $table"});
+00216                                 \textcolor{keywordflow}{return} $stmt->fetchObject()->cnt;       
+00217                                 \textcolor{keywordflow}{break};  
+00218                         \textcolor{keywordflow}{default}:
+00219                                 \textcolor{keywordflow}{throw} new \(\backslash\)Exception(\textcolor{stringliteral}{"Illegaler Tabellenname $table"});
+00220                                 
+00221                 \}
+00222                                 
+00223         \}
 00224 
-00225 ?>
+00225 \}
+00226 
+00227 
+00228 
+00229 ?>
 \end{DoxyCode}
